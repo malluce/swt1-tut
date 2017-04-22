@@ -1,0 +1,150 @@
+\documentclass[18pt]{beamer}
+\usepackage[utf8]{inputenc} % for the umlauts
+
+\beamertemplatenavigationsymbolsempty
+%% SLIDE FORMAT
+
+% use 'beamerthemekit' for standard 4:3 ratio
+% for widescreen slides (16:9), use 'beamerthemekitwide'
+
+\usepackage{templates/beamerthemekit}
+% \usepackage{templates/beamerthemekitwide}
+
+%% TITLE PICTURE
+
+% if a custom picture is to be used on the title page, copy it into the 'logos'
+% directory, in the line below, replace 'mypicture' with the 
+% filename (without extension) and uncomment the following line
+% (picture proportions: 63 : 20 for standard, 169 : 40 for wide
+% *.eps format if you use latex+dvips+ps2pdf, 
+% *.jpg/*.png/*.pdf if you use pdflatex)
+
+%\titleimage{mypicture}
+
+%% TikZ INTEGRATION
+
+% use these packages for PCM symbols and UML classes
+% \usepackage{templates/tikzkit}
+% \usepackage{templates/tikzuml}
+
+% the presentation starts here
+
+\title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
+\author{Felix Bachmann}
+
+\institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
+
+% Bibliography
+
+\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+\addbibresource{templates/example.bib}
+\bibhang1em
+
+\begin{document}
+
+% change the following line to "ngerman" for German style date and logos
+\selectlanguage{ngerman}
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%table of contents
+\begin{frame}{Themenübersicht}
+\tableofcontents
+\end{frame}
+
+\section{Organisatorisches}
+	\subsection{Vorstellung}
+		\begin{frame}
+			\frametitle{Das bin ich}
+			\begin{itemize}
+				\item Felix Bachmann
+				\item Infostudent im 4. Semester
+				\item erstes Tutorium
+				\item E-Post-Adresse: felix.bachmann@ewetel.net
+			\end{itemize}
+		\end{frame}
+		\begin{frame}
+			\frametitle{\dots und ihr?}
+			\begin{itemize}
+				\item Name
+				\item Studiengang und Semester
+				\item erlernte Programmiersprachen, Lieblingsprogrammiersprache
+				\item Erfahrung mit Git/Maven oder ähnlichen Tools?
+				\item Von dem Tutorium erwarte ich\dots
+			\end{itemize}
+		\end{frame}
+		
+	\subsection{Regeln}
+		\begin{frame}
+			\frametitle{Verhalten im Tutorium}
+			\begin{block}{cool}
+				\begin{itemize}
+					\item \textbf{mitdenken}
+					\item \textbf{Fragen stellen}
+					\item \textbf{Fragen beantworten}
+					\item essen \& trinken
+					\item gehen
+					\item schlafen
+				\end{itemize}
+			\end{block}
+			\pause
+			\begin{block}{!cool}
+				\begin{itemize}
+					\item laut sein
+					\item stören
+					\item andere ablenken
+				\end{itemize}
+			\end{block}
+		\end{frame}
+		
+	\subsection{Übungs- und Tutoriumsbetrieb}
+		\begin{frame}
+			\frametitle{Übungsbetrieb}
+			\begin{itemize}
+				\item Bestehen des Scheins Voraussetzung zum Bestehen des Moduls
+				\item neue Übungsblätter ungefähr alle 2 Wochen $\implies$ 1+6 Blätter
+				\item ab 50\% der Punkte habt ihr sicher bestanden
+				\item Besprechung der Musterlösung
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Tutoriumsbetrieb}
+			\begin{itemize}
+				\item normalerweise 14-tägiges Tutorium
+				\item Wiederholung (bestenfalls Verstehen) des VL-Stoffs
+				\item Fragen stellen !!!
+				\item "'Rechnen"' von Aufgaben (Altklausuren)
+				\item ggf. Tipps für die Übungsblätter
+			\end{itemize}
+		\end{frame}
+		
+	\subsection{Fragen}
+		\begin{frame}
+			\frametitle{Fragen zu Übung(sblättern), Vorlesung}
+			erst im Forum, auf Google oder Stackoverflow nachschauen, dann
+				\begin{itemize}
+					\item neuen Forum-Thread anlegen
+					\item falls nicht öffentlich postbar: Mail an swt1@ipd.kit.edu (nur im Notfall)
+				\end{itemize}
+		\end{frame}
+		
+		
+		
+		
+		
+\section{Tipps}
+		
+		
+\section{Ende}
+		\begin{frame}
+			\frametitle{Bis dann! (dann=15.05.17)}
+			\centering
+			\includegraphics[height=0.85\textheight]{./comics/geek_and_poke_gitignore.jpg}
+			\tiny\url{geek-and-poke.com/geekandpoke/2012/11/7/simply-explained.html}
+		\end{frame}
+
+\end{document}
