@@ -130,7 +130,8 @@
 						\item "'Rechnen"' von Aufgaben (Altklausuren)
 						\item ggf. Tipps für die Übungsblätter
 					\end{itemize}
-				\item Fragen stellen !!!
+				\item Folien gibt's im Ilias und auf \url{www.github.com/malluce/swt1-tut}
+				\item Fragen stellen !!
 			\end{itemize}
 		\end{frame}
 		
@@ -239,6 +240,28 @@
 	\begin{frame}
 		\frametitle{Maven - Überblick}
 		Verzeichnisstruktur:
+		\begin{itemize}
+			\item src
+			\begin{itemize}
+				\item main
+				\begin{itemize}
+					\item java
+					\item resources
+				\end{itemize}
+				\item test
+				\begin{itemize}
+					\item java
+					\item resources
+				\end{itemize}
+			\end{itemize}
+			\item target
+			\begin{itemize}
+				\item classes
+				\item test-classes
+				\item *.jar / *.war / *.zip \dots
+				\item \dots
+			\end{itemize}
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
@@ -252,9 +275,30 @@
 			\end{tabular}
 		\end{block}
 	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Maven - Fehler finden}
+		Lösungsansätze:
+		\begin{itemize}
+			\item Rechtsklick auf Projekt $\implies$ Maven $\implies$ Update Maven Project $\implies$ Haken bei "'Force Update..." 
+			\begin{itemize}
+				\item Synchronisiert pom.xml mit Projekt, aktualisiert Abhängigkeiten
+			\end{itemize}
+			\item mvn clean
+			\begin{itemize}
+				\item vielleicht war der target-Ordner verschmutzt
+			\end{itemize}
+			\item C:/Users/MeinName/.m2/ löschen und mvn compile (oder mvn package) ausführen
+			\begin{itemize}
+				\item löscht alle Dependencies und lädt sie neu runter (ab und zu lädt man leider korrupte Dateien runter oder Dateien fehlen)
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
 
 
+\section{Git}
 		
+\section{Live-Demo}		
 		
 \section{Tipps}
 %TODO Reminder Abgabe
