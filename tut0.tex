@@ -219,6 +219,39 @@
 		\end{block}
 		(mehr Beispiele später)
 	\end{frame}
+		
+\section{Maven}
+	\begin{frame}
+		\frametitle{Maven - Überblick}
+		\begin{itemize}
+			\item Maven ist in jeder Eclipse-Installation integriert \linebreak $\implies$ keine manuelle Installation nötig
+			\item Aufgaben von Maven
+				\begin{itemize}
+					\item Strukturierung (durch vorgegebene Verzeichnisstruktur)
+					\item Kompilieren
+					\item Testen
+					\item Verwalten von Abhängigkeiten
+					\item Verpacken
+				\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Maven - Überblick}
+		Verzeichnisstruktur:
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Maven - Überblick}
+		\begin{block}{Wichtige Befehle}
+			\begin{tabular}{ll}
+				\texttt{mvn compile} & kompiliert Quelltexte zu .class-Dateien \\
+				\texttt{mvn test} & kompiliert Test-Quelldateien zu .class-Dateien, \\ & führt Tests aus und zeigt Ergebnisse an \\
+				\texttt{mvn package} & verpackt euer Projekt in eine Datei (.war/.jar/.zip) \\ 
+				\texttt{mvn clear} & leert euren target-Ordner \\
+			\end{tabular}
+		\end{block}
+	\end{frame}
 
 
 		
