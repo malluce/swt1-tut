@@ -10,6 +10,8 @@
 \usepackage{templates/beamerthemekit}
 % \usepackage{templates/beamerthemekitwide}
 
+\setcounter{tocdepth}{1}
+
 %% TITLE PICTURE
 
 % if a custom picture is to be used on the title page, copy it into the 'logos'
@@ -106,19 +108,29 @@
 			\begin{itemize}
 				\item Bestehen des Scheins Voraussetzung zum Bestehen des Moduls
 				\item neue Übungsblätter ungefähr alle 2 Wochen $\implies$ 1+6 Blätter
+				\item Übungen i.d.R. jeweils am Tag der Abgabe
 				\item ab 50\% der Punkte habt ihr sicher bestanden
 				\item Besprechung der Musterlösung
+				\item Abgaben
+					\begin{itemize}
+						\item Theorieaufgaben+Deckblatt im 3.Stock
+						\item Programmieraufgaben auf http://lez.ipd.kit.edu 
+					\end{itemize}
 			\end{itemize}
 		\end{frame}
 		
 		\begin{frame}
 			\frametitle{Tutoriumsbetrieb}
 			\begin{itemize}
-				\item normalerweise 14-tägiges Tutorium
-				\item Wiederholung (bestenfalls Verstehen) des VL-Stoffs
+				\item Wann?: ab dem 15.05 14-tägig 
+				\item Wo?: Raum -107
+				\item Was?: 
+					\begin{itemize}
+						\item Wiederholung des VL-Stoffs
+						\item "'Rechnen"' von Aufgaben (Altklausuren)
+						\item ggf. Tipps für die Übungsblätter
+					\end{itemize}
 				\item Fragen stellen !!!
-				\item "'Rechnen"' von Aufgaben (Altklausuren)
-				\item ggf. Tipps für die Übungsblätter
 			\end{itemize}
 		\end{frame}
 		
@@ -128,18 +140,93 @@
 			erst im Forum, auf Google oder Stackoverflow nachschauen, dann
 				\begin{itemize}
 					\item neuen Forum-Thread anlegen
-					\item falls nicht öffentlich postbar: Mail an swt1@ipd.kit.edu (nur im Notfall)
+					\item falls nicht öffentlich postbar: Mail an mich oder swt1@ipd.kit.edu (nur im Notfall)
 				\end{itemize}
 		\end{frame}
 		
+\section{Vorbereitungsblatt}
+	\begin{frame}
+		\frametitle{Was ihr bisher getan haben solltet..}
+		Installation von:
+		\begin{itemize}
+			\item Eclipse (incl. CheckStyle und EclEmma)
+			\item Git
+		\end{itemize}
+		Überblick über:
+		\begin{itemize}
+			\item Maven
+			\item Git
+		\end{itemize}
+		Probleme mit der Installation? $\implies$ kommt nach dem Tut nach vorne
+	\end{frame}
 		
 		
+\section{JUnit4}	
+	\begin{frame}
+		\frametitle{JUnit4 - Überblick}
+		\begin{itemize}
+			\item Test-Tool für Java-Klassen
+			\item Nur öffentliche Methoden testen
+			\item Konventionen:
+			 \begin{itemize}
+			 		\item Für Klasse Hallo Testklasse HalloTest schreiben
+			 		\item Methode hallo(Object o) wird z.B. durch die Methode testHalloWithNull() getestet
+			 \end{itemize}
+		\end{itemize}
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{JUnit4 - Aufbau einer Testklasse}
+		Methoden können mit Annotationen (@XYZ) versehen werden \linebreak
+		Aufbau:
+		\begin{itemize}
+			\item @BeforeClass (wird als erstes einmal ausgeführt)
+			\pause
+			\item @Before (wird vor jeder Test-Methode einmal ausgeführt)
+			\pause
+			\item @Test (vergleichen erwartetes und reales Ergebnis, schlagen ggf. fehl, Ausführung in beliebiger Reihenfolge)
+			\pause
+			\item @After (wird nach jeder Test-Methode einmal ausgeführt)
+			\pause
+			\item @AfterClass (wird am ende einmal ausgeführt)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{JUnit4 - Assert}
+		org.junit.Assert bietet diverse Methoden, um Ergebnis mit Erwartung abzugleichen \linebreak
+		zu jeder Methode kann als erstes Argument ein String mitgegeben werden (wird bei Fehlschlag angezeigt) \linebreak
+		Beispiele:
+		\begin{itemize}
+			\item assertArrayEquals(int[] expected, int[] actual)
+			\item assertNotNull(Object obj)
+			\item assertSame(Object expected, Object actual)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{JUnit4 - eine Testmethode}
+		\begin{block}{Zu testende Methode in der Klasse Hallo}
+				public static int add(int a, int b) \{ \linebreak
+					 return a + b; \linebreak
+				      \}	
+		\end{block} 
+		\begin{block}{Testmethode in der Klasse HalloTest}
+			@Test\linebreak
+			public void testAdd() \{ \linebreak
+				Assert.assertEquals(7, Hallo.add(5 + 2)); \linebreak
+			\}
+		\end{block}
+		(mehr Beispiele später)
+	\end{frame}
+
+
 		
 		
 \section{Tipps}
+%TODO Reminder Abgabe
 		
-		
-\section{Ende}
+
 		\begin{frame}
 			\frametitle{Bis dann! (dann=15.05.17)}
 			\centering
