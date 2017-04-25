@@ -32,7 +32,7 @@
 % the presentation starts here
 
 \usepackage[absolute,overlay]{textpos}
-\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
+%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
 \author{Felix Bachmann}
@@ -332,23 +332,128 @@
 
 
 \section{Git}
-%TODO Warum?:Bild Externe Platte
-%TODO Bild Repo (staging area...)
-%TODO Navigation cmd
-%TODO wichtige Git-Befehle
+	\subsection{Warum Versionsverwaltung?}
+	\begin{frame}
+		\frametitle{Warum Versionsverwaltung?}
+		%TODO Bild Externe Platte		
+	\end{frame}
+	
+	\subsection{Git - Überblick}
+	\begin{frame}
+		\frametitle{Git - Überblick}
+		\begin{textblock*}{20mm}(60mm,5mm)
+			\includegraphics[width=30mm, scale=0.8]{./pics/tut0/Git-logo.png}
+		\end{textblock*}
+		\begin{itemize}
+			\item git ist Englisch, bedeutet Schwachkopf, Penner oder Nudelauge (?)
+			\item dezentrales Versionsverwaltungssystem
+			\item wichtig! (universell)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Umgang mit der Kommandozeile (cmd)}
+		Nötig?\linebreak
+		\begin{block}{Wichtige Befehle - Navigation}
+			\begin{tabular}{ll}
+				\texttt{cd test} &  Wechselt in das Verzeichnis test.\\
+				\texttt{dir bzw. ls} &  Zeigt Inhalt des aktuellen Ordners an.\\
+				\texttt{.} & = aktuelles Verzeichnis\\ 
+				\texttt{..} & = übergeordnetes Verzeichnis\\
+			\end{tabular}
+		\end{block}
+		
+		\begin{alertblock}{Hacks}
+			\begin{itemize}
+				\item Mit den Pfeiltasten können bereits eingegebene Befehle durchgescrollt werden.
+				\item Tabulator = Autovervollständigung
+			\end{itemize}
+		\end{alertblock}
+		
+	\end{frame}
+	
+	\subsection{Git - Befehle}
+	\begin{frame}
+		\frametitle{Git - Überblick}
+		\begin{block}{Wichtige Befehle}
+			\begin{tabular}{ll}
+				\texttt{git init} &  Initialisiert ein leeres Git-Repo.\\
+				\texttt{git log} &  Zeigt alle vergangenen Commits.\\
+				\texttt{git status} &  Zeigt den Status der Dateien im Repo.\\
+				\texttt{git checkout} & \begin{small}
+					Lässt HEAD zwischen Commits springen. 
+				\end{small}\\
+				\texttt{git add} &  Fügt Datei(en) zur Staging Area hinzu.\\
+				\texttt{git commit -m "message"} &  Erzeugt einen Commit.\\ 
+			\end{tabular}
+		\end{block}
+		\centering \includegraphics[width=60mm, scale=1.5]{./pics/tut0/git-file-lifecycle.png}
+	\end{frame}
+
+	\subsection{Git - .gitignore}
+	\begin{frame}
+		\frametitle{Git - .gitignore}
+		\begin{itemize}
+			\item Datei, die Namen von Pfaden/ Dateien enthält, die von git ignoriert werden sollen (z.B IDE-spezifisches)
+			\item Beispiele: 
+			\begin{itemize}
+				\item target/
+				\item *.java
+				\item dis.like
+			\end{itemize}
+			\item \# dient als Kommentar-Zeichen
+		\end{itemize}
+	\end{frame}
 		
 \section{Live-Demo}		
-%TODO Ablaufplan
+	\subsection{Live-Demo}
+	\begin{frame}
+		\centering Live-Demo
+	\end{frame}
 		
 \section{Tipps}
-%TODO Reminder Abgabe
+	\subsection{Tipps}
+	\begin{frame}
+		\frametitle{Tipps - 1. Übungsblatt}
+		\begin{small}
+			\begin{exampleblock}{Aufgabe 1: Altsoftware vorbereiten}
+				\begin{itemize}
+					\item löchriges Kochrezept für Umgang mit Maven, Git, Checkstyle - da müsst ihr durch
+					\item Google ist euer Freund (meistens)
+				\end{itemize}
+			\end{exampleblock}
+			\pause
+			\begin{exampleblock}{Aufgabe 2: Modultests}
+				\begin{itemize}
+					\item Aufgaben zum Testen mit JUnit4
+					\item Ordner sollen erstellt werden, wenn sie nicht existieren
+					\item Asserts benutzen !
+				\end{itemize}
+			\end{exampleblock}
+			\begin{exampleblock}{Aufgabe 3: Testüberdeckung}
+				\begin{itemize}
+					\item Mockito klingt komplizierter als es ist (schaut mal auf \url{https://www.javacodegeeks.com/2012/05/mocks-and-stubs-understanding-test.html})
+				\end{itemize}
+			\end{exampleblock}
+		\end{small}
+	\end{frame}
+	
+	\subsection{Abgabe}
+	\begin{frame}
+		\frametitle{Denkt dran!}
+		\begin{alertblock}{Abgabe}
+			\begin{itemize}
+				\item in der LEZ bis zum 10.05, 12:00
+				\item falls ihr ein Feedback wollt, werft das Deckblatt ein
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
 		
-
-		\begin{frame}
-			\frametitle{Bis dann! (dann=15.05.17)}
-			\centering
-			\includegraphics[height=0.85\textheight]{./comics/geek_and_poke_gitignore.jpg}
-			\tiny\url{geek-and-poke.com/geekandpoke/2012/11/7/simply-explained.html}
-		\end{frame}
+	\begin{frame}
+		\frametitle{Bis dann! (dann=15.05.17)}
+		\centering
+		\includegraphics[height=0.85\textheight]{./comics/geek_and_poke_gitignore.jpg}
+		\tiny\url{geek-and-poke.com/geekandpoke/2012/11/7/simply-explained.html}
+	\end{frame}
 
 \end{document}
