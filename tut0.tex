@@ -31,6 +31,9 @@
 
 % the presentation starts here
 
+\usepackage[absolute,overlay]{textpos}
+\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
+
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
 \author{Felix Bachmann}
 
@@ -232,6 +235,11 @@
 	\begin{frame}
 		\frametitle{Maven - Überblick}
 		\begin{itemize}
+			\begin{textblock*}{20mm}(60mm,5mm)
+				\includegraphics[width=40mm, scale=1.0]{./pics/tut0/Maven_logo.png}
+			\end{textblock*}
+			\item Maven ist Jiddisch und heißt "'Sammler des Wissens"'
+			\item Build-Management-Tool (Automatisierung von möglichst vielen Schritten)
 			\item Maven ist in jeder Eclipse-Installation integriert \linebreak $\implies$ keine manuelle Installation nötig
 			\item Aufgaben von Maven
 				\begin{itemize}
