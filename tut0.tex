@@ -32,7 +32,7 @@
 % the presentation starts here
 
 \usepackage[absolute,overlay]{textpos}
-%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
+\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
 \author{Felix Bachmann}
@@ -177,8 +177,12 @@
 	\subsection{JUnit4}
 	\begin{frame}
 		\frametitle{JUnit4 - Überblick}
+		\begin{textblock*}{20mm}(60mm,5mm)
+			\includegraphics[width=30mm, scale=0.8]{./pics/tut0/junit-logo.png}
+		\end{textblock*}
 		\begin{itemize}
-			\item Test-Tool für Java-Klassen
+			\item Unittest-Tool für Java-Klassen
+			\item über die pom.xml mit scope "'test"' einbinden
 			\item Nur öffentliche Methoden testen
 			\item Konventionen:
 			 \begin{itemize}
@@ -209,8 +213,10 @@
 	\subsection{JUnit4 - Assert}
 	\begin{frame}
 		\frametitle{JUnit4 - Assert}
-		org.junit.Assert bietet diverse Methoden, um Ergebnis mit Erwartung abzugleichen \linebreak
-		zu jeder Methode kann als erstes Argument ein String mitgegeben werden (wird bei Fehlschlag angezeigt) \linebreak
+		\begin{itemize}
+			\item org.junit.Assert bietet diverse Methoden, um Ergebnis mit Erwartung abzugleichen 
+			\item zu jeder Methode kann als erstes Argument ein String mitgegeben werden (wird bei Fehlschlag angezeigt) \linebreak
+		\end{itemize}
 		Beispiele:
 		\begin{itemize}
 			\item assertArrayEquals(int[] expected, int[] actual)
