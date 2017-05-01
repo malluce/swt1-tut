@@ -32,7 +32,7 @@
 % the presentation starts here
 
 \usepackage[absolute,overlay]{textpos}
-%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
+\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
 \subtitle{Tutorium 03}
@@ -183,10 +183,36 @@
 		Probleme mit der Installation? $\implies$ kommt nach dem Tut nach vorne
 	\end{frame}
 		
-	\subsection{Feedback Vorbereitungsblatt}	
+	\subsection{Feedback Vorbereitungsblatt (1)}	
 	\begin{frame}
 		\frametitle{Feedback Vorbereitungsblatt}
-		%TODO Feedback für Abgaben, Statistik?
+		\includegraphics[width=0.65\textwidth, scale=0.8]{./pics/tut0/points-prep-sheet.png}
+		\begin{block}{Kriterien für Punkte}
+			je 1P.:
+			\begin{itemize}
+				\item Import + Abgabe (pom.xml muss stimmen)
+				\item CheckStyle (+ sinnvolles (!!) JavaDoc)
+				\item Implementierung (EditMe + EditMeTest)
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{Feedback Vorbereitungsblatt (2)}
+	\begin{frame}
+		\frametitle{Feedback Vorbereitungsblatt}
+		Achtet zukünftig besonders auf:
+		\begin{itemize}
+			\item sinnvolles (!!) JavaDoc (siehe nächste Folie)
+			\item alte Kommentare (TODOs\dots) entfernen
+			\item nicht "'throws Exception"' angewöhnen
+			\item tut etwas in tearDown() $\implies$ Objekte nullen\dots
+		\end{itemize}
+	\end{frame}
+	
+	\subsection{Feedback Vorbereitungsblatt (3)}
+	\begin{frame}
+		\frametitle{How to JavaDoc}
+		\includegraphics[width=0.9\textwidth, scale=1.0]{./pics/tut0/javadoc-demo.png}
 	\end{frame}
 			
 \section{JUnit4}	
