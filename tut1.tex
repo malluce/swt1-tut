@@ -1,5 +1,6 @@
 \documentclass[18pt]{beamer}
 \usepackage[utf8]{inputenc} % for the umlauts
+\usepackage{subfigure}
 
 \beamertemplatenavigationsymbolsempty
 %% SLIDE FORMAT
@@ -63,7 +64,7 @@
 \tableofcontents
 \end{frame}
 
-\section{Organisatorisches}
+\section{Orga}
 	\subsection{Keine Lösungen ins Forum!}
 	\begin{frame}
 		\frametitle{Keine Lösungen ins Forum schreiben!}
@@ -287,6 +288,74 @@
 	\end{frame}
 
 \section{UML-Klassendiagramm}
+	\subsection{UML? Kann man das essen?}
+	\begin{frame}
+		\frametitle{UML? Kann man das essen?}
+		\begin{itemize}
+			\item UML = \textbf{U}nified \textbf{M}odeling \textbf{L}anguage
+			\item grafische Modellierungssprache, strenge Syntax
+		\end{itemize}
+		\includegraphics[scale=0.35]{./pics/tut1/uml_diagrams.png}
+	\end{frame}	
+	
+	\subsection{UML-Klassendiagramm (1)}
+	\begin{frame}
+		\frametitle{UML-Klassendiagramm: Klassen + Vererbung}
+		\includegraphics[scale=0.5]{./pics/tut1/inheritence.png}
+		\begin{small}
+			\begin{itemize}
+				\item - ist private: von Exemplaren derselben Klasse sichtbar (aber von allen!)
+			\end{itemize}
+		\end{small}
+	\end{frame}
+	
+	\subsection{UML-Klassendiagramm (2)}
+	\begin{frame}
+		\frametitle{UML-Klassendiagramm: Interface}
+		\centering
+		\includegraphics[scale=0.7]{./pics/tut1/interface.png}
+	\end{frame}
+	
+	\subsection{UML-Klassendiagramm (3)}
+	\begin{frame}
+		\frametitle{UML-Klassendiagramm: Abstrakte Klassen}
+		\begin{figure}
+			\subfigure[UML-Notation]{\includegraphics[scale=0.5]{./pics/tut1/abstract.png}}	
+			\subfigure[Notation für Abgaben]{\includegraphics[scale=0.5]{./pics/tut1/abstractUb.png}}
+		\end{figure}
+	\end{frame}
+	
+	\subsection{UML-Klassendiagramm (4)}
+	\begin{frame}
+		\frametitle{UML-Klassendiagramm: Assoziationen}
+		\begin{figure}
+			\subfigure[so nicht,...]{\includegraphics[scale=0.5]{./pics/tut1/wrong_assoc.png}}	
+			\subfigure[..., sondern so!]{\includegraphics[scale=0.5]{./pics/tut1/correct_assoc.png}}
+		\end{figure}
+	\end{frame}
+	
+	\subsection{UML-Klassendiagramm (5)}
+	\begin{frame}
+		\frametitle{UML-Klassendiagramm: Aggregation + Komposition}
+		\begin{figure}
+			\subfigure[Aggregation (Teil-Ganzes-Beziehung)]{\includegraphics[scale=0.5]{./pics/tut1/aggregation.png}}	
+			\subfigure[Komposition (Aggregation, Teil kann ohne Ganzes nicht existieren)]{\includegraphics[scale=0.5]{./pics/tut1/composition.png}}
+		\end{figure}
+	\end{frame}
+	
+	\subsection{UML-Klausuraufgabe(1)}
+	\begin{frame}
+		\frametitle{Klausuraufgabe SS09}
+		\textit{Modellieren Sie das Szenario möglichst vollständig als UML-Klassendiagramm. Modellieren Sie keine Methoden. Geben Sie Attribute, Multiplizitäten, Restriktionen, Assoziationsnamen sowie Rollen an.} \linebreak
+		Ein Fachwerkhaus besteht aus 5 bis 10 Holzstämmen, 200 bis 400 Lehmziegeln sowie 1.000 bis 2.000 Nägeln. Jedes Baumaterial, egal ob Holzstamm, Lehmziegel oder Nagel, ist Bestandteil in genau einem Fachwerkhaus. Jedes Fachwerkhaus hat eine bestimmte Anzahl an Zimmern und Stockwerken. Für den Bau eines Fachwerkhauses ist mindestens ein Zimmermann zuständig, welcher einen Namen sowie einen individuellen Stundenlohn besitzt. Zum Bau des Fachwerkhauses verwendet jeder Zimmermann sein eigenes Werkzeug, bestehend aus genau einem Hammer sowie genau einer Säge. Jeder Zimmermann kann an maximal einem Fachwerkhaus gleichzeitig bauen. 
+	\end{frame}
+	
+	\subsection{UML-Klausuraufgabe(2)}
+	\begin{frame}
+		\frametitle{Musterlösung}
+		\includegraphics[scale=0.48]{./pics/tut1/solution.png}
+	\end{frame}
+		
 		
 \section{\LaTeX}
 		
