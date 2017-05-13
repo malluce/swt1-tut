@@ -69,6 +69,55 @@
 		\frametitle{Keine Lösungen ins Forum schreiben!}
 		\includegraphics[height=0.85\textheight]{./pics/tut1/censored.png}
 	\end{frame}
+	
+	\subsection{Feedback 1. Übungsblatt}
+	\begin{frame}
+		\frametitle{1. Übungsblatt Statistik}
+		\includegraphics[scale=0.7]{./pics/tut1/statistics_ub1.png}
+	\end{frame}
+	
+	\subsection{1. Übungsblatt - Fehler (Allgemein)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Allgemein}
+			generell ohne Abzug:
+			\begin{itemize}
+				\item gleiche Abgabe bei allen Aufgaben
+			\end{itemize}
+			generell mit Abzug: (je bis zu -2P)
+			\begin{itemize}
+				\item  CheckStyle nicht beachtet
+				\item JavaDoc nicht vollständig / nicht aussagekräftig
+				\item zu wenige commits / nicht aussagekräftige commit-messages
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{1. Übungsblatt - Fehler (Aufgabe 1)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 1 (Altsoftware vorbereiten)}
+		\begin{itemize}
+			\item *.properties falsch / nicht verschoben (ist Ressource!)
+			\item in src.xml wurden *.launch-Dateien nicht hinzugefügt
+		\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{1. Übungsblatt - Fehler (Aufgabe 2)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 2 + 3 (Modultests + Testüberdeckung)}
+			\begin{itemize}
+				\item auch bei Drehung um 0$^{\circ}$  ist Überprüfung des Bildes nötig (Dimensionen + Pixel) \pause
+				\item equals() reicht nicht aus, um Gleichheit der Bilder zu prüfen \pause 
+				\item new File() erstellt kein File, sondern nur einen "'pointer"' auf einen Pfad (siehe File.createNewFile() oder File.mkdir()) \pause
+				\item benutzt relative Pfade (beginnen im jmjrst.main-Ordner) \pause 
+				\item Testklasse in gleiches Paket wie zu testenden Klasse \pause 
+				\item fügt Abhängigkeiten in die jmjrst.main-pom.xml ein, \textbf{nicht} in die von iMage
+			\end{itemize}
+		\end{block}
+	\end{frame}
 
 \section{Wasserfallmodell}
 	\subsection{Wasserfallmodell, ohne Grafik}
