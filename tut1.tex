@@ -67,7 +67,56 @@
 	\subsection{Keine Lösungen ins Forum!}
 	\begin{frame}
 		\frametitle{Keine Lösungen ins Forum schreiben!}
-		%TODO pic of censored forum thread \includegraphics[height=0.85\textheight]{}
+		\includegraphics[height=0.85\textheight]{./pics/tut1/censored.png}
+	\end{frame}
+	
+	\subsection{Feedback 1. Übungsblatt}
+	\begin{frame}
+		\frametitle{1. Übungsblatt Statistik}
+		\includegraphics[scale=0.7]{./pics/tut1/statistics_ub1.png}
+	\end{frame}
+	
+	\subsection{1. Übungsblatt - Fehler (Allgemein)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Allgemein}
+			generell ohne Abzug:
+			\begin{itemize}
+				\item gleiche Abgabe bei allen Aufgaben
+			\end{itemize}
+			generell mit Abzug: (bis zu -2P)
+			\begin{itemize}
+				\item  CheckStyle nicht beachtet
+				\item JavaDoc nicht vollständig / nicht aussagekräftig
+				\item zu wenige commits / nicht aussagekräftige commit-messages
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{1. Übungsblatt - Fehler (Aufgabe 1)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 1 (Altsoftware vorbereiten)}
+		\begin{itemize}
+			\item *.properties falsch / nicht verschoben (ist Ressource!)
+			\item in src.xml wurden *.launch-Dateien nicht hinzugefügt
+		\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{1. Übungsblatt - Fehler (Aufgabe 2)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 2 + 3 (Modultests + Testüberdeckung)}
+			\begin{itemize}
+				\item auch bei Drehung um 0$^{\circ}$  ist Überprüfung des Bildes nötig (Dimensionen + Pixel) \pause
+				\item equals() reicht nicht aus, um Gleichheit der Bilder zu prüfen \pause 
+				\item new File() erstellt kein File, sondern nur einen "'pointer"' auf einen Pfad (siehe File.createNewFile() oder File.mkdir()) \pause
+				\item benutzt relative Pfade (beginnen im jmjrst.main-Ordner) \pause 
+				\item Testklasse in gleiches Paket wie zu testenden Klasse \pause 
+				\item fügt Abhängigkeiten in die jmjrst.main-pom.xml ein, \textbf{nicht} in die von iMage 
+			\end{itemize}
+		\end{block}
 	\end{frame}
 
 \section{Wasserfallmodell}
@@ -82,7 +131,7 @@
 	\subsection{Wasserfallmodell, mit Grafik}
 	\begin{frame}
 		\frametitle{Wasserfallmodell}
-		dokumentengetriebenes Modell, das die (möglichen) Phasen der Softwareentwicklung beschreibt
+		dokumentengetriebenes Prozessmodell, das die (möglichen) Phasen der Softwareentwicklung beschreibt
 		\includegraphics[scale=0.4]{./pics/tut1/waterfall_without-docs.png}
 	\end{frame}
 	
@@ -98,28 +147,172 @@
 	\end{frame}
 
 \section{Durchführbarkeitsuntersuchung}
+	\subsection{Welche Aspekte?}
+	\begin{frame}
+		\frametitle{Gliederung}
+		\begin{block}{Grundlegende Frage}
+			Ist das Projekt in dem jeweiligen Szenario überhaupt durchführbar?
+		\end{block}
+		\begin{enumerate}
+			\item \pause Fachlich \pause 
+			\item Alternativen \pause
+			\item Personell \pause 
+			\item Risiken \pause
+			\item Ökonomisch \pause 
+			\item Rechtlich 
+		\end{enumerate}
+		\pause
+		\begin{alertblock}{Fürs Übungsblatt}
+			Denkt euch was (logisches) aus!
+		\end{alertblock}
+	\end{frame}
 
 \section{Lastenheft}
-
+	\subsection{Lastenheft - Gliederung}
+	\begin{frame}
+		\frametitle{Gliederung}
+		\begin{block}{Grundlegende Aufgabe}
+			Das Lastenheft sammelt die Anforderungen des Auftraggebers an den Auftragnehmer.
+		\end{block}
+		\begin{enumerate}
+			\item \pause Zielbestimmung \pause 
+			\item Produkteinsatz \pause
+			\item Funktionale Anforderungen \pause 
+			\item Produktdaten \pause
+			\item Nichtfunktionale Anforderungen \pause 
+			\item Systemmodelle
+			\begin{itemize}
+				\item Szenarien
+				\item Anwendungsfälle
+			\end{itemize}
+			\pause
+			\item Glossar 
+		\end{enumerate}
+	\end{frame}
+	
+	\subsection{Lastenheft - Unterschiede}
+	\begin{frame}
+		\frametitle{Begriffsklärung}
+		\begin{block}{Zielbestimmung vs. Funktionale Anforderungen}
+			\pause
+			\begin{itemize}
+				\item Zielbestimmung: allgemeine Beschreibung, was das Produkt können soll
+				\item Funktionale Anforderungen: konkrete Auflistung von Funktionen
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{block}{Funktionale Anforderungen vs. Nichtfunktionale Anforderungen}
+			\pause
+			\begin{itemize}
+				\item Funktionale Anforderungen: Funktionen des Produkts
+				\item Nichtfunktionale Anforderungen: "'Meta"'-Eigenschaften des Produkts
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{block}{Zielbestimmung vs. Produkteinsatz}
+			\pause
+			\begin{itemize}
+				\item Zielbestimmung: allgemeine Beschreibung, was das Produkt können soll
+				\item Produkteinsatz: Rahmenbedingungen (Zielgruppe, Anwendungsbereiche)
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
 \section{Pflichtenheft}
+	\subsection{Pflichtenheft - Aufgabe}
+	\begin{frame}
+		\frametitle{Wozu ein Pflichtenheft?}
+		\begin{block}{Grundlegende Aufgabe}
+			Erweiterung des Lastenheftes, sodass exakt abgebildet ist \textbf{was} (noch nicht \textbf{wie}) zu implementieren ist.
+		\end{block}
+	\end{frame}
+	
+	\subsection{Pflichtenheft - Gliederung}
+	\begin{frame}
+		\frametitle{Gliederung}
+		\pause
+		\begin{enumerate}
+			\item Zielbestimmung  
+			\item Produkteinsatz 
+			\item \underline{\textbf{Produktumgebung}} 
+			\item Funktionale Anforderungen 
+			\item Produktdaten 
+			\item Nichtfunktionale Anforderungen 
+			\item \underline{\textbf{Globale Testfälle}} 
+			\item Systemmodelle
+			\begin{itemize}
+				\item Szenarien
+				\item Anwendungsfälle
+				\item \underline{\textbf{Objektmodelle}} $\implies$ UML-Klassendiagramme (heute)
+				\item \underline{\textbf{Dynamische Modelle}} $\implies$ nächstes Mal
+				\item \underline{\textbf{Benutzerschnittstelle}} $\implies$ Zeichnungen/Screenshots
+			\end{itemize}
+			\item Glossar 
+		\end{enumerate}
+	\end{frame}
+	
+	\subsection{Lastenheft - Unterschiede}
+	\begin{frame}
+		\frametitle{Begriffsklärung}
+		\begin{block}{Produkteinsatz vs. Produktumgebung}
+			\pause
+			\begin{itemize}
+				\item Produkteinsatz: Rahmenbedingungen (Zielgruppe, Anwendungsbereiche)
+				\item Produktumgebung: Rahmenbedingungen bzgl. Software/Hardware
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{Bemerkung}
+	\begin{frame}
+		\frametitle{Bemerkung}
+		\begin{itemize}
+			\item auf dem Blatt müsst ihr \LaTeX  ~ für die Dokumente benutzen \linebreak $\implies$ verträgt sich besser mit git als z.B. LibreOffice o.Ä.
+			\linebreak $\implies$ wird euch an der Uni immer wieder begegnen
+		\end{itemize}
+	\end{frame}
+	
+	\subsection{Quiz}
+	\begin{frame}
+		\frametitle{Quiz (Ankreuzaufgaben aus Klausuren)}
+		Wahr oder falsch?
+		\begin{itemize}
+			\item Das Lastenheft ist eine Verfeinerung des Pflichtenheftes. \pause \colorbox{red}{falsch} \pause
+			\item Das Lastenheft ist das Ergebnis der Planungsphase. \pause \colorbox{green}{wahr} \pause
+			\item Nicht-funktionale Eigenschaften beschreiben, was das Produkt nicht tun sollte. \pause \colorbox{red}{falsch} \pause 
+			\item Das Pflichtenheft beschreibt nur, was zu implementieren ist und nicht wie. \pause \colorbox{green}{wahr} \pause 
+			\item Nicht-funktionale Anforderungen sind sowohl Teil des Pflichtenhefts als auch des Lastenhefts. \pause \colorbox{green}{wahr}
+		\end{itemize}
+		
+	\end{frame}
 
 \section{UML-Klassendiagramm}
+		
+\section{\LaTeX}
 		
 \section{Tipps}
 	\subsection{Tipps}
 	\begin{frame}
 		\frametitle{Tipps - 2. Übungsblatt}
 		\begin{small}
-			\begin{exampleblock}{Aufgabe 1}
-				%TODO
+			\begin{exampleblock}{Aufgabe 1 + 3: Lastenheft + Durchführbarkeitsuntersuchung}
+				\begin{itemize}
+					\item lasst euch was (sinnvolles) einfallen
+					\item benutzt \LaTeX
+				\end{itemize}
 			\end{exampleblock}
 			\pause
-			\begin{exampleblock}{Aufgabe 2}
-				%TODO
+			\begin{exampleblock}{Aufgabe 2: Klassendiagramme}
+				\begin{itemize}
+					\item achtet auf Schlüsselwörter ("'ist ein"', "'enthält ein"', "'besteht aus"',\dots)
+				\end{itemize}
 			\end{exampleblock}
 			\pause
-			\begin{exampleblock}{Aufgabe 3}
-				%TODO
+			\begin{exampleblock}{Aufgabe 4 + 5: Geometrify + cmd-Programm}
+				\begin{itemize}
+					\item an einigen Stellen sind Aufgaben etwas vage
+					\linebreak $\implies$ überlegt euch, was Sinn macht
+				\end{itemize}
 			\end{exampleblock}
 		\end{small}
 	\end{frame}
@@ -128,14 +321,18 @@
 	\begin{frame}
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
-			%TODO
+			\begin{itemize}
+				\item Deadline am 24.5 um 12:00
+				\item Dokumente ausdrucken
+				\item Klassendiagramme handschriftlich
+			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Bis dann! (dann=15.05.17)}
+		\frametitle{Bis dann! (dann := 29.05.17)}
 		\centering
-		%TODO comic \includegraphics[height=0.85\textheight]{}
+		\includegraphics[scale=0.85]{./comics/geek_and_poke_javadoc.jpg}
 	\end{frame}
 
 \end{document}
