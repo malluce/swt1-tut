@@ -85,7 +85,7 @@
 
 
 \section{Zustandsdiagramm}
-	\subsection{Letztes Mal..}
+	\subsection{Intro(1)}
 	\begin{frame}
 		\frametitle{Wo sind wir? Pflichtenheft!}
 		\begin{enumerate}
@@ -115,10 +115,78 @@
 		\end{enumerate}
 	\end{frame}
 
-	\subsection{Statisch vs. Dynamisch}
+	\subsection{Intro(2)}
 	\begin{frame}
 		\frametitle{Begriffsklärung}
 		\includegraphics[scale=0.35]{./pics/tut1/uml_diagrams.png}
+	\end{frame}
+
+	\subsection{ZD: Allgemein}
+	\begin{frame}
+		\frametitle{Zustandsdiagramm - Allgemein}
+		\begin{block}{Wozu braucht man das?}
+			\pause
+			\begin{itemize}
+				\item Zustand \textbf{eines Objektes} beschreiben
+				\item Zustandsüberführungsfunktion?
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\subsection{ZD: Allgemein (2)}
+	\begin{frame}
+		\frametitle{Zustandsdiagramm $\approx$ endlicher Automat}
+					\begin{figure}
+			\subfigure[GBI: DEA]{\includegraphics[scale=0.23]{./pics/tut2/auto_gbi.png}}
+			\subfigure[SWT: Zustandsdiagramm]{\includegraphics[scale=0.2]{./pics/tut2/auto_swt.png}}
+		\end{figure}
+	\end{frame}
+
+	\subsection{ZD: Syntax(1)}
+	\begin{frame}
+		\frametitle{Zustandsdiagramm: Syntax}
+		\begin{figure}
+			\includegraphics[scale=0.4]{./pics/tut2/auto_swt.png}
+		\end{figure}	
+	\end{frame}
+
+	\subsection{ZD: Syntax (2)}
+	\begin{frame}
+		\frametitle{Zustandsdiagramm: Hierarchie}
+		\includegraphics[scale=0.7]{./pics/tut2/auto_hier.png}	
+	\end{frame}
+
+	\subsection{ZD: Syntax (3)}
+	\begin{frame}
+		\frametitle{Zustandsdiagramm: Hierarchie - History}
+		\begin{itemize}
+			\item  History-Element, damit sich Hierarchie den letzten Zustand merkt
+		\end{itemize}
+		\includegraphics[scale=0.5]{./pics/tut2/auto_hier-hist.png}	
+	\end{frame}
+
+	\subsection{ZD: Syntax(4)}
+	\begin{frame}
+		\frametitle{Zustandsdiagramm: Nebenläufigkeit}	
+		\begin{itemize}
+			\item  mehrere Zustandsdiagramme in einem
+		\end{itemize}
+		\centering
+		\includegraphics[scale=0.5]{./pics/tut2/auto_par.png}	
+	\end{frame}
+
+	\subsection{ZD: Aufgabe}
+	\begin{frame}
+		\frametitle{Klausuraufgabe SS09}
+		Gegeben ist der folgende UML-Zustandsautomat. Geben Sie an, in welcher Zustandskombination
+		sich der Zustandsautomat, jeweils ausgehend vom Startzustand, nach den beiden Eingabefolgen
+		befindet.
+		\centering
+		\includegraphics[scale=0.7]{./pics/tut2/auto_ex.png}
+		\begin{itemize}
+			\item a ,b, c, c \pause $\implies$ AxD
+			\item c, c, a, b, b, a, c, c, a \pause $\implies$ BxC
+		\end{itemize}
 	\end{frame}
 		
 \section{Tipps}
