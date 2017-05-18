@@ -32,6 +32,7 @@
 
 % the presentation starts here
 
+\usepackage{picture}
 \usepackage[absolute,overlay]{textpos}
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 \setbeamercovered{invisible}
@@ -59,11 +60,6 @@
 \titlepage
 \end{frame}
 
-%table of contents
-\begin{frame}{Themenübersicht}
-\tableofcontents
-\end{frame}
-
 \section{Orga}
 	\subsection{Feedback 2. Übungsblatt}
 	\begin{frame}
@@ -87,7 +83,43 @@
 		\end{block}
 	\end{frame}
 
-\section{Main}
+
+\section{Zustandsdiagramm}
+	\subsection{Letztes Mal..}
+	\begin{frame}
+		\frametitle{Wo sind wir? Pflichtenheft!}
+		\begin{enumerate}
+			\item Zielbestimmung  
+			\item Produkteinsatz 
+			\item Produktumgebung
+			\item Funktionale Anforderungen 
+			\item Produktdaten 
+			\item Nichtfunktionale Anforderungen 
+			\item Globale Testfälle
+			\item Systemmodelle
+			\begin{itemize}
+				\item Szenarien
+				\item Anwendungsfälle
+				\item Objektmodelle $\implies$ UML-Klassendiagramme (letztes mal)
+				\item \underline{\textbf{Dynamische Modelle}}
+				\begin{itemize}
+					\item UML-Zustandsdiagramm
+					\item UML-Aktivitätsdiagramm
+					\item UML-Sequenzdiagramm
+					\makebox(0,0){\put(0,3.3\normalbaselineskip){%
+							$\left.\rule{0pt}{1.5\normalbaselineskip}\right\}$ Heute!}}
+				\end{itemize}
+				\item Benutzerschnittstelle$\implies$ Zeichnungen/Screenshots
+			\end{itemize}
+			\item Glossar 
+		\end{enumerate}
+	\end{frame}
+
+	\subsection{Statisch vs. Dynamisch}
+	\begin{frame}
+		\frametitle{Begriffsklärung}
+		\includegraphics[scale=0.35]{./pics/tut1/uml_diagrams.png}
+	\end{frame}
 		
 \section{Tipps}
 	\subsection{Tipps}
