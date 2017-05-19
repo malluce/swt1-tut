@@ -184,9 +184,70 @@
 		\centering
 		\includegraphics[scale=0.7]{./pics/tut2/auto_ex.png}
 		\begin{itemize}
-			\item a ,b, c, c \pause $\implies$ AxD
+			\item a, b, c, c \pause $\implies$ AxD
 			\item c, c, a, b, b, a, c, c, a \pause $\implies$ BxC
 		\end{itemize}
+	\end{frame}
+		
+\section{Aktivitätsdiagramm}
+	\subsection{AD: Allgemein(1)}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Allgemein}
+		\begin{block}{Wozu braucht man das?}
+			\pause
+			\begin{itemize}
+				\item Ablaufbeschreibungen (Kontrollfluss, Objektfluss)
+				\item i.A. \textbf{mehrere verschiedene} Objekte
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\subsection{AD: Allgemein(2)}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Beispiel}
+		\begin{itemize}
+			\item ist ebenfalls nicht neues!
+		\end{itemize}
+		\centering
+		\includegraphics[scale=0.35]{./pics/tut2/act_wat.png}
+	\end{frame}
+
+	\subsection{AD: Syntax(1)}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Syntax}
+		\includegraphics[scale=0.45]{./pics/tut2/act_syn1.png}
+	\end{frame}
+
+	\subsection{AD: Syntax(2)}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Syntax}
+		\includegraphics[scale=0.45]{./pics/tut2/act_syn2.png}
+	\end{frame}
+
+	\subsection{AD: Syntax(3)}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Syntax}
+		\includegraphics[scale=0.45]{./pics/tut2/act_syn3.png}
+	\end{frame}
+
+	\subsection{AD: Ablauf}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Ablauf}
+		\begin{itemize}
+			\item Start am Startknoten mit einer Marke
+			\item Aktivitäten werden erst ausgeführt, wenn an jedem Eingang eine Marke anliegt
+			\item wurde eine Aktivität ausgeführt, erscheinen an all ihren Ausgängen Marken
+		\end{itemize}
+	\end{frame}
+
+	\subsection{AD: Beispiel}
+	\begin{frame}
+		\frametitle{Aktivitätsdiagramm - Beispiel}
+		\begin{figure}
+			\centering
+			\caption{Wie kommt man hier zum Endknoten?}
+			\includegraphics[scale=0.4]{./pics/tut2/act_ex.png}
+		\end{figure}
 	\end{frame}
 		
 \section{Tipps}
