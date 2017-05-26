@@ -36,6 +36,7 @@
 \usepackage[absolute,overlay]{textpos}
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 \setbeamercovered{invisible}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \title[SWT1]{Softwaretechnik 1 - 2. Tutorium}
 \subtitle{Tutorium 03}
@@ -249,30 +250,103 @@
 			\includegraphics[scale=0.4]{./pics/tut2/act_ex.png}
 		\end{figure}
 	\end{frame}
-		
+
+\section{Sequenzdiagramm}
+	\subsection{SD: Allgemein}
+	\begin{frame}
+		\frametitle{Sequenzdiagramm - Allgemein}
+		\begin{block}{Wozu braucht man das?}
+			\pause
+			\begin{itemize}
+				\item stellt den möglichen Ablauf eines Anwendungsfalls dar
+				\item \textbf{zeitlicher Verlauf} von Methodenaufrufen, Objekterstellung, Objektzerstörung
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\subsection{SD: Syntax(1)}
+	\begin{frame}
+		\frametitle{Sequenzdiagramm - Syntax}
+		\begin{itemize}
+			\item Zeit verläuft von oben nach unten
+			\item Lebenslinie
+			\begin{itemize}
+				\item gestrichelte senkrechte Linie
+				\item eine pro Objekt
+			\end{itemize}
+			\item Steuerungsfokus
+			\begin{itemize}
+				\item dicker Balken über Lebenslinie
+				\item zeigt, dass Objekt gerade aktiv ist
+			\end{itemize}
+			\item Nachrichtentypen
+			\begin{itemize}
+				\item Synchrone Nachricht (blockierend)
+				\item Antwort (optional)
+				\item Asynchrone Nachricht
+			\end{itemize}
+			\begin{textblock*}{20mm}(75mm,60mm)
+				\includegraphics[scale=0.4]{./pics/tut2/sd_met.png}
+			\end{textblock*}
+		\end{itemize}
+	\end{frame}
+
+	\subsection{SD: Syntax(2)}
+	\begin{frame}
+		\frametitle{Sequenzdiagramm - Beispiel}
+			\includegraphics[scale=0.4]{./pics/tut2/sd_ex.png}
+	\end{frame}
+
+	\subsection{SD: Aufgabe}
+	\begin{frame}
+		\frametitle{Klausuraufgabe SS14}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.65]{./pics/tut2/sdtask.png}
+				\caption{Hier stimmt was nicht\dots}
+			\end{figure}
+	\end{frame}
+
+%TODO Methode: Gruppenarbeit
+
 \section{Tipps}
 	\subsection{Tipps}
 	\begin{frame}
 		\frametitle{Tipps - 3. Übungsblatt}
-		\begin{small}
 			\begin{exampleblock}{Aufgabe 1-3: Plug-In programmieren}
 				\begin{itemize}
-					\item l%TODO tipps? allgemein javadoc etc.? [abhängig von UB 2]
+					\pause
+					\item JavaDoc + CheckStyle \dots
+					\item Falls ihr Tests schreibt, fügt junit in die jeweilige Untermodul-pom ein
+					\item Java Swing benutzen (schaut euch die Java-Klassen JMenu und JMenuItem an)
 				\end{itemize}
 			\end{exampleblock}
 			\pause
 			\begin{exampleblock}{Aufgabe 4: Aktivitätsdiagramm}
 				\begin{itemize}
-					\item l%TODO tipps
+					\pause 
+					\item seperate Diagramme $\implies$ verschachtelte Aktionen
+				\end{itemize}
+			\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tipps - 3. Übungsblatt}
+			\begin{exampleblock}{Aufgabe 5: Sequenzdiagramm}
+				\begin{itemize}
+					\pause
+					\item auf welchen Objekten/Klassen werden Methoden aufgerufen?
+					\item auf Pfeile var=methode() schreiben, wenn Rückgabe von methode() in var gespeichert wird
 				\end{itemize}
 			\end{exampleblock}
 			\pause
-			\begin{exampleblock}{Aufgabe 5: Sequenzdiagramm}
+			\begin{exampleblock}{Aufgabe 6: Substitutionsprinzip}
 				\begin{itemize}
-					\item l%TODO tipps
+					\pause
+					\item Folien "'Folgerung aus dem Substitutionsprinzip"' anschauen (Ko-/Kontravarianz)
+					\item mal als Java-Programm hinschreiben und versuchen zu kompilieren
 				\end{itemize}
 			\end{exampleblock}
-		\end{small}
 	\end{frame}
 	
 	\subsection{Abgabe}
@@ -282,6 +356,7 @@
 			\begin{itemize}
 				\item Deadline am 7.6 um 12:00
 				\item Aufgabe 4+5 handschriftlich (auf saubere Syntax achten!)
+				\item an das Deckblatt denken!!
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
