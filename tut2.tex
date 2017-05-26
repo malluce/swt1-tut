@@ -32,6 +32,7 @@
 
 % the presentation starts here
 
+\usepackage{mathabx}
 \usepackage{picture}
 \usepackage[absolute,overlay]{textpos}
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
@@ -72,15 +73,53 @@
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Allgemein}
-			%TODO add common faults
+			\includegraphics[scale=0.6]{./pics/tut2/deckblatt.png}
+			\begin{itemize}
+				\item $\implies$ nur das offizielle Deckblatt verwenden!
+				\pause
+				\item häufigster Fehler: Aufgaben nicht abgegeben
+			\end{itemize}
 		\end{block}
 	\end{frame}
 	
 	\subsection{2. Übungsblatt - Fehler}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1 (??)}
-			%TODO add exercise specific faults
+		\begin{block}{Aufgabe 1 (Lastenheft): $\diameter$ 2,29 bzw. 3,44 von 5}
+			\begin{itemize}
+				\item Unnötiges aus Vorlage durfte man löschen (z.B. "'Siehe https://en.wikibooks.org/wiki/LaTeX/Glossary"' oder "'Szenarien"')
+				\pause
+				\item Anwendungsfälle beschreiben, was man in dem System tun kann 
+				\linebreak $\implies$ beinhalten immer Verben! (z.B. "'Hobbyfotograph"' oder "'JMJRST"' ist kein Anwendungsfall)
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 2 (Klassendiagramm): $\diameter$ 2,54 bzw. 4,07 von 8}
+			\begin{itemize}
+				\item oft wurden abstrakte Klassen "'Maler-Filter"' und "'Kunst-Filter"' vergessen
+				\pause
+				\item es wurden Dinge ergänzt, die so nicht explizit im Text standen
+				\pause
+				\item Ausrichtung des Bildes wurde nicht als Enum modelliert
+				\pause
+				\item falsche UML-Syntax (insb. Methode, Attribute)
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 3 (Durchführbarkeitsanalyse): $\diameter$ 0,81 bzw. 1,95 von 3}
+			\begin{itemize}
+				\item sehr häufig nicht abgegeben
+				\pause
+				\item Fragen beantworten, nicht stellen!
+				\linebreak z.B. "'Es werden 3 Java-Entwickler benötigt."' ergänzen durch
+				"'Da wir 5 zur Zeit untätige Java-Entwickler in der Firma haben, ist das Projekt aus personeller Sicht für die Pear Corp. durchführbar."'
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
