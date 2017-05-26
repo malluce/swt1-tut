@@ -356,7 +356,128 @@
 			\end{figure}
 	\end{frame}
 
-%TODO Methode: Gruppenarbeit
+	\subsection{Gruppenarbeit}
+	\begin{frame}
+		\frametitle{Gruppenarbeit: Jetzt seid ihr dran!}
+		Ablauf:
+		\begin{enumerate}
+			\item Einteilung in Expertengruppen
+			\item Bearbeitet eure Aufgabe in der Gruppe
+			\begin{itemize}
+				\item Falls ihr Hilfe braucht, sagt Bescheid!
+			\end{itemize}
+			\item Vergleicht eure Lösung mit der Musterlösung 
+			\item Durchmischen der Gruppen
+			\item Stellt den anderen eure Aufgabe $\&$ Lösung vor
+			\begin{itemize}
+				\item Erklärt insbesondere, was ihr evtl. falsch gemacht habt
+			\end{itemize}
+		\end{enumerate}
+	\end{frame}
+	
+	\subsection{Gruppe 1 - Aufgabe}
+	\begin{frame}
+		\frametitle{Gruppe 1: Zustandsdiagramm (Nachklausur 09)}
+		\begin{tiny}
+			Gegeben ist die folgende Beschreibung eines Automaten zum Verkauf von Getränken und
+			Süßwaren: \linebreak
+			\textit{Zu Beginn wartet der Automat auf die Auswahl des Produktes durch den Kunden. Die
+			Produktauswahl findet in zwei Schritten statt. Zunächst wählt der Kunde die Ebene, in
+			welcher sich das gewünschte Produkt befindet. Wählt der Kunde eine Ebene aus, die
+			nicht existiert, wartet der Automat weiter auf die Produktauswahl. Ist die Ebene gewählt,
+			gibt der Kunde das Fach des gewünschten Produktes an. Ist das gewählte Produktfach
+			ausverkauft, bricht der Automat den Kaufvorgang ab und wartet erneut auf
+			die Produktauswahl. Nach erfolgreicher Produktauswahl wirft der Kunde so lange
+			Münzen ein, bis der eingeworfene Betrag gleich oder größer dem Preis des ausgewählten
+			Produktes ist. Solange der Kunde nicht ausreichend Geld in den Automaten eingeworfen
+			hat, wartet der Automat auf den Einwurf des fehlenden Geldbetrages. Hat der
+			Kunde ausreichend Geld eingeworfen, befördert der Automat das gewählte Produkt in
+			den Ausgabeschacht. Danach entnimmt der Kunde das Produkt. Hat der Kunde genau
+			so viel Geld eingeworfen, wie das Produkt kostet, wartet der Automat auf die nächste
+			Produktauswahl. Hat der Kunde das Produkt entnommen und mehr Geld eingeworfen,
+			als das ausgewählte Produkt kostet, so gibt der Automat das Rückgeld in den Ausgabeschacht
+			aus. Nachdem der Kunde das Rückgeld entnommen hat, wartet der Automat
+			wieder auf die nächste Produktauswahl.} \linebreak
+			Modellieren Sie das Verhalten des Automaten wie im obigen Szenario beschrieben als UMLZustandsdiagramm.
+			Geben Sie zu jedem Übergang das auslösende Ereignis sowie ggf. die
+			notwendige Bedingungen an.
+		\end{tiny}
+	\end{frame}
+	
+	\subsection{Gruppe 1 - Lösung}
+	\begin{frame}
+		\frametitle{Gruppe 1: Musterlösung}
+		\includegraphics[scale=0.4]{./pics/tut2/group1sol.png}
+	\end{frame}
+
+	\subsection{Gruppe 2 - Aufgabe}
+	\begin{frame}
+		\frametitle{Gruppe 2: Sequenzdiagramm (Nachklausur 11)}
+		\begin{tiny}
+			Gegeben sei folgendes Szenario, welches eine Untersuchung in einem Krankenhaus beschreibt:  \linebreak
+			\textit{Bernd Bruegge fühlt sich nicht wohl und möchte sich untersuchen lassen, um eine Diagnose
+				zu erhalten. Er geht dazu ins Krankenhaus und meldet sich an der Patientenaufnahme
+				an. Während der Sachbearbeiter an der Patientenaufnahme die Krankenakte anlegt,
+				füllt Bernd B. den Anamnesebogen aus, den ihm der Sachbearbeiter gegeben hat.
+				Nachdem Bernd B. den ausgefüllten Bogen dem Sachbearbeiter zurückgegeben hat, wird
+				Bernd B. vom Arzt untersucht. Dazu nimmt er Bernd B. zunächst Blut ab. Während das
+				Labor das Blut analysiert, führt der Arzt bei Bernd B. eine Auskultation durch. Schließlich
+				bekommt Bernd B. vom Arzt seine Diagnose.} \linebreak
+			Modellieren Sie das gegebene Szenario als UML-Sequenzdiagramm im Kasten auf der nächsten
+			Seite (Querformat!). Verwenden Sie bei Ihrer Modellierung korrekte UML-Notation. Achten Sie
+			bei Ihrer Modellierung darauf, auf welchen Objekten die Methoden sinnvollerweise aufgerufen
+			werden müssen. Geben Sie ggf. Argumente der Methoden an. 
+		\end{tiny}
+	\end{frame}
+
+	\subsection{Gruppe 2 - Lösung (1)}
+	\begin{frame}
+		\frametitle{Gruppe 2: Musterlösung}
+		\includegraphics[scale=0.4]{./pics/tut2/group2sol1.png}
+	\end{frame}
+
+	\subsection{Gruppe 2 - Lösung(2)}
+	\begin{frame}
+		\frametitle{Gruppe 2: Musterlösung}
+		\includegraphics[scale=0.4]{./pics/tut2/group2sol2.png}
+	\end{frame}
+
+	\subsection{Gruppe 3 - Aufgabe}
+	\begin{frame}
+		\frametitle{Gruppe 3: Aktivitätsdiagramm (Hauptklausur 06)}
+		\begin{tiny}
+			Entwerfen Sie ein Aktivitätsdiagramm, das die Durchführung einer Klausur beschreibt. Halten
+			Sie sich dabei so eng wie möglich an die nachfolgende Beschreibung und achten Sie darauf,
+			parallele Aktivitäten korrekt zu synchronisieren. Beginnen Sie mit der Modellierung der
+			Aktivitäten nach Betreten des Hörsaals.
+			Hinweis: Aktivitäten der Studenten sind nicht zu modellieren.   \linebreak
+			\textit{Nach Betreten des Hörsaals beginnt A1 die Tafel zu beschriften, während einer seiner
+				Helfer die Etiketten auslegt und der andere die mitgebrachten Türschilder
+				(„Bitte nicht stören! Klausur!“) an den Türen anbringt. Auf den Etiketten stehen
+				der Vor- und Nachname jedes Studenten, seine Matrikelnummer und eine fortlaufende
+				Nummer, die später die Verwaltung der Klausur vereinfacht.
+				Sind diese Aufgaben erledigt, kann der Einlass beginnen. Dazu öffnen die Helfer
+				die Türen des Hörsaals und A1 beaufsichtigt den Einlass. Solange noch nicht alle
+				Studenten ihren Platz gefunden haben, helfen A2 und A3 bei der Platzsuche.
+				Der Hauptverantwortliche A1 wartet ab, bis alle ihre Plätze gefunden haben. Dann
+				erklärt er den Ablauf, beaufsichtigt das Austeilen der Klausurblätter und verkündet
+				den Beginn der Klausur. Anschließend beaufsichtigt er 60 Minuten lang die Klausur
+				und sagt das Ende der Klausur an.
+				Nachdem A1 den Ablauf der Klausur angesagt hat, sind A2 und A3 für das Austeilen
+				der Klausur, die anschließende Aufsicht zuständig. Während der Bearbeitungszeit
+				geht zusätzlich einer von beiden herum und kontrolliert die Studentenausweise,
+				während der andere Aufsicht führt.
+				Während der Klausur verlässt keine Aufsicht den Hörsaal. } \linebreak
+		\end{tiny}
+	\end{frame}
+
+	\subsection{Gruppe 3 - Lösung }
+	\begin{frame}
+	\frametitle{Gruppe 3: Musterlösung}
+	\centering
+	\includegraphics[scale=0.35]{./pics/tut2/group3sol.png}
+	\end{frame}
+
 
 \section{Tipps}
 	\subsection{Tipps}
