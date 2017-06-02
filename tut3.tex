@@ -74,9 +74,8 @@
 		%TODO statistics \includegraphics[scale=0.7]{./pics/tut2/statistics-ub2.png}
 		%TODO \linebreak \centering $\diameter$ 8,35 bzw. 11,79 von 25 (28)
 	\end{frame}
-
 	
-	\subsection{2. Übungsblatt - Fehler (Allgemein)}
+	\subsection{3. Übungsblatt - Fehler (Allgemein)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Allgemein}
@@ -139,6 +138,94 @@
 				\item 	%TODO
 			\end{itemize}
 		\end{block}
+	\end{frame}
+
+
+
+\section{Motivation}
+	\subsection{Kontext}
+		\begin{frame}
+			\frametitle{Wo sind wir?}
+			\begin{itemize}
+				\item die ersten 2 Phasen des Wasserfallmodells sind geschafft
+				\pause
+				\linebreak $\implies$ Welche waren das nochmal? \pause Planung, Definition!
+				\pause
+				\linebreak $\implies$ Dokumente? \pause Lastenheft, Pflichtenheft (+ andere\dots)
+				\pause
+				\item  jetzt: Entwurf!
+			\end{itemize}
+		\end{frame}
+	
+		\begin{frame}
+			\frametitle{Wozu Entwurf?}
+			\centering
+			\includegraphics[scale=0.4]{./pics/tut3/design.png} \linebreak
+			Softwarearchitektur ist Grundlage für Implementierung!
+		\end{frame}
+	
+		\begin{frame}
+			\frametitle{Abgrenzung Definition vs. Entwurf}
+			\begin{itemize}
+				\item Definition: \textbf{Was} ist zu implementieren?
+				\pause
+				\item Entwurf: \textbf{Wie} ist das System zu implementieren?
+			\end{itemize}
+		\end{frame}
+	
+\section{Entwurfsmuster}
+	\subsection{Grundlagen}
+	\begin{frame}
+		\frametitle{Wozu Entwurfsmuster?}
+		\begin{block}{Entwurfsmuster}
+			Ein Software-Entwurfsmuster beschreibt eine
+			Familie von Lösungen für ein Software-Entwurfsproblem.
+		\end{block}
+		\pause
+		\begin{itemize}
+			\item schematische Klassendiagramme zur Lösung von häufig auftretenden Problemen \pause
+			\item Wiederverwendung von Entwurfswissen $\implies$ Rad nicht neu erfinden!
+		\end{itemize}
+		\pause
+		\centering
+		\includegraphics[scale=0.2]{./pics/tut3/new-wheel.jpg}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Geheimnisprinzip}
+		\begin{block}{Geheimnis- / Kapselungsprinzip}
+			Jedes Modul verbirgt eine wichtige
+			Entwurfsentscheidung hinter einer
+			wohldefinierten Schnittstelle, die sich bei einer
+			Änderung der Entscheidung nicht mit ändert.
+		\end{block}
+		\pause
+		Sinn? \pause $\implies$ Änderungen ohne Risiko durchführen \linebreak \pause
+		Beispiel? \pause $\implies$ private Attribute mit get()- und set()-Methoden
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Vorgriff: Entwurfsmuster Strategie}
+		%TODO
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kategorien der Entwurfsmuster}
+		\begin{itemize}
+			\item \textbf{Entkopplungs-Muster}
+				\begin{itemize}
+					\item \textbf{Adapter}
+					\item \textbf{Beobachter}
+					\item \textbf{Iterator}
+					\item \textbf{Stellvertreter}
+					\item \textbf{Vermittler}
+					\item Brücke
+				\end{itemize}
+			\item Varianten-Muster
+			\item Zustandshandhabungs-Muster
+			\item Steuerungs-Muster
+			\item Bequemlichkeits-Muster
+		\end{itemize}
 	\end{frame}
 
 
