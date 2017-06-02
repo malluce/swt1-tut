@@ -276,15 +276,39 @@
 
 	\begin{frame}
 		\frametitle{Adapter - Alternative}
-		\includegraphics[scale=0.45]{./pics/tut3/adap-cl.png} \linebreak
+		\includegraphics[scale=0.45]{./pics/tut3/adap-cl.png} \linebreak \pause
 		Was für ein Problem bekommt ihr, wenn ihr das auf einem ÜB implementieren müsst? \pause \linebreak
 		$\implies$ keine Mehrfachvererbung in Java!
 	\end{frame}
 
-	\section{Beobachter}
-	\begin{frame}
-	Inhalt...
+\section{Beobachter}
+	\subsection{Beobachter}
+	\begin{frame}{Beobachter/Observer: abstrakt}
+		\begin{exampleblock}{Problemstellung}
+			\begin{itemize}
+				\item ein Subjekt, viele Beobachter
+				\item Subjekt ändert Zustand $\implies$ Beobachter machen "'irgendwas"
+			\end{itemize}		
+		\end{exampleblock}
 	\end{frame}
+
+	\begin{frame}{}
+		\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{diagrams/interview/observer.jpg}
+		\pause
+		\begin{block}{Entkopplung?}
+		\begin{itemize}
+			\pause 
+			\item jeder Beobachter definiert, was bei Benachrichtigung passiert, Subjekt kriegt davon nichts mit \pause
+			\item zur Laufzeit änderbar: Anzahl der Beobachter \pause
+		\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Beobachter/Observer: am Beispiel}
+		\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{diagrams/interview/observer_example.jpg}
+	\end{frame}
+
+	%TODO task
 
 \section{Iterator}
 	\begin{frame}
