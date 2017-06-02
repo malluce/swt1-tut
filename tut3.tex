@@ -240,6 +240,8 @@
 		\end{itemize}
 	\end{frame}
 
+	%TODO true-false-questions?
+
 	\begin{frame}
 		\frametitle{Entkopplungs-Muster}
 		\begin{itemize}
@@ -249,8 +251,34 @@
 	\end{frame}
 
 \section{Adapter}
+	\subsection{Adapter}
 	\begin{frame}
-		Inhalt...
+		\frametitle{Adapter}
+		\begin{block}{Problem}
+			\begin{itemize}
+				\item Klassen mit inkompatiblen Schnittstellen, die wir aber zusammen benutzen wollen 
+				\item Schnittstellen nicht änderbar (z.B. externe Bibliotheken)
+			\end{itemize}
+		\end{block}
+		\pause
+		\includegraphics[scale=0.45]{./pics/tut3/adap-obj.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Adapter}
+		\includegraphics[scale=0.45]{./pics/tut3/adap-obj.png}
+		\begin{block}{Wir sind bei Entkopplung-Mustern, Preisfrage:}
+			Wo ist hier die Entkopplung?
+			\pause
+			\linebreak der Klient ist von der adaptierten Klasse entkoppelt $\implies$ austauschbar
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Adapter - Alternative}
+		\includegraphics[scale=0.45]{./pics/tut3/adap-cl.png} \linebreak
+		Was für ein Problem bekommt ihr, wenn ihr das auf einem ÜB implementieren müsst? \pause \linebreak
+		$\implies$ keine Mehrfachvererbung in Java!
 	\end{frame}
 
 	\section{Beobachter}
