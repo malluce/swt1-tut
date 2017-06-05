@@ -184,7 +184,7 @@
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Wozu Entwurfsmuster?}
+		\frametitle{Was sind Entwurfsmuster?}
 		\begin{block}{Entwurfsmuster}
 			Ein Software-Entwurfsmuster beschreibt eine
 			Familie von Lösungen für ein Software-Entwurfsproblem.
@@ -198,6 +198,14 @@
 		\centering
 		\includegraphics[scale=0.2]{./pics/tut3/new-wheel.jpg}
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Wozu Entwurfsmuster?}
+		\begin{itemize}
+			\item erleichtern Kommunikation \pause
+			\item erleichtern "'gute"' Entwürfe und das Schreiben von wartbarem/erweiterbarem Code
+		\end{itemize}
+\end{frame}
 	
 	\begin{frame}
 		\frametitle{Geheimnisprinzip}
@@ -240,7 +248,16 @@
 		\end{itemize}
 	\end{frame}
 
-	%TODO true-false-questions?
+	\begin{frame}
+		\frametitle{Quiz (Ankreuzaufgaben aus Klausuren)}
+		Wahr oder falsch?
+		\begin{itemize}
+			\item Das Entwurfsmuster Strategie bietet die Möglichkeit, eine Klasse mit einer von mehreren möglichen Verhaltensweisen zu konfigurieren. \pause \colorbox{green}{wahr} \pause
+			\item Das Strategiemuster erfüllt das Geheimnisprinzip, indem es Datenstrukturen, die in einer konkreten Strategie enthalten sind, vor dem Klienten verbirgt. \pause \colorbox{green}{wahr} \pause
+			\item Das Muster Strategie kapselt austauschbares Verhalten und verwendet Delegierung, um zu entscheiden, welches Verhalten verwendet wird. \pause \colorbox{green}{wahr} \pause 
+			\item Das Hinzufügen einer neuen konkreten Strategie erfordert keine Änderung existierender konkreter Strategien. \pause \colorbox{green}{wahr}
+		\end{itemize}
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Entkopplungs-Muster}
@@ -265,7 +282,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Adapter}
+		\frametitle{Adapter (Objektadapter)}
 		\includegraphics[scale=0.45]{./pics/tut3/adap-obj.png}
 		\begin{block}{Wir sind bei Entkopplung-Mustern, Preisfrage:}
 			Wo ist hier die Entkopplung?
@@ -275,7 +292,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Adapter - Alternative}
+		\frametitle{Adapter - Alternative (Klassenadapter)}
 		\includegraphics[scale=0.45]{./pics/tut3/adap-cl.png} \linebreak \pause
 		Was für ein Problem bekommt ihr, wenn ihr das auf einem ÜB implementieren müsst? \pause \linebreak
 		$\implies$ keine Mehrfachvererbung in Java!
