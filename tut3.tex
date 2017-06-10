@@ -71,8 +71,8 @@
 	\subsection{Feedback 2. Übungsblatt}
 	\begin{frame}
 		\frametitle{2. Übungsblatt Statistik}
-		%TODO statistics \includegraphics[scale=0.7]{./pics/tut2/statistics-ub2.png}
-		%TODO \linebreak \centering $\diameter$ 8,35 bzw. 11,79 von 25 (28)
+		\includegraphics[scale=0.7]{./pics/tut3/statistics-ub3.png}
+		\linebreak \centering $\diameter$ 11,56 bzw. 16,32 von 28+1
 	\end{frame}
 	
 	\subsection{3. Übungsblatt - Fehler (Allgemein)}
@@ -82,7 +82,6 @@
 			\begin{itemize}
 				\item verspätete Abgaben bekomme ich erst beim jeweils nächsten Tutorentreffen	
 				\linebreak $\implies$ Rückgabe dauert länger; gibt keine Punkte, nur grobe Korrektur
-				%TODO more common faults
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -92,6 +91,7 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1 (Plug-In-Architektur): $\diameter$  2,25 bzw. 3,86 von 5}
 			\begin{itemize}
+				\pause
 				\item keine riesigen switch-cases/if-else Anweisungen in compareTo() benutzen
 				\linebreak $\implies$ Erweiterbarkeit wird dadurch eingeschränkt \pause
 				\linebreak $\implies$ Java vergleicht Enum-Elemente anhand ihrer Position in dem Enum \pause
@@ -116,27 +116,41 @@
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Aktivitätsdiagramme (Geometrify)): $\diameter$ von 10} %TODO avg
+		\begin{block}{Aufgabe 4 (Aktivitätsdiagramme (Geometrify)): $\diameter$ 4,83 bzw. 7,25 von 10}
 			\begin{itemize}
-				\item 	%TODO
+				\pause 
+				\item denkt an die Rauten! \pause
+				\item Geometrify sollte eigener Kasten mit Objektfluss sein \pause
+				\item $\lbrack$Bedingung$\rbrack$ \pause
+				\item verschachtelte Aktivitäten $\implies$ irgendwo passender Kasten dazu
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 5 (Sequenzdiagramm (main-Methode)): $\diameter$ von 5} %TODO avg
+		\begin{block}{Aufgabe 5 (Sequenzdiagramm (main-Methode)): $\diameter$ 1,58 bzw. 2,71 von 5}
 			\begin{itemize}
-				\item %TODO
+				\pause 
+				\item bzgl. Konstruktor sind VL-Folien etwas blöd \pause
+				\item asynchron vs. synchron (Pfeilspitzen sind wichtig!) \pause
+				\item nicht statische Instanzen unterstreichen \pause
+				\item Instanz-Kästen erst dann hinzeichnen, wenn Instanz auch existiert
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 6 (Substitutionsprinzip): $\diameter$ von 3} %TODO avg
+		\begin{block}{Aufgabe 6 (Substitutionsprinzip): $\diameter$ 0,67 bzw. 1,23 von 3}
 			\begin{itemize}
-				\item 	%TODO
+				\pause
+				\item die Methode wurde überladen 
+				\linebreak $\implies$ Java schaut sich nur die Signatur an \pause
+				\item für Erfüllung des Substitutionsprinzips auch Verhalten wichtig \pause
+				\item Methoden sind dynamisch gebunden, Attribute sind statisch gebunden
+				\linebreak $\implies$ merke: getter und setter benutzen
+				\linebreak $\implies$ vermeidet mindfucks
 			\end{itemize}
 		\end{block}
 	\end{frame}
