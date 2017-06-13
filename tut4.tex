@@ -1,0 +1,229 @@
+\documentclass[18pt]{beamer}
+\usepackage[utf8]{inputenc} % for the umlauts
+\usepackage{subfigure}
+
+\beamertemplatenavigationsymbolsempty
+%% SLIDE FORMAT
+
+% use 'beamerthemekit' for standard 4:3 ratio
+% for widescreen slides (16:9), use 'beamerthemekitwide'
+
+\usepackage{templates/beamerthemekit}
+% \usepackage{templates/beamerthemekitwide}
+
+\setcounter{tocdepth}{1}
+
+%% TITLE PICTURE
+
+% if a custom picture is to be used on the title page, copy it into the 'logos'
+% directory, in the line below, replace 'mypicture' with the 
+% filename (without extension) and uncomment the following line
+% (picture proportions: 63 : 20 for standard, 169 : 40 for wide
+% *.eps format if you use latex+dvips+ps2pdf, 
+% *.jpg/*.png/*.pdf if you use pdflatex)
+
+%\titleimage{mypicture}
+
+%% TikZ INTEGRATION
+
+% use these packages for PCM symbols and UML classes
+% \usepackage{templates/tikzkit}
+% \usepackage{templates/tikzuml}
+
+% the presentation starts here
+
+\usepackage{mathabx}
+\usepackage{picture}
+\usepackage[absolute,overlay]{textpos}
+%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
+\setbeamercovered{invisible}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\title[SWT1]{Softwaretechnik 1 - 4. Tutorium}
+\subtitle{Tutorium 03}
+\author{Felix Bachmann}
+\date{26.06.2017}
+
+\institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
+
+% Bibliography
+
+\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+\addbibresource{templates/example.bib}
+\bibhang1em
+
+\begin{document}
+
+% change the following line to "ngerman" for German style date and logos
+\selectlanguage{ngerman}
+
+%title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+\section{Orga}
+
+	%TODO no email commitments anymore
+
+	\subsection{Feedback 4. Übungsblatt}
+	\begin{frame}
+		\frametitle{4. Übungsblatt Statistik}
+		%TODO statistics\includegraphics[scale=0.7]{./pics/tut3/statistics-ub3.png}
+		%TODO avg \linebreak \centering $\diameter$ 
+	\end{frame}
+	
+	\subsection{4. Übungsblatt - Fehler (Allgemein)}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Allgemein}
+			\begin{itemize}
+				\item %TODO 
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{4. Übungsblatt - Fehler}
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 1 (Zustandsdiagramm - LEZ): $\diameter$}%TODO avg
+			\begin{itemize}
+				\item %TODO
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 2 (Abbottsche Methode): $\diameter$}%TODO avg
+			\begin{itemize}
+				\item %TODO
+			\end{itemize}
+		\end{block}
+		\begin{block}{Aufgabe 3 (iMage-GUI): $\diameter$}%TODO avg
+			\begin{itemize}
+				\item	%TODO
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 4 (Geheimnisprinzip): $\diameter$}%TODO avg
+			\begin{itemize}
+				\item %TODO
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+%TODO intro
+
+\section{Stellvertreter}
+	\subsection{Stellvertreter}
+	\begin{frame}
+		\frametitle{Stellvertreter}
+		\begin{block}{Problem}
+			\begin{itemize}
+				\item wollen Zugriff auf ein Objekt kontrollieren, ohne seine Klasse zu ändern \linebreak \pause $\implies$ Stellvertreter macht Zugriffskontrolle
+			\end{itemize}
+		\end{block}
+		\pause
+		\centering
+		\includegraphics[scale=0.4]{./pics/tut3/prox.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Stellvertreter}
+		\centering
+		\includegraphics[scale=0.4]{./pics/tut3/prox.png}
+		\begin{block}{Entkopplung?}
+			\begin{itemize}
+				\pause 
+				\item Klient hat keinen direkten Zugriff auf das echte Subjekt
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+\section{Vermittler}
+	\subsection{Vermittler}
+		\begin{frame}
+		\frametitle{Vermittler}
+		\begin{block}{Problem}
+			\begin{itemize}
+				\item mehrere voneinander abhängige Objekte \linebreak \pause $\implies$ Zustände der Objekte von anderen Zuständen abhängig
+			\end{itemize}
+		\end{block}
+		\pause
+		\centering
+		\includegraphics[scale=0.45]{./pics/tut3/med.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Vermittler}
+		\centering
+		\includegraphics[scale=0.45]{./pics/tut3/med.png}
+		\begin{block}{Entkopplung?}
+			\begin{itemize}
+				\pause 
+				\item Kollegen kennen sich nicht direkt  \linebreak \pause $\implies$ Hinzufügen eines Kollegen erfordert keine Änderung der alten Kollegen
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+
+
+\section{Tipps}
+	\subsection{Tipps}
+	\begin{frame}
+		\frametitle{Tipps - 5. Übungsblatt}
+			\begin{exampleblock}{Aufgabe 1: } %TODO
+				\begin{itemize}
+					\item %TODO
+				\end{itemize}
+			\end{exampleblock}
+			\pause
+			\begin{exampleblock}{Aufgabe 2: } %TODO
+				\begin{itemize}
+					\item %TODO
+				\end{itemize}
+			\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tipps - 5. Übungsblatt}
+			\begin{exampleblock}{Aufgabe 3:} %TODO
+				\begin{itemize}
+					\item %TODO
+				\end{itemize}
+			\end{exampleblock}
+			\pause
+			\begin{exampleblock}{Aufgabe 4:} %TODO
+				\begin{itemize}
+					\item %TODO
+				\end{itemize}
+			\end{exampleblock}
+	\end{frame}
+	
+	\subsection{Abgabe}
+	\begin{frame}
+		\frametitle{Denkt dran!}
+		\begin{alertblock}{Abgabe}
+			\begin{itemize}
+				\item Deadline am 5.7. um 12:00 %TODO check when released
+				%TODO self-written,...?
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Bis dann! (dann  := 10.07.17)}
+		\centering
+		%TODO choose comic \includegraphics[scale=0.5]{./comics/geek_and_poke_undeadCode.jpg}
+	\end{frame}
+
+\end{document}
