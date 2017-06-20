@@ -301,15 +301,17 @@
 			\end{itemize}
 		\end{block}
 	\end{frame}
-	
+
+\section{Gruppenarbeit}
+\subsection{Gruppenarbeit}
 	\begin{frame}
 		\frametitle{Kategorien der Entwurfsmuster}
 		\begin{itemize}
 			\item Entkopplungs-Muster \colorbox{green}{fertig}
 			\item \textbf{Varianten-Muster}
 			\begin{itemize}
-				\item Abstrakte Fabrik
-				\item Besucher
+				\item (Abstrakte Fabrik)
+				\item (Besucher)
 				\item Schablonenmethode
 				\item Fabrikmethode
 				\item Kompositum
@@ -321,48 +323,135 @@
 			\item Bequemlichkeits-Muster
 		\end{itemize}
 	\end{frame}
-
+		%TODO was ist variantenmuster?
 	\begin{frame}
 		\frametitle{Jetzt: Gruppenarbeit}
 		\begin{enumerate}
-			\item ich teile pro Reihe ein Aufgabenblatt aus
+			\item ihr kriegt pro Reihe eine Aufgabe
 			\item ihr habt Zeit zum Bearbeiten
-			\item ihr stellt den anderen eure Lösung vor
+			\item ihr stellt den anderen vorne eure Lösung vor
 		\end{enumerate}
-\end{frame}
+	\end{frame}
 
+	\begin{frame}
+		\frametitle{Vorstellung Dekorierer}
+		\includegraphics[scale=0.35]{./pics/tut4/decor.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{MuLö Dekorierer}
+		\begin{block}{Wo Gemeinsamkeiten?}
+			Die beiden Methoden methodeEins() und methodeZwei().
+		\end{block}
+		\begin{block}{Wo Variation?}
+			In den KonkretenDekorierern bzw. ihren Methoden. Hier: neueMethodeA(), neueMethodeB().
+		\end{block}
+		\begin{block}{Wozu Instanzvariable?}
+			Weiterleitung von Aufrufen der methodeEins() und methodeZwei() an die KonkreteKompenente.
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Vorstellung Kompositum}
+		\includegraphics[scale=0.35]{./pics/tut4/comp.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{MuLö Kompositum}
+		\begin{block}{Wo Gemeinsamkeiten?}
+			gemeinsameOperation().
+		\end{block}
+		\begin{block}{Wo Variation?}
+			In Blatt/Kompositum-Klassen mit verschiedenen zusätzlichen Operationen.
+		\end{block}
+		\begin{block}{Zusammengesetzt vs. nicht-zusammengesetzt}
+			Kompositum = zusammengesetzt, Blatt = nicht-zusammengesetzt
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Vorstellung Schablonenmethode}
+		\includegraphics[scale=0.45]{./pics/tut4/schab.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{MuLö Schablonenmethode}
+		\begin{block}{Wo Gemeinsamkeiten?}
+			Reihenfolge der Methodenaufrufe in der Schablonenmethode.
+		\end{block}
+		\begin{block}{Wo Variation?}
+			In den Einschubmethoden. (hier: primitiveOperation1() und primitiveOpoeration2())
+		\end{block}
+		\begin{block}{Schablonenmethode vs. Einschubmethode}
+			Einschubmethode ist eine der Methoden, die von der Schablonenmethode aufgerufen wird und deren Implementierung in den Unterklassen stattfindet.
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Vorstellung Fabrikmethode}
+		\includegraphics[scale=0.4]{./pics/tut4/fab.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{MuLö Fabrikmethode}
+		\begin{block}{Wo Gemeinsamkeiten?}
+			Reihenfolge der Methodenaufrufe in der beliebigenMethode().
+		\end{block}
+		\begin{block}{Wo Variation?}
+			In der Fabrikmethode.
+		\end{block}
+		\begin{block}{Klasse des Objekts, Oberklasse, Unterklasse}
+			Klasse des Objekts = KonkretesProdukt, Oberklasse = Produkt, Unterklasse = KonkreterErzeuger
+		\end{block}
+		\begin{block}{Unterschied zu Schablonenmethode?}
+			Fabrikmethode benutzen, wenn ein Objekt erzeugt wird. Fabrikmethode ist Einschubmethode des Musters "'Schablonenmethode"'.
+		\end{block}
+		\begin{block}{Wahr/falsch}
+			Fabrikmethode ist eine Einschubmethode, keine Schablonenmethode.
+		\end{block}
+	\end{frame}
 
 
 \section{Tipps}
 	\subsection{Tipps}
 	\begin{frame}
 		\frametitle{Tipps - 5. Übungsblatt}
-			\begin{exampleblock}{Aufgabe 1: } %TODO
+			\begin{exampleblock}{Aufgabe 1: Manager-Deutsch und Architekturstile} 
 				\begin{itemize}
-					\item %TODO
+					\item Architekturstile nochmal anschauen
 				\end{itemize}
 			\end{exampleblock}
 			\pause
-			\begin{exampleblock}{Aufgabe 2: } %TODO
+			\begin{exampleblock}{Aufgabe 2: Iterator für Plug-Ins} 
 				\begin{itemize}
-					\item %TODO
+					\item Iterator-Muster selbst benutzen
 				\end{itemize}
 			\end{exampleblock}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Tipps - 5. Übungsblatt}
-			\begin{exampleblock}{Aufgabe 3:} %TODO
+			\begin{exampleblock}{Aufgabe 3: Geometrify mit Entwurfsmustern}
 				\begin{itemize}
-					\item %TODO
+					\item überlegen, welches Entwurfsmuster \textbf{warum} Sinn macht
 				\end{itemize}
 			\end{exampleblock}
 			\pause
-			\begin{exampleblock}{Aufgabe 4:} %TODO
+			\begin{exampleblock}{Aufgabe 4: Geometrify umstrukturieren}
 				\begin{itemize}
-					\item %TODO
+					\item Überlegungen aus Aufgabe 3 umsetzen
 				\end{itemize}
 			\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tipps - 5. Übungsblatt}
+		\begin{exampleblock}{Aufgabe 5: GUI erweitern}
+			\begin{itemize}
+				\item nochmal ServiceLoader
+			 	 $\implies$ diesmal mit Primitiven
+			\end{itemize}
+		\end{exampleblock}
 	\end{frame}
 	
 	\subsection{Abgabe}
@@ -370,8 +459,8 @@
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item Deadline am 5.7. um 12:00 %TODO check when released
-				%TODO self-written,...?
+				\item Deadline am 5.7. um 12:00
+				\item Aufgabe 1, 3 handschriftlich
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
