@@ -69,6 +69,8 @@
 
 \section{Orga}
 
+	%TODO add design patterns extra slides
+
 	\subsection{Allgemein}
 	\begin{frame}
 		\frametitle{Allgemeines}
@@ -323,13 +325,24 @@
 			\item Bequemlichkeits-Muster
 		\end{itemize}
 	\end{frame}
-		%TODO was ist variantenmuster?
+	
+	\begin{frame}
+		\frametitle{Varianten-Muster}
+		\begin{block}{Übergeordnetes Ziel}
+			\begin{itemize}
+				\item übergeordnetes Ziel: Gemeinsamkeiten herausziehen und an einer Stelle beschreiben \pause
+				\linebreak $\implies$ keine Wiederholung desselben Codes \pause
+				\linebreak $\implies$ bessere Wartbarkeit/Erweiterbarkeit		
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
 	\begin{frame}
 		\frametitle{Jetzt: Gruppenarbeit}
 		\begin{enumerate}
 			\item ihr kriegt pro Reihe eine Aufgabe
 			\item ihr habt Zeit zum Bearbeiten
-			\item ihr stellt den anderen vorne eure Lösung vor
+			\item ihr stellt den anderen eure Lösung vor
 		\end{enumerate}
 	\end{frame}
 
@@ -411,7 +424,65 @@
 		\end{block}
 	\end{frame}
 
+\section{Memento}
+	\subsection{Intro}
+	\begin{frame}
+		\frametitle{Kategorien der Entwurfsmuster}
+		\begin{itemize}
+			\item Entkopplungs-Muster \colorbox{green}{fertig}
+			\item Varianten-Muster \colorbox{green}{fertig}
+			\item \textbf{Zustandshandhabungs-Muster}
+				\begin{itemize}
+					\item (Einzelstück)
+					\item (Fliegengewicht)
+					\item \textbf{Memento} 
+					\item (Prototyp) 
+					\item (Zustand)
+				\end{itemize}
+			\item Steuerungs-Muster
+			\item Bequemlichkeits-Muster
+		\end{itemize}
+	\end{frame}
 
+	\begin{frame}
+		\frametitle{Zustandshandhabungs-Muster}
+		\begin{block}{Übergeordnetes Ziel}
+			\begin{itemize}
+				\item den Zustand eines Objektes beschreiben (wer hätt's gedacht? :D) \pause 
+				\item aber unabhängig von dem Zweck des Objekts!
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Memento}
+		\begin{block}{Problem}
+			\begin{itemize}
+				\item internen Zustand eines Objekts "'externalisieren"', um z.B. Zurücksetzen möglich zu machen \pause 
+				\item ohne Kapselung zu verletzten!
+			\end{itemize}
+		\end{block}
+		\pause
+		\centering
+		\includegraphics[scale=0.4]{./pics/tut4/mem.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Memento}
+		\includegraphics[scale=0.4]{./pics/tut4/mem.png}
+		\begin{block}{Problem gelöst?}
+			\begin{itemize}
+				\pause
+				\item Ja
+				\begin{itemize}
+					\pause
+					\item Zustand durch Memento externalisiert \pause
+					\item Kapselung nicht verletzt (Nutzer ruft nur sichereZustand() auf und kriegt neuen Memento)
+				\end{itemize}
+			\end{itemize}
+		\end{block}
+\end{frame}
+	
 \section{Tipps}
 	\subsection{Tipps}
 	\begin{frame}
