@@ -69,7 +69,7 @@
 
 \section{Orga}
 
-	%TODO add design patterns extra slides
+	%TODO add design patterns extra slides (weekend)
 
 	\subsection{Allgemein}
 	\begin{frame}
@@ -77,7 +77,8 @@
 		\begin{alertblock}{Ansage der Übungsleiter}
 			\begin{itemize}
 				\item ab jetzt keine Abgabe per Mail mehr!
-				\linebreak $\implies$ auch nicht in Ausnahmefällen
+				\linebreak $\implies$ auch nicht in Ausnahmefällen \pause
+				\item keine Abgabe von semi-handschriftlichen Ausarbeitungen mehr!
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
@@ -482,6 +483,61 @@
 			\end{itemize}
 		\end{block}
 \end{frame}
+
+\section{Befehl}
+	\subsection{Intro}
+	\begin{frame}
+		\frametitle{Kategorien der Entwurfsmuster}
+		\begin{itemize}
+			\item Entkopplungs-Muster \colorbox{green}{fertig}
+			\item Varianten-Muster \colorbox{green}{fertig}
+			\item Zustandshandhabungs-Muster \colorbox{green}{fertig}
+			\item \textbf{Steuerungs-Muster} 
+				\begin{itemize}
+					\item \textbf{Befehl}
+					\item (master/worker)
+				\end{itemize}
+			\item Bequemlichkeits-Muster
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Steuerungs-Muster}
+		\begin{block}{Übergeordnetes Ziel}
+			\begin{itemize}
+				\item steuern den Kontrollfluss \pause 
+				\linebreak $\implies$ zur richtigen Zeit richtige Methoden aufrufen
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Befehl}
+		\begin{block}{Problem}
+			\begin{itemize}
+				\item Parametrisieren von Objekten mit einer auszuführenden Aktion \pause 
+				\item komplexe Operationen aus primitiven Operationen aufbauen \pause
+				\item Ausführung in Warteschlange
+			\end{itemize}
+		\end{block}
+		\pause
+		\centering
+		\includegraphics[scale=0.33]{./pics/tut4/command.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Befehl}
+		\includegraphics[scale=0.35]{./pics/tut4/command.png}
+		\begin{block}{Was haben wir erreicht?}
+			\begin{itemize}
+				\item Austauschbarkeit: Befehle unabhängig vom Aufrufer, universell einsetzbar \pause
+				\item Logik komplett im Befehl $\implies$ keine Inkonsistenzen bei Benutzung
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	
+	%TODO conclusion design patterns
 	
 \section{Tipps}
 	\subsection{Tipps}
