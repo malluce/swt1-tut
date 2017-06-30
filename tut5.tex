@@ -11,7 +11,7 @@
 \usepackage{templates/beamerthemekit}
 % \usepackage{templates/beamerthemekitwide}
 
-%\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{1}
 
 %% TITLE PICTURE
 
@@ -125,9 +125,9 @@
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Allgemein}
-		\begin{itemize}
-		\item %TODO common faults
-		\end{itemize}
+			\begin{itemize}
+				\item %TODO common faults
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
@@ -135,36 +135,36 @@
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1 (Architekturstile): $\diameter$   von 5} %TODO avg
-		\begin{itemize}
-		\pause 
-		\item %TODO 
-		\end{itemize}
+			\begin{itemize}
+				\pause 
+				\item %TODO 
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 2 (Iterator für Plug-Ins): $\diameter$ von 6} %TODO avg
-		\begin{itemize}
-		\pause 
-		\item %TODO
-		\end{itemize}
+			\begin{itemize}
+				\pause 
+				\item %TODO
+			\end{itemize}
 		\end{block}
 		\pause 
 		\begin{block}{Aufgabe 3 (Umstrukturierung von Geometrify): $\diameter$ von 8} %TODO avg
-		\begin{itemize}
-		\item %TODO
-		\end{itemize}
+			\begin{itemize}
+				\item %TODO
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 4 (Reimplementierung von Geometrify): $\diameter$ von 7+2} %TODO avg
-		\begin{itemize}
-		\pause
-		\item %TODO
-		\end{itemize}
+			\begin{itemize}
+				\pause
+				\item %TODO
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
@@ -189,7 +189,8 @@
 	\begin{frame}
 		\frametitle{4. Übungsblatt - A3 mit Threads}
 		\begin{block}{Aufgabe 3 (GUI für Geometrify): 6,56 bzw. 11,25 von 10+7} 
-		\includegraphics[scale=0.34]{./pics/tut5/extra-thread.png}
+			\centering
+			\includegraphics[scale=0.34]{./pics/tut5/extra-thread.png}
 		\end{block}
 	\end{frame}
 
@@ -198,62 +199,64 @@
 
 
 \section{Tipps}
-\subsection{Tipps}
-\begin{frame}
-\frametitle{Tipps - 5. Übungsblatt}
-\begin{exampleblock}{Aufgabe 1: Manager-Deutsch und Architekturstile} 
-\begin{itemize}
-\item Architekturstile nochmal anschauen
-\end{itemize}
-\end{exampleblock}
-\pause
-\begin{exampleblock}{Aufgabe 2: Iterator für Plug-Ins} 
-\begin{itemize}
-\item Iterator-Muster selbst benutzen
-\end{itemize}
-\end{exampleblock}
-\end{frame}
+	\subsection{Tipps}
+	\begin{frame}
+		\frametitle{Tipps - 6. Übungsblatt}
+		\begin{exampleblock}{Aufgabe 1: Kontrollfluss-orientiertes Testen}
+			\begin{itemize}
+				\item Zwischensprache benutzen
+				\item Definitionen der verschiedenen Abdeckungen anschauen
+			\end{itemize}
+		\end{exampleblock}
+		\pause
+		\begin{exampleblock}{Aufgabe 2: Codeinspektion} 
+			\begin{itemize}
+				\item an das Format halten
+			\end{itemize}
+		\end{exampleblock}
+	\end{frame}
 
-\begin{frame}
-\frametitle{Tipps - 5. Übungsblatt}
-\begin{exampleblock}{Aufgabe 3: Geometrify mit Entwurfsmustern}
-\begin{itemize}
-\item überlegen, welches Entwurfsmuster \textbf{warum} Sinn macht
-\end{itemize}
-\end{exampleblock}
-\pause
-\begin{exampleblock}{Aufgabe 4: Geometrify umstrukturieren}
-\begin{itemize}
-\item Überlegungen aus Aufgabe 3 umsetzen
-\end{itemize}
-\end{exampleblock}
-\end{frame}
+	\begin{frame}
+		\frametitle{Tipps - 6. Übungsblatt}
+		\begin{exampleblock}{Aufgabe 3: Parallelisierung von Geometrify}
+			\begin{itemize}
+				\item Berechnung der Samples parallelisieren
+				\item Zahl der benutzten Threads abhängig machen von der Anzahl der Prozessor-Kerne
+			\end{itemize}
+		\end{exampleblock}
+		\pause
+		\begin{exampleblock}{Aufgabe 4: Alternative Parallelisierungsverfahren}
+			\begin{itemize}
+				\item theoretische Überlegungen, was man sonst noch so parallelisieren könnte
+				\item Sinnhaftigkeit, Aufwand, etc. prüfen
+			\end{itemize}
+		\end{exampleblock}
+	\end{frame}
 
-\begin{frame}
-\frametitle{Tipps - 5. Übungsblatt}
-\begin{exampleblock}{Aufgabe 5: GUI erweitern}
-\begin{itemize}
-\item nochmal ServiceLoader
-$\implies$ diesmal mit Primitiven
-\end{itemize}
-\end{exampleblock}
-\end{frame}
+	\begin{frame}
+		\frametitle{Tipps - 6. Übungsblatt}
+		\begin{exampleblock}{Aufgabe 5: Parallelisierungswettbewerb}
+			\begin{itemize}
+				\item Aufgabe 3 verbessern und Laufzeit messen
+			\end{itemize}
+		\end{exampleblock}
+	\end{frame}
 
-\subsection{Abgabe}
-\begin{frame}
-\frametitle{Denkt dran!}
-\begin{alertblock}{Abgabe}
-\begin{itemize}
-\item Deadline am 5.7. um 12:00
-\item Aufgabe 1, 3 handschriftlich (wirklich handschriftlich!)
-\end{itemize}
-\end{alertblock}
-\end{frame}
+	\subsection{Abgabe}
+	\begin{frame}
+		\frametitle{Denkt dran!}
+		\begin{alertblock}{Abgabe}
+			\begin{itemize}
+				\item Deadline am 19.7. um 12:00
+				\item Aufgabe 1,2,4 und Beschreibung, Laufzeitprofil von Aufgabe 5 handschriftlich
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
 
-\begin{frame}
-\frametitle{Bis dann! (dann  := 10.07.17)}
-\centering
-\includegraphics[scale=0.4]{./comics/patterns.jpg}
-\end{frame}
+	\begin{frame}
+		\frametitle{Bis dann! (dann  := 24.07.17)}
+		\centering
+		\includegraphics[scale=1.0]{./comics/geek_and_poke_concurrency.jpg}
+	\end{frame}
 
 \end{document}
