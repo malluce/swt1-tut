@@ -176,7 +176,186 @@
 \section{Parallelität}
 	\subsection{}	
 	
-	%TODO parallelism
+	\begin{frame}
+		\frametitle{Parallelität - Grundlagen}
+		\includegraphics[scale=0.34]{./pics/tut5/proc-thr.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Grundlagen}
+		\begin{itemize}
+			\item Prozess = Programm in Ausführung \pause
+			\item jeder Prozess hat eigenen Adressraum (= Speicherbereich im Arbeitsspeicher) \pause
+			\item jeder Prozess hat mindestens einen Thread \pause
+			\item Threads existieren innerhalb eines Prozesses \pause 
+			\begin{itemize}
+				\item Threads haben den gleichen Heap und Code \pause 
+					\linebreak $\implies$ alle Threads innerhalb eines Prozesses arbeiten mit denselben Objekten und demselben Code \pause 
+				\item Threads haben eigene Stacks und Befehlszeiger (Programmzähler) \pause 
+					\linebreak $\implies$ Threads haben eigene lokale Variablen und können beliebigen Code des Prozesses ausführen
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Parallelität - Motivation}
+		\includegraphics[scale=0.34]{./pics/tut5/mot-par.png}
+		\pause
+		\begin{itemize}
+			\item "'normales"' sequentielles Programm = 1 Prozess mit 1 Thread
+			\item paralleles Programm = 1 Prozess mit mehreren Threads
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - in Java}
+		\begin{itemize}
+			\item in Java zwei Möglichkeiten einen Thread zu erstellen
+			\item bereits in Java enthalten:
+			\begin{itemize}
+				\item Interface java.lang.Runnable
+				\item Klasse java.lang.Thread
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - in Java}
+		\includegraphics[scale=0.34]{./pics/tut5/crea-thr.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - in Java}
+		\centering
+		\includegraphics[scale=0.43]{./pics/tut5/crea-thr-java.png}
+		\pause
+		\begin{alertblock}{Wichtig!}
+			\begin{itemize}
+				\item immer Thread.start() aufrufen, nicht Thread.run() \pause
+				\item Thread.run() würde run() sequenziell aufrufen, start() kehrt direkt zurück, nachdem Thread gestartet wurde
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Synchronisation}
+		\begin{itemize}
+			\item Problem: Zugriff auf globale Variablen/ Objekte passiert nicht parallel, Unterbrechungen möglich
+			\item Folge: ggf. falsche Ergebnisse
+		\end{itemize}
+		\includegraphics[scale=0.43]{./pics/tut5/par-pro.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Synchronisation}
+		\begin{itemize}
+			\item nicht nur ein theoretisches Beispiel!
+		\end{itemize}
+		\centering
+		\includegraphics[scale=0.43]{./pics/tut5/synch-ex.png} \pause
+		\includegraphics[scale=0.43]{./pics/tut5/synch-ex2.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Synchronisation}
+		\begin{itemize}
+			\item Ziel: Zugriff auf gemeinsam genutzte Daten synchronisieren \pause 
+			\begin{itemize}
+				\item kritische Abschnitte schützen \pause
+				\item Wettlaufsituationen vermeiden
+			\end{itemize}
+			\begin{block}{Kritischer Abschnitt (critical section)}
+				Codeabschnitt, wo Zugriffe auf gemeinsam genutzte Daten stattfindet
+			\end{block} \pause
+			\begin{block}{Wettlaufsituation (race condition)}
+				Verhalten des Programms hängt von der zeitlichen Abfolge der Operationen ab (Wann wird welcher Thread abgebrochen?)
+			\end{block} \pause
+			\item Idee: Monitor einführen
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Monitor}
+		\begin{itemize}
+			\item Idee: Monitor einführen \pause
+			\item Bereich im Code markieren, den nur ein Thread gleichzeitig ausführen kann und dabei nicht unterbrochen werden kann \pause
+			\item Schlüsselwort in Java \textcolor{blue}{synchronized} \pause
+			\item es wird immer an einem Objekt synchronisiert, als Argument bei \textcolor{blue}{synchronized} \pause
+			\item Thread t kommt an eine mit \textcolor{blue}{synchronized}(Objekt) markierte Stelle \pause
+			\begin{itemize}
+				\item es wird geprüft, ob der Monitor Objekt gerade frei ist \pause
+				\item ist der Monitor frei, kommt t in den kritischen Abschnitt und der Monitor ist besetzt, bis t den Abschnitt wieder verlässt \pause
+				\item ist der Monitor besetzt, wird t blockiert, bis der kritische Abschnitt frei ist
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Monitor}
+		private Object o = new Object();
+		\includegraphics[scale=0.36]{./pics/tut5/synch-ex3.png} \pause
+		\includegraphics[scale=0.39]{./pics/tut5/synch-ex4.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - wait() und notify()}
+		\textcolor{blue}{synchronized} an Methoden = synchronized(this)\{Methoden-Rumpf\} \pause
+		\includegraphics[scale=0.3]{./pics/tut5/cons-prod.png}
+		\begin{alertblock}{Probleme}
+			\begin{itemize}
+				\item "'busy waiting"' verschwendet Rechenzeit \pause
+				\item wartender Produzent blockiert Konsument, der dann nichts konsumieren kann 
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - wait() und notify()}
+		\begin{itemize}
+			\item Idee: brauchen Mechanismus, der es erlaubt den Monitor freizugeben, während man auf etwas wartet \pause
+			\item dazu braucht man natürlich auch einen Mechanismus, der es erlaubt wartende Threads aufzuwecken \pause
+			\item in Java: wait() und notify() bzw. notifyAll() \pause
+			\includegraphics[scale=0.3]{./pics/tut5/cons-prod-sol.png}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - wait() und notify()}
+		\includegraphics[scale=0.3]{./pics/tut5/cons-prod-sol.png}
+		\begin{itemize}
+			\item Kann man die while-Schleifen jetzt nicht durch eine if-Abfrage ersetzen? \pause
+			\begin{itemize}
+				\item Nein, dann würde nach dem Aufwecken nicht nochmal geprüft werden, ob die Bedingung mittlerweile falsch ist.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Verklemmung (deadlock)}
+		\includegraphics[scale=0.3]{./pics/tut5/deadlock.jpg}
+		\pause
+		\begin{itemize}
+			\item Thread A hält Monitor B und benötigt Monitor C
+			\item Thread B hält Monitor C und benötigt Monitor B
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Parallelität - Verklemmung (deadlock)}
+			\centering \includegraphics[scale=0.4]{./pics/tut5/deadlock-ex.png} \linebreak
+			klassicher Deadlock!
+	\end{frame}
+
+	
+	\begin{frame}
+		\frametitle{Parallelität - Verklemmung (deadlock)}
+		\centering Lösungsansatz: Monitore immer in gleicher Reihenfolge anfordern \linebreak
+		\includegraphics[scale=0.4]{./pics/tut5/deadlock-ex-sol.png}
+	\end{frame}
+	
+
+	%TODO exam task! ss14?
 	
 	
 	\begin{frame}
@@ -184,6 +363,9 @@
 		\begin{block}{Aufgabe 3 (GUI für Geometrify): 6,56 bzw. 11,25 von 10+7} 
 			\includegraphics[scale=0.34]{./pics/tut5/edt.png}
 		\end{block}
+		\begin{tiny}
+			siehe auch: \url{https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html}
+		\end{tiny}
 	\end{frame}
 
 	\begin{frame}
@@ -197,6 +379,7 @@
 \section{Testen}
 	\subsection{}
 
+	%TODO testing
 
 \section{Tipps}
 	\subsection{Tipps}
