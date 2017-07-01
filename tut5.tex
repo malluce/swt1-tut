@@ -109,6 +109,7 @@
 				\linebreak $\implies$ geht schöner, performanter mit LayoutManagern \pause
 				\item fileChooser.setFileFilter(filter) anstatt fileChooser.addChoosableFileFilter(filter)
 			\end{itemize}
+			\pause 
 			mehr zur Aufgabe 3 nach dem Parallelität-Teil!
 		\end{block}
 	\end{frame}
@@ -266,7 +267,7 @@
 				\item Wettlaufsituationen vermeiden
 			\end{itemize}
 			\begin{block}{Kritischer Abschnitt (critical section)}
-				Codeabschnitt, wo Zugriffe auf gemeinsam genutzte Daten stattfindet
+				Codeabschnitt, wo Zugriffe auf gemeinsam genutzte Daten stattfinden
 			\end{block} \pause
 			\begin{block}{Wettlaufsituation (race condition)}
 				Verhalten des Programms hängt von der zeitlichen Abfolge der Operationen ab (Wann wird welcher Thread abgebrochen?)
@@ -282,7 +283,7 @@
 			\item Bereich im Code markieren, den nur ein Thread gleichzeitig ausführen kann und dabei nicht unterbrochen werden kann \pause
 			\item Schlüsselwort in Java \textcolor{blue}{synchronized} \pause
 			\item es wird immer an einem Objekt synchronisiert, als Argument bei \textcolor{blue}{synchronized} \pause
-			\item Thread t kommt an eine mit \textcolor{blue}{synchronized}(Objekt) markierte Stelle \pause
+			\item Thread t kommt an eine mit \textcolor{blue}{synchronized}(Objekt)\{\dots\} markierte Stelle \pause
 			\begin{itemize}
 				\item es wird geprüft, ob der Monitor Objekt gerade frei ist \pause
 				\item ist der Monitor frei, kommt t in den kritischen Abschnitt und der Monitor ist besetzt, bis t den Abschnitt wieder verlässt \pause
@@ -304,6 +305,7 @@
 		\includegraphics[scale=0.3]{./pics/tut5/cons-prod.png}
 		\begin{alertblock}{Probleme}
 			\begin{itemize}
+				\pause
 				\item "'busy waiting"' verschwendet Rechenzeit \pause
 				\item wartender Produzent blockiert Konsument, der dann nichts konsumieren kann 
 			\end{itemize}
@@ -354,8 +356,12 @@
 		\includegraphics[scale=0.4]{./pics/tut5/deadlock-ex-sol.png}
 	\end{frame}
 	
-
-	%TODO exam task! ss14?
+	\begin{frame}
+		\centering
+		\begin{huge}
+			Klausuraufgabe SS14
+		\end{huge}
+	\end{frame}
 	
 	
 	\begin{frame}
