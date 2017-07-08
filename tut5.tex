@@ -86,6 +86,7 @@
 		\begin{block}{Evaluation vom letzten Mal}
 			\begin{itemize}
 				\item nochmal Danke fürs Mitmachen! \pause
+				\item positiv: Folien, Beispiele \pause
 				\item häufigster Kritikpunkt: nicht so gut lesbarer Tafelanschrieb
 				\linebreak $\implies$ versuche ich besser zu machen :)
 			\end{itemize}
@@ -127,7 +128,7 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Allgemein}
 			\begin{itemize}
-				\item %TODO common faults
+				\item (mal wieder\dots) CheckStyle und JavaDoc
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -138,7 +139,14 @@
 		\begin{block}{Aufgabe 1 (Architekturstile): $\diameter$ 1,4 bzw. 2,79 von 4}
 			\begin{itemize}
 				\pause 
-				\item %TODO 
+				\item "'Wenn wir unsere Functionality in der Cloud anbieten erhöhen wir die Customer-Reachability."'
+				\linebreak $\implies$ nicht Client/Server, sondern Service Oriented Architecture (SOA) \pause
+				\linebreak hatte keiner so, Übungsleiter haben Client/Server aber nicht zugelassen\dots
+				\item oft vergessen:
+				\begin{itemize}
+					\item Wann findet zwischen wem Kommunikation statt? 
+					\item Wo findet die Bildberechnung statt?
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -148,13 +156,18 @@
 		\begin{block}{Aufgabe 2 (Iterator für Plug-Ins): $\diameter$ 1,4 bzw. 4,19 von 6}
 			\begin{itemize}
 				\pause 
-				\item %TODO
+				\item Klasse PluginManager als "'Klient/Kontext"' im UML-Diagramm vergessen \pause
+				\item Sortierung der Liste sollte \textbf{im} Iterator \textbf{sichergestellt} werden
 			\end{itemize}
 		\end{block}
 		\pause 
 		\begin{block}{Aufgabe 3 (Umstrukturierung von Geometrify): $\diameter$ 2,69 bzw. 5,38 von 8}
 			\begin{itemize}
-				\item %TODO
+				\item (abstrakte) Fabrik $\ne$ Fabrikmethode \pause
+				\item  kein Beobachter, sondern Memento \pause
+				\item Entwurfsmuster-Elemente im UML-Diagramm nicht richtig markiert \pause
+				\item richtige Muster verwendet, falsche Muster erklärt \pause
+				\item getPrimitive() ist Einschubmethode im Schablonenmethoden-Muster \textbf{UND} Fabrikmethode im Fabrikmethoden-Muster
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -164,7 +177,13 @@
 		\begin{block}{Aufgabe 4 (Reimplementierung von Geometrify): $\diameter$ 1,92 bzw. 6,57 von 7+2}
 			\begin{itemize}
 				\pause
-				\item %TODO
+				\item Bonus (nicht achsensymmetrische Rechtecke) nicht gemacht
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{block}{Aufgabe 5 (GUI-Erweiterung): $\diameter$ 0,04 bzw. 1 von 2}
+			\begin{itemize}
+				\item \textbf{EINE} Abgabe :D
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -176,7 +195,14 @@
 		\end{huge}
 \end{frame}
 
-%TODO recap
+\section{Überblick}
+	\subsection{Überblick}
+	\begin{frame}
+		\frametitle{Überblick}
+		\begin{huge}
+			Wo sind wir?
+		\end{huge}
+	\end{frame}
 	
 	
 	
