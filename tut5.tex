@@ -455,6 +455,9 @@
 
 	\begin{frame}
 		\frametitle{Kontrollflussorientiertes Testverfahren (KFO)}
+		\begin{itemize}
+			\item Ziel: "'sinnvolle"' Testfälle finden
+		\end{itemize}
 		Vorgehen:
 		\begin{enumerate}
 			\item gegeben: zu testender Code \pause
@@ -466,7 +469,7 @@
 			\end{itemize}
 			\pause
 			\item Zwischensprache $\implies$ Kontrollflussgraph \pause
-			\item am Kontrollflussgraphen testen: \pause
+			\item am Kontrollflussgraphen Testfälle finden: \pause
 			\begin{itemize}
 				\item Anweisungsüberdeckung
 				\item Zweigüberdeckung 
@@ -527,7 +530,6 @@
 			\item goto-Knoten kann man auch weglassen
 		\end{itemize}
 		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\pause
 	\end{frame}
 
 	\begin{frame}
@@ -543,7 +545,7 @@
 		\frametitle{KFO: Anweisungsüberdeckung}
 		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
 		\begin{itemize}
-			\item Pfad für Anweisungsüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n4, n_6, n_7, n_2, n_{stopp}$) 
+			\item Pfad für Anweisungsüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
 		\end{itemize}
 	\end{frame}
 
@@ -572,18 +574,25 @@
 			\item nicht praktikabel, da 
 			\begin{itemize}
 				\item Schleifen die Anzahl der möglichen Pfade stark erhöhen \pause
-				\item manche Pfade nicht ausführbar sind (sich gegenseitig ausschließende Bedingungen) \pause
+				\item manche Pfade nicht ausführbar sind (sich gegenseitig ausschließende Bedingungen)
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
 
 		
 	\begin{frame}
-		\centering
-		\begin{huge}
-			Klausuraufgabe SS11
-		\end{huge}
+		\frametitle{Klausuraufgabe SS11}
+		\centering \includegraphics[scale=0.4]{./pics/tut5/exam-task-kfo.png}
+		\linebreak
+		Erstellen Sie den Kontrollflussgraphen und geben Sie einen Pfad an, der Anweisungsüberdeckung erzielt.
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{MuLö KFO}
+		\centering \includegraphics[scale=0.3]{./pics/tut5/exam-task-kfo-sol.png}
+		\linebreak \pause
+		Pfad: ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_6, n_8, n_4, n_{stopp}$) 
+\end{frame}
 
 
 \section{Tipps}
@@ -637,6 +646,7 @@
 			\begin{itemize}
 				\item Deadline am 19.7. um 12:00
 				\item Aufgabe 1,2,4 und Beschreibung, Laufzeitprofil von Aufgabe 5 handschriftlich
+				\item auf jeden Fall abgeben, wenn ihr noch Punkte braucht
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
