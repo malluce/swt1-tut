@@ -91,22 +91,30 @@
 		\end{block}
 	\end{frame}
 
-	\begin{frame}
+	\begin{frame}[fragile]
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1 (Kontrollfluss-orientiertes Testen): $\diameter$ von 5+1} %TODO avg
+		\begin{block}{Aufgabe 1 (Kontrollfluss-orientiertes Testen): $\diameter$ 2,3 bzw. 5,0 von 5+1}
 			\begin{itemize}
 				\pause 
-				\item %TODO
+				\item alles außer Kontrollfluss-Zeug so lassen wie es ist! \pause
+				\item minimale Testfallmenge $=$ Eingabe, um Pfade zu erreichen \pause
+				\item Methoden-Signatur nicht als eigenen Grundblock \pause
 			\end{itemize}
 		\end{block}
-	\end{frame}
+		\begin{verbatim}
+			10	fakultaet *= n;
+			20  n--;
+			30  if(n > 1) goto 10;
+		\end{verbatim}
+\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2 (Codeinspektion): $\diameter$ von 4} %TODO avg
+		\begin{block}{Aufgabe 2 (Codeinspektion): $\diameter$ 1,0 bzw. 2,8 von 4}
 			\begin{itemize}
 				\pause 
-				\item %TODO 
+				\item Regeln vergessen \pause
+				\item Tipp: Code pro Regel anschauen
 			\end{itemize}
 		\end{block}
 		\pause 
@@ -120,10 +128,10 @@
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Alternative Parallelisierungsvarianten): $\diameter$ von 6+3} %TODO avg
+		\begin{block}{Aufgabe 4 (Alternative Parallelisierungsvarianten): $\diameter$ 1,8 bzw. 6,1 von 6+3}
 			\begin{itemize}
 				\pause
-				\item %TODO
+				\item ungenaue Beschreibung, wie man vorgehen würde
 			\end{itemize}
 		\end{block}
 		\pause
