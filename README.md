@@ -1,3 +1,3 @@
 # swt1-tut
-Slides for my SWT1 Tutorial as .tex and .pdf files.
-The .tex files are located in the root directory while the .pdf files can be found in output/tutX. (where X is between 0 and 6)
+Repository containing material for my tutorial in "Softwaretechnik 1" i held in Summer Term 2017 and i am currently holding at Summer Term 2018 at Karlsruhe Institute of Technology (KIT). 
+You can find the PDF files in the tutX/ subdirectories. If you are interested, the .tex files are located in the root directory.
