@@ -295,7 +295,7 @@
 		\includegraphics[scale=0.5]{./pics/tut1/inheritence.png}
 		\begin{small}
 			\begin{itemize}
-				\item - ist private: von Exemplaren derselben Klasse sichtbar (aber von allen!)
+				\item - ist private: von Instanzen derselben Klasse sichtbar (aber von allen!)
 			\end{itemize}
 		\end{small}
 	\end{frame}
@@ -314,6 +314,7 @@
 			\subfigure[UML-Notation]{\includegraphics[scale=0.5]{./pics/tut1/abstract.png}}	
 			\subfigure[Notation für Abgaben]{\includegraphics[scale=0.5]{./pics/tut1/abstractUb.png}}
 		\end{figure}
+		\centering Kursiv schriftlich nicht erkennbar!
 	\end{frame}
 	
 	\subsection{UML-Klassendiagramm (4)}
@@ -323,15 +324,31 @@
 			\subfigure[so nicht,...]{\includegraphics[scale=0.5]{./pics/tut1/wrong_assoc.png}}	
 			\subfigure[..., sondern so!]{\includegraphics[scale=0.5]{./pics/tut1/correct_assoc.png}}
 		\end{figure}
+		\pause
+		\begin{block}{UML}
+			Beziehungen sollen direkt ersichtlich werden\linebreak
+			$\implies$nur primitive Typen als Felder
+		\end{block}
 	\end{frame}
 	
 	\subsection{UML-Klassendiagramm (5)}
 	\begin{frame}
 		\frametitle{UML-Klassendiagramm: Aggregation + Komposition}
 		\begin{figure}
-			\subfigure[Aggregation (Teil-Ganzes-Beziehung)]{\includegraphics[scale=0.5]{./pics/tut1/aggregation.png}}	
-			\subfigure[Komposition (Aggregation, Teil kann ohne Ganzes nicht existieren)]{\includegraphics[scale=0.5]{./pics/tut1/composition.png}}
+			\subfigure[Aggregation]{\includegraphics[scale=0.5]{./pics/tut1/aggregation.png}}	
+			\subfigure[Komposition]{\includegraphics[scale=0.5]{./pics/tut1/composition.png}}
 		\end{figure}
+	\end{frame}
+	
+	\subsection{UML-Klassendiagramm(6)}
+	\begin{frame}
+		\frametitle{Aggregation vs Komposition}
+		\begin{alertblock}{Unterschied}
+			\begin{itemize}
+				\item Aggregation: Teil-Ganzes-Beziehung
+				\item Komposition: Aggregation, Teil kann ohne Ganzes nicht existieren
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 	
 	\subsection{UML-Klausuraufgabe(1)}
@@ -353,8 +370,7 @@
 	\begin{frame}
 		\frametitle{\LaTeX - Basics}
 		\begin{itemize}
-			\item auf dem Blatt müsst ihr \LaTeX  ~ für die Dokumente benutzen \linebreak $\implies$ verträgt sich besser mit git als z.B. LibreOffice o.Ä.
-			\linebreak $\implies$ wird euch an der Uni immer wieder begegnen (leichtes Setzen von Formeln etc.)
+			\item auf dem Blatt müsst ihr \LaTeX  ~ für die Dokumente benutzen
 			\item nicht wie z.B. Word WYSIWYG, sondern WYSIWYAF / WYSIWYM
 			\item Vorteile:
 			\begin{itemize}
@@ -366,6 +382,7 @@
 			\item Nachteile:
 			\begin{itemize}
 				\item Einarbeitung notwendig :(
+				\item für einfache Textdokumente anfangs umständlich
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
