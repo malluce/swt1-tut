@@ -36,9 +36,9 @@
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
-\subtitle{Tutorium 03}
+\subtitle{Tutorium ??} %TODO
 \author{Felix Bachmann}
-\date{08.05.2017}
+\date{24.04.2018}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
@@ -90,9 +90,30 @@
 			\begin{itemize}
 				\item Name
 				\item Programmiersprachen?
+				\item Erfahrung mit Git/Maven o.Ä.?
 				\item Von dem Tutorium erwarte ich\dots
 			\end{itemize}
 		\end{frame}
+	
+	\begin{frame}
+		\frametitle{Tutoriumsbetrieb}
+		\begin{itemize}
+			\item Wann?: ab heute 14-tägig 
+			\item Wo?: Raum -119
+			\item Was?: 
+			\pause
+			\begin{itemize}
+				\item Feedback letztes Blatt
+				\item Wiederholung des VL-Stoffs
+				\item "'Rechnen"' von Aufgaben (Altklausuren)
+				\item Tipps nächstes Blatt
+			\end{itemize}
+		\pause
+			\item Folien gibt's im Ilias und auf \url{www.github.com/malluce/swt1-tut}
+			\pause
+			\item \textcolor{red}{Fragen stellen !!}
+		\end{itemize}
+	\end{frame}
 		
 	\subsection{Regeln}
 		\begin{frame}
@@ -121,37 +142,44 @@
 		\begin{frame}
 			\frametitle{Übungsbetrieb}
 			\begin{itemize}
-				\item Bestehen des Scheins Voraussetzung zum Bestehen des Moduls
-				\item neue Übungsblätter ungefähr alle 2 Wochen $\implies$ 1+6 Blätter
-				\item ab 50\% der Punkte habt ihr sicher bestanden
+				\item Bestehen des Scheins Voraussetzung zum Bestehen des Moduls \pause
+				\item 14-tägige Übungsblätter \pause
+				\item ab 50\% der Punkte habt ihr sicher bestanden \pause
 				\item Besprechung der Musterlösung
 				\pause
 				\item Abgaben
 					\begin{itemize}
-						\item Theorieaufgaben (handschriftlich und leserlich!) + Deckblatt im 3.Stock
+						\item Theorieaufgaben im 3.Stock $\implies$ Holzkasten
 						\item Programmieraufgaben auf http://lez.ipd.kit.edu 
-						\item Plagiate können teuer werden
-						\item Deadlines sind hart!
-						\item keine Abgabe per Mail!
 					\end{itemize}
 			\end{itemize}
 		\end{frame}
-		
-		\begin{frame}
-			\frametitle{Tutoriumsbetrieb}
+	
+	\begin{frame}
+		\frametitle{Übungsbetrieb - Regeln}
+		\begin{itemize}
+			\item Theorieaufgaben 
 			\begin{itemize}
-				\item Wann?: ab dem 15.05 14-tägig 
-				\item Wo?: Raum -107
-				\item Was?: 
-					\begin{itemize}
-						\item Wiederholung des VL-Stoffs
-						\item "'Rechnen"' von Aufgaben (Altklausuren)
-						\item ggf. Tipps für die Übungsblätter
-					\end{itemize}
-				\item Folien gibt's im Ilias und auf \url{www.github.com/malluce/swt1-tut}
-				\item Fragen stellen !!
+				\item handschriftlich
+				\item leserlich
+				\item Deckblatt (von Vorlage)
 			\end{itemize}
-		\end{frame}
+			\item Programmieraufgaben (Verstoß = Punktabzug)
+			\begin{itemize}
+				\item Git
+				\item JavaDoc
+				\item CheckStyle
+				\item Stil (sinnvolle Namen, Kommentare etc.)
+			\end{itemize}
+			\pause
+			\item keine Abgabe per Mail \pause
+			\item harte Deadlines \pause
+			\item Plagiate teuer \pause
+			\item keine Punkte geschenkt $\implies$ früh anfangen
+		\end{itemize}
+	\end{frame}
+		
+		
 		
 	\subsection{Fragen}
 		\begin{frame}
@@ -167,9 +195,9 @@
 		\begin{frame}
 			\frametitle{Warum Softwaretechnik?}
 			\begin{itemize}
-				\item Programmieren $\implies$ SWT1 $\implies$ PSE
-				\item den Hacker strukturieren 
-				\item den Umgang mit wichtigen Tools (insb. Build-Management-Tools, Versionsverwaltung) erlernen
+				\item Programmieren $\implies$ SWT1 $\implies$ PSE \pause
+				\item den Hacker strukturieren \pause
+				\item Tools (Versionsverwaltung, Build-Management) erlernen
 			\end{itemize}
 		\end{frame}
 		
@@ -181,17 +209,20 @@
 		\begin{itemize}
 			\item Eclipse (incl. CheckStyle und EclEmma)
 		\end{itemize}
+		\pause
 		Überblick über:
 		\begin{itemize}
 			\item Maven
 			\item Git
 		\end{itemize}
+	\pause
 		Anmelden in der LEZ!
-		\begin{alertblock}{Tut euch den Gefallen}
+		\pause
+		\begin{exampleblock}{Meine Empfehlung}
 			\begin{itemize}
 				\item Installiert Git manuell!
 			\end{itemize}
-		\end{alertblock}
+		\end{exampleblock} \pause
 		Probleme mit der Installation? $\implies$ kommt nach dem Tut nach vorne
 	\end{frame}
 		
@@ -533,12 +564,6 @@ public void testAdd() {
 		\begin{block}{Richtig oder falsch?}
 			\texttt{git log} zeigt eine Liste aller bisher getätigten Commits an und zeigt dabei Informationen wie Datum, Zeit, Hashcode und Commitnachricht der jeweiligen Commits an.
 		\end{block}
-	\end{frame}
-		
-\section{Live-Demo}		
-	\subsection{Live-Demo}
-	\begin{frame}
-		\centering Live-Demo
 	\end{frame}
 		
 \section{Tipps}
