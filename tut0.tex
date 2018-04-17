@@ -36,7 +36,7 @@
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
-\subtitle{Tutorium ??} %TODO
+\subtitle{Tutorium 18}
 \author{Felix Bachmann}
 \date{24.04.2018}
 
@@ -304,9 +304,9 @@
 		\end{itemize}
 		Beispiele:
 		\begin{itemize}
-			\item assertArrayEquals(int[] expected, int[] actual)
-			\item assertNotNull(Object obj)
-			\item assertSame(Object expected, Object actual)
+			\item Assert.assertArrayEquals(int[] expected, int[] actual)
+			\item Assert.assertNotNull(Object obj)
+			\item Assert.assertSame(Object expected, Object actual)
 		\end{itemize}
 	\end{frame}
 	
@@ -320,6 +320,7 @@ public static int add(int a, int b) {
 }
 			\end{minted}	
 		\end{block} 
+		\pause Wie sieht Testmethode aus? \pause
 		\begin{block}{Testmethode in der Klasse HalloTest}
 			\begin{minted}{java}
 @Test
@@ -329,7 +330,6 @@ public void testAdd() {
 			\end{minted}
 		
 		\end{block}
-		(mehr Beispiele später)
 \end{frame}
 	
 	\subsection{JUnit4 - Fragen}
@@ -344,13 +344,23 @@ public void testAdd() {
 			\end{itemize}
 		\end{block}
 		\pause
+		B (Ignore = Methode nicht ausführen, AfterClass = nach Ausführung einer Tests einmal annotierte Methode)
+		\pause
 		\begin{block}{Wahr oder falsch?}
 			Die mit @Test versehenen Methoden werden in der Reihenfolge ausgeführt, in der sie im Quellcode stehen.
 		\end{block}
 		\pause
-		\begin{block}{Wahr oder falsch?}
-			Um Ergebnisse von Methodenaufrufen mit dem erwarteten Ergebnis abzugleichen, benutzt man Methoden aus junit.framework.Assert.
-		\end{block}
+		Falsch, \enquote{zufällig}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{JUnit4 - Quiz}
+	\begin{block}{Wahr oder falsch?}
+		Um Ergebnisse von Methodenaufrufen mit dem erwarteten Ergebnis abzugleichen, benutzt man Methoden aus junit.framework.Assert.
+	\end{block}
+	\pause
+	Falsch (deprecated, org.junit.Assert benutzen!)
+	
 	\end{frame}
 		
 \section{Maven}
