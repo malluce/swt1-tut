@@ -366,25 +366,30 @@ public void testAdd() {
 \section{Maven}
 
 	\subsection{Maven - Überblick}
-	\begin{frame}
+	\begin{frame}[fragile]
 		\frametitle{Maven - Überblick}
 		\begin{itemize}
 			\begin{textblock*}{20mm}(60mm,5mm)
 				\includegraphics[width=40mm, scale=1.0]{./pics/tut0/Maven_logo.png}
 			\end{textblock*}
-			\item Maven ist Jiddisch und heißt "'Sammler des Wissens"'
-			\item Build-Management-Tool (Automatisierung von möglichst vielen Schritten)
-			\item Maven ist in jeder Eclipse-Installation integriert \linebreak $\implies$ keine manuelle Installation nötig
+			\item Build-Management-Tool (Automatisierung von möglichst vielen Schritten) \pause
+			\item Maven ist in jeder Eclipse-Installation integriert \linebreak $\implies$ keine manuelle Installation nötig \pause
 			\item Aufgaben von Maven
 				\begin{itemize}
-					\item Strukturierung (durch vorgegebene Verzeichnisstruktur)
-					\item Kompilieren
-					\item Testen
-					\item Verwalten von Abhängigkeiten
-					\item Verpacken
+					\item Strukturierung (durch vorgegebene Verzeichnisstruktur) \pause
+					\item Kompilieren \pause
+					\item Testen \pause
+					\item Verwalten von Abhängigkeiten \pause
+					\item Verpacken \pause
+				\end{itemize}
+			\item Goals = Maven-Befehle (z.B. mvn package)
+				\begin{itemize}			
+					\item Ausführung eines Goals führt ggf. vorandgehende Goals aus
+					\item \url{https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html}
+					%TODO wasserfall 
 				\end{itemize}
 		\end{itemize}
-	\end{frame}
+\end{frame}
 	
 	\subsection{Maven - Überblick}
 	\begin{frame}
@@ -398,12 +403,14 @@ public void testAdd() {
 					\item java
 					\item resources
 				\end{itemize}
+				\pause
 				\item test
 				\begin{itemize}
 					\item java
 					\item resources
 				\end{itemize}
 			\end{itemize}
+			\pause
 			\item target
 			\begin{itemize}
 				\item classes
@@ -411,6 +418,7 @@ public void testAdd() {
 				\item *.jar / *.war / *.zip \dots
 				\item \dots
 			\end{itemize}
+			\pause
 			\item pom.xml
 		\end{itemize}
 	\end{frame}
@@ -422,9 +430,9 @@ public void testAdd() {
 			\item pom steht für "'Project Object Model"'
 			\item konfiguriert euer Maven Projekt im XML-Format (gefüllt durch default-Werte)
 			\begin{itemize}
-				\item Wo sucht Maven Tests?
-				\item Wohin speichert Maven Build-Dateien?
-				\item In welches Format soll das Projekt verpackt werden?
+				\item Wo sucht Maven Tests? \pause
+				\item Wohin speichert Maven Build-Dateien? \pause
+				\item In welches Format soll das Projekt verpackt werden? \pause
 				\item \dots
 			\end{itemize}
 			\item Eclipse-Plugin bietet GUI
@@ -436,10 +444,10 @@ public void testAdd() {
 		\frametitle{Maven - Überblick}
 		\begin{block}{Wichtige Befehle}
 			\begin{tabular}{ll}
-				\texttt{mvn compile} & kompiliert Quelltexte zu .class-Dateien \\
-				\texttt{mvn test} & kompiliert Test-Quelldateien zu .class-Dateien, \\ & führt Tests aus und zeigt Ergebnisse an \\
-				\texttt{mvn package} & verpackt euer Projekt in eine Datei (.war/.jar/.zip) \\ 
-				\texttt{mvn clear} & leert euren target-Ordner \\
+				\texttt{mvn compile} & Quelltexte $\implies$ .class-Dateien \\ \pause
+				\texttt{mvn test} & Test-Quelldateien $\implies$ .class-Dateien, \\ & führt Tests aus und zeigt Ergebnisse an \\ \pause
+				\texttt{mvn package} & verpackt Projekt in eine Datei (.war/.jar/.zip) \\ \pause 
+				\texttt{mvn clear} & leert  target-Ordner \\
 			\end{tabular}
 		\end{block}
 	\end{frame}
@@ -453,10 +461,12 @@ public void testAdd() {
 			\begin{itemize}
 				\item Synchronisiert pom.xml mit Projekt, aktualisiert Abhängigkeiten
 			\end{itemize}
+			\pause
 			\item mvn clean
 			\begin{itemize}
 				\item vielleicht war der target-Ordner verschmutzt
 			\end{itemize}
+			\pause
 			\item C:/Users/MeinName/.m2/ löschen und mvn compile (oder mvn package) ausführen
 			\begin{itemize}
 				\item löscht alle Dependencies und lädt sie neu runter (ab und zu lädt man leider korrupte Dateien runter oder Dateien fehlen)
@@ -477,9 +487,12 @@ public void testAdd() {
 			\end{itemize}
 		\end{block}
 		\pause
+		B,C,D. A kompiliert nur src-Quelltexte
 		\begin{block}{Wahr oder falsch?}
 			Damit Maven funktioniert, muss die komplette pom.xml manuell ausgefüllt werden. 
 		\end{block}
+		\pause
+		Falsch, default-Werte!
 	\end{frame}
 
 
