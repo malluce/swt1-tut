@@ -71,14 +71,6 @@
 			\begin{itemize}
 				\item E-Post-Adresse: $\overbrace{felix.bachmann}^{Name}$@ewetel.net 
 				\item Infostudent im 6. Semester
-				\item Erfahrung mit:
-				\begin{itemize}
-					\item \textbf{Java}
-					\item C/C++
-					\item Haskell, Prolog \dots
-					\item JavaScript + CSS + HTML
-					\item (\LaTeX)
-				\end{itemize}
 				\item zweites Tutorium
 				\begin{itemize}
 					\item SS17: SWT1
@@ -164,6 +156,7 @@
 				\item leserlich
 				\item Deckblatt (von Vorlage)
 			\end{itemize}
+			\pause
 			\item Programmieraufgaben (Verstoß = Punktabzug)
 			\begin{itemize}
 				\item Git
@@ -225,16 +218,27 @@
 		\end{exampleblock} \pause
 		Probleme mit der Installation? $\implies$ kommt nach dem Tut nach vorne
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Die Sache mit Java 9\dots}
+		\begin{itemize}
+			\item Java 9 nicht mehr unterstützt
+			\item $\implies$ Java 10 verwenden \pause
+			\item LEZ forciert Verwendung von Java 9
+			\item man kann aber auch mit Java 10 für Java 9 kompilieren
+		\end{itemize}
+\end{frame}
 		
 	\subsection{Feedback Vorbereitungsblatt (1)}	
 	\begin{frame}
 		\frametitle{Feedback Vorbereitungsblatt}
+		%TODO
 		\includegraphics[width=0.65\textwidth, scale=0.8]{./pics/tut0/points-prep-sheet.png}
 		\begin{block}{Kriterien für Punkte}
 			je 1P.:
 			\begin{itemize}
 				\item Import + Abgabe (pom.xml muss stimmen)
-				\item CheckStyle (+ sinnvolles (!!) JavaDoc)
+				\item CheckStyle (+ \textcolor{red}{sinnvolles} JavaDoc)
 				\item Implementierung (EditMe + EditMeTest)
 			\end{itemize}
 		\end{block}
@@ -245,7 +249,8 @@
 		\frametitle{Feedback Vorbereitungsblatt}
 		Achtet zukünftig besonders auf:
 		\begin{itemize}
-			\item sinnvolles (!!) JavaDoc (siehe nächste Folie)
+			%TODO
+			\item \textcolor{red}{sinnvolles} JavaDoc (siehe nächste Folie)
 			\item alte Kommentare (TODOs\dots) entfernen
 			\item nicht "'throws Exception"' angewöhnen
 			\item tut etwas in tearDown() $\implies$ Objekte nullen\dots
