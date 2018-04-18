@@ -9,6 +9,7 @@
 
 \usepackage{templates/beamerthemekit}
 \usepackage[outputdir=output/tut0]{minted}
+\usepackage{rotating}
 % \usepackage{templates/beamerthemekitwide}
 
 \setcounter{tocdepth}{1}
@@ -559,10 +560,16 @@ public void testAdd() {
 				\end{small}\\
 				\texttt{git add} &  Fügt Datei(en) zur Staging Area hinzu.\\
 				\texttt{git commit -m "message"} &  Erzeugt einen Commit.\\ 
+				\texttt{git branch hallo} & Erzeugt einen neuen Branch namens hallo.\\
+				\texttt{git merge hallo} & Merged den Branch hallo in den aktuellen. 
 			\end{tabular}
 		\end{block}
-		\centering \includegraphics[width=50mm, scale=1.3]{./pics/tut0/git-file-lifecycle.png}
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Git - Workflow}
+		\centering \includegraphics[width=100mm, scale=1.3]{./pics/tut0/git-file-lifecycle.png}
+\end{frame}
 
 	\subsection{Git - .gitignore}
 	\begin{frame}
@@ -579,30 +586,62 @@ public void testAdd() {
 		\end{itemize}
 	\end{frame}
 	
+	\subsection{Git - Regeln}
+	\begin{frame}
+		\frametitle{Git - Regeln }
+		\begin{itemize}
+			\item sinnvolle Commit-Nachrichten
+			\item Dateien ggf. sinnvoll zu Commits zusammenfassen (mit git add)
+			\item Übung: pro Teilaufgabe o.Ä. ein commit
+		\end{itemize}
+\end{frame}
+	
+	
 	\subsection{Git - Quiz}
 	\begin{frame}{Git - Quiz}
 		\begin{block}{Richtig oder falsch?}
 			Mit \texttt{git commit "message"} wird ein neuer Commit erzeugt, dessen Commit-Nachricht \texttt{message} ist.
 		\end{block}
 		\pause
+		Falsch, es fehlt die Option -m
 		\begin{block}{Richtig oder falsch?}
 			Git ist im Gegensatz zu SVN ein zentrales Versionsverwaltungssystem.
 		\end{block}
 		\pause
+		Falsch, andersrum.
 		\begin{block}{Richtig oder falsch?}
 			\texttt{git log} zeigt eine Liste aller bisher getätigten Commits an und zeigt dabei Informationen wie Datum, Zeit, Hashcode und Commitnachricht der jeweiligen Commits an.
 		\end{block}
+		\pause
+		Richtig.
 	\end{frame}
 		
 \section{Tipps}
 	\subsection{Tipps}
+	
+	\begin{frame}
+		\frametitle{Hilfreiche Links fürs Blatt}
+		\begin{itemize}
+			\item Eclipse von z.B. Neon zu Oxygen upgraden (für Java 9/10 Support)
+			\begin{itemize}
+				\item \url{https://wiki.eclipse.org/FAQ\_How\_do\_I\_upgrade\_Eclipse\_IDE\%3F}
+			\end{itemize}
+			\item Hilfe zu Mockito
+			\begin{itemize}
+				\item \url{https://www.javacodegeeks.com/2012/05/mocks-and-stubs-understanding-test.html}
+			\end{itemize}
+		\end{itemize}
+\end{frame}
+	
+	
 	\begin{frame}
 		\frametitle{Tipps - 1. Übungsblatt}
 		\begin{small}
 			\begin{exampleblock}{Aufgabe 1: Altsoftware vorbereiten}
 				\begin{itemize}
-					\item löchriges Kochrezept für Umgang mit Maven, Git, Checkstyle - da müsst ihr durch
-					\item Google ist euer Freund (meistens)
+					\item löchriges Kochrezept für Umgang mit Maven, Git, Checkstyle
+					\item bei Fehlern Google + Forum benutzen
+					\item an Maven-Ordnerstruktur erinnern
 				\end{itemize}
 			\end{exampleblock}
 			\pause
@@ -610,34 +649,40 @@ public void testAdd() {
 				\begin{itemize}
 					\item Aufgaben zum Testen mit JUnit4
 					\item Ordner sollen erstellt werden, wenn sie nicht existieren
-					\item Asserts benutzen !
-				\end{itemize}
-			\end{exampleblock}
-			\pause
-			\begin{exampleblock}{Aufgabe 3: Testüberdeckung}
-				\begin{itemize}
-					\item Mockito klingt komplizierter als es ist (schaut mal auf \url{https://www.javacodegeeks.com/2012/05/mocks-and-stubs-understanding-test.html})
+					\item Tests ohne Erwartung sind keine Tests (Asserts oder @expect benutzen)
 				\end{itemize}
 			\end{exampleblock}
 		\end{small}
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Tipps - 1. Übungsblatt}
+		\begin{exampleblock}{Aufgabe 3: Testüberdeckung}
+		\begin{itemize}
+			\item Testüberdeckung mit EclEmma überprüfen
+			\item Mockito klingt komplizierter als es ist (siehe Link, Abschnitt Mock Objekt)
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
 	
 	\subsection{Abgabe}
 	\begin{frame}
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item in der LEZ bis zum 10.05, 12:00
+				\item in der LEZ bis zum 02.05, 12:00
 				\item falls ihr ein Feedback wollt, werft das Deckblatt ein
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Bis dann! (dann=15.05.17)}
+		\frametitle{Bis dann! (dann:=08.05.18)}
 		\centering
 		\includegraphics[height=0.85\textheight]{./comics/geek_and_poke_gitignore.jpg}
-		\tiny\url{geek-and-poke.com/geekandpoke/2012/11/7/simply-explained.html}
+		\begin{turn}{90}
+			\tiny\url{geek-and-poke.com/geekandpoke/2012/11/7/simply-explained.html}
+		\end{turn}
 	\end{frame}
 
 \end{document}
