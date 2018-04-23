@@ -233,7 +233,6 @@
 	\subsection{Feedback Vorbereitungsblatt (1)}	
 	\begin{frame}
 		\frametitle{Feedback Vorbereitungsblatt}
-		%TODO
 		\includegraphics[width=0.65\textwidth, scale=0.8]{./pics/tut0/points-prep-sheet.png}
 		\begin{block}{Kriterien für Punkte}
 			je 1P.:
@@ -250,17 +249,17 @@
 		\frametitle{Feedback Vorbereitungsblatt}
 		Achtet zukünftig besonders auf:
 		\begin{itemize}
-			%TODO
-			\item \textcolor{red}{sinnvolles} JavaDoc (siehe nächste Folie)
-			\item alte Kommentare (TODOs\dots) entfernen
-			\item nicht "'throws Exception"' angewöhnen
-			\item tut etwas in tearDown() $\implies$ Objekte nullen\dots
+			\item \textcolor{red}{sinnvolles und vollständiges} JavaDoc (siehe nächste Folie) \pause
+			\item alte Kommentare (TODOs\dots) entfernen \pause
+			\item tut etwas in tearDown() $\implies$ Objekte nullen\dots \pause
+			\item CheckStyle für jede *.java-Datei, insbesondere auch Tests!
 		\end{itemize}
 	\end{frame}
 	
 	\subsection{Feedback Vorbereitungsblatt (3)}
 	\begin{frame}
 		\frametitle{How to JavaDoc}
+		Bitte auf Englisch.
 		\includegraphics[width=0.9\textwidth, scale=1.0]{./pics/tut0/javadoc-demo.png}
 	\end{frame}
 			
@@ -350,7 +349,7 @@ public void testAdd() {
 			\end{itemize}
 		\end{block}
 		\pause
-		B (Ignore = Methode nicht ausführen, AfterClass = nach Ausführung einer Tests einmal annotierte Methode)
+		B (Ignore = Methode nicht ausführen, AfterClass = nach Ausführung aller Tests einmal annotierte Methode)
 		\pause
 		\begin{block}{Wahr oder falsch?}
 			Die mit @Test versehenen Methoden werden in der Reihenfolge ausgeführt, in der sie im Quellcode stehen.
@@ -388,11 +387,15 @@ public void testAdd() {
 					\item Verwalten von Abhängigkeiten \pause
 					\item Verpacken \pause
 				\end{itemize}
-			\item Goals = Maven-Befehle (z.B. mvn package)
+			\item Phasen = Maven-Befehle (z.B. mvn package), in Eclipse in Feld Goal 
 				\begin{itemize}			
-					\item Ausführung eines Goals führt ggf. vorandgehende Goals aus
-					\item \url{https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html}
-					%TODO wasserfall 
+					\item Ausführung einer Phase führt ggf. vorangehende Phasen aus
+					\item \begin{tiny}
+						\url{https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html}
+					\end{tiny} 
+					\item \begin{tiny}
+						\url{https://stackoverflow.com/questions/26607834/maven-lifecycle-vs-phase-vs-plugin-vs-goal}
+					\end{tiny} 
 				\end{itemize}
 		\end{itemize}
 \end{frame}
@@ -436,6 +439,7 @@ public void testAdd() {
 			\item pom steht für "'Project Object Model"'
 			\item konfiguriert euer Maven Projekt im XML-Format (gefüllt durch default-Werte)
 			\begin{itemize}
+				\item \{Artifact/Group\}ID \pause 
 				\item Wo sucht Maven Tests? \pause
 				\item Wohin speichert Maven Build-Dateien? \pause
 				\item In welches Format soll das Projekt verpackt werden? \pause
