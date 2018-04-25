@@ -67,21 +67,17 @@
 \end{frame}
 
 \section{Orga}
-	\subsection{Keine Lösungen ins Forum!}
-	\begin{frame}
-		\frametitle{Keine Lösungen ins Forum schreiben!}
-		\includegraphics[height=0.85\textheight]{./pics/tut1/censored.png}
-	\end{frame}
-	
 	\subsection{Feedback 1. Übungsblatt}
 	\begin{frame}
 		\frametitle{1. Übungsblatt Statistik}
+		%TODO
 		\includegraphics[scale=0.7]{./pics/tut1/statistics_ub1.png}
 	\end{frame}
 	
 	\subsection{1. Übungsblatt - Fehler (Allgemein)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
+		%TODO
 		\begin{block}{Allgemein}
 			generell ohne Abzug:
 			\begin{itemize}
@@ -99,6 +95,7 @@
 	\subsection{1. Übungsblatt - Fehler (Aufgabe 1)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
+		%TODO
 		\begin{block}{Aufgabe 1 (Altsoftware vorbereiten)}
 		\begin{itemize}
 			\item *.properties falsch / nicht verschoben (ist Ressource!)
@@ -110,6 +107,7 @@
 	\subsection{1. Übungsblatt - Fehler (Aufgabe 2)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
+		%TODO
 		\begin{block}{Aufgabe 2 + 3 (Modultests + Testüberdeckung)}
 			\begin{itemize}
 				\item auch bei Drehung um 0$^{\circ}$  ist Überprüfung des Bildes nötig (Dimensionen + Pixel) \pause
@@ -134,7 +132,10 @@
 	\subsection{Wasserfallmodell, mit Grafik}
 	\begin{frame}
 		\frametitle{Wasserfallmodell}
-		dokumentengetriebenes Prozessmodell, das die (möglichen) Phasen der Softwareentwicklung beschreibt
+		\begin{itemize}
+			\item \textcolor{red}{dokumentengetriebenes Prozessmodell} \pause
+			\item mögliche Phasen der Softwareentwicklung \pause
+		\end{itemize}
 		\includegraphics[scale=0.4]{./pics/tut1/waterfall_without-docs.png}
 	\end{frame}
 	
@@ -142,6 +143,7 @@
 	\begin{frame}
 		\frametitle{Wasserfallmodell}
 		\includegraphics[scale=0.4]{./pics/tut1/waterfall_with-docs.png}
+		\pause
 		Dokumente für das 2. ÜB: 
 		\begin{itemize}
 			\item Lastenheft
@@ -157,16 +159,16 @@
 			Ist das Projekt in dem jeweiligen Szenario überhaupt durchführbar?
 		\end{block}
 		\begin{enumerate}
-			\item \pause Fachlich \pause 
-			\item Alternativen \pause
-			\item Personell \pause 
-			\item Risiken \pause
-			\item Ökonomisch \pause 
-			\item Rechtlich 
+			\item \pause Fachlich \pause (softwaretechnisch leicht realisierbar?) \pause
+			\item Alternativen \pause (lieber altes Projekt anpassen oder komplett neu entwickeln?) \pause
+			\item Personell \pause (genug qualifizertes Personal?) \pause
+			\item Risiken \pause (Gibt es Risiken? :D) \pause
+			\item Ökonomisch \pause (wirtschaftlich? Termine?) \pause
+			\item Rechtlich \pause (Datenschutz, Standards)
 		\end{enumerate}
 		\pause
 		\begin{alertblock}{Fürs Übungsblatt}
-			Denkt euch was (logisches) aus!
+			Denkt euch was (plausibles) aus!
 		\end{alertblock}
 	\end{frame}
 
@@ -178,18 +180,18 @@
 			Das Lastenheft sammelt die Anforderungen des Auftraggebers an den Auftragnehmer.
 		\end{block}
 		\begin{enumerate}
-			\item \pause Zielbestimmung \pause 
-			\item Produkteinsatz \pause
-			\item Funktionale Anforderungen \pause 
-			\item Produktdaten \pause
-			\item Nichtfunktionale Anforderungen \pause 
+			\item \pause Zielbestimmung (grobe Beschreibung) \pause 
+			\item Produkteinsatz (Für wen? Zielgruppe, Anwendungsbereich)\pause
+			\item Funktionale Anforderungen (feingranular: Funktionen des Produkts)\pause 
+			\item Produktdaten (Welche Daten speichern?)\pause
+			\item Nichtfunktionale Anforderungen (Meta-Anforderungen: Zeit, Zuverlässigkeit)\pause 
 			\item Systemmodelle
 			\begin{itemize}
-				\item Szenarien
-				\item Anwendungsfälle
+				\item Szenarien (spezielles Beispiel)
+				\item Anwendungsfälle (allgemeiner Verwendungszweck)
 			\end{itemize}
 			\pause
-			\item Glossar 
+			\item Glossar (technische Begriffe erklären)
 		\end{enumerate}
 	\end{frame}
 	
@@ -237,11 +239,11 @@
 		\begin{enumerate}
 			\item Zielbestimmung  
 			\item Produkteinsatz 
-			\item \underline{\textbf{Produktumgebung}} 
+			\item \underline{\textbf{Produktumgebung}} (Hard-/Software in Einsatzumgebung)
 			\item Funktionale Anforderungen 
 			\item Produktdaten 
 			\item Nichtfunktionale Anforderungen 
-			\item \underline{\textbf{Globale Testfälle}} 
+			\item \underline{\textbf{Globale Testfälle}} (\enquote{zu testende Abläufe})
 			\item Systemmodelle
 			\begin{itemize}
 				\item Szenarien
