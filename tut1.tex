@@ -9,6 +9,8 @@
 % for widescreen slides (16:9), use 'beamerthemekitwide'
 
 \usepackage{templates/beamerthemekit}
+\usepackage{stackengine}
+\usepackage{graphicx}
 % \usepackage{templates/beamerthemekitwide}
 
 \setcounter{tocdepth}{1}
@@ -37,9 +39,9 @@
 \setbeamercovered{invisible}
 
 \title[SWT1]{Softwaretechnik 1 - 1. Tutorium}
-\subtitle{Tutorium 03}
+\subtitle{Tutorium 18}
 \author{Felix Bachmann}
-\date{15.05.2017}
+\date{08.05.2018}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
@@ -150,7 +152,7 @@
 \section{Durchführbarkeitsuntersuchung}
 	\subsection{Welche Aspekte?}
 	\begin{frame}
-		\frametitle{Gliederung}
+		\frametitle{Durchführbarkeitsuntersuchung - Gliederung}
 		\begin{block}{Grundlegende Frage}
 			Ist das Projekt in dem jeweiligen Szenario überhaupt durchführbar?
 		\end{block}
@@ -171,7 +173,7 @@
 \section{Lastenheft}
 	\subsection{Lastenheft - Gliederung}
 	\begin{frame}
-		\frametitle{Gliederung}
+		\frametitle{Lastenheft - Gliederung}
 		\begin{block}{Grundlegende Aufgabe}
 			Das Lastenheft sammelt die Anforderungen des Auftraggebers an den Auftragnehmer.
 		\end{block}
@@ -230,7 +232,7 @@
 	
 	\subsection{Pflichtenheft - Gliederung}
 	\begin{frame}
-		\frametitle{Gliederung}
+		\frametitle{Pflichtenheft - Gliederung}
 		\pause
 		\begin{enumerate}
 			\item Zielbestimmung  
@@ -292,6 +294,7 @@
 	\subsection{UML-Klassendiagramm (1)}
 	\begin{frame}
 		\frametitle{UML-Klassendiagramm: Klassen + Vererbung}
+		\centering
 		\includegraphics[scale=0.5]{./pics/tut1/inheritence.png}
 		\begin{small}
 			\begin{itemize}
@@ -311,18 +314,20 @@
 	\begin{frame}
 		\frametitle{UML-Klassendiagramm: Abstrakte Klassen}
 		\begin{figure}
-			\subfigure[UML-Notation]{\includegraphics[scale=0.5]{./pics/tut1/abstract.png}}	
-			\subfigure[Notation für Abgaben]{\includegraphics[scale=0.5]{./pics/tut1/abstractUb.png}}
+			\footnotesize
+			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/abstract.png}}{UML-Notation} \pause
+			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/abstractUb.png}}{Notation für Abgaben}
 		\end{figure}
-		\centering Kursiv schriftlich nicht erkennbar!
+		\centering \textcolor{red}{Kursiv schriftlich nicht erkennbar!}
 	\end{frame}
 	
 	\subsection{UML-Klassendiagramm (4)}
 	\begin{frame}
 		\frametitle{UML-Klassendiagramm: Assoziationen}
 		\begin{figure}
-			\subfigure[so nicht,...]{\includegraphics[scale=0.5]{./pics/tut1/wrong_assoc.png}}	
-			\subfigure[..., sondern so!]{\includegraphics[scale=0.5]{./pics/tut1/correct_assoc.png}}
+			\footnotesize
+			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/wrong_assoc.png}}{so nicht,\dots} \pause
+			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/correct_assoc.png}}{\dots, sondern so}
 		\end{figure}
 		\pause
 		\begin{block}{UML}
@@ -335,8 +340,9 @@
 	\begin{frame}
 		\frametitle{UML-Klassendiagramm: Aggregation + Komposition}
 		\begin{figure}
-			\subfigure[Aggregation]{\includegraphics[scale=0.5]{./pics/tut1/aggregation.png}}	
-			\subfigure[Komposition]{\includegraphics[scale=0.5]{./pics/tut1/composition.png}}
+			\footnotesize
+			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/aggregation.png}}{Aggregation} \pause
+			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/composition.png}}{Komposition}
 		\end{figure}
 	\end{frame}
 	
