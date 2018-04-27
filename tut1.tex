@@ -418,8 +418,23 @@
 	
 	\subsection{Beispiel}
 	\begin{frame}
-		\frametitle{\LaTeX - Beispiel}
-		\centering \huge Beispiel
+		\frametitle{\LaTeX - Dokumentaufbau}
+		\begin{itemize}
+			\item Präambel: Includes von Paketen
+			\begin{itemize}
+				\item $\backslash$documentclass\{Klasse\} (z.B. book, letter)
+				\item $\backslash$usepackage[option1, option2,..]\{Paket\}
+			\end{itemize}
+			\pause
+			\item Inhalt: Text setzen 
+			\begin{itemize}
+				\item Struktur: part, (chapter), section, subsection, subsubsection
+				\item Auflistungen: $\backslash$begin\{itemize\} $\backslash$item Hello World! $\backslash$end\{itemize\}
+				\item Bilder: $\backslash$includegraphics$[scale=0.8]$\{PfadZumBild\}
+			\end{itemize}
+			\pause
+		\end{itemize}
+		\huge \centering \textcolor{red}{Beispiel!}
 	\end{frame}
 		
 \section{Tipps}
