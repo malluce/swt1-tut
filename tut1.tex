@@ -77,17 +77,17 @@
 	\subsection{1. Übungsblatt - Fehler (Allgemein)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		%TODO
 		\begin{block}{Allgemein}
 			generell ohne Abzug:
 			\begin{itemize}
 				\item gleiche Abgabe bei allen Aufgaben
 			\end{itemize}
+			\pause
 			generell mit Abzug: (bis zu -2P)
 			\begin{itemize}
 				\item  CheckStyle nicht beachtet
-				\item JavaDoc nicht vollständig / nicht aussagekräftig
-				\item zu wenige commits / nicht aussagekräftige commit-messages
+				\item JavaDoc !(vollständig \&\& sinnvoll)
+				\item Commits !(regelmäßig \&\& aussagekräftig)
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -98,8 +98,9 @@
 		%TODO
 		\begin{block}{Aufgabe 1 (Altsoftware vorbereiten)}
 		\begin{itemize}
-			\item *.properties falsch / nicht verschoben (ist Ressource!)
-			\item in src.xml wurden *.launch-Dateien nicht hinzugefügt
+			\item vorgegebene .gitignore verwenden (mit IDE-Zeug), nicht nur target/ \pause
+			\item templates-Ordner sollte im obersten Ordner sein (wegen JMJRST) \pause
+			\item fully.qualified.MainClass durch Paket-Struktur ersetzen (org.jis.Main)
 		\end{itemize}
 		\end{block}
 	\end{frame}
