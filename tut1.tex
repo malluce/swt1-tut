@@ -61,16 +61,10 @@
 \titlepage
 \end{frame}
 
-%table of contents
-\begin{frame}{Themenübersicht}
-\tableofcontents
-\end{frame}
-
 \section{Orga}
 	\subsection{Feedback 1. Übungsblatt}
 	\begin{frame}
 		\frametitle{1. Übungsblatt Statistik}
-		%TODO
 		\includegraphics[scale=0.7]{./pics/tut1/statistics_ub1.png}
 	\end{frame}
 	
@@ -95,7 +89,6 @@
 	\subsection{1. Übungsblatt - Fehler (Aufgabe 1)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		%TODO
 		\begin{block}{Aufgabe 1 (Altsoftware vorbereiten)}
 		\begin{itemize}
 			\item vorgegebene .gitignore verwenden (mit IDE-Zeug), nicht nur target/ \pause
@@ -108,18 +101,25 @@
 	\subsection{1. Übungsblatt - Fehler (Aufgabe 2)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		%TODO
 		\begin{block}{Aufgabe 2 + 3 (Modultests + Testüberdeckung)}
 			\begin{itemize}
 				\item auch bei Drehung um 0$^{\circ}$  ist Überprüfung des Bildes nötig (Dimensionen + Pixel) \pause
 				\item equals() reicht nicht aus, um Gleichheit der Bilder zu prüfen \pause 
 				\item new File() erstellt kein File, sondern nur einen "'pointer"' auf einen Pfad (siehe File.createNewFile() oder File.mkdir()) \pause
-				\item benutzt relative Pfade (beginnen im jmjrst.main-Ordner) \pause 
-				\item Testklasse in gleiches Paket wie zu testenden Klasse \pause 
-				\item fügt Abhängigkeiten in die jmjrst.main-pom.xml ein, \textbf{nicht} in die von iMage 
+				\item fügt Abhängigkeiten in die jmjrst.main-pom.xml ein, \textbf{nicht} in die von iMage \pause
+				\item @Test(expected=XYException.class) nutzen \pause
+				\item JUnit4 benutzen \pause
+				\item nicht throws Exception angewöhnen \pause
+				\item nicht Korrektheit der zu testenden Methoden annehmen \pause
+				\item Stil: Konstanten für Pfade benutzen
 			\end{itemize}
 		\end{block}
 	\end{frame}
+
+%table of contents
+\begin{frame}{Themenübersicht}
+\tableofcontents
+\end{frame}
 
 \section{Wasserfallmodell}
 	\subsection{Wasserfallmodell, ohne Grafik}
@@ -360,6 +360,25 @@
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
+
+	\subsection{UML-Warmup-Aufgabe}
+	\begin{frame}
+		\frametitle{Klassischer Aufgabentyp}
+		\begin{exampleblock}{Text $\implies$ UML-Diagramm}
+			Jeder Student hat eine Matrikelnummer und einen Namen. Ein fauler Student ist ein Student, der schlafen kann. Er hat dazu ein Bett. Ein fleißiger Student hingegen, kann lernen und hat dazu einen Computer, der aus Bauteilen besteht.
+		\end{exampleblock}
+	\pause
+	\textcolor{red}{UML-Diagramm?}
+\end{frame}
+
+	\subsection{UML-Warmup-Aufgabe2}
+	\begin{frame}
+	\frametitle{Klassischer Aufgabentyp}
+	\begin{exampleblock}{Text $\implies$ UML-Diagramm}
+		Jeder \textcolor{red}{Student} hat eine Matrikelnummer und einen Namen. Ein fauler Student \textcolor{red}{ist ein} Student, der schlafen kann. Er \textcolor{red}{hat} dazu ein Bett. Ein fleißiger Student hingegen, kann lernen und \textcolor{red}{hat} dazu einen \textcolor{red}{Computer}, der aus \textcolor{red}{Bauteilen} \textcolor{red}{besteht}.
+	\end{exampleblock}
+	\textcolor{red}{Schlüsselwörter!}
+\end{frame}
 	
 	\subsection{UML-Klausuraufgabe(1)}
 	\begin{frame}
@@ -456,10 +475,11 @@
 				\end{itemize}
 			\end{exampleblock}
 			\pause
-			\begin{exampleblock}{Aufgabe 4 + 5: Geometrify + cmd-Programm}
+			\begin{exampleblock}{Aufgabe 4 + 5: Shutterpile}
 				\begin{itemize}
 					\item an einigen Stellen sind Aufgaben etwas vage
 					\linebreak $\implies$ überlegt euch, was Sinn macht
+					\item Zusammenhang der Klassen unklar? Vielleicht hilft Diagramm
 				\end{itemize}
 			\end{exampleblock}
 		\end{small}
@@ -468,10 +488,9 @@
 	\subsection{Abgabe}
 	\begin{frame}
 		\frametitle{Denkt dran!}
-		%TODO
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item Deadline am 24.5 um 12:00
+				\item Deadline am 16.5 um 12:00
 				\item Dokumente ausdrucken
 				\item Klassendiagramme handschriftlich
 			\end{itemize}
