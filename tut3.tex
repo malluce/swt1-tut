@@ -42,7 +42,7 @@
 \title[SWT1]{Softwaretechnik 1 - 3. Tutorium}
 \subtitle{Tutorium 03}
 \author{Felix Bachmann}
-\date{12.06.2017}
+\date{05.06.2018}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
@@ -62,15 +62,11 @@
 \titlepage
 \end{frame}
 
-\begin{frame}
-\tableofcontents
-\end{frame}
-
-
 \section{Orga}
-	\subsection{Feedback 2. Übungsblatt}
+	\subsection{Feedback 3. Übungsblatt}
 	\begin{frame}
-		\frametitle{2. Übungsblatt Statistik}
+		\frametitle{3. Übungsblatt Statistik}
+		%TODO
 		\includegraphics[scale=0.7]{./pics/tut3/statistics-ub3.png}
 		\linebreak \centering $\diameter$ 11,56 bzw. 16,32 von 28+1
 	\end{frame}
@@ -78,6 +74,7 @@
 	\subsection{3. Übungsblatt - Fehler (Allgemein)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
+		%TODO
 		\begin{block}{Allgemein}
 			\begin{itemize}
 				\item verspätete Abgaben bekomme ich erst beim jeweils nächsten Tutorentreffen	
@@ -89,7 +86,8 @@
 	\subsection{3. Übungsblatt - Fehler}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1 (Plug-In-Architektur): $\diameter$  2,25 bzw. 3,86 von 5}
+		%TODO
+		\begin{block}{Aufgabe 1 (Plug-In-Architektur)}
 			\begin{itemize}
 				\pause
 				\item keine riesigen switch-cases/if-else Anweisungen in compareTo() benutzen
@@ -102,12 +100,13 @@
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2 (Plug-In): $\diameter$ 1,79 bzw. 3,58 von 4}
+		%TODO
+		\begin{block}{Aufgabe 2 (Plug-In)}
 			\begin{itemize}
 				\item 	keine :D
 			\end{itemize}
 		\end{block}
-		\begin{block}{Aufgabe 3 (iMage-Bundle): $\diameter$  0,44 bzw. 1,75 von 2}
+		\begin{block}{Aufgabe 3 (iMage-Bundle)}
 			\begin{itemize}
 				\item 6 Abgaben \dots
 			\end{itemize}
@@ -116,11 +115,11 @@
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Aktivitätsdiagramme (Geometrify)): $\diameter$ 4,83 bzw. 7,25 von 10}
+		\begin{block}{Aufgabe 4 (Aktivitätsdiagramm)}
+			%TODO
 			\begin{itemize}
 				\pause 
 				\item denkt an die Rauten! \pause
-				\item Geometrify sollte eigener Kasten mit Objektfluss sein \pause
 				\item $\lbrack$Bedingung$\rbrack$ \pause
 				\item verschachtelte Aktivitäten $\implies$ irgendwo passender Kasten dazu
 			\end{itemize}
@@ -129,7 +128,15 @@
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 5 (Sequenzdiagramm (main-Methode)): $\diameter$ 1,58 bzw. 2,71 von 5}
+		\begin{block}{Aufgabe 5 (Zustandsdiagramm)}
+			%TODO
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 6 (Sequenzdiagramm)}
+			%TODO
 			\begin{itemize}
 				\pause 
 				\item bzgl. Konstruktor sind VL-Folien etwas blöd \pause
@@ -138,20 +145,8 @@
 				\item Instanz-Kästen erst dann hinzeichnen, wenn Instanz auch existiert
 			\end{itemize}
 		\end{block}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 6 (Substitutionsprinzip): $\diameter$ 0,67 bzw. 1,23 von 3}
-			\begin{itemize}
-				\pause
-				\item die Methode wurde überladen 
-				\linebreak $\implies$ Java schaut sich nur die Signatur an \pause
-				\item für Erfüllung des Substitutionsprinzips auch Verhalten wichtig \pause
-				\item Methoden sind dynamisch gebunden, Attribute sind statisch gebunden
-				\linebreak $\implies$ merke: getter und setter benutzen
-				\linebreak $\implies$ vermeidet mindfucks
-			\end{itemize}
+		\begin{block}{Aufgabe 7 (Testen mit Nachahmungen)}
+			%TODO
 		\end{block}
 	\end{frame}
 
@@ -249,6 +244,17 @@
 	\end{frame}
 
 	\begin{frame}
+		\frametitle{Quiz (Ankreuzaufgaben aus Klausuren)}
+		Wahr oder falsch?
+		\begin{itemize}
+			\item Das Entwurfsmuster Strategie bietet die Möglichkeit, eine Klasse mit einer von mehreren möglichen Verhaltensweisen zu konfigurieren. \pause \colorbox{green}{wahr} \pause
+			\item Das Strategiemuster erfüllt das Geheimnisprinzip, indem es Datenstrukturen, die in einer konkreten Strategie enthalten sind, vor dem Klienten verbirgt. \pause \colorbox{green}{wahr} \pause
+			\item Das Muster Strategie kapselt austauschbares Verhalten und verwendet Delegierung, um zu entscheiden, welches Verhalten verwendet wird. \pause \colorbox{green}{wahr} \pause 
+			\item Das Hinzufügen einer neuen konkreten Strategie erfordert keine Änderung existierender konkreter Strategien. \pause \colorbox{green}{wahr}
+		\end{itemize}
+\end{frame}
+
+	\begin{frame}
 		\frametitle{Kategorien der Entwurfsmuster}
 		\begin{itemize}
 			\item \textbf{Entkopplungs-Muster}
@@ -264,17 +270,6 @@
 			\item Zustandshandhabungs-Muster
 			\item Steuerungs-Muster
 			\item Bequemlichkeits-Muster
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Quiz (Ankreuzaufgaben aus Klausuren)}
-		Wahr oder falsch?
-		\begin{itemize}
-			\item Das Entwurfsmuster Strategie bietet die Möglichkeit, eine Klasse mit einer von mehreren möglichen Verhaltensweisen zu konfigurieren. \pause \colorbox{green}{wahr} \pause
-			\item Das Strategiemuster erfüllt das Geheimnisprinzip, indem es Datenstrukturen, die in einer konkreten Strategie enthalten sind, vor dem Klienten verbirgt. \pause \colorbox{green}{wahr} \pause
-			\item Das Muster Strategie kapselt austauschbares Verhalten und verwendet Delegierung, um zu entscheiden, welches Verhalten verwendet wird. \pause \colorbox{green}{wahr} \pause 
-			\item Das Hinzufügen einer neuen konkreten Strategie erfordert keine Änderung existierender konkreter Strategien. \pause \colorbox{green}{wahr}
 		\end{itemize}
 	\end{frame}
 

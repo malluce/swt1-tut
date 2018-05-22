@@ -220,6 +220,12 @@ TSWLatexianTemp*
 # expex forward references with \gathertags
 *-tags.tex
 
+#code
+/target/
+.settings
+.classpath
+
+
 # interview slides
 interview.tex
 diagrams/
