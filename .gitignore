@@ -222,8 +222,9 @@ TSWLatexianTemp*
 
 #code
 */target/
-.settings
+*.settings/
 .classpath
+.project
 
 
 # interview slides
