@@ -221,7 +221,7 @@ TSWLatexianTemp*
 *-tags.tex
 
 #code
-/target/
+*/target/
 .settings
 .classpath
 
