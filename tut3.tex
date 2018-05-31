@@ -88,6 +88,7 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1 (Plug-In-Architektur: PluginManager + JmjrstPlugin)}
 			\begin{itemize}
+				\pause
 				\item Plugins anhand \textbf{Klassen}namen vergleichen, nicht getName() \pause
 				\item Strings auslagern (Konstanten oder Datei) \pause
 				\item PluginManager gibt euch Iterable $\implies$ nutzt Iterator
@@ -103,6 +104,7 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 2 (Plug-In)}
 			\begin{itemize}
+				\pause
 				\item Prüfen auf *.png/*.jpg sollte case insensitive sein \pause
 				\item Anm.: MetainfServices tut manchmal nicht richtig (oft hilft \texttt{mvn clean package}) \pause
 			\end{itemize}
@@ -147,7 +149,12 @@
 			\end{itemize}
 		\end{block}
 		\begin{block}{Aufgabe 7 (Testen mit Nachahmungen)}
-			%TODO
+			\begin{itemize}
+				\pause
+				\item Substitutionsprinzip: fordert dass Objekte einer Unterklasse immer auch im Kontext der Oberklasse eingesetzt werden können \pause
+				\item Varianz war kein Problem, da Signatur gleich \pause
+				\item Problem war Verhalten, schwächere Nachbedingung \pause
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
