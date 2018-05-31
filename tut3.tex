@@ -86,29 +86,30 @@
 	\subsection{3. Übungsblatt - Fehler}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		%TODO
-		\begin{block}{Aufgabe 1 (Plug-In-Architektur)}
+		\begin{block}{Aufgabe 1 (Plug-In-Architektur: PluginManager + JmjrstPlugin)}
 			\begin{itemize}
-				\pause
-				\item keine riesigen switch-cases/if-else Anweisungen in compareTo() benutzen
-				\linebreak $\implies$ Erweiterbarkeit wird dadurch eingeschränkt \pause
-				\linebreak $\implies$ Java vergleicht Enum-Elemente anhand ihrer Position in dem Enum \pause
-				\item orientiert euch nicht am JMJRST-Stil
+				\item Plugins anhand \textbf{Klassen}namen vergleichen, nicht getName() \pause
+				\item Strings auslagern (Konstanten oder Datei) \pause
+				\item PluginManager gibt euch Iterable $\implies$ nutzt Iterator
+				\begin{itemize}
+					\item kein Casten, Kopieren in Liste \pause
+				\end{itemize}
+ 				\item orientiert euch nicht am JMJRST-Stil
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		%TODO
 		\begin{block}{Aufgabe 2 (Plug-In)}
 			\begin{itemize}
-				\item 	keine :D
+				\item Prüfen auf *.png/*.jpg sollte case insensitive sein \pause
+				\item Anm.: MetainfServices tut manchmal nicht richtig (oft hilft \texttt{mvn clean package}) \pause
 			\end{itemize}
 		\end{block}
 		\begin{block}{Aufgabe 3 (iMage-Bundle)}
 			\begin{itemize}
-				\item 6 Abgaben \dots
+				\item keine :D
 			\end{itemize}
 		\end{block}
 	\end{frame}
