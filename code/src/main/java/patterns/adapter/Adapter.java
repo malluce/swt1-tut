@@ -1,4 +1,4 @@
-package patterns;
+package patterns.adapter;
 
 public class Adapter extends RandomStringCreator {
 	private RandomIntegerCreator adapt;

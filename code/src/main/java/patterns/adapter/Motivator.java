@@ -1,4 +1,4 @@
-package patterns;
+package patterns.adapter;
 
 public class Motivator extends RandomStringCreator {
 	@Override

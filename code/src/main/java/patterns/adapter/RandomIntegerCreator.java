@@ -1,4 +1,4 @@
-package patterns;
+package patterns.adapter;
 
 /**
  * The adapted class.

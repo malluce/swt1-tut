@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="patterns.Adapter" project="patterns" 
-    file="/patterns/src/main/java/patterns/Adapter.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="patterns.adapter.Adapter" project="patterns" 
+    file="/patterns/src/main/java/patterns/adapter/Adapter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="633" y="364"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="patterns.RandomIntegerCreator" project="patterns" 
-    file="/patterns/src/main/java/patterns/RandomIntegerCreator.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="patterns.adapter.RandomIntegerCreator" project="patterns" 
+    file="/patterns/src/main/java/patterns/adapter/RandomIntegerCreator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="893" y="143"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="patterns.RandomStringCreator" project="patterns" 
-    file="/patterns/src/main/java/patterns/RandomStringCreator.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="patterns.adapter.RandomStringCreator" project="patterns" 
+    file="/patterns/src/main/java/patterns/adapter/RandomStringCreator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="496" y="146"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="patterns.Motivator" project="patterns" 
-    file="/patterns/src/main/java/patterns/Motivator.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="patterns.adapter.Motivator" project="patterns" 
+    file="/patterns/src/main/java/patterns/adapter/Motivator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="372" y="369"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="patterns.Klient" project="patterns" 
-    file="/patterns/src/main/java/patterns/Klient.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="patterns.adapter.Klient" project="patterns" 
+    file="/patterns/src/main/java/patterns/adapter/Klient.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="230" y="142"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -47,19 +47,27 @@
     </display>  
   </class>  
   <association id="6">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="7" name="adapt"/>      
-      <multiplicity id="8" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="7" name="list">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="8" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="9">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="10" name="list"/>      
-      <multiplicity id="11" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="10" name="adapt">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="12">    

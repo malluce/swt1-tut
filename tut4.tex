@@ -142,7 +142,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut \pause
-			\linebreak $\implies$ Beobachter, Iterator, Adapter \pause
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler \pause
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.33]{./pics/tut4/adap-obj-mod.png}
@@ -154,7 +154,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.33]{./pics/tut4/adap-obj-mod.png}
@@ -166,7 +166,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.45]{./pics/tut3/adap-obj.png}
@@ -178,7 +178,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{./pics/tut4/iter-mod.png}
@@ -190,7 +190,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{./pics/tut4/iter-mod.png}
@@ -202,7 +202,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.35]{./pics/tut3/iter.png}
@@ -215,7 +215,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{./pics/tut4/obs-mod.png}
@@ -227,12 +227,14 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns erste Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.35]{./pics/tut3/obs.png}
 		\end{figure}
 	\end{frame}
+
+	%TODO Stellvertreter, Vermittler recap
 
 	\begin{frame}
 		\frametitle{Kategorien der Entwurfsmuster}
@@ -242,8 +244,8 @@
 				\item Adapter \colorbox{green}{fertig}
 				\item Beobachter\colorbox{green}{fertig}
 				\item Iterator \colorbox{green}{fertig}
-				\item \textbf{Stellvertreter}
-				\item \textbf{Vermittler}
+				\item Stellvertreter \colorbox{green}{fertig}
+				\item Vermittler \colorbox{green}{fertig}
 				\item (Brücke)
 			\end{itemize}
 			\item Varianten-Muster
@@ -251,61 +253,6 @@
 			\item Steuerungs-Muster
 			\item Bequemlichkeits-Muster
 		\end{itemize}
-	\end{frame}
-
-
-\section{Stellvertreter}
-	\subsection{Stellvertreter}
-	\begin{frame}
-		\frametitle{Stellvertreter}
-		\begin{block}{Problem}
-			\begin{itemize}
-				\item wollen Zugriff auf ein Objekt kontrollieren, ohne seine Klasse zu ändern \linebreak \pause $\implies$ Stellvertreter macht Zugriffskontrolle
-			\end{itemize}
-		\end{block}
-		\pause
-		\centering
-		\includegraphics[scale=0.4]{./pics/tut3/prox.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Stellvertreter}
-		\centering
-		\includegraphics[scale=0.4]{./pics/tut3/prox.png}
-		\begin{block}{Entkopplung?}
-			\begin{itemize}
-				\pause 
-				\item Klient hat keinen direkten Zugriff auf das echte Subjekt
-				\pause 
-				\item Stellvertreter hat Relation zu Oberklasse (!), echtes Subjekt austauschbar
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-\section{Vermittler}
-	\subsection{Vermittler}
-		\begin{frame}
-		\frametitle{Vermittler}
-		\begin{block}{Problem}
-			\begin{itemize}
-				\item mehrere voneinander abhängige Objekte \linebreak \pause $\implies$ Zustände der Objekte von anderen Zuständen abhängig
-			\end{itemize}
-		\end{block}
-		\pause
-		\centering
-		\includegraphics[scale=0.45]{./pics/tut3/med.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Vermittler}
-		\centering
-		\includegraphics[scale=0.45]{./pics/tut3/med.png}
-		\begin{block}{Entkopplung?}
-			\begin{itemize}
-				\pause 
-				\item Kollegen kennen sich nicht direkt  \linebreak \pause $\implies$ Hinzufügen eines Kollegen erfordert keine Änderung der alten Kollegen
-			\end{itemize}
-		\end{block}
 	\end{frame}
 
 \section{Gruppenarbeit}
@@ -459,6 +406,8 @@
 		\end{block}
 	\end{frame}
 
+	%TODO singleton, zustand
+
 	\begin{frame}
 		\frametitle{Memento}
 		\begin{block}{Problem}
@@ -568,6 +517,7 @@
 	\subsection{Feedback}
 	\begin{frame}
 		\frametitle{Feedback - Sagt mir eure Meinung}
+		%TODO google docs oder so
 		\begin{enumerate}
 			\item nehmt einen Zettel
 			\item schreibt (konstruktives!) Feedback darauf
@@ -625,14 +575,14 @@
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item Deadline am 5.7. um 12:00
+				\item Deadline am 27.6. um 12:00
 				\item Aufgabe 1, 3 handschriftlich (wirklich handschriftlich!)
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Bis dann! (dann  := 10.07.17)}
+		\frametitle{Bis dann! (dann  := 03.07.18)}
 		\centering
 		\includegraphics[scale=0.4]{./comics/patterns.jpg}
 	\end{frame}
