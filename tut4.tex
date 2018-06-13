@@ -376,7 +376,7 @@
 		\end{block}
 	\end{frame}
 
-\section{Memento}
+	\section{Einzelstück}
 	\subsection{Intro}
 	\begin{frame}
 		\frametitle{Kategorien der Entwurfsmuster}
@@ -385,11 +385,11 @@
 			\item Varianten-Muster \colorbox{green}{fertig}
 			\item \textbf{Zustandshandhabungs-Muster}
 				\begin{itemize}
-					\item (Einzelstück)
+					\item \textbf{Einzelstück}
 					\item (Fliegengewicht)
 					\item \textbf{Memento} 
 					\item (Prototyp) 
-					\item \textbf{Zustand}
+					\item (Zustand)
 				\end{itemize}
 			\item Steuerungs-Muster
 			\item Bequemlichkeits-Muster
@@ -406,8 +406,24 @@
 		\end{block}
 	\end{frame}
 
-	%TODO singleton, zustand
+	\begin{frame}
+		\frametitle{Einzelstück/Singleton}
+		\begin{block}{Problem}
+			\begin{itemize}
+				\item von einer Klasse soll nur eine Instanz existieren
+				\item Konstruktor könnte überall benutzt werden!
+			\end{itemize}
+		\end{block}
+		\pause
+		\centering
+		\begin{figure}
+			\includegraphics[scale=0.3]{./pics/tut4/singleton.png}
+		\end{figure}
+		\pause
+		Aber warum nicht einfach statisch?\pause ~~ Unterklassenbildung möglich!
+	\end{frame}
 
+	\section{Memento}
 	\begin{frame}
 		\frametitle{Memento}
 		\begin{block}{Problem}
