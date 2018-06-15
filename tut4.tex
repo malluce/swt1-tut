@@ -107,8 +107,13 @@
 		\pause 
 		\begin{block}{Aufgabe 3: git}
 			\begin{itemize}
-				\pause %TODO
-				\item bla
+				\item bei Umbenennung und Änderung direkt zu commiten würde beides hinzufügen \pause
+				\linebreak $\implies$ entweder \texttt{add -N}, \texttt{add -p} \pause
+				\linebreak $\implies$ oder \texttt{mv neu alt}, \texttt{git mv alt neu} \pause
+				\item git rm -r löscht rekursiv Ordner (inkl. der Überordner!)
+				\begin{itemize}
+					\item und fügt implizit zur Staging Area hinzu, kein add nötig
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 	\end{frame}
