@@ -293,7 +293,7 @@
 			\item es wird immer an einem Objekt synchronisiert, als Argument bei \textcolor{blue}{synchronized} \pause
 			\item Thread t kommt an eine mit \textcolor{blue}{synchronized}(Objekt)\{\dots\} markierte Stelle \pause
 			\begin{itemize}
-				\item es wird geprüft, ob der Monitor Objekt gerade frei ist \pause
+				\item es wird geprüft, ob der Monitor gerade frei ist \pause
 				\item ist der Monitor frei, kommt t in den kritischen Abschnitt und der Monitor ist besetzt, bis t den Abschnitt wieder verlässt \pause
 				\item ist der Monitor besetzt, wird t blockiert, bis der kritische Abschnitt frei ist
 			\end{itemize}
@@ -341,8 +341,6 @@
 		\end{itemize}
 	\end{frame}
 
-	%TODO deadlock empire
-
 	\begin{frame}
 		\frametitle{Parallelität - Verklemmung (deadlock)}
 		\includegraphics[scale=0.3]{./pics/tut5/deadlock.jpg}
@@ -373,23 +371,25 @@
 		\end{huge}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Parallelität üben}
+		\centering \huge \url{https://deadlockempire.github.io/}
+	\end{frame}
+	
 	
 	\begin{frame}
-		\frametitle{4. Übungsblatt - A3 mit Threads}
-		\begin{block}{Aufgabe 3 (GUI für Geometrify): 6,56 bzw. 11,25 von 10+7} 
-			\includegraphics[scale=0.34]{./pics/tut5/edt.png}
-		\end{block}
+		\frametitle{Swing Dispatch Thread}
+		\includegraphics[scale=0.35]{./pics/tut5/edt.png}
 		\begin{tiny}
 			siehe auch: \url{https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html}
 		\end{tiny}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{4. Übungsblatt - A3 mit Threads}
-		\begin{block}{Aufgabe 3 (GUI für Geometrify): 6,56 bzw. 11,25 von 10+7} 
-			\centering
-			\includegraphics[scale=0.34]{./pics/tut5/extra-thread.png}
-		\end{block}
+		\frametitle{Parallelität in GUI nutzen}
+		\centering
+		\includegraphics[scale=0.4]{./pics/tut5/extra-thread.png}
+
 	\end{frame}
 
 \section{Testen}
