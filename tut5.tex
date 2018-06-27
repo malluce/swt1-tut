@@ -577,45 +577,40 @@
 	\subsection{Tipps}
 	\begin{frame}
 		\frametitle{Tipps - 6. Übungsblatt}
-		%TODO update
 		\begin{exampleblock}{Aufgabe 1: Kontrollfluss-orientiertes Testen}
 			\begin{itemize}
-				\item Zwischensprache benutzen
+				\item zur Sicherheit Zwischensprache benutzen
 				\item Definitionen der verschiedenen Abdeckungen anschauen
 			\end{itemize}
 		\end{exampleblock}
 		\pause
-		\begin{exampleblock}{Aufgabe 2: Codeinspektion} 
+		\begin{exampleblock}{Aufgabe 2: Parallelisierung von Shutterpile} 
 			\begin{itemize}
-				\item an das Format halten
+				\item Berechnung des Wasserzeichenbilds parallelisieren \pause
+				\item Thread-Pool spart euch die manuelle Verwaltung der Threads
+				\begin{itemize}
+					\item \texttt{ExecutorService es = Executors.newFixedThreadPool(amountOfThreads);}
+					\item \texttt{es.execute(myRunnable);} (beliebig viele)
+					\item \texttt{es.shutdown();}
+				\end{itemize} \pause
+				\item Tests schreiben für Korrektheit
 			\end{itemize}
 		\end{exampleblock}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Tipps - 6. Übungsblatt}
-		%TODO update
-		\begin{exampleblock}{Aufgabe 3: Parallelisierung von Geometrify}
+		\begin{exampleblock}{Aufgabe 3: Abnahmetests}
 			\begin{itemize}
-				\item Berechnung der Samples parallelisieren
-				\item Zahl der benutzten Threads abhängig machen von der Anzahl der Prozessor-Kerne
+				\item Tests schreiben für spezielle Anforderungen
+				\item Teil d) handschriftlich!
 			\end{itemize}
 		\end{exampleblock}
 		\pause
-		\begin{exampleblock}{Aufgabe 4: Alternative Parallelisierungsverfahren}
+		\begin{exampleblock}{Aufgabe 4: Parallelisierungswettbewerb}
 			\begin{itemize}
-				\item theoretische Überlegungen, was man sonst noch so parallelisieren könnte
-				\item Sinnhaftigkeit, Aufwand, etc. prüfen
-			\end{itemize}
-		\end{exampleblock}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Tipps - 6. Übungsblatt}
-		%TODO update
-		\begin{exampleblock}{Aufgabe 5: Parallelisierungswettbewerb}
-			\begin{itemize}
-				\item Aufgabe 3 verbessern und Laufzeit messen
+				\item Aufgabe 2 verbessern und Laufzeit messen
+				\item auch hier Teile (Erklärung des Ansatzes) handschriftlich abgeben
 			\end{itemize}
 		\end{exampleblock}
 	\end{frame}
@@ -624,10 +619,9 @@
 	\begin{frame}
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
-			%TODO update
 			\begin{itemize}
-				\item Deadline am 11.8. um 12:00
-				\item Aufgabe 1,2,4 und Beschreibung, Laufzeitprofil von Aufgabe 5 handschriftlich
+				\item Deadline am 11.7. um 12:00
+				\item Aufgabe 1 und Teile von 3 und 4 handschriftlich
 				\item auf jeden Fall abgeben, wenn ihr noch Punkte braucht
 			\end{itemize}
 		\end{alertblock}
