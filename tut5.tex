@@ -108,13 +108,11 @@
 	\subsection{Feedback 5. Übungsblatt}
 	\begin{frame}
 		\frametitle{5. Übungsblatt Statistik}
-		%TODO update
-		\includegraphics[scale=0.7]{./pics/tut5/statistics-ub5-2.png}
-		\linebreak \centering $\diameter$ 7 bzw. 14 von 27+2
+		\includegraphics[scale=0.7]{./pics/tut5/statistics-ub5.png}
+		%\linebreak \centering $\diameter$ 7 bzw. 14 von 27+2
 	\end{frame}
 
 	\subsection{5. Übungsblatt - Fehler (Allgemein)}
-	%TODO update
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Allgemein}
@@ -130,8 +128,23 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1: Shutterpile: Refaktorisierung + Entwurfsmuster}
 			\begin{itemize}
-				\pause 
-				\item %TODO
+				\item Schablonenmethoden-Muster nicht korrekt angewendet
+				\begin{itemize}
+					\item Schablonenmethode: Gemeinsamkeiten, in abstr. Klasse impl. 
+					\begin{itemize}\pause
+						\item getWatermark(): Alpha-Kanal sicherstellen, Filter anwenden,\dots
+						\item ruft Einschubmethode auf, um das rohe Watermark zu bekommen
+					\end{itemize}\pause
+					\item Einschubmethode: Unterschiede, in konkreter Unterklasse impl.
+					\begin{itemize}\pause
+						\item getRawWatermark(): gibt je nach Implementierung verschieden rohe Bilder zurück
+						\item z.B. Bild von Text, zufälliger Zahl,\dots
+					\end{itemize}
+				\end{itemize}\pause
+				\item Lösung testen
+				\begin{itemize}
+					\item gab viele Exceptions, schwarze Bilder,\dots
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -140,8 +153,7 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 2: cmd-Programm für Pipeline}
 			\begin{itemize}
-				\pause 
-				\item %TODO
+				\item 2 Abgaben 
 			\end{itemize}
 		\end{block}
 		\pause 
