@@ -40,9 +40,9 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \title[SWT1]{Softwaretechnik 1 - 6. Tutorium}
-\subtitle{Tutorium 03}
+\subtitle{Tutorium 18}
 \author{Felix Bachmann}
-\date{24.07.2017}
+\date{17.07.2018}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
@@ -73,8 +73,8 @@
 		\frametitle{Allgemein}
 		\begin{block}{Klausur, Übungsschein}
 			\begin{itemize}
-				\item Hauptklausur findet am 09.08 um 14:00 statt
-				\item Nachklausur findet am 06.10 um 11:00 statt
+				\item Hauptklausur: 26. Juli 2018, 15:00 Uhr
+				\item Nachklausur: findet am 08.10 statt
 				\item Anmeldung sollte nun für alle möglich sein
 			\end{itemize}
 		\end{block}
@@ -83,13 +83,15 @@
 	\subsection{Feedback}
 	\begin{frame}
 		\frametitle{6. Übungsblatt Statistik}
+		%TODO
 		\includegraphics[scale=0.7]{./pics/tut6/statistics-ub6.png}
 		\linebreak \centering $\diameter$ 6,1 bzw. 13,3 von 26+4
 	\end{frame}
 
 	\begin{frame}[fragile]
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1 (Kontrollfluss-orientiertes Testen): $\diameter$ 2,3 bzw. 5,0 von 5+1}
+		\begin{block}{Aufgabe 1: Kontrollfluss-orientiertes Testen}
+			%TODO
 			\begin{itemize}
 				\pause 
 				\item alles außer Kontrollfluss-Zeug so lassen wie es ist! \pause
@@ -106,194 +108,69 @@
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2 (Codeinspektion): $\diameter$ 1,0 bzw. 2,8 von 4}
+		\begin{block}{Aufgabe 2: Parallelisierung von Shutterpile}
 			\begin{itemize}
 				\pause 
-				\item Regeln vergessen \pause
-				\item Tipp: Code pro Regel anschauen
+				\item %TODO
 			\end{itemize}
 		\end{block}
 		\pause 
-		\begin{block}{Aufgabe 3 (Parallelisierung von Geometrify): $\diameter$  0,7 bzw. 3,2 von 5}
+		\begin{block}{Aufgabe 3: Abnahmetests}
 			\begin{itemize}
 				\pause
-				\item generatePrimitive() sollte synchronized sein \pause
-				\item Samples pro Iteration sollten unter den Threads aufgeteilt werden \pause
-				\item JavaDoc, CheckStyle... $>.<$
+				\item %TODO
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Alternative Parallelisierungsvarianten): $\diameter$ 1,8 bzw. 6,1 von 6+3}
+		\begin{block}{Aufgabe 4: Parallelisierungswettbewerb}
 			\begin{itemize}
+				%TODO
 				\pause
 				\item ungenaue Beschreibung, wie man vorgehen würde
-			\end{itemize}
-		\end{block}
-		\pause
-		\begin{block}{Aufgabe 5 (Parallelisierungswettbewerb): $\diameter$ 0,3 bzw. 3,3  von 6}
-			\begin{itemize}
-				\item zwei Abgaben
 			\end{itemize}
 		\end{block}
 	\end{frame}
 		
 \section{Testen}
-	\subsection{KFO}
-	\begin{frame}
-		\frametitle{Kontrollflussorientiertes Testverfahren (KFO)}
-		\begin{itemize}
-			\item Ziel: "'sinnvolle"' Testfälle finden
-		\end{itemize}
-		Vorgehen:
-		\begin{enumerate}
-			\item gegeben: zu testender Code \pause
-			\item Code $\implies$ Zwischensprache
-			\begin{itemize}
-				\item Sprünge umwandeln
-				\item Grundblöcke finden
-				\item Grundblöcke prüfen
-			\end{itemize}
-			\pause
-			\item Zwischensprache $\implies$ Kontrollflussgraph \pause
-			\item am Kontrollflussgraphen Testfälle finden: \pause
-			\begin{itemize}
-				\item Anweisungsüberdeckung
-				\item Zweigüberdeckung 
-				\item Pfadüberdeckung
-			\end{itemize}
-		\end{enumerate}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Sprünge umwandeln
-		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/code.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Sprünge umwandeln
-		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/code-jumps.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Grundblöcke finden (Code bis goto ist ein Grundblock)
-		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/first-blocks.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item 	Grundblöcke prüfen (goto dürfen nur an Anfang eines Grundblocks verweisen)
-		\end{itemize}
-			\centering \includegraphics[scale=0.34]{./pics/tut5/second-blocks.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\begin{itemize}
-			\item Grundblöcke benennen
-			\item Grundblöcke und Verzweigungen hinzeichnen
-			\item Start- und Endzustand hinzufügen
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\centering \includegraphics[scale=0.25]{./pics/tut5/test.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\begin{itemize}
-			\item goto-Knoten kann man auch weglassen
-		\end{itemize}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Anweisungsüberdeckung}
-		\begin{itemize}
-			\item Pfade finden, sodass jeder Grundblock traversiert wird \pause
-			\linebreak $\implies$ Entdeckung nicht erreichbarer Code-Abschnitte \pause
-			\item aber: kein ausreichendes Testkriterium
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Anweisungsüberdeckung}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\begin{itemize}
-			\item Pfad für Anweisungsüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zweigüberdeckung}
-		\begin{itemize}
-			\item Pfade finden, sodass jeder Zweig (=Kante) traversiert wird \pause
-			\linebreak $\implies$ Entdeckung nicht erreichbarer Kanten \pause
-			\item aber: Schleifen werden nicht ausreichend getestet
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zweigüberdeckung}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\begin{itemize}
-			\item Pfad für Zweigüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Pfadüberdeckung}
-		\begin{itemize}
-			\item Finde \textbf{alle} vollständige, unterschiedlichen Pfade \pause
-			\item vollständiger Pfad = Anfang bei $n_{start}$, Ende bei $n_{stopp}$ \pause
-			\item nicht praktikabel, da 
-			\begin{itemize}
-				\item Schleifen die Anzahl der möglichen Pfade stark erhöhen \pause
-				\item manche Pfade nicht ausführbar sind (sich gegenseitig ausschließende Bedingungen)
-			\end{itemize}
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Fehler in VL-Folien}
-		\begin{itemize}
-			\item Kurzschlussauswertung (\&\& bzw. $\Vert$) muss berücksichtigt werden \pause
-			\item Erinnerung: 
-			\begin{itemize}
-				\item \&\& und $\Vert$ werten die rechte Seite nur aus, wenn notwendig
-				\item \& und $\vert$ werten immer beide Seiten aus \pause
-			\end{itemize}
-		\end{itemize}
-		\centering \includegraphics[scale=0.4]{./pics/tut6/code.png}
-\end{frame}
+	\subsection{Definitionen}
 	
 	\begin{frame}
-		\frametitle{KFO: Fehler in VL-Folien}
-		\begin{figure}
-			\subfigure[1. Zwischensprache]{\includegraphics[scale=0.35]{./pics/tut6/zwischen.png}}	
-			\subfigure[KFG]{\includegraphics[scale=0.35]{./pics/tut6/kfg.png}}
-		\end{figure}
-\end{frame}
-
+		\frametitle{Arten von Fehlern}
+		\begin{itemize}
+			\item Was verursacht was?
+			\item Defekt, Irrtum, Versagen \pause
+			\item "'Testing shows the presence of bugs, not their absence."' (Edsger W. Dijkstra)
+		\end{itemize}
+	\end{frame}
+	
 	\begin{frame}
-		\frametitle{KFO: Klausuraufgabe mit Kurzschlussauswertung}
-		\begin{huge}
-			\centering Hauptklausur SS2016 A6
-		\end{huge}
+		\frametitle{Arten von Tests}
+		\begin{block}{Dynamische Verfahren}
+			\begin{itemize}
+				\item Testfälle schreiben und ausführen (z.B. mit JUnit) \pause
+				\item white box testing \pause
+				\begin{itemize}
+					\item kontrollflussorientiert
+					\item datenflussorientiert
+				\end{itemize}
+				\item black box testings \pause
+				\begin{itemize}
+					\item funktionale Tests \pause
+					\item Leistungstests
+				\end{itemize}
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{block}{Statische Verfahren}
+			\begin{itemize}
+				\item Inspektion \pause
+				\item statische Analyse mit Tools \pause
+				\item Programm wird nicht ausgeführt!
+			\end{itemize}
+		\end{block}
 	\end{frame}
 
 \section{Wiederholung und Klausuraufgaben}
@@ -318,13 +195,13 @@
 		\begin{enumerate}
 			\item Aufgabe 1: Wahr-/Falsch-Fragen (ein paar gesammelt auf \url{www.github.com/malluce/swt1-tut})
 			 und Wissensfragen\pause
-			\item meistens:
+			\item meistens Aufgaben zu:
 			\begin{itemize}
-				\item 1-2 Aufgaben zu UML-Diagrammen \pause
-				\item 1 Aufgabe zu Entwurfsmustern \pause
-				\item 1 Aufgabe zu Parallelität \pause
-				\item 1 Aufgabe zu Testen bzw. Qualitätssicherung \pause
-				\item 1 Aufgabe Rest (z.B. Objektorientierung, Abbott, Prozessmodelle\dots) \pause
+				\item UML-Diagrammen \pause
+				\item Entwurfsmustern \pause
+				\item Parallelität \pause
+				\item Testen bzw. Qualitätssicherung \pause
+				\item Rest (z.B. Objektorientierung, Abbott, Prozessmodelle\dots) \pause
 			\end{itemize}
 		\end{enumerate}
 		\begin{itemize}
@@ -470,10 +347,11 @@
 	\end{frame}
 
 \section{Ende}
+	\subsection{Feierabend}
 	\begin{frame}
 		\frametitle{Lernen}
 		\begin{itemize}
-			\item (Klausuren rechnen $\land$ Folien anschauen) \linebreak $>$ (Klausuren rechnen XOR Folien anschauen)
+			\item Klausuren rechnen \&\& Folien anschauen
 		\end{itemize}
 	\end{frame}
 
