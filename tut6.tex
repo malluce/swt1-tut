@@ -40,9 +40,9 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \title[SWT1]{Softwaretechnik 1 - 6. Tutorium}
-\subtitle{Tutorium 03}
+\subtitle{Tutorium 18}
 \author{Felix Bachmann}
-\date{24.07.2017}
+\date{17.08.2018}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
@@ -73,8 +73,8 @@
 		\frametitle{Allgemein}
 		\begin{block}{Klausur, Übungsschein}
 			\begin{itemize}
-				\item Hauptklausur findet am 09.08 um 14:00 statt
-				\item Nachklausur findet am 06.10 um 11:00 statt
+				\item Hauptklausur am 26.07.18, 15:00
+				\item Nachklausur wahrscheinlich am 08.10.18
 				\item Anmeldung sollte nun für alle möglich sein
 			\end{itemize}
 		\end{block}
@@ -89,53 +89,50 @@
 
 	\begin{frame}[fragile]
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1 (Kontrollfluss-orientiertes Testen): $\diameter$ 2,3 bzw. 5,0 von 5+1}
+		\begin{block}{Aufgabe 1: Kontrollfluss-orientiertes Testen}
 			\begin{itemize}
 				\pause 
 				\item alles außer Kontrollfluss-Zeug so lassen wie es ist! \pause
-				\item minimale Testfallmenge $=$ Eingabe, um Pfade zu erreichen \pause
-				\item Methoden-Signatur nicht als eigenen Grundblock \pause
+				\item Kontrollfluss-Zeug, das nicht if(x) goto ist auflösen! \pause
+				\item außerdem Kurzschlussauswertung in zwei if auflösen 
 			\end{itemize}
 		\end{block}
 		\begin{verbatim}
-			10	fakultaet *= n;
-			20  n--;
-			30  if(n > 1) goto 10;
+		if(x && y) {
+		  z++;
+		}
+		
+		if(x || y) {
+		  z++;
+		}
 		\end{verbatim}
 \end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2 (Codeinspektion): $\diameter$ 1,0 bzw. 2,8 von 4}
+		\begin{block}{Aufgabe 2: Parallelisierung}
 			\begin{itemize}
-				\pause 
-				\item Regeln vergessen \pause
-				\item Tipp: Code pro Regel anschauen
+				\item 5 Abgaben, meist richtig \pause
+				\item Anzahl Prozessoren berechnen
+				\begin{itemize}
+					\item Runtime.getRuntime().availableProcessors();
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 		\pause 
-		\begin{block}{Aufgabe 3 (Parallelisierung von Geometrify): $\diameter$  0,7 bzw. 3,2 von 5}
+		\begin{block}{Aufgabe 3: Abnahmetests}
 			\begin{itemize}
-				\pause
-				\item generatePrimitive() sollte synchronized sein \pause
-				\item Samples pro Iteration sollten unter den Threads aufgeteilt werden \pause
-				\item JavaDoc, CheckStyle... $>.<$
+				\item 4 Abgaben
+				\item Test brauchen immer Asserts!
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Alternative Parallelisierungsvarianten): $\diameter$ 1,8 bzw. 6,1 von 6+3}
+		\begin{block}{Aufgabe 4: Wettbewerb}
 			\begin{itemize}
-				\pause
-				\item ungenaue Beschreibung, wie man vorgehen würde
-			\end{itemize}
-		\end{block}
-		\pause
-		\begin{block}{Aufgabe 5 (Parallelisierungswettbewerb): $\diameter$ 0,3 bzw. 3,3  von 6}
-			\begin{itemize}
-				\item zwei Abgaben
+				\item 3 Abgaben
 			\end{itemize}
 		\end{block}
 	\end{frame}
