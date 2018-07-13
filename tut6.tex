@@ -109,6 +109,27 @@
 \end{frame}
 
 	\begin{frame}
+		\frametitle{KFO: Kurzschlussauswertung}
+		\begin{itemize}
+			\item Kurzschlussauswertung (\&\& bzw. $\Vert$) muss berücksichtigt werden \pause
+			\item Erinnerung: 
+			\begin{itemize}
+				\item \&\& und $\Vert$ werten die rechte Seite nur aus, wenn notwendig
+				\item \& und $\vert$ werten immer beide Seiten aus \pause
+			\end{itemize}
+		\end{itemize}
+		\centering \includegraphics[scale=0.4]{./pics/tut6/code.png}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{KFO: Kurzschlussauswertung}
+		\begin{figure}
+			\subfigure[1. Zwischensprache]{\includegraphics[scale=0.35]{./pics/tut6/zwischen.png}}	
+			\subfigure[KFG]{\includegraphics[scale=0.35]{./pics/tut6/kfg.png}}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 2: Parallelisierung}
 			\begin{itemize}
@@ -138,153 +159,42 @@
 	\end{frame}
 		
 \section{Testen}
-	\subsection{KFO}
 	\begin{frame}
-		\frametitle{Kontrollflussorientiertes Testverfahren (KFO)}
+		\frametitle{Arten von Fehlern}
 		\begin{itemize}
-			\item Ziel: "'sinnvolle"' Testfälle finden
+			\item Was verursacht was?
+			\item Defekt, Irrtum, Versagen \pause
+			\item "'Testing shows the presence of bugs, not their absence."' (Edsger W. Dijkstra)
 		\end{itemize}
-		Vorgehen:
-		\begin{enumerate}
-			\item gegeben: zu testender Code \pause
-			\item Code $\implies$ Zwischensprache
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Arten von Tests}
+		\begin{block}{Dynamische Verfahren}
 			\begin{itemize}
-				\item Sprünge umwandeln
-				\item Grundblöcke finden
-				\item Grundblöcke prüfen
+				\item Testfälle schreiben und ausführen (z.B. mit JUnit) \pause
+				\item white box testing \pause
+				\begin{itemize}
+					\item kontrollflussorientiert
+					\item datenflussorientiert
+				\end{itemize}
+				\item black box testings \pause
+				\begin{itemize}
+					\item funktionale Tests \pause
+					\item Leistungstests
+				\end{itemize}
 			\end{itemize}
-			\pause
-			\item Zwischensprache $\implies$ Kontrollflussgraph \pause
-			\item am Kontrollflussgraphen Testfälle finden: \pause
+		\end{block}
+		\pause
+		\begin{block}{Statische Verfahren}
 			\begin{itemize}
-				\item Anweisungsüberdeckung
-				\item Zweigüberdeckung 
-				\item Pfadüberdeckung
+				\item Inspektion \pause
+				\item statische Analyse mit Tools \pause
+				\item Programm wird nicht ausgeführt!
 			\end{itemize}
-		\end{enumerate}
+		\end{block}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Sprünge umwandeln
-		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/code.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Sprünge umwandeln
-		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/code-jumps.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Grundblöcke finden (Code bis goto ist ein Grundblock)
-		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/first-blocks.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item 	Grundblöcke prüfen (goto dürfen nur an Anfang eines Grundblocks verweisen)
-		\end{itemize}
-			\centering \includegraphics[scale=0.34]{./pics/tut5/second-blocks.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\begin{itemize}
-			\item Grundblöcke benennen
-			\item Grundblöcke und Verzweigungen hinzeichnen
-			\item Start- und Endzustand hinzufügen
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\centering \includegraphics[scale=0.25]{./pics/tut5/test.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\begin{itemize}
-			\item goto-Knoten kann man auch weglassen
-		\end{itemize}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Anweisungsüberdeckung}
-		\begin{itemize}
-			\item Pfade finden, sodass jeder Grundblock traversiert wird \pause
-			\linebreak $\implies$ Entdeckung nicht erreichbarer Code-Abschnitte \pause
-			\item aber: kein ausreichendes Testkriterium
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Anweisungsüberdeckung}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\begin{itemize}
-			\item Pfad für Anweisungsüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zweigüberdeckung}
-		\begin{itemize}
-			\item Pfade finden, sodass jeder Zweig (=Kante) traversiert wird \pause
-			\linebreak $\implies$ Entdeckung nicht erreichbarer Kanten \pause
-			\item aber: Schleifen werden nicht ausreichend getestet
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zweigüberdeckung}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\begin{itemize}
-			\item Pfad für Zweigüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Pfadüberdeckung}
-		\begin{itemize}
-			\item Finde \textbf{alle} vollständige, unterschiedlichen Pfade \pause
-			\item vollständiger Pfad = Anfang bei $n_{start}$, Ende bei $n_{stopp}$ \pause
-			\item nicht praktikabel, da 
-			\begin{itemize}
-				\item Schleifen die Anzahl der möglichen Pfade stark erhöhen \pause
-				\item manche Pfade nicht ausführbar sind (sich gegenseitig ausschließende Bedingungen)
-			\end{itemize}
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Fehler in VL-Folien}
-		\begin{itemize}
-			\item Kurzschlussauswertung (\&\& bzw. $\Vert$) muss berücksichtigt werden \pause
-			\item Erinnerung: 
-			\begin{itemize}
-				\item \&\& und $\Vert$ werten die rechte Seite nur aus, wenn notwendig
-				\item \& und $\vert$ werten immer beide Seiten aus \pause
-			\end{itemize}
-		\end{itemize}
-		\centering \includegraphics[scale=0.4]{./pics/tut6/code.png}
-\end{frame}
-	
-	\begin{frame}
-		\frametitle{KFO: Fehler in VL-Folien}
-		\begin{figure}
-			\subfigure[1. Zwischensprache]{\includegraphics[scale=0.35]{./pics/tut6/zwischen.png}}	
-			\subfigure[KFG]{\includegraphics[scale=0.35]{./pics/tut6/kfg.png}}
-		\end{figure}
-\end{frame}
 
 	\begin{frame}
 		\frametitle{KFO: Klausuraufgabe mit Kurzschlussauswertung}
