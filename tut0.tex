@@ -8,7 +8,6 @@
 % for widescreen slides (16:9), use 'beamerthemekitwide'
 
 \usepackage{templates/beamerthemekit}
-\usepackage[outputdir=output/tut0]{minted}
 \usepackage{rotating}
 % \usepackage{templates/beamerthemekitwide}
 
@@ -34,21 +33,19 @@
 % the presentation starts here
 
 \usepackage[absolute,overlay]{textpos}
+\usepackage{csquotes}
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 
 \title[SWT1]{Softwaretechnik 1 - 0. Tutorium}
-\subtitle{Tutorium 18}
+\subtitle{Tutorium 17}
 \author{Felix Bachmann}
-\date{24.04.2018}
+\date{30.04.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
 % Bibliography
 
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
 \setbeamercovered{invisible}
-\bibhang1em
 
 \begin{document}
 
@@ -71,10 +68,16 @@
 			\frametitle{Das bin ich}
 			\begin{itemize}
 				\item E-Post-Adresse: $\overbrace{felix.bachmann}^{Name}$@ewetel.net 
-				\item Infostudent im 6. Semester
-				\item zweites Tutorium
+				\item Infostudent im 1. Master-Semester
+				\item Bachelor angefangen im WS 15/16
+				\item im WS18/19 BA am Institut für Telematik
+				\begin{itemize}
+					\item software-basierte Netzwerke
+				\end{itemize}
+				\item drittes Tutorium
 				\begin{itemize}
 					\item SS17: SWT1
+					\item SS18: SWT1
 				\end{itemize}
 			\end{itemize}
 		\end{frame}
@@ -82,8 +85,12 @@
 			\frametitle{\dots und ihr?}
 			\begin{itemize}
 				\item Name
-				\item Programmiersprachen?
-				\item Erfahrung mit Git/Maven o.Ä.?
+				\item praktische Erfahrung
+				\begin{itemize}
+					\item außerhalb der Uni?
+					\item Programmiersprachen?
+					\item Erfahrung mit Git/Maven o.Ä.?
+				\end{itemize}
 				\item Von dem Tutorium erwarte ich\dots
 			\end{itemize}
 		\end{frame}
@@ -91,12 +98,15 @@
 	\begin{frame}
 		\frametitle{Tutoriumsbetrieb}
 		\begin{itemize}
-			\item Wann?: ab heute 14-tägig 
+			\item Wann?: ab heute 14-tägig (Di. 11:30-13:00)
 			\item Wo?: Raum -119
 			\item Was?: 
 			\pause
 			\begin{itemize}
 				\item Feedback letztes Blatt
+				\begin{itemize}
+					\item Korrekturzeit i.d.R. $<$ 1 Woche
+				\end{itemize}
 				\item Wiederholung des VL-Stoffs
 				\item "'Rechnen"' von Aufgaben (Altklausuren)
 				\item Tipps nächstes Blatt
@@ -107,6 +117,35 @@
 			\item \textcolor{red}{Fragen stellen !!}
 		\end{itemize}
 	\end{frame}
+
+	\begin{frame}{Eine Ausnahme im Ablauf}
+		\begin{itemize}
+			\item am 11.06. bin ich nicht da
+			\begin{itemize}
+				\item Tut am 11.06. fällt aus
+			\end{itemize}
+			\item Alternativen für euch
+			\begin{itemize}
+				\item Ersatztutorium
+				\begin{itemize}
+					\item eine Woche davor (04.06) oder 
+					\item eine Woche danach (18.06)
+				\end{itemize}
+				\item könnt auch anderes Tut besuchen
+			\end{itemize}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Abstimmung: Ersatztermin}
+	\begin{itemize}
+		\item Abstimmung über Ersatztermin
+		\begin{itemize}
+			\item \url{https://forms.gle/kX18JiigVw1mSRPz5}
+		\end{itemize}
+	\end{itemize}
+		\centering
+		\includegraphics[scale=0.65]{pics/tut0/frame.png}
+\end{frame}
 		
 	\subsection{Regeln}
 		\begin{frame}
@@ -135,11 +174,13 @@
 		\begin{frame}
 			\frametitle{Übungsbetrieb}
 			\begin{itemize}
-				\item Bestehen des Scheins Voraussetzung zum Bestehen des Moduls \pause
-				\item 14-tägige Übungsblätter \pause
-				\item ab 50\% der Punkte habt ihr sicher bestanden \pause
+				\item Bestehen des Scheins Voraussetzung zum Bestehen des SWT1-Moduls 
+				\begin{itemize}
+					\item Modul Vorraussetzung für PSE (unter anderem)
+				\end{itemize}
+				\item 14-tägige Übungsblätter 
+				\item ab 50\% der Punkte habt ihr sicher bestanden
 				\item Besprechung der Musterlösung
-				\pause
 				\item Abgaben
 					\begin{itemize}
 						\item Theorieaufgaben im 3.Stock $\implies$ Holzkasten
@@ -162,13 +203,16 @@
 			\begin{itemize}
 				\item Git
 				\item JavaDoc
-				\item CheckStyle
+				\item CheckStyle (benutzt \enquote{Save Actions}, erspart einige Arbeit)
 				\item Stil (sinnvolle Namen, Kommentare etc.)
 			\end{itemize}
 			\pause
 			\item keine Abgabe per Mail \pause
-			\item harte Deadlines \pause
-			\item Plagiate teuer \pause
+			\item harte Deadlines
+			\begin{itemize}
+				\item 10 Minuten vor Abgabe in der ATIS das Deckblatt drucken ist unklug\pause
+			\end{itemize} 
+			\item Plagiate teuer (ÜBs alleine lösen!) \pause
 			\item keine Punkte geschenkt $\implies$ früh anfangen
 		\end{itemize}
 	\end{frame}
@@ -183,7 +227,33 @@
 					\item neuen Forum-Thread anlegen
 					\item falls nicht öffentlich postbar: Mail an mich oder swt1@ipd.kit.edu (nur im Notfall)
 				\end{itemize}
+			Forum nicht zum Teilen von Lösungen verwenden $\rightarrow$ Plagiate!
 		\end{frame}
+	
+		\begin{frame}
+	\frametitle{Die Sache mit Java 11\dots}
+	\begin{itemize}
+		\item dieses Jahr wird in der Übung Java 11 verwendet
+		\item Problem(chen)
+		\begin{itemize}
+			\item evtl. Eclipse-Aktualisierung für Java 11-Unterstützung nötig
+			\item Oracle JDK 11 nur mit Oracle-Account
+		\end{itemize}
+		\item Lösungen
+		\begin{itemize}
+			\item Eclipse aktualisieren :)
+			\item Oracle JDK 12 kann man ohne Account beziehen
+			\begin{itemize}
+				\item damit kann man auch für Java 11 kompilieren
+			\end{itemize}
+			\item OpenJDK 11 (und 12) nutzen
+			\begin{itemize}
+				\item aber kommen als .zip ohne Installer 
+				\item Windows: PATH-Variable manuell um bin/ erweitern
+			\end{itemize} 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
 		
 	\subsection{Warum Softwaretechnik?}
 		\begin{frame}
@@ -201,34 +271,18 @@
 		\frametitle{Was ihr bisher getan haben solltet..}
 		Installation von:
 		\begin{itemize}
-			\item Eclipse (incl. CheckStyle und EclEmma)
+			\item Eclipse (inkl. CheckStyle und EclEmma)
+			\item Git
 		\end{itemize}
-		\pause
 		Überblick über:
 		\begin{itemize}
 			\item Maven
 			\item Git
 		\end{itemize}
-	\pause
 		Anmelden in der LEZ!
-		\pause
-		\begin{exampleblock}{Meine Empfehlung}
-			\begin{itemize}
-				\item Installiert Git manuell!
-			\end{itemize}
-		\end{exampleblock} \pause
-		Probleme mit der Installation? $\implies$ kommt nach dem Tut nach vorne
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Die Sache mit Java 9\dots}
-		\begin{itemize}
-			\item Java 9 nicht mehr unterstützt
-			\item $\implies$ Java 10 verwenden \pause
-			\item LEZ forciert Verwendung von Java 9
-			\item man kann aber auch mit Java 10 für Java 9 kompilieren
-		\end{itemize}
-\end{frame}
+
 		
 	\subsection{Feedback Vorbereitungsblatt (1)}	
 	\begin{frame}
@@ -318,27 +372,29 @@
 	\subsection{JUnit4 - eine Testmethode}
 	\begin{frame}[fragile]
 		\frametitle{JUnit4 - eine Testmethode}
-		\begin{block}{Zu testende Methode in der Klasse Hallo}
-			\begin{minted}{java}
-public static int add(int a, int b) { 
-	return a + b;
+			\begin{verbatim}
+public class Hallo {
+    public static int add(int a, int b) { 
+        return a + b;
+    }
 }
-			\end{minted}	
-		\end{block} 
-		\pause Wie sieht Testmethode aus? \pause
-		\begin{block}{Testmethode in der Klasse HalloTest}
-			\begin{minted}{java}
-@Test
-public void testAdd() {
-	Assert.assertEquals(7, Hallo.add(5, 2));
+			\end{verbatim}
+		Wie sieht Testmethode aus? \pause
+		\begin{block}{Testmethode}
+			\begin{verbatim}
+// imports..
+public class HalloTest {
+    @Test
+    public void testAdd() {
+        Assert.assertEquals(7, Hallo.add(5, 2));
+    }
 }
-			\end{minted}
-		
+			\end{verbatim}
 		\end{block}
 \end{frame}
 	
 	\subsection{JUnit4 - Fragen}
-	\begin{frame}
+	\begin{frame}[fragile]
 		\frametitle{JUnit4 - Quiz}
 		\begin{block}{A, B oder C?}
 			Welche Annotation führt dazu, dass die annotierte Methode nach jeder mit @Test versehenen Methode einmal ausgeführt wird?
@@ -534,7 +590,6 @@ public void testAdd() {
 	
 	\begin{frame}
 		\frametitle{Umgang mit der Kommandozeile (cmd)}
-		Nötig?\linebreak
 		\begin{block}{Wichtige Befehle - Navigation}
 			\begin{tabular}{ll}
 				\texttt{cd test} &  Wechselt in das Verzeichnis test.\\
@@ -628,7 +683,7 @@ public void testAdd() {
 	\begin{frame}
 		\frametitle{Hilfreiche Links fürs Blatt}
 		\begin{itemize}
-			\item Eclipse von z.B. Neon zu Oxygen upgraden (für Java 9/10 Support)
+			\item altes Eclipse aktualisieren, ohne Neuinstallation (für Java 11 Support)
 			\begin{itemize}
 				\item \url{https://wiki.eclipse.org/FAQ\_How\_do\_I\_upgrade\_Eclipse\_IDE\%3F}
 			\end{itemize}
@@ -666,7 +721,10 @@ public void testAdd() {
 		\begin{exampleblock}{Aufgabe 3: Testüberdeckung}
 		\begin{itemize}
 			\item Testüberdeckung mit EclEmma überprüfen
-			\item Mockito klingt komplizierter als es ist (siehe Link, Abschnitt Mock Objekt)
+			\item Mockito klingt komplizierter als es ist 
+			\begin{itemize}
+				\item siehe Link, Abschnitt Mock Objekt
+			\end{itemize}
 		\end{itemize}
 	\end{exampleblock}
 \end{frame}
@@ -676,14 +734,14 @@ public void testAdd() {
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item in der LEZ bis zum 02.05, 12:00
-				\item falls ihr ein Feedback wollt, werft das Deckblatt ein
+				\item in der LEZ bis zum 08.05, 12:00
+				\item falls ihr schriftliches Feedback wollt, werft das Deckblatt ein
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Bis dann! (dann:=08.05.18)}
+		\frametitle{Bis dann! (dann:=14.05.19)}
 		\centering
 		\includegraphics[height=0.85\textheight]{./comics/geek_and_poke_gitignore.jpg}
 		\begin{turn}{90}
