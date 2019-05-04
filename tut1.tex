@@ -1,6 +1,6 @@
 \documentclass[18pt]{beamer}
 \usepackage[utf8]{inputenc} % for the umlauts
-\usepackage{subfigure}
+\usepackage{subcaption}
 
 \beamertemplatenavigationsymbolsempty
 %% SLIDE FORMAT
@@ -56,9 +56,6 @@
 
 
 \begin{document}
-	
-%\pgfsetlayers{connections,activity,lifelines}
-
 
 % change the following line to "ngerman" for German style date and logos
 \selectlanguage{ngerman}
@@ -261,9 +258,7 @@
 	\end{frame}
 	
 	\subsection{Pflichtenheft - Gliederung}
-	\begin{frame}
-		\frametitle{Pflichtenheft - Gliederung}
-		\pause
+	\begin{frame}{Pflichtenheft - Gliederung}
 		\begin{enumerate}
 			\item Zielbestimmung  
 			\item Produkteinsatz 
@@ -600,15 +595,19 @@
 	
 	\subsection{UML-Klausuraufgabe(1)}
 	\begin{frame}
-		\frametitle{Klausuraufgabe SS09}
-		\textit{Modellieren Sie das Szenario möglichst vollständig als UML-Klassendiagramm. Modellieren Sie keine Methoden. Geben Sie Attribute, Multiplizitäten, Restriktionen, Assoziationsnamen sowie Rollen an.} \linebreak
-		Ein Fachwerkhaus besteht aus 5 bis 10 Holzstämmen, 200 bis 400 Lehmziegeln sowie 1.000 bis 2.000 Nägeln. Jedes Baumaterial, egal ob Holzstamm, Lehmziegel oder Nagel, ist Bestandteil in genau einem Fachwerkhaus. Jedes Fachwerkhaus hat eine bestimmte Anzahl an Zimmern und Stockwerken. Für den Bau eines Fachwerkhauses ist mindestens ein Zimmermann zuständig, welcher einen Namen sowie einen individuellen Stundenlohn besitzt. Zum Bau des Fachwerkhauses verwendet jeder Zimmermann sein eigenes Werkzeug, bestehend aus genau einem Hammer sowie genau einer Säge. Jeder Zimmermann kann an maximal einem Fachwerkhaus gleichzeitig bauen. 
+		\frametitle{Klausuraufgabe SS11}
+		\textit{Modellieren Sie das Szenario möglichst vollständig als UML-Klassendiagramm. Geben Sie Methoden, Attribute, Multiplizitäten, Restriktionen, Assoziationsnamen, Aggregationen und Kompositionen sowie Rollen an.} 
+		\begin{block}{Szenario}
+			Ein Güterzug ist ein Zug, dessen Waggons ausschließlich Güterwagen sind. Die Waggons eines Personenzugs sind mindestens ein Reisezugwagen und höchstens ein Speisewagen. Jeder Zug hat eine oder zwei Lokomotiven. Reisezugwagen setzen sich aus bis zu einem Großraum sowie einem oder mehreren Abteilen zusammen. Jeder Reisezugwagen hat eine Klimaanlage, die ein- und ausgeschaltet werden kann. Jede Klimaanlage darf
+			nur bis zu einer bestimmten maximalen Außentemperatur betrieben werden.
+		\end{block}
 	\end{frame}
 	
 	\subsection{UML-Klausuraufgabe(2)}
 	\begin{frame}
 		\frametitle{Musterlösung}
-		\includegraphics[scale=0.48]{./pics/tut1/solution.png}
+		\centering
+		\includegraphics[scale=0.37]{./pics/tut1/solution.png}
 	\end{frame}
 		
 		
@@ -618,23 +617,73 @@
 		\frametitle{\LaTeX - Basics}
 		\begin{itemize}
 			\item auf dem Blatt müsst ihr \LaTeX  ~ für die Dokumente benutzen
-			\item nicht wie z.B. Word WYSIWYG, sondern WYSIWYAF / WYSIWYM
-			\item wird euch an der Uni immer wieder begegnen, oft Pflicht
+			\item wird euch an der Uni immer wieder begegnen, manchmal Pflicht
 			\pause
-			\item Vorteile:
+			\item nicht WYSIWYG
 			\begin{itemize}
-				\item gut versionierbar
-				\item leicht Formeln erstellbar
-				\item nach Eingewöhnung recht intuitiv (vergleichbar mit HTML)
-				\item multifunktional (Dokumente, Präsentationen, \dots)
-			\end{itemize}
-			\pause
-			\item Nachteile:
-			\begin{itemize}
-				\item Einarbeitung notwendig :(
+				\item What You See Is What You Get
+				\item Paradigma von Word etc.
 			\end{itemize}
 		\end{itemize}
+		\begin{figure}
+			\begin{subfigure}{0.5\textwidth}
+				\centering
+				\caption{\small What You See}
+				\includegraphics[scale=0.2]{pics/tut1/wysiwyg_raw.png}
+			\end{subfigure}%
+			\begin{subfigure}{0.5\textwidth}
+				\centering
+				\caption{\small What You Get}
+				\includegraphics[scale=0.2]{pics/tut1/wysiwyg.png}
+			\end{subfigure}
+		\end{figure}
 	\end{frame}
+
+\begin{frame}{\LaTeX - Basics}
+	\begin{itemize}
+		\item stattdessen WYSIWYAF bzw. WYSIWYM
+		\begin{itemize}
+			\item What You See Is What You Ask For / Mean
+			\item Paradigma von \LaTeX $\approx$ HTML und CSS
+		\end{itemize}
+	\end{itemize}
+	\begin{figure}
+		\begin{subfigure}{0.55\textwidth}
+			\centering
+			\caption{\small What You See}
+			\includegraphics[scale=0.36]{pics/tut1/wysiwym_raw.png}
+		\end{subfigure}%
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\caption{\small What You Mean}
+			\includegraphics[scale=0.2]{pics/tut1/wysiwym.png}
+		\end{subfigure}
+	\end{figure}
+\end{frame}
+
+	\begin{frame}{\LaTeX}
+	\begin{itemize}
+		\item Vorteile
+		\begin{itemize}
+			\item gut versionierbar
+			\begin{itemize}
+				\item \enquote{Quellcode} ist normales Textdokument
+				\item Word etc. verwenden oft XML-Formate mit Metadaten
+			\end{itemize}
+			\item leicht Formeln erstellbar
+			\item nach Eingewöhnung recht intuitiv
+			\item multifunktional (Bücher, Dokumente, Präsentationen, \dots)
+			\item kostet nix :)
+			\item open source
+			\item viele Erweiterungen, Pakete, \dots
+		\end{itemize}
+		\item Nachteile
+		\begin{itemize}
+			\item Einarbeitung notwendig :(
+		\end{itemize} 
+	\end{itemize}
+				
+\end{frame}
 	
 	\subsection{Installation}
 	\begin{frame}
@@ -650,6 +699,7 @@
 			\item Texmaker
 			\item TeXstudio (erweiterter Texmaker, mein Favorit)
 			\item TeXclipse (Plugin für Eclipse)
+			\item Plugins für Visual Studio Code
 			\item \dots
 		\end{itemize}
 	\end{frame}
@@ -657,23 +707,28 @@
 	\subsection{Beispiel}
 	\begin{frame}
 		\frametitle{\LaTeX - Dokumentaufbau}
+		\begin{block}{Präambel: Pakete laden, Dokumenttyp festlegen}
+			\texttt{$\backslash$documentclass\{Klasse\}} \newline
+			\texttt{$\backslash$usepackage[option1,option2,\dots]\{Paket\}}
+		\end{block}
 		\begin{itemize}
-			\item Präambel: Includes von Paketen
-			\begin{itemize}
-				\item $\backslash$documentclass\{Klasse\} (z.B. book, letter)
-				\item $\backslash$usepackage[option1, option2,..]\{Paket\}
-			\end{itemize}
-			\pause
-			\item Inhalt: Text setzen 
+			\item nützliche Klassen: book, beamer, scrartcl
+			\item nützliches Paket z.B. csquotes (ermöglicht \texttt{$\backslash$enquote\{\dots\}})
+		\end{itemize}
+	\pause
+		\begin{block}{Inhalt: Text setzen, Bilder, Graphiken, Formeln,\dots}
+			\texttt{\% preamble \\ $\backslash$begin\{document\} \\ ~~~~content \\ $\backslash$end\{document\}}
+		\end{block}
 			\begin{itemize}
 				\item Struktur: part, (chapter), section, subsection, subsubsection
 				\item Auflistungen: $\backslash$begin\{itemize\} $\backslash$item Hello World! $\backslash$end\{itemize\}
 				\item Bilder: $\backslash$includegraphics$[scale=0.8]$\{PfadZumBild\}
 			\end{itemize}
-			\pause
-		\end{itemize}
-		\huge \centering \textcolor{red}{Beispiel!}
 	\end{frame}
+
+\begin{frame}{}
+	\huge \centering \textcolor{red}{\LaTeX-Beispiel!}
+\end{frame}
 		
 \section{Tipps}
 	\subsection{Tipps}
