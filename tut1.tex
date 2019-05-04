@@ -11,6 +11,12 @@
 \usepackage{templates/beamerthemekit}
 \usepackage{stackengine}
 \usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{tikz-uml}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}% redefines the caption setup of the figures environment in the beamer class.
+
 % \usepackage{templates/beamerthemekitwide}
 
 \setcounter{tocdepth}{1}
@@ -29,29 +35,30 @@
 %% TikZ INTEGRATION
 
 % use these packages for PCM symbols and UML classes
-% \usepackage{templates/tikzkit}
-% \usepackage{templates/tikzuml}
+ \usepackage{templates/tikzkit}
+	\usepackage{templates/tikzuml}
 
 % the presentation starts here
 
 \usepackage[absolute,overlay]{textpos}
+\usepackage{csquotes}
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red, subgridcolor=green]{eso-pic}
 \setbeamercovered{invisible}
 
 \title[SWT1]{Softwaretechnik 1 - 1. Tutorium}
-\subtitle{Tutorium 18}
+\subtitle{Tutorium 17}
 \author{Felix Bachmann}
-\date{08.05.2018}
+\date{14.05.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
 % Bibliography
 
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
-\bibhang1em
 
 \begin{document}
+	
+%\pgfsetlayers{connections,activity,lifelines}
+
 
 % change the following line to "ngerman" for German style date and logos
 \selectlanguage{ngerman}
@@ -62,6 +69,18 @@
 \end{frame}
 
 \section{Orga}
+
+	\begin{frame}{Ersatztermin}
+
+	\centering
+	\includegraphics[scale=0.7]{pics/tut1/poll.png}
+		\begin{itemize}
+		\item Tut von 11.06 wird auf 04.06. verschoben
+		\item ansonsten alles gleich (11:30-13:00, -119) 
+	\end{itemize}
+\end{frame}
+
+
 	\subsection{Feedback 1. Übungsblatt}
 	\begin{frame}
 		\frametitle{1. Übungsblatt Statistik}
@@ -154,7 +173,7 @@
 \section{Durchführbarkeitsuntersuchung}
 	\subsection{Welche Aspekte?}
 	\begin{frame}
-		\frametitle{Durchführbarkeitsuntersuchung - Gliederung}
+		\frametitle{Durchführbarkeitsuntersuchung}
 		\begin{block}{Grundlegende Frage}
 			Ist das Projekt in dem jeweiligen Szenario überhaupt durchführbar?
 		\end{block}
@@ -175,9 +194,9 @@
 \section{Lastenheft}
 	\subsection{Lastenheft - Gliederung}
 	\begin{frame}
-		\frametitle{Lastenheft - Gliederung}
+		\frametitle{Lastenheft}
 		\begin{block}{Grundlegende Aufgabe}
-			Das Lastenheft sammelt die Anforderungen des Auftraggebers an den Auftragnehmer.
+			Das Lastenheft sammelt die Anforderungen des Auftraggebers an den Auftragnehmer. Theoretisch vom Kunden geschrieben.
 		\end{block}
 		\begin{enumerate}
 			\item \pause Zielbestimmung (grobe Beschreibung) \pause 
@@ -228,8 +247,17 @@
 	\begin{frame}
 		\frametitle{Wozu ein Pflichtenheft?}
 		\begin{block}{Grundlegende Aufgabe}
-			Erweiterung des Lastenheftes, sodass exakt abgebildet ist \textbf{was} (noch nicht \textbf{wie}) zu implementieren ist.
+			Erweiterung des Lastenheftes, sodass exakt abgebildet ist \textbf{was} (noch nicht \textbf{wie}) zu implementieren ist. Vom Entwickler geschrieben.
 		\end{block}
+	\pause
+		\begin{itemize}
+			\item man kann es sich so merken
+			\begin{itemize}
+				\item erst werden uns \enquote{Lasten} vom Kunden auferlegt
+				\item daraus generieren wir dann \enquote{Pflichten}
+				\item \enquote{Pflichten} Grundlage für Entwurf
+			\end{itemize}
+		\end{itemize}
 	\end{frame}
 	
 	\subsection{Pflichtenheft - Gliederung}
@@ -292,78 +320,269 @@
 		\end{itemize}
 		\includegraphics[scale=0.35]{./pics/tut1/uml_diagrams.png}
 	\end{frame}	
+
+	\begin{frame}[fragile]{UML-Klassendiagramm: Syntax}
+	\begin{columns}
+		\begin{column}{0.25\textwidth}
+				\begin{tikzpicture}
+				\centering
+			\umlclass[name=classname]{Name der Klasse}{Attribute}{Methoden}
+			\end{tikzpicture}
+		\end{column}%
+		\begin{column}{0.75\textwidth}
+			\begin{itemize}
+				\item Klassenname
+				\begin{itemize}
+					\item keine spezielle Syntax
+					\item einfach Namen hinschreiben
+				\end{itemize}
+				\item Attribute
+				\begin{itemize}
+					\item \begin{verbatim}<modifier><name>:<type>\end{verbatim} 
+				\end{itemize} 
+				\item Methoden
+				\begin{itemize}
+					\item \begin{verbatim}<modifier><name>(<parameters>):<type>\end{verbatim}
+					\item \verb|<parameters>|
+					\begin{itemize}
+						\item kann leer sein
+						\item oder komma-getrennte Liste von \verb|<name>:<type>|
+					\end{itemize}
+					\item falls Rückgabe void, \verb|:<type>| weglassen
+					
+				\end{itemize} 
+			\item statische Methoden und Attribute unterstreichen
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Modifier}
+	\begin{itemize}
+		\item UML
+		\begin{itemize}
+			\item -
+			\begin{itemize}
+				\item private
+				\item von Instanzen derselben Klasse sichtbar (\textcolor{red}{aber von allen!})
+			\end{itemize}
+			\item \#
+			\begin{itemize}
+				\item protected (wie in Java)
+				\item von Instanzen derselben Klasse, aller Unterklassen und Instanzen aus dem gleichen Paket sichtbar
+			\end{itemize}
+			\item +
+			\begin{itemize}
+				\item public (wie in Java)
+				\item von Instanzen jeder Klasse sichtbar
+			\end{itemize}
+			\item falls nichts angegeben implizit public
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiel}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\umlclass[name=classname]{Hund}{- name: String\\
+		- rasse: Rasse\\
+		- gewicht: int}{
+		+ wiegen(): int\\
+		+ streicheln() \\
+		+ streicheln(intensität: int, ausruf: String)\\
+		+ füttern(ration: Nahrung)}
+	\end{tikzpicture}
+\end{figure}
+\end{frame}
 	
 	\subsection{UML-Klassendiagramm (1)}
 	\begin{frame}
-		\frametitle{UML-Klassendiagramm: Klassen + Vererbung}
-		\centering
-		\includegraphics[scale=0.5]{./pics/tut1/inheritence.png}
-		\pause
-		\begin{small}
-			\begin{itemize}
-				\item - ist private: von Instanzen derselben Klasse sichtbar (\textcolor{red}{aber von allen!})
-			\end{itemize}
-		\end{small}
+		\frametitle{Vererbung}
+		\begin{figure}
+					\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+				\umlclass[y=4,name=classname]
+				{ParentClass}
+				{+publicString: String \\
+				-privateInt: int\\
+				\#protectedDouble: double}
+				{
+				\umlstatic{+staticMethod()}\\
+				+publicMethod(): String\\
+				-privateMethod(): int\\
+				\#protectedMethod(param: String): double
+				}
+			
+				\umlemptyclass[y=0, name=classname]{ChildClass}
+				
+				\umlinherit{ChildClass}{ParentClass}
+			\end{tikzpicture}
+		\end{figure}
 	\end{frame}
 	
 	\subsection{UML-Klassendiagramm (2)}
 	\begin{frame}
-		\frametitle{UML-Klassendiagramm: Interface}
-		\centering
-		\includegraphics[scale=0.7]{./pics/tut1/interface.png}
+		\frametitle{Interface}
+				\begin{figure}
+			\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+			\umlclass[y=4,name=classname, type=interface]{NiceInterface}
+			{}
+			{
+				+pleaseRealizeMe()
+			}
+			
+			\umlclass[y=0, name=classname]{ImplementingClass}{}{+pleaseRealizeMe()}
+			
+			\umlimpl{ImplementingClass}{NiceInterface}
+			\end{tikzpicture}
+		\end{figure}
 	\end{frame}
 	
 	\subsection{UML-Klassendiagramm (3)}
 	\begin{frame}
-		\frametitle{UML-Klassendiagramm: Abstrakte Klassen}
-		\begin{figure}
-			\footnotesize
-			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/abstract.png}}{UML-Notation} \pause
-			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/abstractUb.png}}{Notation für Abgaben}
+		\frametitle{Abstrakte Klassen}
+				\begin{figure}
+			\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+			\umlclass[y=3,name=classname,type=abstract]
+			{AbstractClass}
+			{}
+			{
+				+regularMethod(): String\\
+				\umlvirt{+abstractMethod(): int}
+			}
+			
+			\umlclass[y=0, name=classname]{ChildClass}{}{+abstractMethod(): int}
+			
+			\umlinherit{ChildClass}{AbstractClass}
+			\end{tikzpicture}
 		\end{figure}
-		\centering \textcolor{red}{Kursiv schriftlich nicht erkennbar!}
 	\end{frame}
+
+	\begin{frame}
+\frametitle{Abstrakte Klassen: Abgaben}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\pgfsetlayers{connections,main}
+	\umlclass[y=3,name=classname,tags={abstract}]
+	{AbstractClass}
+	{}
+	{
+		+regularMethod(): String\\
+		+abstractMethod(): int \{abstract\}
+	}
+	
+	\umlclass[y=0, name=classname]{ChildClass}{}{+abstractMethod(): int}
+	
+	\umlinherit{ChildClass}{AbstractClass}
+	\end{tikzpicture}
+\end{figure}
+\begin{itemize}
+	\item für Übungsblätter und Klausur
+	\begin{itemize}
+		\item kursiv nicht erkennbar, stattdessen \texttt{\{abstract\}} verwenden
+		\item laut VL unter Klassenname, hinter Methode
+	\end{itemize}
+\end{itemize}
+\end{frame}
 	
 	\subsection{UML-Klassendiagramm (4)}
 	\begin{frame}
-		\frametitle{UML-Klassendiagramm: Assoziationen}
+		\frametitle{Assoziationen}
 		\begin{figure}
-			\footnotesize
-			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/wrong_assoc.png}}{so nicht,\dots} \pause
-			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/correct_assoc.png}}{\dots, sondern so}
+			\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+			\umlclass[x=0,name=classname]
+			{Firma}
+			{angestellte: List$<$Person$>$}
+			{}
+			
+			\umlclass[
+			x=6, name=classname]{Person}{arbeitgeber: Firma}{}
+			
+			\end{tikzpicture}
 		\end{figure}
-		\pause
-		\begin{block}{UML}
-			Beziehungen sollen direkt ersichtlich werden\linebreak
-			$\implies$nur primitive Typen als Felder
-		\end{block}
+	\pause
+		\begin{alertblock}{Probleme}
+			\begin{itemize}
+				\item List$<$X$>$ ist Java-Syntax und schreibt Datenstruktur vor
+				\item Beziehungen sollen direkt ersichtlich werden
+				\item Faustregel: nur primitive Typen als Attribute hinschreiben
+			\end{itemize}
+		\end{alertblock}
+				\begin{figure}
+			\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+			\umlclass[x=0,name=classname]
+			{Firma}
+			{}
+			{}
+			
+			\umlclass[
+			x=8, name=classname]{Person}{}{}
+			
+			\umlassoc[arg1=Arbeitgeber, arg2=Arbeitnehmer, mult1=0..1, mult2=*, pos1=0, pos2=1, align1=left, align2=right]{Firma}{Person}
+			\end{tikzpicture}
+		\end{figure}
 	\end{frame}
 	
 	\subsection{UML-Klassendiagramm (5)}
 	\begin{frame}
-		\frametitle{UML-Klassendiagramm: Aggregation + Komposition}
-		\begin{figure}
-			\footnotesize
-			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/aggregation.png}}{Aggregation} \pause
-			\stackunder{\includegraphics[scale=0.5]{./pics/tut1/composition.png}}{Komposition}
+		\frametitle{Aggregation und Komposition}
+		\begin{itemize}
+			\item Aggregation = Teil-Ganzes-Beziehung
+		\end{itemize}
+			\begin{figure}
+			\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+			\umlclass[x=0,name=classname]
+			{Auto}
+			{}
+			{}
+			
+			\umlclass[
+			x=8, name=classname]{Rad}{}{}
+			
+			\umlaggreg[arg1=1, arg2=4, pos1=0, pos2=1, align1=left, align2=right, thick]{Auto}{Rad}
+			\end{tikzpicture}
 		\end{figure}
-	\end{frame}
-	
-	\subsection{UML-Klassendiagramm(6)}
-	\begin{frame}
-		\frametitle{Aggregation vs Komposition}
-		\begin{alertblock}{Unterschied}
+	\pause
+		\begin{itemize}
+			\item Komposition: Aggregation, aber Teil kann ohne Ganzes nicht existieren
 			\begin{itemize}
-				\item Aggregation: Teil-Ganzes-Beziehung
-				\item Komposition: Aggregation, Teil kann ohne Ganzes nicht existieren
+				\item wenn ganzes gelöscht wird, dann auch Teile!
 			\end{itemize}
-		\end{alertblock}
-	\end{frame}
+		\end{itemize}
+				\begin{figure}
+		\centering
+		\begin{tikzpicture}
+		\pgfsetlayers{connections,main}
+		\umlclass[x=0,name=classname]
+		{Rechnung}
+		{}
+		{}
+		
+		\umlclass[
+		x=8, name=classname]{Rechnungsposten}{}{}
+		
+		\umlcompo[arg1=1, arg2=1..*, pos1=0, pos2=1, align1=left, align2=right,thick]{Rechnung}{Rechnungsposten}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
 
 	\subsection{UML-Warmup-Aufgabe}
 	\begin{frame}
 		\frametitle{Klassischer Aufgabentyp}
-		\begin{exampleblock}{Text $\implies$ UML-Diagramm}
+		\begin{exampleblock}{Text $\implies$ UML-Klassendiagramm}
 			Jeder Student hat eine Matrikelnummer und einen Namen. Ein fauler Student ist ein Student, der schlafen kann. Er hat dazu ein Bett. Ein fleißiger Student hingegen, kann lernen und hat dazu einen Computer, der aus Bauteilen besteht.
 		\end{exampleblock}
 	\pause
@@ -373,7 +592,7 @@
 	\subsection{UML-Warmup-Aufgabe2}
 	\begin{frame}
 	\frametitle{Klassischer Aufgabentyp}
-	\begin{exampleblock}{Text $\implies$ UML-Diagramm}
+	\begin{exampleblock}{Text $\implies$ UML-Klassendiagramm}
 		Jeder \textcolor{red}{Student} hat eine Matrikelnummer und einen Namen. Ein fauler Student \textcolor{red}{ist ein} Student, der schlafen kann. Er \textcolor{red}{hat} dazu ein Bett. Ein fleißiger Student hingegen, kann lernen und \textcolor{red}{hat} dazu einen \textcolor{red}{Computer}, der aus \textcolor{red}{Bauteilen} \textcolor{red}{besteht}.
 	\end{exampleblock}
 	\textcolor{red}{Schlüsselwörter!}
