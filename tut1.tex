@@ -65,6 +65,11 @@
 \titlepage
 \end{frame}
 
+%table of contents
+\begin{frame}{Themenübersicht}
+\tableofcontents
+\end{frame}
+
 \section{Orga}
 
 	\begin{frame}{Ersatztermin}
@@ -86,29 +91,73 @@
 	
 	\subsection{1. Übungsblatt - Fehler (Allgemein)}
 	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Allgemein}
-			generell ohne Abzug:
+		\frametitle{Allgemeine Anmerkungen}
+			\begin{itemize}
+			\item für Feedback zu eurem Code Deckblatt einwerfen!
+		\end{itemize}
+		\begin{block}{Punktevergabe}
+			generell ohne Abzug
 			\begin{itemize}
 				\item gleiche Abgabe bei allen Aufgaben
 			\end{itemize}
 			\pause
-			generell mit Abzug: (bis zu -2P)
+			generell mit Abzug
 			\begin{itemize}
-				\item  CheckStyle nicht beachtet
-				\item JavaDoc !(vollständig \&\& sinnvoll)
-				\item Commits !(regelmäßig \&\& aussagekräftig)
+				\item Code nicht CheckStyle-konform (auch Tests!) 
+				\begin{itemize}
+					\item Save Actions bei Eclipse! (IntelliJ ähnlich)
+				\end{itemize}
+				\item JavaDoc nicht (vollständig \&\& sinnvoll)
+				\item Git-Commits nicht (regelmäßig \&\& aussagekräftig)
 			\end{itemize}
 		\end{block}
 	\end{frame}
+
+\begin{frame}
+\frametitle{Allgemeine Anmerkungen - pom.xml}
+
+\begin{block}{Abhängigkeiten deklarieren}
+\begin{itemize}
+		\item iMage dient dazu jmjrst.main zu verpacken
+		\item wenn ihr Abhängigkeiten in iMage-pom hinzufügt funktioniert es bei euch
+		\begin{itemize}
+			\item aber es wird jmjrst.main-pom in zip gepackt
+			\item bei mir explodiert es, da mein iMage die Abhängigkeit nicht hat
+		\end{itemize}
+	\end{itemize}
+ Lösung: Abhängigkeiten in dem Untermodul, das ihr gerade abgebt, deklarieren
+\end{block}
+\pause
+\begin{block}{Parent}
+	\begin{itemize}
+		\item als parent von Untermodulen iMage, nicht das remote uebungsparent benutzen!
+		\item als Version des Parents 0.0.1-SNAPSHOT
+	\end{itemize}
+\end{block}
+\pause
+ab nächstem ÜB Punktabzug, wenn ich noch irgendwas an der pom ändern muss, damit es bei mir läuft 
+\end{frame}
 	
 	\subsection{1. Übungsblatt - Fehler (Aufgabe 1)}
 	\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1 (Altsoftware vorbereiten)}
 		\begin{itemize}
-			\item vorgegebene .gitignore verwenden (mit IDE-Zeug), nicht nur target/ \pause
-			\item fully.qualified.MainClass durch Paket-Struktur ersetzen (org.jis.Main)
+			\item falsche oder keine .gitignore in die zip verpackt 
+			\begin{itemize}
+				\item Konfiguration in src/assembly/src.xml
+				\item wenn ihr nur .gitignore hinschreibt, wird .gitignore aus jmjrst-Ordner genommen
+				\item die existiert bei euch vielleicht garnicht, oder ist default
+				\begin{itemize}
+					\item in zip liegt keine oder falsche .gitignore
+				\end{itemize}
+				\item fix: ../../.gitignore statt .gitignore
+			\end{itemize}
+			\pause
+			\item LICENSE sollte in das Wurzelverzeichnis
+			\begin{itemize}
+				\item siehe \url{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}
+			\end{itemize}
 		\end{itemize}
 		\end{block}
 	\end{frame}
@@ -118,22 +167,51 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 2 + 3 (Modultests + Testüberdeckung)}
 			\begin{itemize}
-				\item auch bei Drehung um 0$^{\circ}$  ist Überprüfung des Bildes nötig (Dimensionen + Pixel) \pause
-				\item equals() reicht nicht aus, um Gleichheit der Bilder zu prüfen \pause 
-				\item new File() erstellt kein File, sondern nur einen "'pointer"' auf einen Pfad (siehe File.createNewFile() oder File.mkdir()) \pause
-				\item fügt Abhängigkeiten in die jmjrst.main-pom.xml ein, \textbf{nicht} in die von iMage \pause
-				\item @Test(expected=XYException.class) nutzen \pause
-				\item JUnit4 benutzen \pause
-				\item nicht throws Exception angewöhnen \pause
-				\item nicht Korrektheit der zu testenden Methoden annehmen \pause
-				\item Stil: Konstanten für Pfade benutzen
+				\item CheckStyle (und JavaDoc) auch in Tests benutzen \pause
+				\item sinnvolle Definition der Gleichheit zweier Bilder
+				\begin{itemize}
+					\item gleiche Dimensionen
+					\item UND gleiche Pixel-Werte
+				\end{itemize} \pause
+				\item auch bei Drehung um 0$^{\circ}$  ist Überprüfung von Gleichheit nötig \pause
+				\item \texttt{assertEquals()} reicht nicht aus, um Gleichheit der Bilder zu prüfen \pause 
+				\item Ordner \texttt{target/test} wurde nicht erstellt
+				\begin{itemize}
+					\item \texttt{new File()} erstellt keine Datei, sondern nur einen "'pointer"' auf einen Pfad (siehe \texttt{File.createNewFile()} oder \texttt{File.mkdir()} oder \texttt{File.mkdirs())} \pause
+				\end{itemize}
+				\item \texttt{@Test(expected=XYException.class)} nutzen, wenn Exception erwartet, sonst \texttt{@Ignore}
 			\end{itemize}
 		\end{block}
 	\end{frame}
-
-%table of contents
-\begin{frame}{Themenübersicht}
-\tableofcontents
+	
+\begin{frame}
+	\frametitle{Häufige Fehler}
+	\begin{block}{Aufgabe 2 + 3 (Modultests + Testüberdeckung)}
+		\begin{itemize}
+			\item Stil: Konstanten für Pfade benutzen
+			\begin{itemize}
+				\item magic Strings sind ähnlich böse wie magic numbers
+			\end{itemize}
+			\pause
+			\item Generator soll in \texttt{@Before}-Methode vor jedem Test neu erstellt werden
+			\begin{itemize}
+				\item Objekt soll \enquote{frisch} sein
+				\item Zustand des Objektes kann sich durch Methoden-Aufrufe verändern
+			\end{itemize}
+			\pause
+			\item niemals absolute Pfade verwenden
+			\begin{itemize}
+				\item ich habe bei mir keinen Ordner \texttt{C:/Users/Manfred/Desktop/Uni/bloedes\_SWT/eclipseWorkspace/\dots}
+				\item besser: relative Pfade 
+				\item am besten: Resourcen über eingebaute Methoden suchen
+				\begin{itemize}
+					\item \texttt{this.getClass().getResource(<Datei-Name>)}
+					\item \dots
+					\item siehe \url{https://stackoverflow.com/questions/3861989/preferred-way-of-loading-resources-in-java}
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \section{Wasserfallmodell}
@@ -792,7 +870,7 @@
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Bis dann! (dann := 28.05.18)}
+		\frametitle{Bis dann! (dann := 28.05.19)}
 		\centering
 		\includegraphics[scale=0.86]{./comics/geek_and_poke_javadoc.jpg}
 	\end{frame}
