@@ -26,11 +26,13 @@
 
 %% TikZ INTEGRATION
 
+\usepackage{tikz-uml}
 % use these packages for PCM symbols and UML classes
 % \usepackage{templates/tikzkit}
-% \usepackage{templates/tikzuml}
+ \usepackage{templates/tikzuml}
 
 % the presentation starts here
+\usepackage{csquotes}
 
 \usepackage{mathabx}
 \usepackage{picture}
@@ -39,18 +41,15 @@
 \setbeamercovered{invisible}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
+
 \title[SWT1]{Softwaretechnik 1 - 2. Tutorium}
-\subtitle{Tutorium 18}
+\subtitle{Tutorium 17}
 \author{Felix Bachmann}
-\date{22.05.2018}
+\date{28.05.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
-% Bibliography
-
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
-\bibhang1em
+\usetikzlibrary{positioning}
 
 \begin{document}
 
@@ -63,14 +62,6 @@
 \end{frame}
 
 \section{Orga}
-	\subsection{title}
-	\begin{frame}
-		\frametitle{Musterlösung Klassendiagramm}
-		\includegraphics[scale=0.4]{./pics/tut1/solution.png}
-		\begin{itemize}
-			\item Zimmer und Stockwerk müsste wirklich eine Komposition sein
-		\end{itemize}
-\end{frame}
 	\subsection{Feedback 2. Übungsblatt}
 	\begin{frame}
 		%TODO
@@ -79,8 +70,36 @@
 	\end{frame}
 
 	
-	\subsection{2. Übungsblatt - Fehler (Allgemein)}
-	\begin{frame}
+\begin{frame}{Abgabemodalitäten - Sprache}
+	\begin{itemize}
+		\item letztes Mal kam eine Frage, ob Abgaben auf Englisch auch erlaubt
+		\item für mich ok
+		\item laut Übungsleitern in Klausur nicht ok
+		\begin{itemize}
+			\item also am besten jetzt auch schon auf Deutsch abgeben
+		\end{itemize}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}{Tutorientermine}
+	\begin{itemize}
+		\item entsprechend der Abstimmung vom vorletzten Mal ist das nächste Tut am 04.06
+		\item also
+		\begin{itemize}
+			\item 28.05. (heute): Tutorium
+			\item 04.06.: Tutorium
+			\item 11.06.: kein Tutorium
+			\item 18.06.: kein Tutorium
+			\item ab 25.06. wieder regulär 14-tägig
+			\begin{itemize}
+				\item 25.06, 09.07, 23.07
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+	
+\subsection{2. Übungsblatt - Fehler (Allgemein)}
+\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Allgemein}
 			\includegraphics[scale=0.6]{./pics/tut2/deckblatt.png}
@@ -90,10 +109,10 @@
 				\item häufigster Fehler: Aufgaben nicht abgegeben
 			\end{itemize}
 		\end{block}
-	\end{frame}
+\end{frame}
 	
-	\subsection{2. Übungsblatt - Fehler}
-	\begin{frame}
+\subsection{2. Übungsblatt - Fehler}
+\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1 (Lastenheft)}
 			\begin{itemize}
@@ -110,9 +129,9 @@
 				\end{itemize}
 			\end{itemize}
 		\end{block}
-	\end{frame}
+\end{frame}
 
-	\begin{frame}
+\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 2 (Klassendiagramm)}
 			\begin{itemize}
@@ -125,9 +144,9 @@
 				\item bei Collections immer []-Schreibweise nutzen, nicht ArrayList$<XY>$
 			\end{itemize}
 		\end{block}
-	\end{frame}
+\end{frame}
 
-	\begin{frame}
+\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 3 (Durchführbarkeitsanalyse)}
 			\begin{itemize}
@@ -138,9 +157,9 @@
 				"'Da wir 5 zur Zeit untätige Java-Entwickler in der Firma haben, ist das Projekt aus personeller Sicht für die Pear Corp. durchführbar."'
 			\end{itemize}
 		\end{block}
-	\end{frame}
+\end{frame}
 
-	\begin{frame}
+\begin{frame}
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 4 (Shutterpile programmieren)}
 			\begin{itemize}
@@ -205,7 +224,7 @@
 
 	\subsection{ZD: Allgemein}
 	\begin{frame}
-		\frametitle{Zustandsdiagramm - Allgemein}
+		\frametitle{Zustandsdiagramm \\ - Mein Entwurf bekommt Zustände}
 		\begin{block}{Wozu braucht man das?}
 			\pause
 			\begin{itemize}
@@ -223,6 +242,99 @@
 			\subfigure[SWT: Zustandsdiagramm]{\includegraphics[scale=0.2]{./pics/tut2/auto_swt.png}}
 		\end{figure}
 	\end{frame}
+	
+	\begin{frame}{Zustände}
+		\begin{figure}
+			\centering
+			\begin{tikzpicture}
+				\begin{umlstate}[x=0, y=0, name=state, rectangle split parts=0, entry=\texttt{methodCalledOnEntry()}, exit=\texttt{methodCalledOnExit()}]{ZustandsName} \end{umlstate}
+			\end{tikzpicture}
+		\end{figure}
+		\begin{itemize}
+			\item es können Methoden angegeben werden, die ausgeführt werden bei
+			\begin{itemize}
+				\item Übergang in den Zustand hinein (entry)
+				\item Übergäng aus dem Zustand heraus (exit)
+			\end{itemize}
+			\item falls kein entry und exit, kann man Unterteilung auch weglassen
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}{Zustandsübergänge}
+	\begin{figure}
+		\centering
+			\begin{tikzpicture}[stateNode/.style={rectangle, draw, rounded corners, fill=yellow!20}, semithick]
+		\node[stateNode, draw] at (0,0) (a) {ZustandA};
+		\node[stateNode, draw] at (8,0) (b) {ZustandB};
+		\draw[->] (a) node[above, align=left, xshift=4cm] { \texttt{methode(argumente)} \\ \lbrack \texttt{bedingung}\rbrack \\ \texttt{/operation(argumente)}} -- (b);
+		\end{tikzpicture}
+	\end{figure}
+
+	\begin{itemize}
+		\item Übergang von ZustandA nach ZustandB findet statt, wenn
+		\begin{itemize}
+			\item in ZustandA \texttt{methode(argumente)} ausgeführt wird, und
+			\item \lbrack \texttt{bedingung}\rbrack~gilt
+		\end{itemize} \pause
+		\item \texttt{methode(argumente)} ist optional, $\epsilon$-Übergänge sind möglich
+		\item  \lbrack \texttt{bedingung}\rbrack~ebenfalls optional
+		\item  \texttt{/operation(argumente)} wird bei Übergang ausgeführt
+		\begin{itemize}
+			\item ist auch optional
+		\end{itemize} \pause
+		\item auch reflexive Übergänge möglich
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Start- und Endzustand}
+		\begin{figure}
+		\centering
+		\begin{tikzpicture}[stateNode/.style={rectangle, draw, rounded corners, fill=yellow!20}, semithick]
+			\node[stateNode, draw] at (4,0) (a) {ZustandA};
+			\node[stateNode, draw] at (8,0) (b) {ZustandB};
+			\node[] at (9.9, 0) (help) {};
+			\draw[->] (a) -- (b);
+			
+			\umlstateinitial[x=0, y=0,name=init, width=2ex]
+			
+			\umlstatefinal[x=10, y=0,name=final, width=2ex]
+			
+			\draw[->] (init) -- (a);
+			\draw[->] (b) -- (help);
+		\end{tikzpicture}
+	\end{figure}
+	\begin{itemize}
+		\item Startzustand muss immer da sein
+		\item Endzustand ist optional
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiel}
+	\centering
+	\begin{tikzpicture}[stateNode/.style={rectangle, draw, rounded corners, fill=yellow!20}, semithick]
+		\begin{umlstate}[x=0, y=5, name=m, entry=\texttt{gähnen()}]{müde} \end{umlstate}
+		\begin{umlstate}[x=8, y=5, name=s, entry=\texttt{entspannen()}]{schlafend} \end{umlstate}
+		\node[stateNode, draw] at (4, 9) (w) {hellwach};
+		\draw[->] (w.west) node[above, xshift=-2cm] { \lbrack \texttt{wachInStunden >= 14}\rbrack} -| (m.north);
+		\draw[->] (m.east) node[above, xshift=2cm] {\texttt{augenZu()}} -- (s.west);
+		
+		\draw[->] (s) node[above, align=center, yshift=3.35cm, xshift=-1.5cm] {\texttt{weckerKlingelt()} \\ \texttt{/weckerAus()}} |- (w);
+		
+		\umlstateinitial[x=4, y=10,name=init, width=2ex]
+		\draw[->] (init) -- (w);
+		
+		\node[above right=1cm and -2.1cm of s](help-1) {};
+		\draw[-] (s.80) -- (help-1.center);
+		\draw[->] (help-1.center) node[above,xshift=0.9cm, align=center] {\footnotesize \texttt{schnarchen()}} -| (s.30);
+	\end{tikzpicture}
+	\pause
+	\begin{itemize}
+		\item Achtung, reflexive Übergänge führen auch entry und exit aus!
+		\begin{itemize}
+			\item \texttt{entspannen()} wird ggf. mehrfach aufgerufen
+		\end{itemize}
+	\end{itemize}
+\end{frame}
 
 	\subsection{ZD: Syntax(1)}
 	\begin{frame}
@@ -236,6 +348,9 @@
 	\begin{frame}
 		\frametitle{Zustandsdiagramm: Hierarchie}
 		\includegraphics[scale=0.7]{./pics/tut2/auto_hier.png}	
+		\begin{itemize}
+			\item nicht mächtiger, aber übersichtlicher
+		\end{itemize}
 	\end{frame}
 
 	\subsection{ZD: Syntax (3)}
@@ -244,7 +359,11 @@
 		\begin{itemize}
 			\item  History-Element, damit sich Hierarchie den letzten Zustand merkt
 		\end{itemize}
-		\includegraphics[scale=0.5]{./pics/tut2/auto_hier-hist.png}	
+		\includegraphics[scale=0.5]{./pics/tut2/auto_hier-hist.png}
+		\pause	
+		\begin{itemize}
+			\item a, c, d $\implies$ C (ohne History wäre es A)
+		\end{itemize}
 	\end{frame}
 
 	\subsection{ZD: Syntax(4)}
@@ -255,21 +374,47 @@
 		\end{itemize}
 		\centering
 		\includegraphics[scale=0.5]{./pics/tut2/auto_par.png}	
+		\begin{itemize}
+			\item Zustand angegeben durch Kombination aus Zuständen
+			\begin{itemize}
+				\item z.B. AxC, BxC, \dots
+			\end{itemize} 
+		\end{itemize}
 	\end{frame}
 
 	\subsection{ZD: Aufgabe}
 	\begin{frame}
 		\frametitle{Klausuraufgabe SS09}
-		Gegeben ist der folgende UML-Zustandsautomat. Geben Sie an, in welcher Zustandskombination
-		sich der Zustandsautomat, jeweils ausgehend vom Startzustand, nach den beiden Eingabefolgen
-		befindet.
+		\begin{block}{Aufgabe}
+			Gegeben ist der folgende UML-Zustandsautomat. Geben Sie an, in welcher Zustandskombination
+			sich der Zustandsautomat, jeweils ausgehend vom Startzustand, nach den beiden Eingabefolgen
+			befindet.
+		\end{block}
 		\centering
 		\includegraphics[scale=0.7]{./pics/tut2/auto_ex.png}
 		\begin{itemize}
-			\item a, b, c, c \pause $\implies$ AxD
-			\item c, c, a, b, b, a, c, c, a \pause $\implies$ BxC
+			\item 1. Eingabefolge: a, b, c, c \pause $\implies$ AxD
+			\item 2. Eingabefolge: c, c, a, b, b, a, c, c, a \pause $\implies$ BxC
 		\end{itemize}
 	\end{frame}
+
+	\begin{frame}{Klausuraufgabe SS09 (verkürzt)}
+	\begin{block}{Szenario}
+	\small	Zu Beginn wartet der Automat auf die Auswahl des Produktes durch den Kunden. Die
+		Produktauswahl findet in zwei Schritten statt. Zunächst wählt der Kunde die Ebene, in
+		welcher sich das gewünschte Produkt befindet. Wählt der Kunde eine Ebene aus, die
+		nicht existiert, wartet der Automat weiter auf die Produktauswahl. Ist die Ebene gewählt,
+		gibt der Kunde das Fach des gewünschten Produktes an. Nach der Produktauswahl wirft der Kunde so lange
+		Münzen ein, bis der eingeworfene Betrag gleich oder größer dem Preis des ausgewählten
+		Produktes ist. Solange der Kunde nicht ausreichend Geld in den Automaten eingeworfen
+		hat, wartet der Automat auf den Einwurf des fehlenden Geldbetrages. Hat der
+		Kunde ausreichend Geld eingeworfen, befördert der Automat das gewählte Produkt in
+		den Ausgabeschacht. Danach entnimmt der Kunde das Produkt und der Automat wartet auf die nächste Produktauswahl.
+	\end{block}
+		Modellieren Sie das Verhalten des Automaten wie im obigen Szenario beschrieben als UML-Zustandsdiagramm.
+		Geben Sie zu jedem Übergang das auslösende Ereignis sowie ggf. die
+		notwendigen Bedingungen an.
+\end{frame}
 		
 \section{Aktivitätsdiagramm}
 	\subsection{AD: Allgemein(1)}
@@ -300,6 +445,15 @@
 		\includegraphics[scale=0.45]{./pics/tut2/act_syn1.png}
 	\end{frame}
 
+	\begin{frame}
+	\frametitle{Aktivitätsdiagramm - Ablauf}
+	\begin{itemize}
+		\item Start am Startknoten mit einer Marke
+		\item Aktionen werden erst ausgeführt, wenn an jedem Eingang eine Marke anliegt
+		\item wurde eine Aktion ausgeführt, erscheinen an all ihren Ausgängen Marken
+	\end{itemize}
+	\end{frame}
+
 	\subsection{AD: Syntax(2)}
 	\begin{frame}
 		\frametitle{Aktivitätsdiagramm - Syntax}
@@ -312,16 +466,6 @@
 		\includegraphics[scale=0.45]{./pics/tut2/act_syn3.png}
 	\end{frame}
 
-	\subsection{AD: Ablauf}
-	\begin{frame}
-		\frametitle{Aktivitätsdiagramm - Ablauf}
-		\begin{itemize}
-			\item Start am Startknoten mit einer Marke
-			\item Aktionen werden erst ausgeführt, wenn an jedem Eingang eine Marke anliegt
-			\item wurde eine Aktion ausgeführt, erscheinen an all ihren Ausgängen Marken
-		\end{itemize}
-	\end{frame}
-
 	\subsection{AD: Beispiel}
 	\begin{frame}
 		\frametitle{Aktivitätsdiagramm - Beispiel}
@@ -331,6 +475,40 @@
 			\includegraphics[scale=0.4]{./pics/tut2/act_ex.png}
 		\end{figure}
 	\end{frame}
+
+	\begin{frame}{Noch ein Beispiel}
+	 	(Tafel)
+\end{frame}
+
+	\begin{frame}{Klausuraufgabe SS 11}
+	\begin{exampleblock}{Aufgabenstellung}
+		Modellieren Sie das gegebene Szenario als UML-Aktivitätsdiagramm. Verwenden Sie bei Ihrer
+		Modellierung korrekte UML-Notation. Objektflüsse müssen Sie nicht modellieren. 
+	\end{exampleblock}
+	(Szenario auf nächster Folie)
+\end{frame}
+
+\begin{frame}{Klausuraufgabe SS 11: Szenario}
+\begin{block}{Szenario}
+	\small Bernd Bruegge fühlt sich nicht wohl und möchte sich untersuchen lassen, um eine Diagnose zu erhalten. Er geht dazu ins Krankenhaus und meldet sich an der Pforte. Der
+	Pförtner macht ihn darauf aufmerksam, dass er seine Krankenkassenkarte dabei haben
+	muss – falls nicht, kann ihm keine Diagnose gestellt werden. Bernd B. hat seine Krankenkassenkarte dabei und lässt sich daher den Weg zur Patientenaufnahme zeigen, da
+	er sich dort zunächst anmelden muss. Während der Sachbearbeiter an der Patientenaufnahme die Krankenakte mit den persönlichen Daten anlegt, füllt Bernd B. den
+	Anamnesebogen aus. Danach wird Bernd B. vom Arzt untersucht. Die Untersuchung
+	ergibt, dass der Arzt zur weiteren Diagnose ein Blutbild und ein Röntgenbild der Lunge
+	benötigt und er in der Zwischenzeit ein Gespräch mit einem anderen Patienten führen
+	kann. Dazu wird Bernd B. zunächst Blut abgenommen. Während das Blut im Labor
+	analysiert wird, geht Bernd B. in die radiologische Abteilung und lässt das Röntgenbild
+	der Lunge anfertigen. Als der Arzt von seinem Gespräch mit dem anderen Patienten zurückkommt, liegen das Röntgen- und das Blutbild vor und er stellt Bernd B. eine Diagnose.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Musterlösung}
+\centering
+\includegraphics[scale=0.35]{./pics/tut2/solution-act.png}
+\includegraphics[scale=0.4]{./pics/tut2/solution-act-points.png}
+\end{frame}
 
 \section{Sequenzdiagramm}
 	\subsection{SD: Allgemein}
@@ -350,23 +528,24 @@
 		\frametitle{Sequenzdiagramm - Syntax}
 		\begin{itemize}
 			\item Zeit verläuft von oben nach unten
+			\item ein Kasten pro Objekt (\texttt{\underline{instanzName: KlassenName}})
 			\item Lebenslinie
 			\begin{itemize}
 				\item gestrichelte senkrechte Linie
-				\item eine pro Objekt
+				\item eine pro Objekt, solange wie Objekt \enquote{lebt}
 			\end{itemize}
 			\item Steuerungsfokus
 			\begin{itemize}
 				\item dicker Balken über Lebenslinie
 				\item zeigt, dass Objekt gerade aktiv ist
 			\end{itemize}
-			\item Nachrichtentypen
+			\item Nachrichtentypen (für Methodenaufrufe und Rückgabe)
 			\begin{itemize}
 				\item Synchrone Nachricht (blockierend)
 				\item Antwort (optional)
 				\item Asynchrone Nachricht
 			\end{itemize}
-			\begin{textblock*}{20mm}(75mm,60mm)
+			\begin{textblock*}{20mm}(75mm,63mm)
 				\includegraphics[scale=0.4]{./pics/tut2/sd_met.png}
 			\end{textblock*}
 		\end{itemize}
@@ -394,9 +573,41 @@
 			\begin{figure}
 				\centering
 				\includegraphics[scale=0.65]{./pics/tut2/sdtask.png}
-				\caption{Hier stimmt was nicht\dots}
+				\caption{Hier stimmt was nicht\dots, aber was?}
 			\end{figure}
 	\end{frame}
+
+\begin{frame}{Musterlösung 1}
+	\includegraphics[scale=0.65]{pics/tut2/solution-seq.png}
+\end{frame}
+
+\begin{frame}{Musterlösung 2}
+	\includegraphics[scale=0.65]{pics/tut2/solution-seq-l1.png}
+\end{frame}
+
+\begin{frame}{Musterlösung 3}
+	\includegraphics[scale=0.65]{pics/tut2/solution-seq-l2.png}
+\end{frame}
+
+\begin{frame}[fragile]{Aufgabe: Code $\rightarrow$ Sequenzdiagramm}	
+\begin{verbatim}
+public class Student {
+    public void schlechtesGewissen(Übungsblatt b) {
+        Aufgabe a = b.gibAufgabe();
+        Loesung l = löseAufgabe(a);
+        b.setzeLösung(a, l);
+        LEZ.abgeben(b);
+    }
+    
+    private Lösung löseAufgabe(Aufgabe a) {
+        // SWT1-Magie erstellt Lösungs-Objekt
+    }
+}
+\end{verbatim}
+\begin{block}{Aufgabe}
+	Aufruf von \texttt{schlechtesGewissen} als Sequenzdiagramm modellieren
+\end{block}
+\end{frame}
 
 	\subsection{Zusammenfassung}
 	\begin{frame}
@@ -420,126 +631,6 @@
 		\end{itemize}
 	\end{block}
 \end{frame}
-
-	\subsection{Gruppenarbeit}
-	\begin{frame}
-		\frametitle{Gruppenarbeit: Jetzt seid ihr dran!}
-		Ablauf:
-		\begin{enumerate}
-			\item Einteilung in Expertengruppen
-			\item Bearbeitet eure Aufgabe in der Gruppe
-			\item Vergleicht eure Lösung mit der Musterlösung 
-			\item Durchmischen der Gruppen
-			\item Stellt den anderen eure Aufgabe $\&$ Lösung vor
-			\begin{itemize}
-				\item Erklärt insbesondere, was ihr evtl. falsch gemacht habt
-			\end{itemize}
-		\end{enumerate}
-	\end{frame}
-	
-	\subsection{Gruppe 1 - Aufgabe}
-	\begin{frame}
-		\frametitle{Gruppe 1: Zustandsdiagramm (Nachklausur 09)}
-		\begin{tiny}
-			Gegeben ist die folgende Beschreibung eines Automaten zum Verkauf von Getränken und
-			Süßwaren: \linebreak
-			\textit{Zu Beginn wartet der Automat auf die Auswahl des Produktes durch den Kunden. Die
-			Produktauswahl findet in zwei Schritten statt. Zunächst wählt der Kunde die Ebene, in
-			welcher sich das gewünschte Produkt befindet. Wählt der Kunde eine Ebene aus, die
-			nicht existiert, wartet der Automat weiter auf die Produktauswahl. Ist die Ebene gewählt,
-			gibt der Kunde das Fach des gewünschten Produktes an. Ist das gewählte Produktfach
-			ausverkauft, bricht der Automat den Kaufvorgang ab und wartet erneut auf
-			die Produktauswahl. Nach erfolgreicher Produktauswahl wirft der Kunde so lange
-			Münzen ein, bis der eingeworfene Betrag gleich oder größer dem Preis des ausgewählten
-			Produktes ist. Solange der Kunde nicht ausreichend Geld in den Automaten eingeworfen
-			hat, wartet der Automat auf den Einwurf des fehlenden Geldbetrages. Hat der
-			Kunde ausreichend Geld eingeworfen, befördert der Automat das gewählte Produkt in
-			den Ausgabeschacht. Danach entnimmt der Kunde das Produkt. Hat der Kunde genau
-			so viel Geld eingeworfen, wie das Produkt kostet, wartet der Automat auf die nächste
-			Produktauswahl. Hat der Kunde das Produkt entnommen und mehr Geld eingeworfen,
-			als das ausgewählte Produkt kostet, so gibt der Automat das Rückgeld in den Ausgabeschacht
-			aus. Nachdem der Kunde das Rückgeld entnommen hat, wartet der Automat
-			wieder auf die nächste Produktauswahl.} \linebreak
-			Modellieren Sie das Verhalten des Automaten wie im obigen Szenario beschrieben als UMLZustandsdiagramm.
-			Geben Sie zu jedem Übergang das auslösende Ereignis sowie ggf. die
-			notwendige Bedingungen an.
-		\end{tiny}
-	\end{frame}
-	
-	\subsection{Gruppe 1 - Lösung}
-	\begin{frame}
-		\frametitle{Gruppe 1: Musterlösung}
-		\includegraphics[scale=0.4]{./pics/tut2/group1sol.png}
-	\end{frame}
-
-	\subsection{Gruppe 2 - Aufgabe}
-	\begin{frame}
-		\frametitle{Gruppe 2: Sequenzdiagramm (Nachklausur 11)}
-		\begin{tiny}
-			Gegeben sei folgendes Szenario, welches eine Untersuchung in einem Krankenhaus beschreibt:  \linebreak
-			\textit{Bernd Bruegge fühlt sich nicht wohl und möchte sich untersuchen lassen, um eine Diagnose
-				zu erhalten. Er geht dazu ins Krankenhaus und meldet sich an der Patientenaufnahme
-				an. Während der Sachbearbeiter an der Patientenaufnahme die Krankenakte anlegt,
-				füllt Bernd B. den Anamnesebogen aus, den ihm der Sachbearbeiter gegeben hat.
-				Nachdem Bernd B. den ausgefüllten Bogen dem Sachbearbeiter zurückgegeben hat, wird
-				Bernd B. vom Arzt untersucht. Dazu nimmt er Bernd B. zunächst Blut ab. Während das
-				Labor das Blut analysiert, führt der Arzt bei Bernd B. eine Auskultation durch. Schließlich
-				bekommt Bernd B. vom Arzt seine Diagnose.} \linebreak
-			Modellieren Sie das gegebene Szenario als UML-Sequenzdiagramm im Kasten auf der nächsten
-			Seite (Querformat!). Verwenden Sie bei Ihrer Modellierung korrekte UML-Notation. Achten Sie
-			bei Ihrer Modellierung darauf, auf welchen Objekten die Methoden sinnvollerweise aufgerufen
-			werden müssen. Geben Sie ggf. Argumente der Methoden an. 
-		\end{tiny}
-	\end{frame}
-
-	\subsection{Gruppe 2 - Lösung (1)}
-	\begin{frame}
-		\frametitle{Gruppe 2: Musterlösung}
-		\includegraphics[scale=0.4]{./pics/tut2/group2sol1.png}
-	\end{frame}
-
-	\subsection{Gruppe 2 - Lösung(2)}
-	\begin{frame}
-		\frametitle{Gruppe 2: Musterlösung}
-		\includegraphics[scale=0.4]{./pics/tut2/group2sol2.png}
-	\end{frame}
-
-	\subsection{Gruppe 3 - Aufgabe}
-	\begin{frame}
-		\frametitle{Gruppe 3: Aktivitätsdiagramm (Hauptklausur 06)}
-		\begin{tiny}
-			Entwerfen Sie ein Aktivitätsdiagramm, das die Durchführung einer Klausur beschreibt. Halten
-			Sie sich dabei so eng wie möglich an die nachfolgende Beschreibung und achten Sie darauf,
-			parallele Aktivitäten korrekt zu synchronisieren. Beginnen Sie mit der Modellierung der
-			Aktivitäten nach Betreten des Hörsaals.
-			Hinweis: Aktivitäten der Studenten sind nicht zu modellieren.   \linebreak
-			\textit{Nach Betreten des Hörsaals beginnt A1 die Tafel zu beschriften, während einer seiner
-				Helfer die Etiketten auslegt und der andere die mitgebrachten Türschilder
-				(„Bitte nicht stören! Klausur!“) an den Türen anbringt. Auf den Etiketten stehen
-				der Vor- und Nachname jedes Studenten, seine Matrikelnummer und eine fortlaufende
-				Nummer, die später die Verwaltung der Klausur vereinfacht.
-				Sind diese Aufgaben erledigt, kann der Einlass beginnen. Dazu öffnen die Helfer
-				die Türen des Hörsaals und A1 beaufsichtigt den Einlass. Solange noch nicht alle
-				Studenten ihren Platz gefunden haben, helfen A2 und A3 bei der Platzsuche.
-				Der Hauptverantwortliche A1 wartet ab, bis alle ihre Plätze gefunden haben. Dann
-				erklärt er den Ablauf, beaufsichtigt das Austeilen der Klausurblätter und verkündet
-				den Beginn der Klausur. Anschließend beaufsichtigt er 60 Minuten lang die Klausur
-				und sagt das Ende der Klausur an.
-				Nachdem A1 den Ablauf der Klausur angesagt hat, sind A2 und A3 für das Austeilen
-				der Klausur, die anschließende Aufsicht zuständig. Während der Bearbeitungszeit
-				geht zusätzlich einer von beiden herum und kontrolliert die Studentenausweise,
-				während der andere Aufsicht führt.
-				Während der Klausur verlässt keine Aufsicht den Hörsaal. } \linebreak
-		\end{tiny}
-	\end{frame}
-
-	\subsection{Gruppe 3 - Lösung }
-	\begin{frame}
-	\frametitle{Gruppe 3: Musterlösung}
-	\centering
-	\includegraphics[scale=0.35]{./pics/tut2/group3sol.png}
-	\end{frame}
-
 
 \section{Tipps}
 	\subsection{Tipps}
@@ -591,15 +682,18 @@
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item Deadline am 30.5. um 12:00
-				\item Aufgabe 4+5+6+7 handschriftlich (Diagramme: auf saubere Syntax achten!)
+				\item Deadline am 05.06. um 12:00
+				\item Aufgabe 4+5+6+7 handschriftlich
+				\begin{itemize}
+					\item auf korrekte Syntax achten
+				\end{itemize}
 				\item an das Deckblatt denken
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 		
 	\begin{frame}
-		\frametitle{Bis dann! (dann := 05.06.18)}
+		\frametitle{Bis dann! (dann := 04.06.19)}
 		\centering
 		\includegraphics[scale=0.9]{./comics/geek_and_poke_development.jpg}
 	\end{frame}
