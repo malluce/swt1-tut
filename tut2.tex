@@ -62,28 +62,31 @@
 \end{frame}
 
 \section{Orga}
-	\subsection{Feedback 2. Übungsblatt}
-	\begin{frame}
-		%TODO
-		\frametitle{2. Übungsblatt Statistik}
-		\includegraphics[scale=0.7]{./pics/tut2/statistics-ub2.png}
-	\end{frame}
-
-	
-\begin{frame}{Abgabemodalitäten - Sprache}
-	\begin{itemize}
-		\item letztes Mal kam eine Frage, ob Abgaben auf Englisch auch erlaubt
-		\item für mich ok
-		\item laut Übungsleitern in Klausur nicht ok
+\begin{frame}[fragile]{Abgabemodalitäten}
+	\begin{block}{Sprache}
 		\begin{itemize}
-			\item also am besten jetzt auch schon auf Deutsch abgeben
+			\item letztes Mal kam eine Frage, ob Abgaben auf Englisch auch erlaubt
+			\item für mich ok
+			\item laut Übungsleitern in Klausur nicht ok
+			\begin{itemize}
+				\item also am besten jetzt auch schon auf Deutsch abgeben
+			\end{itemize}
 		\end{itemize}
-	\end{itemize}	
+	\end{block}
+	\begin{block}{Notation Abstrakte Klassen}
+		\begin{itemize}
+			\item an VL-Notation halten (insbesondere nicht \verb|<<abstract>>|)
+			\item siehe UML-Spec 
+			\begin{itemize}
+				\item \url{https://www.omg.org/spec/UML/2.5.1/PDF}, p.101
+			\end{itemize}
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}{Tutorientermine}
 	\begin{itemize}
-		\item entsprechend der Abstimmung vom vorletzten Mal ist das nächste Tut am 04.06
+		\item entsprechend der Abstimmung vom vorletzten Mal ist das nächste Tut am 04.06 (= nächste Woche)
 		\item also
 		\begin{itemize}
 			\item 28.05. (heute): Tutorium
@@ -96,6 +99,12 @@
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
+\end{frame}
+
+\subsection{Feedback 2. Übungsblatt}
+\begin{frame}
+	\frametitle{2. Übungsblatt Statistik}
+	\includegraphics[scale=0.7]{./pics/tut2/statistics-ub2.png}
 \end{frame}
 	
 \subsection{2. Übungsblatt - Fehler (Allgemein)}
@@ -116,16 +125,23 @@
 		\frametitle{Häufige Fehler}
 		\begin{block}{Aufgabe 1 (Lastenheft)}
 			\begin{itemize}
-				\item Unnötiges aus Vorlage durfte man löschen (z.B. "'Siehe https://en.wikibooks.org/wiki/LaTeX/Glossary"')
+				\item \enquote{relevante Daten} bei Produktdaten ist unpräzise
 				\pause
-				\item \enquote{relevante Daten} unpräzise
+				\item Verwirrung: Szenario vs. \enquote{Aufgaben-Szenario}
 				\pause
-				\item Szenarien zu allgemein
-				\pause
-				\item Diagramm
+				\item Anwendungsfalldiagramm
 				\begin{itemize}
-					\item Server ist Teil des Systems
-					\item direkte Verbindung zwischen Anwendungsfällen nicht definiert
+					\item Syntax (Pfeile, System-Kasten, Aktoren,\dots)
+					\item Anwendungsfälle enthalten Verben
+					\begin{itemize}
+						\item \enquote{Vorschau}, \enquote{Kundenbilder} sind \textbf{keine}
+						\item richtig wäre z.B. \enquote{Kundenbilder speichern}
+					\end{itemize}
+					\item direkte Verbindungen zwischen Anwendungsfällen nicht definiert
+					\begin{itemize}
+						\item include vs. extend
+						\item auch nicht zwischen Aktoren
+					\end{itemize}
 				\end{itemize}
 			\end{itemize}
 		\end{block}
@@ -136,53 +152,125 @@
 		\begin{block}{Aufgabe 2 (Klassendiagramm)}
 			\begin{itemize}
 				\item äußere Form, UML-Syntax
+				\begin{itemize}
+					\item gerichtete Assoziation vs. Vererbung
+					\item $\underbrace{\texttt{name:Typ}}_{\text{UML}}$ statt $\underbrace{\texttt{Typ name}}_{\text{Java}}$
+				\end{itemize}
 				\pause
-				\item Farbtiefe sollte Enum sein
+				\item alle Klassen, die ihr verwendet, müssen auch im Diagramm sein
+				\begin{itemize}
+					\item z.B. \enquote{Bild} als Parameter verwendet, aber nirgendwo definiert
+				\end{itemize}
 				\pause
-				\item Assoziation vs. Methode
+				\item \texttt{verarbeite(b:Bild):Bild} in Einzelbildop./Mehrbildop. nicht als abstrakt gekennzeichnet
+				\begin{itemize}
+					\item kann man aber nicht sinnvoll implementieren
+				\end{itemize}
 				\pause
-				\item bei Collections immer []-Schreibweise nutzen, nicht ArrayList$<XY>$
+				\item Farbtiefe sollte Enum sein (nur bestimmte Werte erlaubt)
+				\pause
+				\item oft wurden die konkreten Operationen als Methoden hingeschrieben
+				\begin{itemize}
+					\item sollten aber eigene Klassen sein
+					\item Wieso ist das sinnvoll? siehe \enquote{Befehl/Command}-Entwurfsmuster 
+					\item (nächstes Tut)
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 \end{frame}
 
 \begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 3 (Durchführbarkeitsanalyse)}
-			\begin{itemize}
-				\item nur Stichpunkte
-				\pause
-				\item Fragen beantworten, nicht stellen!
-				\linebreak z.B. "'Es werden 3 Java-Entwickler benötigt."' $\implies$
-				"'Da wir 5 zur Zeit untätige Java-Entwickler in der Firma haben, ist das Projekt aus personeller Sicht für die Pear Corp. durchführbar."'
-			\end{itemize}
-		\end{block}
+\frametitle{Häufige Fehler}
+\begin{block}{Aufgabe 2 (Klassendiagramm)}
+	\begin{itemize}
+		\item bei Collections immer []-Schreibweise nutzen, nicht \texttt{ArrayList<XY>}
+		\pause
+		\item uses. vs Assoziation
+	\end{itemize}
+\end{block}
+\pause
+	\begin{block}{Aufgabe 3 (Durchführbarkeitsanalyse)}
+	\begin{itemize}
+		\item nur Stichpunkte\dots
+		\pause
+		\item Fragen beantworten, nicht stellen!
+		\linebreak z.B. "'Es werden 3 Java-Entwickler benötigt."' $\implies$
+		"'Da wir 5 zur Zeit untätige Java-Entwickler in der Firma haben, ist das Projekt aus personeller Sicht für die Pear Corp. durchführbar."'
+	\end{itemize}
+\end{block}
 \end{frame}
 
 \begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Shutterpile programmieren)}
+		\begin{block}{Aufgabe 4 (HDR programmieren)}
 			\begin{itemize}
-				\item Alpha-Kanal nicht sichergestellt (im Supplier)
+				\item Überprüfungen bei Matrix-Operationen vergessen
+				\begin{itemize}
+					\item \texttt{A*B} nur möglich, wenn \texttt{A.cols() == B.rows()}
+					\item \texttt{$A^{-1}$} nicht-existent falls \texttt{A} nicht quadratisch
+					\begin{itemize}
+						\item existiert nur, falls \texttt{det(A) != 0}
+					\end{itemize}
+				\end{itemize}
 				\pause
-				\item die aufwendigeren Sachen nicht abgegeben
+				\item die \enquote{komplizierteren} Sachen nicht abgegeben
+				\begin{itemize}
+					\item keine Angst vor ein bisschen Mathe :)
+				\end{itemize}
 				\pause
-				\item Testfälle unzureichend
+				\item zu wenig oder nicht sinnvoll getestet
+				\pause
+				\item Überraschung: \texttt{mtx.copy()} soll Matrix kopieren
 			\end{itemize}
 		\end{block}
 	
-	\begin{block}{Aufgabe 5 (Kommandozeilen-Tool)}
-		\begin{itemize}
-			\item 4 Abgaben \dots
-			\item kleine Fehler in pom (dependencies kopieren!)
-		\end{itemize}
-	\end{block}
 
-	\begin{block}{Aufgabe 6 (Farb-Wasserzeichen)}
+\end{frame}
+
+\begin{frame}{Häufige Fehler}
+	\begin{block}{Aufgabe 5 (Kommandozeilen-Tool)}
+	\begin{itemize}
+		\item 5 Abgaben \dots
+		\item kleine Fehler in pom (dependencies kopieren)
+	\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Aufgabe 6 (Filter-Schnittstellen)}
+	\begin{itemize}
+		\item 4 Abgaben \dots
+		\item Filter-Liste sollte veränderbar sein
 		\begin{itemize}
-			\item 3 Abgaben \dots
+			\item z.B. Pipeline-Muster
 		\end{itemize}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Substitutionsprinzip}
+\begin{frame}{Liskov'sches Substitutionsprinzip}
+	\small aka Verhaltenskonformanz, Klientencode-Wiederverwendung
+	\begin{block}{Definition}
+		In einem Programm, in dem U eine Unterklasse
+		von O ist, kann jedes Exemplar der Klasse O
+		durch ein Exemplar von U ersetzt werden, wobei
+		das Programm weiterhin korrekt funktioniert.
 	\end{block}
+	\pause
+	\begin{itemize}
+		\item aus Sicht des Verhaltens ist jedes U-Objekt auch ein O-Objekt
+		\item Klientencode muss bei Methodenaufrufen nicht wissen, ob es sich um ein U-Objekt oder O-Objekt handelt
+	\end{itemize}
+	\pause
+	\begin{alertblock}{Achtung}
+		Das müssen wir als Programmierer sicherstellen. Nur weil Java uns die Möglichkeit bietet Unterklassen zu bilden, ist das Substitutionsprinzip noch lange nicht erfüllt! (dadurch ist nur die sogenannte Typkonformanz gegeben)
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}{Liskov'sches Substitutionsprinzip}
+	\huge \centering Beispiel!
 \end{frame}
 
 \section{Zustandsdiagramm}
@@ -284,6 +372,10 @@
 		\end{itemize} \pause
 		\item auch reflexive Übergänge möglich
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Mögliche Übergänge}
+	(Tafel)
 \end{frame}
 
 \begin{frame}{Start- und Endzustand}
@@ -641,13 +733,22 @@ public class Student {
 					\pause
 					\item JavaDoc + CheckStyle \dots \pause
 					\item Fügt Abhängigkeiten in die jeweilige Untermodul-pom ein \pause
-					\item Java Swing benutzen (schaut euch die Java-Klassen JMenu und JMenuItem an)
+					\item Java Swing benutzen
+					\begin{itemize}
+						\item zum Teil müsst ihr in existierendem JMJRST-Code rumfummeln
+						\item nicht an dem Stil von JMJRST orientieren!
+						\item relevante Klassen u.A. \texttt{JMenu, JMenuItem, JFrame, JPanel, \dots}
+					\end{itemize}
 				\end{itemize}
 			\end{exampleblock}
 			\pause
 			\begin{exampleblock}{Aufgabe 4: Aktivitätsdiagramm}
 				\begin{itemize}
 					\item Partitionen siehe VL
+					\item Kombination als verschachtelte Aktion für Übersichtlichkeit
+					\begin{itemize}
+						\item Notation!
+					\end{itemize}
 				\end{itemize}
 			\end{exampleblock}
 	\end{frame}
@@ -663,29 +764,41 @@ public class Student {
 			\pause
 			\begin{exampleblock}{Aufgabe 6: Sequenzdiagramm}
 				\begin{itemize}
+					\item zum Text den Quellcode anschauen, dann werden Bezugsobjekte klarer
 					\pause
-					\item statische Methode: Unterstreichung + Name des Objekts + Doppelpunkt beim Kasten weglassen 
+					\item für Verzweigungssyntax siehe VL
+					\pause
+					\item statische Methode: bei den \enquote{Objekt-Kästen} folgendes weglassen
+					\begin{itemize}
+						\item Unterstreichung + Name des Objekts + Doppelpunkt
+						\item also statt \boxed{\underline{\texttt{lez:LEZ}}} einfach \boxed{\texttt{LEZ}}
+						\item Methodenaufruf auf dem Pfeil kann man zusätzlich auch noch unterstreichen, muss man aber nicht
+					\end{itemize}  
 					\pause
 					\item Lebenslinie + Kasten erst hinmalen wenn Objekt schon existiert
 				\end{itemize}
 			\end{exampleblock}
-			\pause
-			\begin{exampleblock}{Aufgabe 7: Substitutionsprinzip}
-				\begin{itemize}
-					\item Definition anschauen und scharf überlegen, was schief gehen kann
-				\end{itemize}
-			\end{exampleblock}
 	\end{frame}
+
+	\begin{frame}
+\frametitle{Tipps - 3. Übungsblatt}
+\begin{exampleblock}{Aufgabe 7: Substitutionsprinzip}
+	\begin{itemize}
+		\item Definition anschauen und \enquote{scharf hinsehen}, was schief gehen kann
+	\end{itemize}
+\end{exampleblock}
+\end{frame}
 
 	\subsection{Abgabe}
 	\begin{frame}
-		\frametitle{Denkt dran!}
+		\frametitle{Die nächste Frist kommt bestimmt}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
 				\item Deadline am 05.06. um 12:00
 				\item Aufgabe 4+5+6+7 handschriftlich
 				\begin{itemize}
 					\item auf korrekte Syntax achten
+					\item Lineal/Geodreieck dürfen benutzt werden :-)
 				\end{itemize}
 				\item an das Deckblatt denken
 			\end{itemize}
