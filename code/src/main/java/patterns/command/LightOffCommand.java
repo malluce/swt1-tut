@@ -1,6 +1,6 @@
 package patterns.command;
 
-public class LightOffCommand extends Command {
+public class LightOffCommand implements Command {
 	private Light light;
 
 	public LightOffCommand(Light light) {

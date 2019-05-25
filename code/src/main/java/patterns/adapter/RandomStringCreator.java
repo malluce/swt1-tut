@@ -1,5 +1,10 @@
 package patterns.adapter;
 
-public abstract class RandomStringCreator {
-	abstract String getRandomString();
+public interface RandomStringCreator {
+	/**
+	 * Creates a random String and returns it.
+	 * 
+	 * @return the random String
+	 */
+	String getRandomString();
 }

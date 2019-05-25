@@ -17,6 +17,11 @@ public class Client {
 			log.executeAndLog(c);
 		}
 
+		System.out.println("We executed the following commands:");
+		for (Command loggedCommand : log.getAllExecutedCommands()) {
+			System.out.println(loggedCommand.getClass().getSimpleName());
+		}
+
 	}
 
 }

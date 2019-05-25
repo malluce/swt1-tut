@@ -1,6 +1,6 @@
 package patterns.adapter;
 
-public class Adapter extends RandomStringCreator {
+public class Adapter implements RandomStringCreator {
 	private RandomIntegerCreator adapt;
 
 	public Adapter() {
@@ -8,7 +8,7 @@ public class Adapter extends RandomStringCreator {
 	}
 
 	@Override
-	String getRandomString() {
+	public String getRandomString() {
 		Integer randomInt = adapt.randomNumberAsInt();
 		return randomInt.toString();
 	}

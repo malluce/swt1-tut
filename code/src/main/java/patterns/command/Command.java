@@ -1,5 +1,5 @@
 package patterns.command;
 
-public abstract class Command {
-	public abstract void execute();
+public interface Command {
+	void execute();
 }
