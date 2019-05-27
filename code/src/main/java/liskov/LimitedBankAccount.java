@@ -5,7 +5,7 @@ public class LimitedBankAccount extends BankAccount {
 	@Override
 	public void withdraw(int amountInEuro) {
 		if (amountInEuro > 1000) {
-			throw new IllegalArgumentException("You can only withdraw up to 1000€ at once.");
+			throw new IllegalArgumentException("You can only withdraw up to 1000 Euro at once.");
 		}
 		balance -= amountInEuro;
 	}

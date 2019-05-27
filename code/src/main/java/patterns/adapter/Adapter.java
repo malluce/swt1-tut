@@ -7,7 +7,6 @@ public class Adapter implements RandomStringCreator {
 		this.adapt = new RandomIntegerCreator();
 	}
 
-	@Override
 	public String getRandomString() {
 		Integer randomInt = adapt.randomNumberAsInt();
 		return randomInt.toString();
