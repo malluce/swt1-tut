@@ -11,4 +11,8 @@ public class BankAccount {
 		balance -= amountInEuro;
 	}
 
+	public void deposit(int amountInEuro) {
+		balance += amountInEuro;
+	}
+
 }

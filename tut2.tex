@@ -1,6 +1,10 @@
 \documentclass[18pt]{beamer}
 \usepackage[utf8]{inputenc} % for the umlauts
 \usepackage{subfigure}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 \beamertemplatenavigationsymbolsempty
 %% SLIDE FORMAT
@@ -481,6 +485,21 @@
 	\end{frame}
 
 	\subsection{ZD: Aufgabe}
+	
+\begin{frame}{Ankreuzaufgaben aus Klausuren}
+Richtig oder falsch?
+	\begin{itemize}
+		\item Nebenläufige Zustandsdiagramme sind echt mächtiger als normale Zustandsdiagramme.\pause ~\textcolor{red}{\xmark}
+		\item Zustandsdiagramme halten immer.\pause ~\textcolor{red}{\xmark}
+		\item Ein Zustandsdiagramm hat nur endlich viele Zustände.
+\pause ~\textcolor{green}{\cmark}
+		\item Das 
+H in Zustandsdiagrammen mit Gedächtnis steht für Hirn.
+\pause ~\textcolor{red}{\xmark}
+		\item Jeder Zustand in einem UML-Zustandsdiagramm kann eine entry/exit-Methode angeben. \pause ~\textcolor{green}{\cmark}
+	\end{itemize}
+\end{frame}
+	
 	\begin{frame}
 		\frametitle{Klausuraufgabe SS09}
 		\begin{block}{Aufgabe}
@@ -626,7 +645,7 @@
 		\frametitle{Sequenzdiagramm - Syntax}
 		\begin{itemize}
 			\item Zeit verläuft von oben nach unten
-			\item ein Kasten pro Objekt (\texttt{\underline{instanzName: KlassenName}})
+			\item ein Kasten pro Objekt \boxed{\texttt{instanzName: KlassenName}}
 			\item Lebenslinie
 			\begin{itemize}
 				\item gestrichelte senkrechte Linie
@@ -707,6 +726,17 @@ public class Student {
 \end{block}
 \end{frame}
 
+\begin{frame}{Ankreuzaufgaben aus Klausuren}
+Richtig oder falsch?
+\begin{itemize}
+	\item Sequenzdiagramme skizzieren einen ganz konkreten Ablauf eines Anwendungsfalls.\pause ~\textcolor{green}{\cmark}
+	\item Im Sequenzdiagramm zeigen Pfeile von dem Objekt weg, auf dem die angegebene Methode aufgerufen wird.\pause ~\textcolor{red}{\xmark}
+	\item In Sequenzdiagrammen können Rückgabewerte an den Rückführungspfeilen angegeben werden.
+	\pause ~\textcolor{green}{\cmark}
+	\item Bei asynchronen Aufrufen im Sequenzdiagramm wird die Quelle in der Ausführung bis zum Erhalt der Antwort blockiert.\pause ~\textcolor{red}{\xmark}
+\end{itemize}
+\end{frame}
+
 	\subsection{Zusammenfassung}
 	\begin{frame}
 		\frametitle{Wozu nochmal was?}
@@ -751,9 +781,9 @@ public class Student {
 			\begin{exampleblock}{Aufgabe 4: Aktivitätsdiagramm}
 				\begin{itemize}
 					\item Partitionen siehe VL
-					\item Kombination als verschachtelte Aktion für Übersichtlichkeit
+					\item Aktion \enquote{Kombination} als verschachtelte Aktion für Übersichtlichkeit
 					\begin{itemize}
-						\item Notation!
+						\item Notation beachten
 					\end{itemize}
 				\end{itemize}
 			\end{exampleblock}
@@ -764,7 +794,7 @@ public class Student {
 			\begin{exampleblock}{Aufgabe 5: Zustandsdiagramm}
 				\begin{itemize}
 					\pause
-					\item History-Vererbung? siehe flache vs. tiefe History!
+					\item History-Vererbung? siehe flache vs. tiefe History
 				\end{itemize}
 			\end{exampleblock}
 			\pause
@@ -774,10 +804,10 @@ public class Student {
 					\pause
 					\item für Verzweigungssyntax siehe VL
 					\pause
-					\item statische Methode: bei den \enquote{Objekt-Kästen} folgendes weglassen
+					\item Aufruf von statischen Methoden
 					\begin{itemize}
-						\item Unterstreichung + Name des Objekts + Doppelpunkt
-						\item also statt \boxed{\underline{\texttt{lez:LEZ}}} einfach \boxed{\texttt{LEZ}}
+						\item Name des Objekts + Doppelpunkt weglassen
+						\item also statt \boxed{\texttt{lez:LEZ}} einfach \boxed{\texttt{LEZ}}
 						\item Methodenaufruf auf dem Pfeil kann man zusätzlich auch noch unterstreichen, muss man aber nicht
 					\end{itemize}  
 					\pause

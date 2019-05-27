@@ -7,6 +7,6 @@ public class LimitedBankAccount extends BankAccount {
 		if (amountInEuro > 1000) {
 			throw new IllegalArgumentException("You can only withdraw up to 1000 Euro at once.");
 		}
-		balance -= amountInEuro;
+		super.withdraw(amountInEuro);
 	}
 }
