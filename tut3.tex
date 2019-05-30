@@ -63,6 +63,13 @@
 \titlepage
 \end{frame}
 
+\section{Evaluation}
+	\begin{frame}{Evaluation}
+	\centering Tutorien-Halbzeit erreicht: Her mit der Kritik!
+	\centering \includegraphics[scale=0.6]{pics/tut3/frame.png}
+	\url{https://forms.gle/N7rjXDUu8BR6gx2KA}
+\end{frame}
+
 \section{Motivation}
 	\subsection{Kontext}
 		\begin{frame}
@@ -479,7 +486,6 @@ public class MyButton extends Button {
 	\end{itemize}
 	\end{frame}
 
-\section{Adapter}
 	\subsection{Adapter}
 	\begin{frame}
 		\frametitle{Adapter}
@@ -510,7 +516,6 @@ public class MyButton extends Button {
 		$\implies$ keine Mehrfachvererbung in Java!
 	\end{frame}
 
-\section{Beobachter}
 	\subsection{Beobachter}
 	\begin{frame}{Beobachter/Observer: abstrakt}
 		\begin{block}{Problem}
@@ -537,7 +542,32 @@ public class MyButton extends Button {
 		\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{pics/tut3/observer_example.jpg}
 	\end{frame}
 
-\section{Iterator}
+\begin{frame}[fragile]{Beobachter=Listener in Java Swing}
+	\centering
+	\includegraphics[scale=0.5]{pics/tut3/listener.png}
+	\pause
+	\begin{block}{Beobachter für einen \texttt{JButton btn}}
+		\begin{verbatim}
+			btn.addActionListener(new ActionListener() {
+			    @Override
+			    public void actionPerformed(ActionEvent e) {
+			        System.out.print("clicked");
+			    }
+			});
+		\end{verbatim}
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Beobachter=Listener in Java Swing}
+	\centering
+	\includegraphics[scale=0.5]{pics/tut3/listener.png}
+	\begin{block}{Das Gleiche mit Lambdas}
+		\begin{verbatim}
+		btn.addActionListener(e -> System.out.print("clicked"));
+		\end{verbatim}
+	\end{block}
+\end{frame}
+
 	\subsection{Iterator}
 	\begin{frame}
 		\frametitle{Iterator}
@@ -568,19 +598,18 @@ public class MyButton extends Button {
 		\frametitle{Iterator}
 		\centering
 		\includegraphics[scale=0.35]{./pics/tut3/iter.png}
-		\linebreak Beispiel in Java: list.iterator();
+		\linebreak Beispiel in Java: \texttt{list.iterator()};
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Quiz (Ankreuzaufgaben aus Klausuren)}
 		Wahr oder falsch?
 		\begin{itemize}
-			\item Klienten können mithilfe des Iterator-Musters Sammlungen von Objekten und einzelne Objekte auf die gleiche Weise behandeln. \pause \colorbox{red}{falsch} \pause
-			\item Das Entwurfsmuster Iterator ist den Variantenmustern zuzuordnen. \pause \colorbox{red}{falsch} 
+			\item Klienten können mithilfe des Iterator-Musters Sammlungen von Objekten und einzelne Objekte auf die gleiche Weise behandeln. \pause \ncorrect \pause
+			\item Das Entwurfsmuster Iterator ist den Variantenmustern zuzuordnen. \pause \ncorrect
 		\end{itemize}
 	\end{frame}
 
-\section{Stellvertreter}
 	\subsection{Stellvertreter}
 	\begin{frame}
 		\frametitle{Stellvertreter}
@@ -608,7 +637,6 @@ public class MyButton extends Button {
 
 %TODO proxy vs adapter?
 
-\section{Vermittler}
 	\subsection{Vermittler}
 		\begin{frame}
 		\frametitle{Vermittler}
@@ -634,7 +662,6 @@ public class MyButton extends Button {
 		\end{block}
 	\end{frame}
 
-\section{Klausuraufgabe}
 	\subsection{Aufgabe}
 	\begin{frame}
 		\frametitle{Klausuraufgabe (Hauptklausur SS 2012)}
@@ -666,7 +693,7 @@ public class MyButton extends Button {
 	\begin{frame}
 		\frametitle{Bis dann! (dann  := 25.06.19)}
 		\centering
-		\includegraphics[scale=0.5]{./comics/geek_and_poke_undeadCode.jpg}
+		\includegraphics[scale=0.55]{./comics/footprints2.jpg}
 	\end{frame}
 
 \end{document}

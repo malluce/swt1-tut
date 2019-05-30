@@ -3,8 +3,6 @@ package swing;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -27,14 +25,10 @@ public class MyDemoFrame extends JFrame {
 		pane.setPreferredSize(new Dimension(300, 150));
 
 		JButton button = new JButton("Click me!");
-		button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("I've been clicked :)");
-			}
+		button.addActionListener(e -> {
+			System.out.println("clicked");
+			System.out.println(pane);
 		});
-
-		button.setToolTipText(text);
 
 		pane.add(button);
 		pane.add(new JTextField("Standard-Text"));
