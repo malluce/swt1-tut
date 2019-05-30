@@ -1,6 +1,12 @@
 \documentclass[18pt]{beamer}
 \usepackage[utf8]{inputenc} % for the umlauts
 \usepackage{subfigure}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\correct}{\textcolor{green}{\cmark}}
+\newcommand{\ncorrect}{\textcolor{red}{\xmark}}
 
 \beamertemplatenavigationsymbolsempty
 %% SLIDE FORMAT
@@ -9,6 +15,7 @@
 % for widescreen slides (16:9), use 'beamerthemekitwide'
 
 \usepackage{templates/beamerthemekit}
+\usepackage{csquotes}
 % \usepackage{templates/beamerthemekitwide}
 
 \setcounter{tocdepth}{1}
@@ -40,17 +47,11 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \title[SWT1]{Softwaretechnik 1 - 3. Tutorium}
-\subtitle{Tutorium 18}
+\subtitle{Tutorium 17}
 \author{Felix Bachmann}
-\date{05.06.2018}
+\date{04.06.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
-
-% Bibliography
-
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
-\bibhang1em
 
 \begin{document}
 
@@ -61,97 +62,6 @@
 \begin{frame}
 \titlepage
 \end{frame}
-
-\section{Orga}
-	\subsection{Feedback 3. Übungsblatt}
-	\begin{frame}
-		\frametitle{3. Übungsblatt Statistik}
-		\includegraphics[scale=0.7]{./pics/tut3/statistics-ub3.png}
-		\linebreak \centering $\diameter$ 11,3 bzw. 15,7 von 27+3
-	\end{frame}
-	
-	\subsection{3. Übungsblatt - Fehler}
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1 (Plug-In-Architektur: PluginManager + JmjrstPlugin)}
-			\begin{itemize}
-				\pause
-				\item Plugins anhand \textbf{Klassen}namen vergleichen, nicht getName() \pause
-				\item Strings auslagern (Konstanten oder Datei) \pause
-				\item PluginManager gibt euch Iterable $\implies$ nutzt Iterator
-				\begin{itemize}
-					\item kein Casten, Kopieren in Liste \pause
-				\end{itemize}
- 				\item orientiert euch nicht am JMJRST-Stil
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2 (Plug-In)}
-			\begin{itemize}
-				\pause
-				\item Prüfen auf *.png/*.jpg sollte case insensitive sein \pause
-				\item Anm.: MetainfServices tut manchmal nicht richtig (oft hilft \texttt{mvn clean package}) \pause
-			\end{itemize}
-		\end{block}
-		\begin{block}{Aufgabe 3 (iMage-Bundle)}
-			\begin{itemize}
-				\item keine :D
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4 (Aktivitätsdiagramm)}
-			\begin{itemize}
-				\pause 
-				\item keine Partition verwendet \pause
-				\item Aktivitiäten = runde Ecken, Objekte = spitze Ecken \pause
-				\item denkt an die Rauten! \pause
-				\item $\lbrack$Bedingung$\rbrack$ \pause
-				\item verschachtelte Aktivitäten $\implies$ irgendwo passender Kasten dazu
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 5 (Zustandsdiagramm)}
-			\begin{itemize}
-				\pause
-				\item Übergänge,Zustände vergessen \pause
-				\item Notation parallel: DxG \pause
-				\item komplettes Diagramm hinzeichnen für Äquivalenz \pause
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 6 (Sequenzdiagramm)}
-			\begin{itemize}
-				\pause 
-				\item bzgl. Konstruktor sind VL-Folien etwas blöd \pause
-				\item asynchron vs. synchron (Pfeilspitzen sind wichtig!) \pause
-				\item nicht statische Instanzen unterstreichen \pause
-				\item Instanz-Kästen erst dann hinzeichnen, wenn Instanz auch existiert \pause
-				\item Selbstaufruf-Syntax
-			\end{itemize}
-		\end{block}
-		\begin{block}{Aufgabe 7 (Testen mit Nachahmungen)}
-			\begin{itemize}
-				\pause
-				\item Substitutionsprinzip: fordert dass Objekte einer Unterklasse immer auch im Kontext der Oberklasse eingesetzt werden können \pause
-				\item Varianz war kein Problem, da Signatur gleich \pause
-				\item Problem war Verhalten, schwächere Nachbedingung \pause
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-
 
 \section{Motivation}
 	\subsection{Kontext}
@@ -164,6 +74,7 @@
 				\pause
 				\linebreak $\implies$ Dokumente? \pause Lastenheft, Pflichtenheft (+ andere\dots)
 				\pause
+				\item und welche Phasen gibt es sonst noch? \pause
 				\item  jetzt: Entwurf!
 			\end{itemize}
 		\end{frame}
@@ -176,17 +87,301 @@
 		\end{frame}
 	
 		\begin{frame}
-			\frametitle{Abgrenzung Definition vs. Entwurf}
+			\frametitle{Entwurf vs Planung/Definition}
 			\begin{itemize}
-				\item Definition: \textbf{Was} ist zu implementieren?
+				\item Planung, Definition: \textbf{Was} ist zu implementieren?
+				\begin{itemize}
+					\item müssen wir mit dem Kunden besprechen
+				\end{itemize}
 				\pause
 				\item Entwurf: \textbf{Wie} ist das System zu implementieren?
+				\begin{itemize}
+					\item können wir uns selbst überlegen
+				\end{itemize}
 			\end{itemize}
 		\end{frame}
 	
+\section{Architekturstile}
+	\begin{frame}{Architekturstile}
+		\begin{itemize}
+			\item legen den Grobaufbau der Software fest
+			\begin{itemize}
+				\item heißt: wir sind noch nicht (unbedingt) auf Klassen-Ebene 
+			\end{itemize}
+			\item in der Vorlesung besprochen
+			\begin{itemize}
+				\item \textbf{Schichtenarchitektur}
+				\item \textbf{Klient/Dienstgeber} 
+				\item \textbf{Partnernetze}
+				\item \textbf{Modell-Präsentation-Steuerung}
+				\item \textbf{Fließband}
+				\item \textbf{Rahmenarchitektur}
+				\item Datenablage
+				\item Dienstorientierte Architektur
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Schichtenarchitektur}
+	\begin{itemize}
+		\item Funktionalität (Pakete, Klassen, \dots) in Schichten getrennt
+		\item Schichten \enquote{aufeinander gestapelt}
+		\item jede Schicht
+		\begin{itemize}
+			\item bietet seine Funktionalität den höheren Schichten an
+			\item nutzt Funktionalität der tieferen Schichten
+		\end{itemize}
+		\item Arten von Schichtenarchitekturen
+		\begin{itemize}
+			\item intransparent: jede Schicht kann nur auf direkt darunterliegende Schicht zugreifen
+			\item transparent: jede Schicht kann auch weiter unten liegende Schichten benutzen
+		\end{itemize}
+	\end{itemize}
+	\end{frame}
+
+\begin{frame}{Schichtenarchitektur}
+	\centering \includegraphics[scale=0.3]{pics/tut3/layers.png}
+	\begin{itemize}
+		\item wichtige Beispiele
+		\begin{itemize}
+			\item Betriebssysteme
+			\begin{itemize}
+				\item siehe Vorlesung \enquote{Betriebssysteme} (3. Semester)
+			\end{itemize}
+			\item Protokolltürme (aka. protocol stacks) 
+			\begin{itemize}
+				\item siehe Vorlesung \enquote{Einführung in Rechnernetze} (4. Semester)
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Klient/Dienstgeber und Partnernetze}
+	\begin{itemize}
+		\item eher bekannt als \emph{Client/Server} und \emph{Peer-to-Peer}
+		\item Client/Server
+		\begin{itemize}
+			\item Server bietet Dienst an
+			\item Client nutzt diesen Dienst
+		\end{itemize}
+		\item Peer-to-Peer
+		\begin{itemize}
+			\item jeder Teilnehmer kann Dienst anbieten und nutzen
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Klient/Dienstgeber und Partnernetze}
+	\centering \includegraphics[scale=0.3]{pics/tut3/client-server-peer.png}
+	\begin{itemize}
+		\item Vor- und Nachteile jeweils?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Modell-Präsentation-Steuerung}
+	\begin{itemize}
+		\item eher bekannt als \emph{model-view-controller}, \emph{MVC}
+		\item Software in drei große Bereiche (oft Pakete) unterteilt
+		\begin{itemize}
+			\item Model
+			\begin{itemize}
+				\item Datenspeicherung, Anwendungslogik
+			\end{itemize}
+			\item View
+			\begin{itemize}
+				\item Darstellung der Daten
+				\item Schaltflächen für Benutzerinteraktion
+			\end{itemize}
+			\item Controller
+			\begin{itemize}
+				\item verwaltet Model und View
+				\item zuständig für Interaktion mit Nutzer
+				\item Benutzerinteraktion mit View soll Model-Daten verändern \newline $\rightarrow$ aktualisiere Model
+			\end{itemize}
+		\end{itemize}
+	\pause
+		\item Was haben wir gewonnen?
+		\begin{itemize}
+			\item Erweiterbarkeit: können z.B. selbes Modell verwenden für Linux, Windows, Internet
+			\item Austauschbarkeit/Wartbarkeit: Model unabhängig von View
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Fließband}
+	\begin{itemize}
+		\item eher bekannt als \emph{pipeline}
+		\item Idee: Datenverarbeitung in mehreren Stufen
+		\begin{itemize}
+			\item jede Stufe verarbeitet Eingabedaten zu Ausgabedaten
+			\item Stufe 1 hat die Rohdaten als Eingabe
+			\item jede andere Stufe hat die Ausgabe der vorherigen Stufe als Eingabe
+		\end{itemize}
+		\centering	\includegraphics[scale=0.35]{pics/tut3/pipeline.png}
+	\end{itemize}
+		\pause
+		\begin{itemize}
+			\item gut anwendbar bei Verarbeitung von Datenströmen
+			\item praktisch bei Parallelität: Stufen können unabhängig voneinander ausgeführt werden
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Fließband bei Parallelität}
+	\begin{itemize}
+		\item angenommen wir haben 3-stufige Pipeline, dessen Stufen auf drei unterschiedlichen Prozessoren gleichzeitig ausgeführt werden
+	\end{itemize}
+	\begin{table}
+		\begin{tabular}{c|c|c|c|}
+				& CPU1 (Stufe 1) & CPU2 (Stufe 2) & CPU3 (Stufe 3) \\
+				\hline
+				t=0 & x & x & x \\
+				\hline
+			t=1 & Daten 1 & x & x \\
+			\hline
+			t=2 & Daten 2 & Daten 1 & x \\
+			\hline
+			t=3 & Daten 3 & Daten 2 & Daten1 \\
+			\hline
+			t=4 & Daten 4 & Daten 3 & Daten 2 \\
+			\hline
+			t=5 & Daten 5 & Daten 4 & Daten 3 \\
+			\dots & \dots & \dots & \dots 
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Rahmenarchitektur}
+	\begin{itemize}
+		\item eher bekannt als \emph{framework}
+		\item Idee 
+		\begin{itemize}
+			\item entwickle funktionsfähiges Programm
+			\item biete an bestimmten Stellen Möglichkeiten zur Erweiterung
+			\begin{itemize}
+				\item \emph{plug-ins}
+			\end{itemize}
+		\end{itemize}
+		\item oft in open source Projekten verwendet
+		\begin{itemize}
+			\item Eclipse, Atom, VSCode, \dots
+		\end{itemize}
+	\end{itemize}
+	\centering \includegraphics[scale=0.4]{pics/tut3/framework.png}
+\end{frame}
+
+\begin{frame}{Ankreuzaufgaben aus Altklausuren}
+	\begin{itemize}
+		\item Bei einer intransparenten Schichtenarchitektur kann eine innere Schicht nur auf direkt benachbarte Schichten zugreifen. \pause \ncorrect
+		\item Schichtenarchitekturen unterstützen das Testen von Programmen. \pause \correct
+		\item Ist die Benutztrelation zwischen Modulen zyklenfrei, sind Teillieferungen bei Entwicklungsverzögerungen einzelner Module möglich. \pause \correct
+		\item Eine Fließband-Architektur in Software kann nur auf Parallelrechnern ausgeführt werden. \pause \correct
+		\item Bei einer Schichtenarchitektur mit drei übereinander liegenden Schichten kann die mittlere Schicht auf die Dienste der oberen und der unteren Schicht zugreifen. \pause \ncorrect
+		\item Wenn die Benutztrelation zyklenfrei ist, heißt sie Benutzthierarchie. \pause \correct
+	\end{itemize}
+\end{frame}
+
+\section{Java Swing}
+
+\begin{frame}{Java Swing}
+	\begin{itemize}
+		\item mit Swing kann man GUIs bauen, ohne was anderes als Java zu benutzen
+		\item graphische Elemente sind als Klassen implementiert
+	\end{itemize}
+	wichtige Klassen und Interfaces
+	\begin{table}
+		\begin{tabular}{c|l}
+			\texttt{JFrame} & Fenster (nicht-blockierend) \\
+			\hline
+			\texttt{JDialog} & Dialogfenster (blockierend) \\
+			\hline
+			\texttt{JFileChooser} & Dateiauswahlfenster \\
+			\hline
+			\texttt{JButton} & Button \\
+			\hline
+			\texttt{JTextField} & Eingabefeld \\
+			\hline
+			\texttt{JMenuBar} & Menüleiste \\
+			\hline
+			\texttt{JLabel} & Text/Bild anzeigen \\
+			\hline
+			\texttt{JPanel} & Container, hier kommen die Bedienelemente rein\\
+			\hline
+			\texttt{LayoutManager} & um Layout in \texttt{JPanel} zu setzen 
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Übersicht}
+	\centering 
+	\includegraphics[scale=0.35]{pics/tut3/swing.png}
+\end{frame}
+
+\begin{frame}[fragile]{Wie erstelle ich meine eigene GUI?}
+grundsätzlich 2 Möglichkeiten
+\begin{block}{\texttt{JFrame} erstellen und anpassen}
+	\begin{verbatim}
+	JFrame f = new JFrame("Titel");
+	f.add(new JButton("Knopf-Text"));
+	f.setVisible(true);
+	\end{verbatim}
+\end{block}
+\pause
+\begin{block}{von \texttt{JFrame} erben, Anpassung z.B. in Konstruktor}
+	\begin{verbatim}
+	public class MyFrame extends JFrame { 
+	    MyFrame() { add(new JButton("Knopf-Text")); // ... } 
+	}
+	// ...
+	JFrame f = new MyFrame();
+	\end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Wie erstelle ich eigene Elemente?}
+	ebenfalls 2 Möglichkeiten (\texttt{JFrame} ist auch nur ein Element)
+	\begin{block}{Instanzen erstellen und anpassen}
+		\begin{verbatim}
+			JButton b = new JButton();
+			b.setText("Click me!");
+			b.setToolTipText("Just do it, bro!");
+		\end{verbatim}
+	\end{block}
+	\pause
+		\begin{block}{Klassen überschreiben, Anpassung z.B. in Konstruktor}
+		\begin{verbatim}
+public class MyButton extends Button { 
+    MyButton() { setText("Click me!"); // ... } 
+}
+		// ...
+		JButton b = new MyButton();
+		\end{verbatim}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{Link-Sammlung}
+	\begin{itemize}
+		\item allgemeine Anlaufstelle
+		\begin{itemize}
+			\item \url{https://docs.oracle.com/javase/tutorial/uiswing/}
+		\end{itemize}
+		\item Layout Manager erklärt
+		\begin{itemize}
+			\item \url{https://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html}
+		\end{itemize}
+		\item jedes Element erklärt
+		\begin{itemize}
+			\item \url{https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html}
+		\end{itemize}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}{Praxis-Zeit}
+	\huge \centering kleines Beispiel
+\end{frame}
+
 \section{Entwurfsmuster}
 	\subsection{Grundlagen}
-	
 	\begin{frame}
 		\frametitle{Empfehlenswerte Literatur (wirklich!)}
 		knapp 700 Seiten \linebreak $\implies$ als interaktives Nachschlagewerk, falls man bestimmte Muster nicht versteht \linebreak
@@ -214,7 +409,10 @@
 		\frametitle{Wozu Entwurfsmuster?}
 		\begin{itemize}
 			\item erleichtern Kommunikation \pause
-			\item erleichtern "'gute"' Entwürfe und das Schreiben von wartbarem/erweiterbarem Code
+			\item erleichtern "'gute"' Entwürfe 
+			\begin{itemize}
+				\item damit auch das Schreiben von wartbarem/erweiterbarem Code
+			\end{itemize}
 		\end{itemize}
 \end{frame}
 	
@@ -228,13 +426,12 @@
 			Änderung der Entscheidung nicht mit ändert.
 		\end{block}
 		\pause
-		\begin{alertblock}{Warum eigentlich?}
+		\begin{alertblock}{Warum eigentlich? Lokalitätsprinzip!}
 			lokale Änderungen sollen sich nicht auf andere Teile auswirken 
 			\linebreak $\implies$ weniger Fehler und Arbeit
 		\end{alertblock}
 		Beispiel? \pause $\implies$ private Attribute mit get()- und set()-Methoden
 	\end{frame}
-%TODO liskov?
 
 	\begin{frame}
 		\frametitle{Vorgriff: Entwurfsmuster Strategie}
@@ -249,10 +446,9 @@
 		\frametitle{Quiz (Ankreuzaufgaben aus Klausuren)}
 		Wahr oder falsch?
 		\begin{itemize}
-			\item Das Entwurfsmuster Strategie bietet die Möglichkeit, eine Klasse mit einer von mehreren möglichen Verhaltensweisen zu konfigurieren. \pause \colorbox{green}{wahr} \pause
-			\item Das Strategiemuster erfüllt das Geheimnisprinzip, indem es Datenstrukturen, die in einer konkreten Strategie enthalten sind, vor dem Klienten verbirgt. \pause \colorbox{green}{wahr} \pause
-			\item Das Muster Strategie kapselt austauschbares Verhalten und verwendet Delegierung, um zu entscheiden, welches Verhalten verwendet wird. \pause \colorbox{green}{wahr} \pause 
-			\item Das Hinzufügen einer neuen konkreten Strategie erfordert keine Änderung existierender konkreter Strategien. \pause \colorbox{green}{wahr}
+			\item Das Entwurfsmuster Strategie bietet die Möglichkeit, eine Klasse mit einer von mehreren möglichen Verhaltensweisen zu konfigurieren. \pause \textcolor{green}{\cmark} \pause
+			\item Das Muster Strategie kapselt austauschbares Verhalten und verwendet Delegierung, um zu entscheiden, welches Verhalten verwendet wird. \pause \textcolor{green}{\cmark} \pause 
+			\item Das Hinzufügen einer neuen konkreten Strategie erfordert keine Änderung existierender konkreter Strategien. \pause \textcolor{green}{\cmark}
 		\end{itemize}
 \end{frame}
 
@@ -465,63 +661,10 @@
 		\frametitle{Musterlösung}
 		\includegraphics[scale=0.35]{./pics/tut3/obs-task-sol.png}
 	\end{frame}
-
-\section{Tipps}
-	\subsection{Tipps}
-	\begin{frame}
-		\frametitle{Tipps - 4. Übungsblatt}
-			\begin{exampleblock}{Aufgabe 1: iMage-GUI}
-				\begin{itemize}
-					\item macht die "'kleinen"' Bonusaufgaben 
-					\linebreak $\implies$ relativ leichte Punkte \pause
-					\item schaut euch die verschiedenen LayoutManager aus Java Swing an
-					\linebreak $\implies$ verschiedene LayoutManager möglich (via mehrerer Container, z.B. JPanel)
-				\end{itemize}
-			\end{exampleblock}
-			
-			\pause
-			
-			\begin{exampleblock}{Aufgabe 2: Zustandsdiagramm}
-				\begin{itemize}
-					\item nochmal Syntax anschauen 
-					\linebreak $\implies$ Was darf in Zustandsdiagramm, was nicht? (laut VL)
-					\item von Hand!
-				\end{itemize}
-			\end{exampleblock}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Tipps - 4. Übungsblatt}
-			\begin{exampleblock}{Aufgabe 3: Git}
-				\begin{itemize}
-					\item echo "hallo" $>>$ test.txt schreibt hallo in test.txt
-					\item git-Dokumentation anschauen
-				\end{itemize}
-			\end{exampleblock}
-			
-			\pause
-
-			\begin{exampleblock}{Aufgabe 4: Architekturstile}
-				\begin{itemize}
-					\item Jmjrst (gedanklich) umbauen
-					\item Zusammenhang der Klassen anschauen (z.B. Main-Klasse)
-				\end{itemize}
-			\end{exampleblock}
-	\end{frame}
 	
-	\subsection{Abgabe}
+\section{Ende}	
 	\begin{frame}
-		\frametitle{Denkt dran!}
-		\begin{alertblock}{Abgabe}
-			\begin{itemize}
-				\item Deadline am 13.6 um 12:00
-				\item A2-4 handschriftlich!
-			\end{itemize}
-		\end{alertblock}
-	\end{frame}
-		
-	\begin{frame}
-		\frametitle{Bis dann! (dann  := 19.06.17)}
+		\frametitle{Bis dann! (dann  := 25.06.19)}
 		\centering
 		\includegraphics[scale=0.5]{./comics/geek_and_poke_undeadCode.jpg}
 	\end{frame}
