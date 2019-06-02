@@ -16,6 +16,9 @@
 
 \usepackage{templates/beamerthemekit}
 \usepackage{csquotes}
+\usepackage{amsmath,tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
 % \usepackage{templates/beamerthemekitwide}
 
 \setcounter{tocdepth}{1}
@@ -61,6 +64,10 @@
 %title page
 \begin{frame}
 \titlepage
+\end{frame}
+
+\begin{frame}{Themen}
+\tableofcontents
 \end{frame}
 
 \section{Evaluation}
@@ -247,7 +254,7 @@
 			\hline
 			t=2 & Daten 2 & Daten 1 & x \\
 			\hline
-			t=3 & Daten 3 & Daten 2 & Daten1 \\
+			t=3 & Daten 3 & Daten 2 & Daten 1 \\
 			\hline
 			t=4 & Daten 4 & Daten 3 & Daten 2 \\
 			\hline
@@ -281,10 +288,46 @@
 		\item Bei einer intransparenten Schichtenarchitektur kann eine innere Schicht nur auf direkt benachbarte Schichten zugreifen. \pause \ncorrect
 		\item Schichtenarchitekturen unterstützen das Testen von Programmen. \pause \correct
 		\item Ist die Benutztrelation zwischen Modulen zyklenfrei, sind Teillieferungen bei Entwicklungsverzögerungen einzelner Module möglich. \pause \correct
-		\item Eine Fließband-Architektur in Software kann nur auf Parallelrechnern ausgeführt werden. \pause \correct
+		\item Eine Fließband-Architektur in Software kann nur auf Parallelrechnern ausgeführt werden. \pause \ncorrect
 		\item Bei einer Schichtenarchitektur mit drei übereinander liegenden Schichten kann die mittlere Schicht auf die Dienste der oberen und der unteren Schicht zugreifen. \pause \ncorrect
 		\item Wenn die Benutztrelation zyklenfrei ist, heißt sie Benutzthierarchie. \pause \correct
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Welcher Architekturstil ist gemeint?}
+	\begin{block}{}
+		\enquote{Wir wollen unseren customern solutions anbieten, die möglichst extensible sind. Falls die Software successfull ist, können wir später neuen stuff implementen, ohne den alten Code zu ändern. Sheesh.}
+	\end{block}
+	\pause 
+	Framework!
+\end{frame}
+
+\begin{frame}{Welcher Architekturstil ist gemeint?}
+	\begin{block}{}
+	\enquote{Auf der letzten Conference waren viele Speaker, die etwas von einer \enquote{Blockkette} erzählt haben. Da wir Amazon und Co. nicht trusten, könnten wir sowas usen um unseren Service decentralized anzubieten. Besides können wir damit money einsparen.}
+	\end{block}
+	\pause
+	Peer-to-Peer
+\end{frame}
+
+\begin{frame}{Eine Entwurfsentscheidung :)}
+	\begin{figure}
+		\centering
+			\begin{tikzpicture}
+		\node [draw, diamond, aspect=2] (b) {Do i need a blockchain?};
+		\node [draw, below=2cm of b] (n) {No.};
+		\draw[->] (b) -- (n);
+		\end{tikzpicture}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}{Welcher Architekturstil ist gemeint?}
+	\begin{block}{}
+		\enquote{Ganz wichtig ist mir ja ein Separation-of-Concerns: Die Design-People sollen einen user-zentrierten Look-and-Feel entwerfen. In the meantime sollen sich die devs um neue functionality kümmern. Beide sollen independently arbeiten.}
+	\end{block}
+	\pause
+	MVC
 \end{frame}
 
 \section{Java Swing}
