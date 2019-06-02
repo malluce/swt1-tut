@@ -296,10 +296,10 @@
 
 \begin{frame}{Welcher Architekturstil ist gemeint?}
 	\begin{block}{}
-		\enquote{Wir wollen unseren customern solutions anbieten, die möglichst extensible sind. Falls die Software successfull ist, können wir später neuen stuff implementen, ohne den alten Code zu ändern. Sheesh.}
+		\enquote{Wir wollen unseren customern solutions anbieten, die möglichst extensible sind. Falls die Software successfull ist, können wir später neuen stuff implementen, ohne den alten Code zu ändern. Über einen marketplace könnten wir dann auch noch Geld dafür getten. Sheesh.}
 	\end{block}
 	\pause 
-	Framework!
+	Framework
 \end{frame}
 
 \begin{frame}{Welcher Architekturstil ist gemeint?}
@@ -314,7 +314,7 @@
 	\begin{figure}
 		\centering
 			\begin{tikzpicture}
-		\node [draw, diamond, aspect=2] (b) {Do i need a blockchain?};
+		\node [draw, diamond, aspect=2] (b) {Do I need a blockchain?};
 		\node [draw, below=2cm of b] (n) {No.};
 		\draw[->] (b) -- (n);
 		\end{tikzpicture}
@@ -344,6 +344,8 @@
 			\hline
 			\texttt{JDialog} & Dialogfenster (blockierend) \\
 			\hline
+			\texttt{JPanel} & Container, hier kommen die Bedienelemente rein\\
+			\hline
 			\texttt{JFileChooser} & Dateiauswahlfenster \\
 			\hline
 			\texttt{JButton} & Button \\
@@ -353,8 +355,6 @@
 			\texttt{JMenuBar} & Menüleiste \\
 			\hline
 			\texttt{JLabel} & Text/Bild anzeigen \\
-			\hline
-			\texttt{JPanel} & Container, hier kommen die Bedienelemente rein\\
 			\hline
 			\texttt{LayoutManager} & um Layout in \texttt{JPanel} zu setzen 
 		\end{tabular}
@@ -399,7 +399,7 @@ grundsätzlich 2 Möglichkeiten
 	\pause
 		\begin{block}{Klassen überschreiben, Anpassung z.B. in Konstruktor}
 		\begin{verbatim}
-public class MyButton extends Button { 
+public class MyButton extends J7Button { 
     MyButton() { setText("Click me!"); // ... } 
 }
 		// ...
@@ -434,7 +434,12 @@ public class MyButton extends Button {
 	\subsection{Grundlagen}
 	\begin{frame}
 		\frametitle{Empfehlenswerte Literatur (wirklich!)}
-		knapp 700 Seiten \linebreak $\implies$ als interaktives Nachschlagewerk, falls man bestimmte Muster nicht versteht \linebreak
+		\begin{itemize}
+			\item knapp 700 Seiten
+			\begin{itemize}
+				\item als interaktives Nachschlagewerk
+			\end{itemize}
+		\end{itemize}
 		\centering
 		\includegraphics[scale=0.15]{./pics/tut3/literature.jpg}
 	\end{frame}
