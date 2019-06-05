@@ -7,6 +7,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 
 public class GreenPanel extends JPanel {
 	public GreenPanel(int width, int height) {
@@ -21,5 +22,6 @@ public class GreenPanel extends JPanel {
 
 		add(button);
 		add(new JLabel("Ein Label"));
+		add(new JScrollBar());
 	}
 }
