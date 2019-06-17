@@ -46,7 +46,6 @@
 \date{25.06.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
-
 \begin{document}
 
 % change the following line to "ngerman" for German style date and logos
@@ -296,13 +295,37 @@
 		\end{block}
 	\end{frame}
 
+	\begin{frame}
+	\frametitle{Evaluation}
+	leider nur 5 Teilnehmer??
+	\centering
+	\begin{table}
+		\begin{tabular}{|c|c|}
+			\hline 
+			Gut & Schlecht/Verbesserungswürdig \\ 
+			\hline
+			Folien (3) & \\
+			Beispiele und Code (3) & \\ 
+			Erklärungen (2) & \\
+			Tipps (2) & \\
+			Aufgaben (2)&  zu viel Zeit für Aufgaben (2)\\ 
+			&  Wahr/Falsch zu einfach (1)\\ 
+			& nicht immer Lösungen auf Folie (1)\\
+			& gleiche Beispiele wie in VL (1) \\
+			& Bewertungen zu kurz (1)\\
+			\hline 
+		\end{tabular} 
+	\end{table}
+
+	\end{frame}
+
 \section{Recap}
 	\subsection{Quiz(Adapter)}
 	\begin{frame}
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut \pause
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler \pause
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter \pause
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.33]{./pics/tut4/adap-obj-mod.png}
@@ -314,7 +337,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.33]{./pics/tut4/adap-obj-mod.png}
@@ -326,7 +349,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.45]{./pics/tut3/adap-obj.png}
@@ -338,7 +361,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{./pics/tut4/iter-mod.png}
@@ -350,7 +373,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{./pics/tut4/iter-mod.png}
@@ -362,7 +385,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.35]{./pics/tut3/iter.png}
@@ -375,7 +398,7 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{./pics/tut4/obs-mod.png}
@@ -387,12 +410,82 @@
 		\frametitle{Was bisher geschah..}
 		\begin{itemize}
 			\item haben uns Entkopplungmuster angeschaut
-			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter, Vermittler
+			\linebreak $\implies$ Beobachter, Iterator, Adapter, Stellvertreter
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.35]{./pics/tut3/obs.png}
 		\end{figure}
 	\end{frame}
+
+\section{Vermittler}
+\subsection{Letztes Entkopplungsmuster: Vermittler}
+	\begin{frame}
+	\frametitle{Vermittler}
+	\begin{block}{Problem}
+		\begin{itemize}
+			\item mehrere voneinander abhängige Objekte \linebreak \pause $\implies$ Zustände der Objekte von anderen Zuständen abhängig
+		\end{itemize}
+	\end{block}
+	\pause
+	\centering
+	\includegraphics[scale=0.45]{./pics/tut3/med.png}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vermittler}
+	\centering
+	\includegraphics[scale=0.45]{./pics/tut3/med.png}
+	\begin{block}{Entkopplung?}
+	\begin{itemize}
+		\pause 
+		\item Kollegen kennen sich nicht direkt  \linebreak \pause $\implies$ Hinzufügen eines Kollegen erfordert keine Änderung der alten Kollegen
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Beobachter vs. Vermittler}
+	\begin{itemize}
+	\item wirken ähnlich
+	\begin{itemize}
+	\item ein Vermittler, viele Kollegen
+	\item ein Subjekt, viele Beobachter
+	\end{itemize}
+	\end{itemize}
+	\pause
+	\begin{block}{Beobachter}
+	Beobachter interessieren sich nicht füreinander. Nur für das Subjekt
+	\end{block}
+	\begin{block}{Vermittler}
+	Kollegen interessieren sich füreinander, kommunizieren über den Vermittler miteinander.
+	\end{block}
+\end{frame}
+
+\subsection{Aufgabe}
+	\begin{frame}
+	\frametitle{Klausuraufgabe (Hauptklausur SS 2012)}
+	\includegraphics[scale=0.35]{./pics/tut3/obs-task.png}	
+	\begin{block}{Aufgabe 1}
+	Welches Entwurfsmuster erkennen Sie in diesem Diagramm? \pause
+	Beobachter.
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{small}
+	Entwerfen Sie das folgende Klassendiagramm passend zu dem Sequenzdiagramm; es soll
+	alle verwendeten Klassen und Methoden enthalten. Kennzeichnen Sie die Zugreifbarkeiten
+	der Methoden mit den Symbolen +, -, \#; seien Sie dabei möglichst restriktiv. Verzichten
+	Sie auf die Modellierung von Attributen. Kennzeichnen Sie die Elemente
+	des Entwurfsmusters und deren Funktion.
+	\end{small}
+	\linebreak
+	\includegraphics[scale=0.35]{./pics/tut3/obs-task.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Musterlösung}
+\includegraphics[scale=0.35]{./pics/tut3/obs-task-sol.png}
+\end{frame}
 
 	\begin{frame}
 		\frametitle{Kategorien der Entwurfsmuster}

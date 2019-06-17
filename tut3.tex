@@ -70,13 +70,6 @@
 \tableofcontents
 \end{frame}
 
-\section{Evaluation}
-	\begin{frame}{Evaluation}
-	\centering Tutorien-Halbzeit erreicht: Her mit der Kritik!
-	\centering \includegraphics[scale=0.6]{pics/tut3/frame.png}
-	\url{https://forms.gle/N7rjXDUu8BR6gx2KA}
-\end{frame}
-
 \section{Motivation}
 	\subsection{Kontext}
 		\begin{frame}
@@ -399,7 +392,7 @@ grundsätzlich 2 Möglichkeiten
 	\pause
 		\begin{block}{Klassen überschreiben, Anpassung z.B. in Konstruktor}
 		\begin{verbatim}
-public class MyButton extends J7Button { 
+public class MyButton extends JButton { 
     MyButton() { setText("Click me!"); // ... } 
 }
 		// ...
@@ -428,6 +421,13 @@ public class MyButton extends J7Button {
 
 \begin{frame}{Praxis-Zeit}
 	\huge \centering kleines Beispiel
+\end{frame}
+
+\section{Evaluation}
+	\begin{frame}{Evaluation}
+	\centering Tutorien-Halbzeit erreicht: Her mit der Kritik!
+	\centering \includegraphics[scale=0.6]{pics/tut3/frame.png}
+	\url{https://forms.gle/N7rjXDUu8BR6gx2KA}
 \end{frame}
 
 \section{Entwurfsmuster}
@@ -702,74 +702,6 @@ public class MyButton extends J7Button {
 \end{frame}
 
 
-	\subsection{Vermittler}
-		\begin{frame}
-		\frametitle{Vermittler}
-		\begin{block}{Problem}
-			\begin{itemize}
-				\item mehrere voneinander abhängige Objekte \linebreak \pause $\implies$ Zustände der Objekte von anderen Zuständen abhängig
-			\end{itemize}
-		\end{block}
-		\pause
-		\centering
-		\includegraphics[scale=0.45]{./pics/tut3/med.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Vermittler}
-		\centering
-		\includegraphics[scale=0.45]{./pics/tut3/med.png}
-		\begin{block}{Entkopplung?}
-			\begin{itemize}
-				\pause 
-				\item Kollegen kennen sich nicht direkt  \linebreak \pause $\implies$ Hinzufügen eines Kollegen erfordert keine Änderung der alten Kollegen
-			\end{itemize}
-		\end{block}
-	\end{frame}
-
-\begin{frame}{Beobachter vs. Vermittler}
-\begin{itemize}
-	\item wirken ähnlich
-	\begin{itemize}
-		\item ein Vermittler, viele Kollegen
-		\item ein Subjekt, viele Beobachter
-	\end{itemize}
-\end{itemize}
-\pause
-	\begin{block}{Beobachter}
-		Beobachter interessieren sich nicht füreinander. Nur für das Subjekt
-	\end{block}
-	\begin{block}{Vermittler}
-		Kollegen interessieren sich füreinander, kommunizieren über den Vermittler miteinander.
-	\end{block}
-\end{frame}
-
-	\subsection{Aufgabe}
-	\begin{frame}
-		\frametitle{Klausuraufgabe (Hauptklausur SS 2012)}
-		\includegraphics[scale=0.35]{./pics/tut3/obs-task.png}	
-		\begin{block}{Aufgabe 1}
-			Welches Entwurfsmuster erkennen Sie in diesem Diagramm? \pause
-			Beobachter.
-		\end{block}
-	\end{frame}
-
-	\begin{frame}
-			\begin{small}
-				Entwerfen Sie das folgende Klassendiagramm passend zu dem Sequenzdiagramm; es soll
-				alle verwendeten Klassen und Methoden enthalten. Kennzeichnen Sie die Zugreifbarkeiten
-				der Methoden mit den Symbolen +, -, \#; seien Sie dabei möglichst restriktiv. Verzichten
-				Sie auf die Modellierung von Attributen. Kennzeichnen Sie die Elemente
-				des Entwurfsmusters und deren Funktion.
-			\end{small}
-			\linebreak
-			\includegraphics[scale=0.35]{./pics/tut3/obs-task.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Musterlösung}
-		\includegraphics[scale=0.35]{./pics/tut3/obs-task-sol.png}
-	\end{frame}
 	
 \section{Ende}	
 	\begin{frame}
