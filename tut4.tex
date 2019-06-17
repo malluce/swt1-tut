@@ -41,17 +41,11 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \title[SWT1]{Softwaretechnik 1 - 4. Tutorium}
-\subtitle{Tutorium 18}
+\subtitle{Tutorium 17}
 \author{Felix Bachmann}
-\date{19.06.2018}
+\date{25.06.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
-
-% Bibliography
-
-\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
-\addbibresource{templates/example.bib}
-\bibhang1em
 
 \begin{document}
 
@@ -63,94 +57,188 @@
 \titlepage
 \end{frame}
 
+\section{Evaluation}
+	\begin{frame}{Evaluation der Evaluation}
+	\centering
+		\begin{tabular}{|c|c|}
+			\hline 
+			Gut & Schlecht/Verbesserungswürdig \\ 
+			\hline
+			%TODO
+			\hline 
+		\end{tabular} 
+	\end{frame}
 
-\section{Orga}
-		\subsection{Feedback 3. Übungsblatt}
+\section{Feedback}
 	\begin{frame}
 	\frametitle{3. Übungsblatt Statistik}
 	\includegraphics[scale=0.7]{./pics/tut3/statistics-ub3.png}
-	\linebreak \centering $\diameter$ 11,3 bzw. 15,7 von 27+3
 \end{frame}
 
-\subsection{3. Übungsblatt - Fehler}
-\begin{frame}
-\frametitle{Häufige Fehler}
-\begin{block}{Aufgabe 1 (Plug-In-Architektur: PluginManager + JmjrstPlugin)}
+\begin{frame}{Häufige Fehler: Blatt 3}
+\begin{block}{Programmieraufgaben generell}
+	\begin{itemize}
+		\item wie letztes Mal gesagt \pause
+		\item und das Mal davor \pause
+		\item und das Mal davor \pause
+		\item und das Mal davor \pause
+		\item CheckStyle und Co.
+		\pause
+		\item nicht am JMJRST-Stil orientieren
+		\begin{itemize}
+			\item das können wir besser :)
+		\end{itemize}
+	\end{itemize}
+\end{block} 
+
+\begin{block}{Aufgabe 1 (\texttt{PluginManagement} + \texttt{PluginForJMJRST})}
 \begin{itemize}
 	\pause
-	\item Plugins anhand \textbf{Klassen}namen vergleichen, nicht getName() \pause
-	\item Strings auslagern (Konstanten oder Datei) \pause
-	\item PluginManager gibt euch Iterable $\implies$ nutzt Iterator
+	\item Plugins anhand \textbf{Klassen}namen vergleichen, 
 	\begin{itemize}
-		\item kein Casten, Kopieren in Liste \pause
+		\item nicht \texttt{Object::getName()}
+		\item nicht \texttt{PluginForJMJRST::getName()}
+		\item z.B. \texttt{Object::getSimpleName()}
 	\end{itemize}
-	\item orientiert euch nicht am JMJRST-Stil
 \end{itemize}
 \end{block}
 \end{frame}
 
-\begin{frame}
-\frametitle{Häufige Fehler}
-\begin{block}{Aufgabe 2 (Plug-In)}
-\begin{itemize}
-\pause
-\item Prüfen auf *.png/*.jpg sollte case insensitive sein \pause
-\item Anm.: MetainfServices tut manchmal nicht richtig (oft hilft \texttt{mvn clean package}) \pause
-\end{itemize}
-\end{block}
-\begin{block}{Aufgabe 3 (iMage-Bundle)}
-\begin{itemize}
-\item keine :D
-\end{itemize}
-\end{block}
+\begin{frame}{Häufige Fehler: Blatt 3}
+	\begin{block}{Aufgabe 2 (Instagrim Plug-In)}
+	\begin{itemize}
+		\pause
+		\item Kommentarmenge komisch umgesetzt
+		\begin{itemize}
+			\item am einfachsten: String-Array
+			\item dann aber keine magic numbers verwenden
+			\begin{itemize}
+				\item z.B. beim Ziehen der zufälligen Kommentare
+			\end{itemize}
+		\end{itemize}
+		\pause
+		\item Frame für \texttt{configure()}-Aufruf selbst gebaut
+		\begin{itemize}
+			\item kein Abzug solange kein Quatsch passiert und sinnvoll programmiert
+			\item geht aber auch deutlich einfacher (siehe MuLö)
+		\end{itemize}
+	\end{itemize}
+	\end{block}\pause
+
+	\begin{block}{Aufgabe 3 (iMage-Bundle)}
+	\begin{itemize}
+	\item keine :D
+	\end{itemize}
+	\end{block}
 \end{frame}
 
-\begin{frame}
-\frametitle{Häufige Fehler}
+\begin{frame}{Häufige Fehler: Blatt 3}
 \begin{block}{Aufgabe 4 (Aktivitätsdiagramm)}
-\begin{itemize}
-\pause 
-\item keine Partition verwendet \pause
-\item Aktivitiäten = runde Ecken, Objekte = spitze Ecken \pause
-\item denkt an die Rauten! \pause
-\item $\lbrack$Bedingung$\rbrack$ \pause
-\item verschachtelte Aktivitäten $\implies$ irgendwo passender Kasten dazu
-\end{itemize}
-\end{block}
+	\begin{itemize}
+	\pause 
+	\item wie schon bei Anwendungsfalldiagramm
+	\begin{itemize}
+		\item Aktivitäten enthalten Verben
+		\begin{itemize}
+			\item es geht darum wer etwas tut
+			\item \enquote{Startseite} ist keine Aktivität
+			\item \enquote{Startseite anzeigen} schon
+		\end{itemize}
+	\end{itemize} \pause
+	\item keine Partition verwendet/ falsche Syntax \pause
+	\item Aktivitiäten = runde Ecken, Objekte = spitze Ecken \pause
+	\item $\lbrack$\texttt{Bedingung}$\rbrack$ \pause
+	\item Modellierung der Nutzerinteraktion
+	\begin{itemize}
+		\item z.B. \enquote{Klick} nachdem \enquote{Startseite anzeigen} vorbei? nicht sinnvoll
+	\end{itemize}
+	\end{itemize}
+	\end{block}
 \end{frame}
 
-\begin{frame}
-\frametitle{Häufige Fehler}
-\begin{block}{Aufgabe 5 (Zustandsdiagramm)}
-\begin{itemize}
-\pause
-\item Übergänge,Zustände vergessen \pause
-\item Notation parallel: DxG \pause
-\item komplettes Diagramm hinzeichnen für Äquivalenz \pause
-\end{itemize}
-\end{block}
+\begin{frame}{Häufige Fehler: Blatt 3}
+	\begin{block}{Aufgabe 5 (Zustandsdiagramm)}
+		\begin{itemize}
+			\pause
+			\item Übergänge von innerem parallelen Zustand \texttt{VxW} nach außen (\texttt{A}, \texttt{I})
+			\begin{itemize}
+				\item \texttt{VxW} ist auch nur ein Zustand
+				\item auch wenn \enquote{innen drin} auch noch was passiert
+				\item war in MuLö leider auch erst falsch
+				\begin{itemize}
+					\item deswegen bei einigen Korrekturen evtl. etwas Geschmiere an der Stelle, sorry!
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+\end{frame} 
+
+\begin{frame}[fragile]{Häufige Fehler: Blatt 3}
+	\begin{block}{Aufgabe 6 (Sequenzdiagramm)}
+		\begin{itemize}
+			\item allerlei Syntax-Kram
+			\begin{itemize}
+				\item Lebenslinien, Kästen, Doppelpunkte, Rückgabe-Notation
+				\item asynchron vs. synchron (Pfeilspitzen wichtig) 
+				\item kein Doppelpunkt bei \enquote{statischen Kästen} 
+				\item \texttt{create} zeigt auf Kasten, nicht Lebenslinie/Steuerungsfokus
+			\end{itemize}
+			\pause
+			\item Achtung: Steuerungsfokus ist zwar optional, erhöht aber stark die Lesbarkeit. In Klausur bitte verwenden. Bei Selbstaufrufen sonst problematisch, da Rückgabe ebenfalls optional. \pause
+			\item Vorsicht bei Objekt-Zerstörung 
+			\begin{itemize}
+				\item \texttt{CameraCurve} vor Verwendeung zerstört
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	
 \end{frame}
 
-\begin{frame}
-\frametitle{Häufige Fehler}
-\begin{block}{Aufgabe 6 (Sequenzdiagramm)}
-\begin{itemize}
-\pause 
-\item bzgl. Konstruktor sind VL-Folien etwas blöd \pause
-\item asynchron vs. synchron (Pfeilspitzen sind wichtig!) \pause
-\item nicht statische Instanzen unterstreichen \pause
-\item Instanz-Kästen erst dann hinzeichnen, wenn Instanz auch existiert \pause
-\item Selbstaufruf-Syntax
-\end{itemize}
-\end{block}
-\begin{block}{Aufgabe 7 (Testen mit Nachahmungen)}
-\begin{itemize}
-\pause
-\item Substitutionsprinzip: fordert dass Objekte einer Unterklasse immer auch im Kontext der Oberklasse eingesetzt werden können \pause
-\item Varianz war kein Problem, da Signatur gleich \pause
-\item Problem war Verhalten, schwächere Nachbedingung \pause
-\end{itemize}
-\end{block}
+\begin{frame}[fragile]{Häufige Fehler: Blatt 3}
+	\begin{block}{Aufgabe 7 (Substitutionsprinzip: Logger)}
+		\begin{itemize}
+			\pause
+			\item Varianz war kein Problem
+			\begin{itemize}
+				\item getter: Kovarianz bei Rückgabetyp passt
+				\item setter: Invarianter Parametertyp passt
+			\end{itemize} \pause
+			\item Problem war Verhalten, schwächere Nachbedingung \pause
+			\item wurde oft zu schwammig formuliert
+			\begin{itemize}
+				\item oft sowas wie \enquote{Unterklasse tut nicht mehr dasselbe wie Oberklasse}
+				\item aber das soll sie ja auch nicht, dann bräuchten wir kein Überschreiben von Methoden :)
+			\end{itemize}
+			\item bei solchen Aufgaben immer  aus Klient-Sicht anschauen
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Häufige Fehler: Blatt 3}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{verbatim}
+			O o = new O();
+			o.m(x);
+			
+			O o = new U(); 
+			o.m(x);
+			\end{verbatim}
+		\end{column}%
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item zweiter Aufruf \enquote{muss sich so verhalten wie} erster Aufruf
+				\item Vorbedingung schwächer/gleich
+				\item Nachbedingung stärker/gleich
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\pause
+	\begin{itemize}
+		\item \enquote{Unterklasse darf weniger verlangen, muss aber mehr leisten}
+		\item (oder gleich viel)
+		\item Hintergrund: Klient muss Unterklasse so benutzen können wie Oberklasse. Würde die Unterklasse bspw. mehr verlangen als Oberklasse müsste Klient wissen, dass er Unterklasse benutzt, um sie korrekt aufrufen zu können.
+	\end{itemize}
 \end{frame}
 
 
@@ -158,7 +246,6 @@
 	\begin{frame}
 		\frametitle{4. Übungsblatt Statistik}
 		\includegraphics[scale=0.7]{./pics/tut4/statistics-ub4.png}
-		\linebreak \centering $\diameter$ 9,3 (alle), 14,5 (abgegeben) von 25+3
 	\end{frame}
 	
 	\subsection{4. Übungsblatt - Fehler}
@@ -607,15 +694,6 @@
 			\item bei Unklarheiten in Head First Design Patterns nachlesen ;)
 		\end{itemize}
 	\end{frame}
-
-\section{Evaluation}
-	\subsection{Evaluation}
-	\begin{frame}
-		\frametitle{Evaluation - Sagt mir eure Meinung}
-		\includegraphics[scale=1.0]{./pics/tut4/qr-feedback.png}
-		\linebreak
-		\centering \large \url{https://goo.gl/forms/osMyz2hScqVPtmSr2}
-\end{frame}
 	
 \section{Tipps}
 	\subsection{Tipps}

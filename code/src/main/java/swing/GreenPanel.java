@@ -18,6 +18,7 @@ public class GreenPanel extends JPanel {
 		JButton button = new JButton("Click me!");
 		button.addActionListener(e -> {
 			System.out.println("clicked");
+			System.out.println("hi");
 		});
 
 		add(button);
