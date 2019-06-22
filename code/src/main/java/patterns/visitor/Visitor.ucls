@@ -4,7 +4,7 @@
   <class id="1" language="java" name="patterns.visitor.AbstractGarbage" project="patterns" 
     file="/patterns/src/main/java/patterns/visitor/AbstractGarbage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="650" y="320"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -13,7 +13,7 @@
   <class id="2" language="java" name="patterns.visitor.GlasGarbage" project="patterns" 
     file="/patterns/src/main/java/patterns/visitor/GlasGarbage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="165" x="362" y="435"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -22,7 +22,7 @@
   <class id="3" language="java" name="patterns.visitor.PaperGarbage" project="patterns" 
     file="/patterns/src/main/java/patterns/visitor/PaperGarbage.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="803" y="485"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -31,7 +31,7 @@
   <interface id="4" language="java" name="patterns.visitor.IGarbageVisitor" project="patterns" 
     file="/patterns/src/main/java/patterns/visitor/IGarbageVisitor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="498" y="153"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -40,7 +40,7 @@
   <class id="5" language="java" name="patterns.visitor.RecycleVisitor" project="patterns" 
     file="/patterns/src/main/java/patterns/visitor/RecycleVisitor.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="912" y="155"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -49,7 +49,7 @@
   <class id="6" language="java" name="patterns.visitor.Client" project="patterns" 
     file="/patterns/src/main/java/patterns/visitor/Client.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="143" y="317"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
