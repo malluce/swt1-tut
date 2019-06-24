@@ -3,7 +3,7 @@ package patterns.command;
 public class Light {
 	private LightState state = LightState.OFF;
 	private int switchCount = 0;
-	private final int BREAK_THRESHOLD = 5;
+	private static final int BREAK_THRESHOLD = 5;
 
 	public Light() {
 

@@ -8,6 +8,8 @@
 \newcommand{\correct}{\textcolor{green}{\cmark}}
 \newcommand{\ncorrect}{\textcolor{red}{\xmark}}
 
+\usepackage{tikz-uml}
+
 \beamertemplatenavigationsymbolsempty
 %% SLIDE FORMAT
 
@@ -33,8 +35,8 @@
 %% TikZ INTEGRATION
 
 % use these packages for PCM symbols and UML classes
-% \usepackage{templates/tikzkit}
-% \usepackage{templates/tikzuml}
+ \usepackage{templates/tikzkit}
+ \usepackage{templates/tikzuml}
 
 % the presentation starts here
 
@@ -590,7 +592,7 @@
 			\begin{itemize}
 				\item Was ist ein großer Nachteil des Besucher-Musters?
 				\item Womit wird die gute Erweiterbarkeit um Methoden erkauft? \pause
-				\item schlecht um neue Klassen erweiterbar!
+				\item schlecht um neue (Element-)Klassen erweiterbar!
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
@@ -604,6 +606,9 @@
 				\end{itemize}
 				\item ohne Klasse zu ändern oder von ihr zu erben
 				\item vermeidet unübersichtliche Vererbungshierarchien
+				\begin{itemize}
+					\item durch rekursives Dekorieren
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -689,7 +694,14 @@
 		\includegraphics[scale=0.4]{./pics/tut4/fab.png}
 	\end{frame}
 
-	%TODO aufgaben?
+	\begin{frame}{Ankreuzaufgaben aus Klausuren}
+	Wahr oder falsch?
+		\begin{itemize}
+			\item Die Fabrikmethode sorgt dafür, dass nur eine einzige Instanz einer Klasse fabriziert wird. \pause \ncorrect \pause 
+			\item Eine Schablonenmethode ist immer auch eine Fabrikmethode. \pause \ncorrect \pause
+			\item Eine Komponente kann immer nur mit einem einzigen Dekorierer versehen werden. \pause \ncorrect
+		\end{itemize}
+	\end{frame}
 
 	\begin{frame}{Kategorien der Entwurfsmuster}
 		\begin{itemize}
@@ -732,7 +744,7 @@
 			\includegraphics[scale=0.3]{./pics/tut4/singleton.png}
 		\end{figure}
 		\pause
-		Aber warum nicht einfach statisch?\pause ~~ Unterklassenbildung möglich!
+		Aber warum nicht einfach statisch?\pause ~~ Unterklassenbildung möglich
 	\end{frame}
 
 	\begin{frame}
@@ -740,7 +752,7 @@
 		\begin{block}{Problem}
 			\begin{itemize}
 				\item internen Zustand eines Objekts "'externalisieren"', um z.B. Zurücksetzen möglich zu machen \pause 
-				\item ohne Kapselung zu verletzten!
+				\item ohne Kapselung zu verletzten
 			\end{itemize}
 		\end{block}
 		\pause
@@ -754,18 +766,52 @@
 		\begin{block}{Problem gelöst?}
 			\begin{itemize}
 				\pause
-				\item Ja
+				\item Ja :)
 				\begin{itemize}
 					\pause
 					\item Zustand durch Memento externalisiert \pause
-					\item Kapselung nicht verletzt (Nutzer ruft nur sichereZustand() auf und kriegt neuen Memento)
+					\item Kapselung nicht verletzt (kein direkter Zugriff auf Zustand)
+					\item Nutzer ruft nur \texttt{sichereZustand()} auf und kriegt neuen Memento
 				\end{itemize}
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}{Memento - Beispiel}
-		%TODO UML Mario
+		\begin{figure}
+			\centering
+			\begin{tikzpicture}
+			\pgfsetlayers{connections,main}
+			\umlclass[x=-1.25,y=4,name=classname]
+			{SuperMario}
+			{
+			 playerPos: Coordinate \\
+			 coins: int\\
+			 level: Level
+		    }
+			{
+				save():Savegame\\
+				load(s:Savegame)\\
+				...
+			}
+			
+			\umlclass[x=5,y=4, name=classname]
+			{Savegame}
+			{
+				playerPos: Coordinate \\
+				coins: int\\
+				level: Level
+	        }
+			{
+				$<<$create$>>$ Savegame(playerPos: Coordinate, \\~~~coins:int, level:Level)\\
+				getPlayerPos(): Coordinate\\
+				getCoins(): int\\
+				getLevel(): Level
+			}
+			
+			\umldep{SuperMario}{Savegame}
+			\end{tikzpicture}
+		\end{figure}
 	\end{frame}
 
 	\begin{frame}{Kategorien der Entwurfsmuster}
@@ -796,7 +842,7 @@
 			\begin{itemize}
 				\item Parametrisieren von Objekten mit einer auszuführenden Aktion \pause 
 				\item komplexe Operationen aus primitiven Operationen aufbauen \pause
-				\linebreak $\implies$ Befehl nicht als Methode, sondern als Objekt modellieren
+				\linebreak $\implies$ Befehl nicht als Methode, sondern als Klasse modellieren
 			\end{itemize}
 		\end{block}
 		\pause
@@ -851,10 +897,7 @@
 		Wahr oder falsch?
 		\begin{itemize}
 			\item Bei dem Entwurfsmuster Befehl kennt der Empfänger den Befehl nicht, jedoch der Befehl den Empfänger. \pause \correct \pause
-			\item Ein Aufbewahrer im Entwurfsmuster Memento kann beliebig viele Mementos verwalten. Für die Restauration im Falle eines Reset ist er allerdings nicht verantwortlich. \pause \correct \pause
-			\item Die Fabrikmethode sorgt dafür, dass nur eine einzige Instanz einer Klasse fabriziert wird. \pause \ncorrect \pause 
-			\item Eine Schablonenmethode ist immer auch eine Fabrikmethode. \pause \ncorrect \pause
-			\item Eine Komponente kann immer nur mit einem einzigen Dekorierer versehen werden. \pause \ncorrect
+			\item Ein Aufbewahrer im Entwurfsmuster Memento kann beliebig viele Mementos verwalten. Für die Restauration im Falle eines Reset ist er allerdings nicht verantwortlich. \pause \correct
 		\end{itemize}
 	\end{frame}
 	
@@ -946,8 +989,12 @@
 		
 	\begin{frame}
 		\frametitle{Bis dann! (dann  := 09.07.19)}
+		\begin{itemize}
+			\item Servicehinweis: Steam Summer Sale ab heute :)
+		\end{itemize}
 		\centering
-		\includegraphics[scale=0.4]{./comics/patterns.jpg}
+		\includegraphics[scale=0.4]{./pics/tut4/steam.jpg}
+		%\includegraphics[scale=0.4]{./comics/patterns.jpg}
 	\end{frame}
 
 \end{document}
