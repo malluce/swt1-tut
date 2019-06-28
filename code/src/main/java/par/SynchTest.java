@@ -1,10 +1,12 @@
 package par;
 
 public class SynchTest {
-	volatile int x = 0;
+	static volatile int x = 0;
 
-	public void test() throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
+		int iterCnt = 0;
 		while (true) {
+			iterCnt++;
 
 			Runnable r = () -> x++;
 
@@ -18,15 +20,11 @@ public class SynchTest {
 			t2.join();
 			if (x != 2) {
 				System.out.println(x);
+				System.out.println(String.format("One fault in %s iterations.", iterCnt));
 				break;
 			}
 			x = 0;
 		}
-	}
-
-	public static void main(String[] args) throws InterruptedException {
-		SynchTest test = new SynchTest();
-		test.test();
 	}
 
 }
