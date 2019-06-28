@@ -1,40 +1,32 @@
 package par;
 
 public class SynchTest {
-	private static int x = 1;
+	volatile int x = 0;
 
-	public static void main(String[] args) throws InterruptedException {
-		for (int i = 0; i < 100000; i++) {
+	public void test() throws InterruptedException {
+		while (true) {
 
-			Runnable r1 = new Runnable() { // possible as lambda
-				@Override
-				public void run() { // implement run
-					if (x > 0) {
-						x--;
-					}
-				}
-			};
-			Thread t1 = new Thread(r1);
+			Runnable r = () -> x++;
 
-			Thread t2 = new Thread() {
-				@Override
-				public void run() { // overwrite run
-					if (x > 0) {
-						x--;
-					}
-				}
-			};
+			Thread t1 = new Thread(r);
+
+			Thread t2 = new Thread(r);
 
 			t1.start();
 			t2.start();
 			t1.join();
 			t2.join();
-			if (x != 0) {
+			if (x != 2) {
 				System.out.println(x);
+				break;
 			}
-			x = 1;
+			x = 0;
 		}
+	}
 
+	public static void main(String[] args) throws InterruptedException {
+		SynchTest test = new SynchTest();
+		test.test();
 	}
 
 }
