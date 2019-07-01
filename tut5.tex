@@ -41,14 +41,13 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
 \title[SWT1]{Softwaretechnik 1 - 5. Tutorium}
-\subtitle{Tutorium 18}
+\subtitle{Tutorium 17}
 \author{Felix Bachmann}
-\date{03.07.2018}
+\date{09.07.2019}
 
 \institute{KIT - Institut für Programmstrukturen und Datenorganisation (IPD)}
 
 \begin{document}
-	
 % change the following line to "ngerman" for German style date and logos
 \selectlanguage{ngerman}
 	
@@ -62,16 +61,18 @@
 \end{frame}
 
 
-\section{Orga}
+\section{Feedback}
 
 	\subsection{Allgemein}
-	\begin{frame}
-		\frametitle{Allgemeines}
-		\begin{alertblock}{Nächstes Mal letztes Tutorium} 
+	\begin{frame}{Allgemeines}
+		\begin{alertblock}{Nächstes Mal ist schon letztes Tutorium} 
 		\begin{itemize}
-			\item irgendwelche Wünsche für das letzte Tut?
+			\item geplant: grobe Wiederholung + viele Klausuraufgaben \pause
+			\item ansonsten irgendwelche Wünsche?
 			\begin{itemize}
 				\item etwas bestimmtes wiederholen?
+				\item nochmal irgendwas erklären?
+				\item Beispiel für XY?
 				\item falls euch noch was einfällt, schreibt mir eine Mail
 				\linebreak $\implies$ felix.bachmann@ewetel.net
 			\end{itemize}
@@ -79,24 +80,15 @@
 		\end{alertblock}
 	\end{frame}
 
-
-
-	\subsection{Zusatztermin}
-	\begin{frame}
-		\frametitle{Zusatztermin}
+	\begin{frame}{Zusatztermin}
 		\centering \huge Zusatztermin Entwurfmuster
 	\end{frame}
 
-	\subsection{Feedback 5. Übungsblatt}
-	\begin{frame}
-		\frametitle{5. Übungsblatt Statistik}
+	\begin{frame}{5. Übungsblatt Statistik}
 		\includegraphics[scale=0.7]{./pics/tut5/statistics-ub5.png}
-		%\linebreak \centering $\diameter$ 7 bzw. 14 von 27+2
 	\end{frame}
 
-	\subsection{5. Übungsblatt - Fehler (Allgemein)}
-	\begin{frame}
-		\frametitle{Häufige Fehler}
+	\begin{frame}{Häufige Fehler}
 		\begin{block}{Allgemein}
 			\begin{itemize}
 				\item (mal wieder\dots) CheckStyle und JavaDoc
@@ -105,72 +97,29 @@
 		\end{block}
 	\end{frame}
 
-	\subsection{5. Übungsblatt - Fehler}
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1: Shutterpile: Refaktorisierung + Entwurfsmuster}
-			\begin{itemize}
-				\item Schablonenmethoden-Muster nicht korrekt angewendet
-				\begin{itemize}
-					\item Schablonenmethode: Gemeinsamkeiten, in abstr. Klasse impl. 
-					\begin{itemize}\pause
-						\item getWatermark(): Alpha-Kanal sicherstellen, Filter anwenden,\dots
-						\item ruft Einschubmethode auf, um das rohe Watermark zu bekommen
-					\end{itemize}\pause
-					\item Einschubmethode: Unterschiede, in konkreter Unterklasse impl.
-					\begin{itemize}\pause
-						\item getRawWatermark(): gibt je nach Implementierung verschieden rohe Bilder zurück
-						\item z.B. Bild von Text, zufälliger Zahl,\dots
-					\end{itemize}
-				\end{itemize}\pause
-				\item Lösung testen
-				\begin{itemize}
-					\item gab viele Exceptions, schwarze Bilder,\dots
-				\end{itemize}
-			\end{itemize}
+	\begin{frame}{Häufige Fehler}
+		\begin{block}{Aufgabe 1: Architekturstile}
+			%TODO
 		\end{block}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2: cmd-Programm für Pipeline}
-			\begin{itemize}
-				\item 2 Abgaben 
-			\end{itemize}
+	\begin{frame}{Häufige Fehler}
+		\begin{block}{Aufgabe 2: Entwurfsmuster \texttt{CacheProvider}}
+			%TODO
 		\end{block}
 		\pause 
-		\begin{block}{Aufgabe 3: Wo sind Entwurfsmuster in Shutterpile?}
-			\begin{itemize}
-				\item Begründung für Befehl (Handlern) in Zusammenhang mit MVC setzen \pause
-				\item getPixelColor + apply zweimal beschrieben 
-				\begin{itemize}
-					\item Strategie
-					\item Schablonenmethode
-				\end{itemize}
-			\end{itemize}
+		\begin{block}{Aufgabe 3: Entwurfsmuster impl. (Iterator, Besucher)}
+			%TODO
 		\end{block}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4: Entwurfsmuster in Java-API}
-			\begin{itemize}
-				\item Stellvertreter vs. Dekorierer
-				\begin{itemize}
-					\item Dekorierer fügt neue Funktionalität hinzu, das hat bei vielen gefehlt
-				\end{itemize}
-				\pause
-				\item getBundle(..) ist statisch und damit nicht überschreibbar 
-			\end{itemize}
+	\begin{frame}{Häufige Fehler}
+		\begin{block}{Aufgabe 4: Code $\rightarrow$ Klassendiagramm}
+			%TODO
 		\end{block}
 		\pause
-		\begin{block}{Aufgabe 5: Entwurfsmuster - Kaffeemaschine}
+		\begin{block}{Aufgabe 5: Zustandsmuster(Kaffeemaschine) impl.}
 			\begin{itemize}
-				\item Zustandsmuster in Entwurfsmuster-Kapitel ist ziemlich grob
-				\begin{itemize}
-					\item siehe Implementierungs-Kapitel für bessere Beschreibung
-				\end{itemize}
-				\pause
 				\item abstrakte Oberklasse/Interface Kaffeemaschine fehlte 
 				\begin{itemize}
 					\item für Hinzufügen neuer Kaffeemaschine sinnvoll
@@ -179,8 +128,13 @@
 		\end{block}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Jetzt letztes Übungsblatt..}
+	\begin{frame}{Häufige Fehler}
+		\begin{block}{Aufgabe 6: \texttt{git merge} vs \texttt{git rebase}}
+			%TODO
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Jetzt letztes Übungsblatt..}
 		\begin{huge}
 			Falls ihr noch Punkte braucht, gebt ab!
 		\end{huge}
@@ -195,15 +149,22 @@
 	
 	
 \section{Parallelität}
-	\subsection{}	
+	
+	\begin{frame}{Programm vs. Prozess vs. Thread}
+		\begin{itemize}
+			\item Programm = ausführbare Datei
+			\item Prozess = Programm in Ausführung
+			\item Thread = Ausführungseinheit innerhalb eines Prozesses
+		\end{itemize}
+	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Parallelität - Grundlagen}
+		\frametitle{Grundlagen}
 		\includegraphics[scale=0.34]{./pics/tut5/proc-thr.png}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Grundlagen}
+		\frametitle{Grundlagen}
 		\begin{itemize}
 			\item Prozess = Programm in Ausführung \pause
 			\item jeder Prozess hat eigenen Adressraum (= Speicherbereich im Arbeitsspeicher) \pause
@@ -220,7 +181,7 @@
 	
 	
 	\begin{frame}
-		\frametitle{Parallelität - Motivation}
+		\frametitle{Motivation}
 		\includegraphics[scale=0.34]{./pics/tut5/mot-par.png}
 		\pause
 		\begin{itemize}
@@ -230,37 +191,37 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - in Java}
+		\frametitle{Parallelität in Java}
 		\begin{itemize}
 			\item in Java zwei Möglichkeiten einen Thread zu erstellen
 			\item bereits in Java enthalten:
 			\begin{itemize}
-				\item Interface java.lang.Runnable
-				\item Klasse java.lang.Thread
+				\item Interface \texttt{java.lang.Runnable}
+				\item Klasse \texttt{java.lang.Thread}
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - in Java}
+		\frametitle{Parallelität in Java}
 		\includegraphics[scale=0.34]{./pics/tut5/crea-thr.png}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - in Java}
+		\frametitle{Parallelität in Java}
 		\centering
 		\includegraphics[scale=0.43]{./pics/tut5/crea-thr-java.png}
 		\pause
 		\begin{alertblock}{Wichtig!}
 			\begin{itemize}
-				\item immer Thread.start() aufrufen, nicht Thread.run() \pause
-				\item Thread.run() würde run() sequenziell aufrufen, start() kehrt direkt zurück, nachdem Thread gestartet wurde
+				\item immer \texttt{Thread.start()} aufrufen, nicht \texttt{Thread.run()} \pause
+				\item \texttt{Thread.run()} würde \texttt{run()} sequenziell aufrufen, \texttt{start()} kehrt direkt zurück, nachdem Thread gestartet wurde
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Synchronisation}
+		\frametitle{Synchronisation}
 		\begin{itemize}
 			\item Problem: Zugriff auf globale Variablen passiert nicht \enquote{gleichzeitig}, Unterbrechungen möglich
 			\item Folge: ggf. falsche Ergebnisse
@@ -268,18 +229,14 @@
 		\includegraphics[scale=0.43]{./pics/tut5/par-pro.png}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Parallelität - Synchronisation}
-		\begin{itemize}
-			\item nicht nur ein theoretisches Beispiel!
-		\end{itemize}
+	\begin{frame}{Nicht nur ein theoretisches Problem}
 		\centering
 		\includegraphics[scale=0.43]{./pics/tut5/synch-ex.png} \pause
 		\includegraphics[scale=0.43]{./pics/tut5/synch-ex2.png}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Synchronisation}
+		\frametitle{Synchronisation}
 		\begin{itemize}
 			\item Ziel: Zugriff auf gemeinsam genutzte Daten synchronisieren \pause 
 			\begin{itemize}
@@ -297,13 +254,22 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Monitor}
+		\frametitle{Monitor}
 		\begin{itemize}
 			\item Idee: Monitor einführen \pause
-			\item Bereich im Code markieren, den nur ein Thread gleichzeitig ausführen kann und dabei nicht unterbrochen werden kann \pause
-			\item Schlüsselwort in Java \textcolor{blue}{synchronized} \pause
-			\item es wird immer an einem Objekt synchronisiert, als Argument bei \textcolor{blue}{synchronized} \pause
-			\item Thread t kommt an eine mit \textcolor{blue}{synchronized}(Objekt)\{\dots\} markierte Stelle \pause
+			\begin{itemize}
+				\item Ziel: Bereich im Code markieren,
+				\begin{itemize}
+					\item den nur ein Thread gleichzeitig ausführen kann
+					\item in dem der Thread nicht unterbrochen werden kann
+				\end{itemize}
+			\end{itemize} \pause
+			\item Schlüsselwort in Java \textcolor{blue}{\texttt{synchronized}} \pause
+			\item es wird immer an einem Objekt synchronisiert
+			\begin{itemize}
+				\item \textcolor{blue}{\texttt{synchronized}}\texttt{(Object o)}\texttt{\{/* zu schützender Code */ \}} \pause
+			\end{itemize} 
+			\item Thread t kommt an eine mit \textcolor{blue}{\texttt{synchronized}}(\texttt{Object o})\{\dots\} markierte Stelle \pause
 			\begin{itemize}
 				\item es wird geprüft, ob der Monitor gerade frei ist \pause
 				\item ist der Monitor frei, kommt t in den kritischen Abschnitt und der Monitor ist besetzt, bis t den Abschnitt wieder verlässt \pause
@@ -313,16 +279,42 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Monitor}
-		private Object o = new Object();
+		\frametitle{Monitor}
+		\texttt{private Object o = new Object();}
 		\includegraphics[scale=0.36]{./pics/tut5/synch-ex3.png} \pause
 		\includegraphics[scale=0.39]{./pics/tut5/synch-ex4.png}
 	\end{frame}
 
+	\begin{frame}{Monitor}
+		\begin{itemize}
+			\item \texttt{synchronized} an Methoden 
+			\begin{itemize}
+				\item nicht-statische Methode = \texttt{synchronized(this)\{Methoden-Rumpf\}} 
+				\item statische Methode = \texttt{synchronized(X.class)\{Methoden-Rumpf\}} 
+			\end{itemize}
+			\pause 
+			\begin{alertblock}{Aber Achtung}
+				\begin{itemize}
+					\item \texttt{synchronized} killt Parallelität
+					\item immer nur ein Thread gleichzeitig im kritischen Abschnitt
+					\item also nur dann benutzen wenn wirklich nötig 
+					\begin{itemize}
+						\item sonst wird alles wieder sequentiell
+					\end{itemize} 
+					\item außerdem kritische Abschnitte möglichst klein halten
+					\begin{itemize}
+						\item möglichst wenig Arbeit im Abschnitt machen
+					\end{itemize}
+				\end{itemize}
+			\end{alertblock}
+
+		\end{itemize}
+	\end{frame}
+
 	\begin{frame}
-		\frametitle{Parallelität - wait() und notify()}
-		\textcolor{blue}{synchronized} an Methoden = synchronized(this)\{Methoden-Rumpf\} \pause
+		\frametitle{wait() und notify()}
 		\includegraphics[scale=0.3]{./pics/tut5/cons-prod.png}
+		\pause
 		\begin{alertblock}{Probleme}
 			\begin{itemize}
 				\pause
@@ -333,17 +325,20 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - wait() und notify()}
+		\frametitle{wait() und notify()}
 		\begin{itemize}
-			\item Idee: brauchen Mechanismus, der es erlaubt den Monitor freizugeben, während man auf etwas wartet \pause
-			\item dazu braucht man natürlich auch einen Mechanismus, der es erlaubt wartende Threads aufzuwecken \pause
-			\item in Java: wait() und notify() bzw. notifyAll() \pause
+			\item Idee: brauchen Mechanismus,
+			\begin{itemize}
+				\item der es erlaubt den Monitor freizugeben, während man auf etwas wartet \pause
+				\item der es erlaubt wartende Threads aufzuwecken \pause
+			\end{itemize}
+			\item in Java: \texttt{wait()} und \texttt{notify()} bzw. \texttt{notifyAll()} \pause
 			\includegraphics[scale=0.3]{./pics/tut5/cons-prod-sol.png}
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - wait() und notify()}
+		\frametitle{wait() und notify()}
 		\includegraphics[scale=0.3]{./pics/tut5/cons-prod-sol.png}
 		\begin{itemize}
 			\item Kann man die while-Schleifen jetzt nicht durch eine if-Abfrage ersetzen? \pause
@@ -354,7 +349,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Verklemmung (deadlock)}
+		\frametitle{Verklemmung (deadlock)}
 		\includegraphics[scale=0.3]{./pics/tut5/deadlock.jpg}
 		\pause
 		\begin{itemize}
@@ -364,16 +359,39 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Parallelität - Verklemmung (deadlock)}
+		\frametitle{Verklemmung (deadlock)}
 			\centering \includegraphics[scale=0.4]{./pics/tut5/deadlock-ex.png} \linebreak
 			klassicher Deadlock!
 	\end{frame}
 
 	
 	\begin{frame}
-		\frametitle{Parallelität - Verklemmung (deadlock)}
+		\frametitle{Verklemmung (deadlock)}
 		\centering Lösungsansatz: Monitore immer in gleicher Reihenfolge anfordern \linebreak
 		\includegraphics[scale=0.4]{./pics/tut5/deadlock-ex-sol.png}
+	\end{frame}
+
+	\begin{frame}{volatile}
+		\begin{itemize}
+			\item Schlüsselwort \texttt{volatile} an Variablen
+			\item Zugriff auf Variablen immer direkt über den Hauptspeicher
+			\begin{itemize}
+				\item Caches werden umgangen
+			\end{itemize}
+			\item sorgt dafür, dass alle Threads den gleichen Wert sehen \pause
+			\item Compiler darf weniger optimieren
+		\end{itemize} \pause
+		\begin{exampleblock}{Löst es das folgende Problem?}
+			\texttt{i++} ausgeführt von 2 Threads. \texttt{volatile i} ist initial 0. \linebreak Ist i nach der Ausführung immer 1?
+		\end{exampleblock} \pause Beispiel-Code \pause
+		\begin{itemize}
+			\item Nein! 
+			\begin{itemize}
+				\item \texttt{volatile} kümmert sich nur darum, dass alle Threads die gleiche Sicht auf den Speicher haben
+				\item kein Einfluss auf Ausführung
+				\item kein Schutz vor race conditions
+			\end{itemize}
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
@@ -401,47 +419,29 @@
 		\frametitle{Parallelität in GUI nutzen}
 		\centering
 		\includegraphics[scale=0.4]{./pics/tut5/extra-thread.png}
+	\end{frame}
 
+	\begin{frame}{Wie benutzt man nun Parallelität?}
+		\begin{enumerate}
+			\item großes Problem
+			\item ??? $\rbrace$ Parallelität?
+			\item Profit
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Wie benutzt man nun Parallelität?}
+		\begin{enumerate}
+			\item großes Problem in Teilprobleme aufteilen
+			\item Teilprobleme durch verschiedene Threads parallel lösen lassen
+			\item Teil-Lösungen zu Gesamt-Lösung zusammensetzen
+			\begin{itemize}
+				\item auf critical sections/ race conditions achten
+			\end{itemize}
+			\item Profit = Laufzeit-Reduktion (falls alles richtig gemacht)
+		\end{enumerate}
 	\end{frame}
 
 \section{Testen}
-	\subsection{Intro}
-	
-	\begin{frame}
-		\frametitle{Arten von Fehlern}
-		\begin{itemize}
-			\item Was verursacht was?
-			\item Defekt, Irrtum, Versagen \pause
-			\item "'Testing shows the presence of bugs, not their absence."' (Edsger W. Dijkstra)
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{Arten von Tests}
-		\begin{block}{Dynamische Verfahren}
-			\begin{itemize}
-				\item Testfälle schreiben und ausführen (z.B. mit JUnit) \pause
-				\item white box testing \pause
-				\begin{itemize}
-					\item kontrollflussorientiert
-					\item datenflussorientiert
-				\end{itemize}
-				\item black box testings \pause
-				\begin{itemize}
-					\item funktionale Tests \pause
-					\item Leistungstests
-				\end{itemize}
-			\end{itemize}
-		\end{block}
-		\pause
-		\begin{block}{Statische Verfahren}
-			\begin{itemize}
-				\item Inspektion \pause
-				\item statische Analyse mit Tools \pause
-				\item Programm wird nicht ausgeführt!
-			\end{itemize}
-		\end{block}
-	\end{frame}
 
 	\begin{frame}
 		\frametitle{Kontrollflussorientiertes Testverfahren (KFO)}
@@ -459,7 +459,7 @@
 			\end{itemize}
 			\pause
 			\item Zwischensprache $\implies$ Kontrollflussgraph \pause
-			\item am Kontrollflussgraphen Testfälle finden: \pause
+			\item am Kontrollflussgraphen Testfälle finden \pause
 			\begin{itemize}
 				\item Anweisungsüberdeckung
 				\item Zweigüberdeckung 
@@ -468,107 +468,309 @@
 		\end{enumerate}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
+	\begin{frame}[fragile]
+		\frametitle{KFO: Code $\rightarrow$ Zwischensprache}
 		\begin{itemize}
 			\item Sprünge umwandeln
 		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/code.png}
+	\centering
+			\begin{verbatim}
+int a = 9;
+System.out.println("blubb");
+while (a == 9) {
+  int z = 0;
+  for (int i = 0; i <= b; i++) {
+    n++;
+  }
+  z++;
+  if (a == z) {
+    a = 8;
+  }
+}
+			\end{verbatim}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
-		\begin{itemize}
-			\item Sprünge umwandeln
+	\begin{frame}[fragile]{KFO: Code $\rightarrow$ Zwischensprache}
+	\begin{itemize}
+		\item Sprünge umwandeln (while, for, if, \texttt{x ? a : b},\dots)
+		\begin{itemize} 
+			\item wie geht das für \texttt{while}, \texttt{if}, \texttt{for}? (Tafel)
+			\item Ziel: nur \texttt{if}, \texttt{not}, \texttt{goto} verwenden. Kein \texttt{\{...\}}
 		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/code-jumps.png}
+	\end{itemize}
+	\centering
+	\begin{verbatim}
+int a = 9;
+System.out.println("blubb");
+while (a == 9) { <- hier
+  int z = 0;
+  for (int i = 0; i <= b; i++) { <- hier
+    n++;
+  }
+  z++;
+  if (a == z) { <- hier
+    a = 8;
+  }
+}
+	\end{verbatim}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
+	\begin{frame}[fragile]{Sprünge wurden umgewandelt}
+	\begin{verbatim}
+01 int a = 9;
+02 System.out.println("blubb");
+03 if not (a == 9) goto 14;
+04 int z = 0;
+05 int i = 0;
+06 if not (i <= b) goto 10;
+07 n++;
+08 i++;
+09 goto 06;
+10 z++;
+11 if not (a == z) goto 13;
+12 a = 8;
+13 goto 03;
+14
+	\end{verbatim}
+	\end{frame}
+
+\begin{frame}{KFO: Code $\rightarrow$ Zwischensprache}
+	\begin{itemize}
+		\item nächster Schritt: Grundblöcke finden
+		\item Code bis \texttt{goto} ist ein Grundblock
+	\end{itemize}
+\end{frame}
+
+	\begin{frame}[fragile]
+\small 
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\footnotesize
+\begin{verbatim}
+01 int a = 9;
+02 System.out.println("blubb");
+03 if not (a == 9) goto 14;
+\end{verbatim}
+\begin{verbatim}
+04 int z = 0;
+05 int i = 0;
+06 if not (i <= b) goto 10;
+\end{verbatim}
+\begin{verbatim}
+07 n++;
+08 i++;
+09 goto 06;
+\end{verbatim}
+\begin{verbatim}
+10 z++;
+11 if not (a == z) goto 13;
+\end{verbatim}
+\begin{verbatim}
+12 a = 8;
+13 goto 03;
+\end{verbatim}
+\begin{verbatim}
+14
+\end{verbatim}
+	\end{column}%
+	\begin{column}{0.5\textwidth}
 		\begin{itemize}
-			\item Grundblöcke finden (Code bis goto ist ein Grundblock)
+			\item haben erste Grundblöcke gefunden
+			\pause
+			\item jetzt: Grundblöcke prüfen
+			\item \texttt{goto} dürfen nur auf Start eines Blocks verweisen
+			\item daher: Blöcke ggf. noch weiter unterteilen
 		\end{itemize}
-		\centering \includegraphics[scale=0.34]{./pics/tut5/first-blocks.png}
+	\end{column}
+\end{columns}	
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{KFO: Code nach Zwischensprache}
+	\begin{frame}[fragile]
+\small 
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\footnotesize
+		\begin{verbatim}
+		01 int a = 9;
+		02 System.out.println("blubb");
+		03 if not (a == 9) goto 14;
+		\end{verbatim}
+		\begin{verbatim}
+		04 int z = 0;
+		05 int i = 0;
+		06 if not (i <= b) goto 10; 
+		\end{verbatim}
+		\begin{verbatim}
+		07 n++;
+		08 i++;
+		09 goto 06; <-- kaputt!
+		\end{verbatim}
+		\begin{verbatim}
+		10 z++;
+		11 if not (a == z) goto 13; <-- kaputt!
+		\end{verbatim}
+		\begin{verbatim}
+		12 a = 8;
+		13 goto 03; <-- kaputt!
+		\end{verbatim}
+		\begin{verbatim}
+		14
+		\end{verbatim}
+	\end{column}%
+	\begin{column}{0.5\textwidth}
 		\begin{itemize}
-			\item 	Grundblöcke prüfen (goto dürfen nur an Anfang eines Grundblocks verweisen)
+			\item haben erste Grundblöcke gefunden
+			\item jetzt: Grundblöcke prüfen
+			\item \texttt{goto} dürfen nur auf Start eines Blocks verweisen
+			\item daher: Blöcke ggf. noch weiter unterteilen
 		\end{itemize}
-			\centering \includegraphics[scale=0.34]{./pics/tut5/second-blocks.png}
-	\end{frame}
+	\end{column}
+\end{columns}	
+\end{frame}
 
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
+	\begin{frame}[fragile]
+\small 
+\begin{columns}
+	\begin{column}{0.4\textwidth}
+		\scriptsize
+		%\fontsize{3mm}{3mm}\selectfont
+		\begin{verbatim}
+		01 int a = 9;
+		02 System.out.println("blubb");
+		\end{verbatim}
+		\begin{verbatim}
+		03 if not (a == 9) goto 14;
+		\end{verbatim}
+		\begin{verbatim}
+		04 int z = 0;
+		05 int i = 0;
+		\end{verbatim}
+		\begin{verbatim}
+		06 if not (i <= b) goto 10;
+		\end{verbatim}
+		\begin{verbatim}
+		07 n++;
+		08 i++;
+		09 goto 06;
+		\end{verbatim}
+		\begin{verbatim}
+		10 z++;
+		11 if not (a == z) goto 13;
+		\end{verbatim}
+		\begin{verbatim}
+		12 a = 8;
+		\end{verbatim}
+		\begin{verbatim}
+		13 goto 03;
+		\end{verbatim}
+		\begin{verbatim}
+		14
+		\end{verbatim}
+	\end{column}%
+	\begin{column}{0.6\textwidth}
 		\begin{itemize}
-			\item Grundblöcke benennen
-			\item Grundblöcke und Verzweigungen hinzeichnen
-			\item Start- und Endzustand hinzufügen
+			\pause
+			\item jetzt sind wir fertig mit den Grundblöcken
+			\pause
+			\item als nächstes: Graphen hinzeichnen
+			\item dazu Start- und Endblock hinzufügen
+			\item Blöcke benennen ($n_{start}, n_1, \dots, n_x, n_{stopp}$)
+			\item Knoten und Kanten hinzeichnen
 		\end{itemize}
+	\end{column}
+\end{columns}	
+\end{frame}
+
+
+	\begin{frame}
+		\centering \includegraphics[scale=0.29]{./pics/tut5/kfo.pdf}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
-		\centering \includegraphics[scale=0.25]{./pics/tut5/test.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zwischensprache nach Kontrollflussgraph}
 		\begin{itemize}
 			\item goto-Knoten kann man auch weglassen
 		\end{itemize}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
+		\centering \includegraphics[scale=0.27]{./pics/tut5/kfo-no-goto.pdf}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{KFO: Anweisungsüberdeckung}
 		\begin{itemize}
-			\item Pfade finden, sodass jeder Grundblock traversiert wird \pause
+			\item wähle Testfälle so, dass jeder Grundblock traversiert wird \pause
 			\linebreak $\implies$ Entdeckung nicht erreichbarer Code-Abschnitte \pause
 			\item aber: kein ausreichendes Testkriterium
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Anweisungsüberdeckung}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\begin{itemize}
-			\item Pfad für Anweisungsüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
+			\begin{itemize}
+				\item Schleifen einmal durchlaufen reicht schon
+			\end{itemize}
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{KFO: Zweigüberdeckung}
 		\begin{itemize}
-			\item Pfade finden, sodass jeder Zweig (=Kante) traversiert wird \pause
+			\item wähle Testfälle so, dass jeder Zweig (=Kante) traversiert wird \pause
 			\linebreak $\implies$ Entdeckung nicht erreichbarer Kanten \pause
-			\item aber: Schleifen werden nicht ausreichend getestet
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Zweigüberdeckung}
-		\centering \includegraphics[scale=0.2]{./pics/tut5/test-without-goto.png}
-		\begin{itemize}
-			\item Pfad für Zweigüberdeckung? \pause ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_2, n_3, n_4, n_5, n_4, n_6, n_7, n_2, n_{stopp}$) 
+			\item wie bei Anweisungsüberdeckung
+			\begin{itemize}
+				\item Schleifen werden ggf. nicht ausreichend getestet
+			\end{itemize}
 		\end{itemize}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{KFO: Pfadüberdeckung}
 		\begin{itemize}
-			\item Finde \textbf{alle} vollständige, unterschiedlichen Pfade \pause
+			\item Finde \textbf{alle} vollständigen, unterschiedlichen Pfade 
+			\begin{itemize}
+				\item wähle Testfälle so, dass alle gefundenen Pfade durchlaufen werden
+			\end{itemize}
 			\item vollständiger Pfad = Anfang bei $n_{start}$, Ende bei $n_{stopp}$ \pause
 			\item nicht praktikabel, da 
 			\begin{itemize}
-				\item Schleifen die Anzahl der möglichen Pfade stark erhöhen \pause
-				\item manche Pfade nicht ausführbar sind (sich gegenseitig ausschließende Bedingungen)
+				\item Schleifen die Anzahl der möglichen Pfade stark erhöhen 
+				\begin{itemize}
+					\item sogar \enquote{unendlich viele}, wenn Iterationen von Eingabe abhängig\pause
+				\end{itemize}
+				\item manche Pfade nicht ausführbar sind
+				\begin{itemize}
+					\item z.B. sich gegenseitig ausschließende Bedingungen
+				\end{itemize} 
 			\end{itemize}
 		\end{itemize}
 	\end{frame}
 
+	\begin{frame}{\enquote{Sinnvolle} Testfälle}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\includegraphics[scale=0.27]{./pics/tut5/kfo-no-goto.pdf}
+			\end{column}%
+			\begin{column}{0.5\textwidth}
+				\begin{itemize}
+					\item was ist nun unsere Testfallmenge?			
+					\begin{itemize}
+						\item = welche \texttt{b} testen?
+					\end{itemize}
+						\item für Anweisungsüberdeckung?
+						\item für Zweigüberdeckung?
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{\enquote{Sinnvolle} Testfälle}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\includegraphics[scale=0.27]{./pics/tut5/kfo-no-goto.pdf}
+			\end{column}%
+			\begin{column}{0.6\textwidth}
+				\begin{itemize}
+					\item \texttt{b=0} erfüllt bereits beides
+					\item Pfad $(n_{start}, n_1, n_2, n_3, n_4, n_5, n_4, n_6, n_2, \dots, \linebreak n_6, n_7, n_2, n_{stopp})$
+					\item i.A. aber mehrere Testfälle nötig
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
 		
 	\begin{frame}
 		\frametitle{Klausuraufgabe SS11}
@@ -582,7 +784,17 @@
 		\centering \includegraphics[scale=0.3]{./pics/tut5/exam-task-kfo-sol.png}
 		\linebreak \pause
 		Pfad: ($n_{start}, n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_6, n_8, n_4, n_{stopp}$) 
-\end{frame}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Kurzschlussauswertung}
+		\begin{alertblock}{Achtung, für ÜBs/Klausur}
+			\begin{itemize}
+				\item MuLö ist alt, nicht ganz korrekt
+				\item Kurzschlussauswertung (\texttt{\&\&} bzw. \texttt{||}) auflösen (in zwei if)
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
 
 
 \section{Tipps}
