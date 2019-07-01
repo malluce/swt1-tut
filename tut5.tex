@@ -801,42 +801,59 @@ while (a == 9) { <- hier
 	\subsection{Tipps}
 	\begin{frame}
 		\frametitle{Tipps - 6. Übungsblatt}
-		\begin{exampleblock}{Aufgabe 1: Kontrollfluss-orientiertes Testen}
+
+		\begin{exampleblock}{Aufgabe 1: Parallelisierung von HDrize} 
 			\begin{itemize}
-				\item zur Sicherheit Zwischensprache benutzen
-				\item Definitionen der verschiedenen Abdeckungen anschauen
-			\end{itemize}
-		\end{exampleblock}
-		\pause
-		\begin{exampleblock}{Aufgabe 2: Parallelisierung von Shutterpile} 
-			\begin{itemize}
-				\item Berechnung des Wasserzeichenbilds parallelisieren \pause
+				\item Berechnung der HDR-Bilder parallelisieren \pause
 				\item Thread-Pool spart euch die manuelle Verwaltung der Threads
 				\begin{itemize}
 					\item \texttt{ExecutorService es = Executors.newFixedThreadPool(amountOfThreads);}
 					\item \texttt{es.execute(myRunnable);} (beliebig viele)
 					\item \texttt{es.shutdown();}
 				\end{itemize} \pause
-				\item Tests schreiben für Korrektheit
+				\item Tests schreiben
+			\end{itemize}
+		\end{exampleblock}
+		\pause
+		\begin{exampleblock}{Aufgabe 2: Parallelisierungswettbewerb}
+			\begin{itemize}
+				\item Aufgabe 1 verbessern und Laufzeit messen
+				\item Teile handschriftlich abgeben
+				\begin{itemize}
+					\item Laufzeitprofil und Erklärung des Ansatzes
+					\item Laufzeitprofil kann man auch ohne weitere Optimierung erstellen ;)
+				\end{itemize}
 			\end{itemize}
 		\end{exampleblock}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Tipps - 6. Übungsblatt}
-		\begin{exampleblock}{Aufgabe 3: Abnahmetests}
+		\begin{exampleblock}{Aufgabe 3: Kontrollfluss-orientiertes Testen}
 			\begin{itemize}
-				\item Tests schreiben für spezielle Anforderungen
-				\item Teil d) handschriftlich!
+				\item zur Sicherheit Zwischensprache benutzen
+				\begin{itemize}
+					\item aber auch ok ohne
+					\item (hilft aber keine Fehler zu machen)
+				\end{itemize}
+				\item Achtung: \texttt{\&} vs. \texttt{\&\&}
+				\item ansonsten \enquote{Schema F}
 			\end{itemize}
 		\end{exampleblock}
 		\pause
-		\begin{exampleblock}{Aufgabe 4: Parallelisierungswettbewerb}
+		\begin{exampleblock}{Aufgabe 4: Funktionales Testen}
 			\begin{itemize}
-				\item Aufgabe 2 verbessern und Laufzeit messen
-				\item auch hier Teile (Erklärung des Ansatzes) handschriftlich abgeben
+				\item Äquivalenzklassen für Parameter finden
+				\item auch ungültige und fehlerhafte Eingaben beachten
 			\end{itemize}
 		\end{exampleblock}
+		\pause
+		\begin{exampleblock}{Aufgabe 5: Codeinspektion}
+			\begin{itemize}
+				\item mit Checkliste an eventuellen Problemen Code durchgehen
+			\end{itemize}
+		\end{exampleblock}
+
 	\end{frame}
 
 	\subsection{Abgabe}
@@ -844,15 +861,18 @@ while (a == 9) { <- hier
 		\frametitle{Denkt dran!}
 		\begin{alertblock}{Abgabe}
 			\begin{itemize}
-				\item Deadline am 11.7. um 12:00
-				\item Aufgabe 1 und Teile von 3 und 4 handschriftlich
+				\item Deadline am 17.7. um 12:00
+				\item A3-5 und Teile von A2 handschriftlich
 				\item auf jeden Fall abgeben, wenn ihr noch Punkte braucht
+				\begin{itemize}
+					\item aus jeder Aufgabe gute Punkte rauszuholen
+				\end{itemize}
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Bis dann! (dann  := 17.07.18)}
+		\frametitle{Bis dann! (dann  := 23.07.19)}
 		\centering
 		\includegraphics[scale=1.0]{./comics/geek_and_poke_concurrency.jpg}
 	\end{frame}
