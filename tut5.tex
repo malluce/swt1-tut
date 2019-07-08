@@ -61,9 +61,21 @@
 \end{frame}
 
 
-\section{Feedback}
+\section{Orga}
+	\begin{frame}{Demokratie ist 'ne super Sache}
+		\begin{itemize}
+			\item wir können das Studierendenparlament und FachschaftssprecherInnen wählen
+			\item noch die gesamte Woche
+			\item bei der Mensa, AKK, oder Fachschaft (egal wo)
+			\item es gibt Kekse!
+			\item weitere Informationen
+			\begin{itemize}
+				\item \url{https://wahl.asta.kit.edu/Wahl19/stupaomat/stupaomat.html}
+				\item \url{https://wahl.asta.kit.edu/}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
 
-	\subsection{Allgemein}
 	\begin{frame}{Allgemeines}
 		\begin{alertblock}{Nächstes Mal ist schon letztes Tutorium} 
 		\begin{itemize}
@@ -80,10 +92,6 @@
 		\end{alertblock}
 	\end{frame}
 
-	\begin{frame}{Zusatztermin}
-		\centering \huge Zusatztermin Entwurfmuster
-	\end{frame}
-
 	\begin{frame}{5. Übungsblatt Statistik}
 		\includegraphics[scale=0.7]{./pics/tut5/statistics-ub5.png}
 	\end{frame}
@@ -92,37 +100,79 @@
 		\begin{block}{Allgemein}
 			\begin{itemize}
 				\item (mal wieder\dots) CheckStyle und JavaDoc
-				\item zu späte Abgabe = nur Korrektur, keine Punkte
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}{Häufige Fehler}
-		\begin{block}{Aufgabe 1: Architekturstile}
-			%TODO
+		\begin{block}{Aufgabe 1: MVC als Schichtenarchitektur}
+			\begin{itemize}
+				\item Methoden/Attribute fehlten
+				\begin{itemize}
+					\item Semantik? 
+					\item Beobachter, Klick/Registrierkomponenten, etc.?
+				\end{itemize}
+				\pause
+				\item Beobachter Model $\leftrightarrow$ View nicht modelliert \pause
+				\item uses-Beziehung 
+				\begin{itemize}
+					\item fehlte
+					\item falsche Syntax
+					\item Pfeile zwischen Paketen sind zu offensichtlich
+				\end{itemize}
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}{Häufige Fehler}
 		\begin{block}{Aufgabe 2: Entwurfsmuster \texttt{CacheProvider}}
-			%TODO
+			\begin{itemize}
+				\item falsches Muster
+				\item häufig: Strategie oder Fabrikmethode \pause
+				\item Strategie ist oft der \enquote{easy way out}
+				\begin{itemize}
+					\item viele (wenn nicht alle) EMs nutzen Strategie
+					\item dafür reicht ja quasi schon eine Schnittstelle \pause
+					\item daher: erst größere Muster \enquote{um Strategie herum} suchen
+					\item Strategie bei solchen Fragen nur antworten, wenn ihr gar nix findet
+				\end{itemize}
+			\end{itemize}
 		\end{block}
 		\pause 
 		\begin{block}{Aufgabe 3: Entwurfsmuster impl. (Iterator, Besucher)}
-			%TODO
+			\begin{itemize}
+				\item Prinzip: Iterator benutzt Visitor um nächstes Element herauszufinden
+				\item Zusammenhang war manchmal nicht ganz klar
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}{Häufige Fehler}
 		\begin{block}{Aufgabe 4: Code $\rightarrow$ Klassendiagramm}
-			%TODO
+			\begin{itemize}
+				\item wie in VL-Folien
+				\begin{itemize}
+					\item Map=qualifizierte Assoziation
+					\begin{itemize}
+						\item Achtung, Multiplizität \underline{pro Qualifizierer}
+					\end{itemize}
+					\item Set=\texttt{\{unique\}}
+				\end{itemize}
+				\pause
+				\item Attribute nicht mehr hinschreiben, wenn bereits die Assoziation da steht
+			\end{itemize}
 		\end{block}
 		\pause
 		\begin{block}{Aufgabe 5: Zustandsmuster(Kaffeemaschine) impl.}
 			\begin{itemize}
-				\item abstrakte Oberklasse/Interface Kaffeemaschine fehlte 
+				\item explizite, ausgelagerte Zustandshaltung sollte verwendet werden
 				\begin{itemize}
-					\item für Hinzufügen neuer Kaffeemaschine sinnvoll
+					\item einfach Vorlesungsfolien \enquote{nachimplementieren}
+				\end{itemize}
+				\item Reminder: im UML-Zustandsdiagramm tun nicht definierte Übergänge nichts
+				\begin{itemize}
+					\item wie in VL kann es aber sinnvoll sein Exceptions zu werfen
+					\item abhängig vom Anwendungsfall, hier war beides ok
 				\end{itemize}
 			\end{itemize}
 		\end{block}
@@ -130,7 +180,21 @@
 
 	\begin{frame}{Häufige Fehler}
 		\begin{block}{Aufgabe 6: \texttt{git merge} vs \texttt{git rebase}}
-			%TODO
+			\begin{itemize}
+				\item beim rebasen zwei Probleme
+				\begin{itemize}
+					\item feature an master \enquote{ran-gerebased}
+					\begin{itemize}
+						\item Kollegen arbeiten auf altem master ohne die feature commits
+					\end{itemize}
+					\pause
+					\item master an feature \enquote{ran-gerebased}
+					\begin{itemize}
+						\item zwei master-Branches! 
+						\item autsch
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
 		\end{block}
 	\end{frame}
 
@@ -223,7 +287,8 @@
 	\begin{frame}
 		\frametitle{Synchronisation}
 		\begin{itemize}
-			\item Problem: Zugriff auf globale Variablen passiert nicht \enquote{gleichzeitig}, Unterbrechungen möglich
+			\item Problem: Zugriff auf globale Variablen durch mehrere Threads können in beliebiger Reihenfolge passieren
+			\item Threads können unterbrochen werden
 			\item Folge: ggf. falsche Ergebnisse
 		\end{itemize}
 		\includegraphics[scale=0.43]{./pics/tut5/par-pro.png}
@@ -359,15 +424,17 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Verklemmung (deadlock)}
-			\centering \includegraphics[scale=0.4]{./pics/tut5/deadlock-ex.png} \linebreak
-			klassicher Deadlock!
+		\frametitle{Deadlock an der PH}
+			\centering \includegraphics[scale=0.4]{./pics/tut5/deadlock-ex.png}
 	\end{frame}
 
 	
 	\begin{frame}
-		\frametitle{Verklemmung (deadlock)}
-		\centering Lösungsansatz: Monitore immer in gleicher Reihenfolge anfordern \linebreak
+		\frametitle{Deadlock an der PH}
+		\begin{itemize}
+			\item Lösungsansatz: Monitore immer in gleicher Reihenfolge anfordern
+		\end{itemize}
+		\centering 
 		\includegraphics[scale=0.4]{./pics/tut5/deadlock-ex-sol.png}
 	\end{frame}
 
@@ -433,6 +500,9 @@
 		\begin{enumerate}
 			\item großes Problem in Teilprobleme aufteilen
 			\item Teilprobleme durch verschiedene Threads parallel lösen lassen
+			\begin{itemize}
+				\item Threads manuell verwalten oder Thread-Pool benutzen
+			\end{itemize}
 			\item Teil-Lösungen zu Gesamt-Lösung zusammensetzen
 			\begin{itemize}
 				\item auf critical sections/ race conditions achten
@@ -464,6 +534,7 @@
 				\item Anweisungsüberdeckung
 				\item Zweigüberdeckung 
 				\item Pfadüberdeckung
+				\item (Bedingungsüberdeckung)
 			\end{itemize}
 		\end{enumerate}
 	\end{frame}
@@ -808,7 +879,7 @@ while (a == 9) { <- hier
 				\item Thread-Pool spart euch die manuelle Verwaltung der Threads
 				\begin{itemize}
 					\item \texttt{ExecutorService es = Executors.newFixedThreadPool(amountOfThreads);}
-					\item \texttt{es.execute(myRunnable);} (beliebig viele)
+					\item \texttt{es.execute(myRunnable);} (beliebig oft)
 					\item \texttt{es.shutdown();}
 				\end{itemize} \pause
 				\item Tests schreiben
