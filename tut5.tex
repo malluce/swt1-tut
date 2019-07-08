@@ -449,7 +449,7 @@
 			\item Compiler darf weniger optimieren
 		\end{itemize} \pause
 		\begin{exampleblock}{Löst es das folgende Problem?}
-			\texttt{i++} ausgeführt von 2 Threads. \texttt{volatile i} ist initial 0. \linebreak Ist i nach der Ausführung immer 1?
+			\texttt{i++} ausgeführt von 2 Threads. \texttt{volatile i} ist initial 0. \linebreak Ist i nach der Ausführung immer 2?
 		\end{exampleblock} \pause Beispiel-Code \pause
 		\begin{itemize}
 			\item Nein! 
@@ -547,9 +547,9 @@
 	\centering
 			\begin{verbatim}
 int a = 9;
+int z = 0;
 System.out.println("blubb");
 while (a == 9) {
-  int z = 0;
   for (int i = 0; i <= b; i++) {
     n++;
   }
@@ -572,9 +572,9 @@ while (a == 9) {
 	\centering
 	\begin{verbatim}
 int a = 9;
+int z = 0;
 System.out.println("blubb");
 while (a == 9) { <- hier
-  int z = 0;
   for (int i = 0; i <= b; i++) { <- hier
     n++;
   }
@@ -589,9 +589,9 @@ while (a == 9) { <- hier
 	\begin{frame}[fragile]{Sprünge wurden umgewandelt}
 	\begin{verbatim}
 01 int a = 9;
-02 System.out.println("blubb");
-03 if not (a == 9) goto 14;
-04 int z = 0;
+02 int z = 0;
+03 System.out.println("blubb");
+04 if not (a == 9) goto 14;
 05 int i = 0;
 06 if not (i <= b) goto 10;
 07 n++;
@@ -600,7 +600,7 @@ while (a == 9) { <- hier
 10 z++;
 11 if not (a == z) goto 13;
 12 a = 8;
-13 goto 03;
+13 goto 04;
 14
 	\end{verbatim}
 	\end{frame}
@@ -619,11 +619,11 @@ while (a == 9) { <- hier
 		\footnotesize
 \begin{verbatim}
 01 int a = 9;
-02 System.out.println("blubb");
-03 if not (a == 9) goto 14;
+02 int z = 0;
+03 System.out.println("blubb");
+04 if not (a == 9) goto 14;
 \end{verbatim}
 \begin{verbatim}
-04 int z = 0;
 05 int i = 0;
 06 if not (i <= b) goto 10;
 \end{verbatim}
@@ -638,7 +638,7 @@ while (a == 9) { <- hier
 \end{verbatim}
 \begin{verbatim}
 12 a = 8;
-13 goto 03;
+13 goto 04;
 \end{verbatim}
 \begin{verbatim}
 14
@@ -663,11 +663,11 @@ while (a == 9) { <- hier
 		\footnotesize
 		\begin{verbatim}
 		01 int a = 9;
-		02 System.out.println("blubb");
-		03 if not (a == 9) goto 14;
+		02 int z = 0;
+		03 System.out.println("blubb");
+		04 if not (a == 9) goto 14;
 		\end{verbatim}
 		\begin{verbatim}
-		04 int z = 0;
 		05 int i = 0;
 		06 if not (i <= b) goto 10; 
 		\end{verbatim}
@@ -682,7 +682,7 @@ while (a == 9) { <- hier
 		\end{verbatim}
 		\begin{verbatim}
 		12 a = 8;
-		13 goto 03; <-- kaputt!
+		13 goto 04; <-- kaputt!
 		\end{verbatim}
 		\begin{verbatim}
 		14
@@ -707,13 +707,13 @@ while (a == 9) { <- hier
 		%\fontsize{3mm}{3mm}\selectfont
 		\begin{verbatim}
 		01 int a = 9;
-		02 System.out.println("blubb");
+		02 int z = 0;
+		03 System.out.println("blubb");
 		\end{verbatim}
 		\begin{verbatim}
-		03 if not (a == 9) goto 14;
+		04 if not (a == 9) goto 14;
 		\end{verbatim}
 		\begin{verbatim}
-		04 int z = 0;
 		05 int i = 0;
 		\end{verbatim}
 		\begin{verbatim}
@@ -732,7 +732,7 @@ while (a == 9) { <- hier
 		12 a = 8;
 		\end{verbatim}
 		\begin{verbatim}
-		13 goto 03;
+		13 goto 04;
 		\end{verbatim}
 		\begin{verbatim}
 		14
