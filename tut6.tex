@@ -93,73 +93,71 @@
 		\includegraphics[scale=0.7]{./pics/tut6/statistics-ub6.png}
 	\end{frame}
 
-	\begin{frame}[fragile]
-		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 1: Kontrollfluss-orientiertes Testen}
-			\begin{itemize}
-				\pause 
-				\item alles außer Kontrollfluss-Zeug so lassen wie es ist! \pause
-				\item Kontrollfluss-Zeug, das nicht if(x) goto ist auflösen! \pause
-				\item außerdem Kurzschlussauswertung in zwei if auflösen 
-			\end{itemize}
-		\end{block}
-		\begin{verbatim}
-		if(x && y) {
-		  z++;
-		}
-		
-		if(x || y) {
-		  z++;
-		}
-		\end{verbatim}
-\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Kurzschlussauswertung}
-		\begin{itemize}
-			\item Kurzschlussauswertung (\&\& bzw. $\Vert$) muss berücksichtigt werden \pause
-			\item Erinnerung: 
-			\begin{itemize}
-				\item \&\& und $\Vert$ werten die rechte Seite nur aus, wenn notwendig
-				\item \& und $\vert$ werten immer beide Seiten aus \pause
-			\end{itemize}
-		\end{itemize}
-		\centering \includegraphics[scale=0.4]{./pics/tut6/code.png}
-	\end{frame}
-
-	\begin{frame}
-		\frametitle{KFO: Kurzschlussauswertung}
-		\begin{figure}
-			\subfigure[1. Zwischensprache]{\includegraphics[scale=0.35]{./pics/tut6/zwischen.png}}	
-			\subfigure[KFG]{\includegraphics[scale=0.35]{./pics/tut6/kfg.png}}
-		\end{figure}
-	\end{frame}
-
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 2: Parallelisierung}
+		\begin{block}{Aufgabe 1+2: Parallelisierung}
 			\begin{itemize}
-				\item 5 Abgaben, meist richtig \pause
-				\item Anzahl Prozessoren berechnen
+				\pause
+				\item 4+1 Abgabe\dots\pause
+				\item Anzahl Prozessoren (inkl. HT) berechnen
 				\begin{itemize}
 					\item \texttt{int nproc = Runtime.getRuntime().availableProcessors();}
 				\end{itemize}
 			\end{itemize}
 			\end{block}
 		\pause 
-		\begin{block}{Aufgabe 3: Abnahmetests}
+		\begin{block}{Aufgabe 3: Äquivalenzklassen-Tests}
 			\begin{itemize}
-				\item 4 Abgaben
-				\item Test brauchen immer Asserts!
+				\item Grenzwerte \enquote{möglichst nah} an Grenze 
+				\item z.B. ungültiger Betrag: Grenzwert sowas wie -1 oder -0.01, nicht -20
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{Häufige Fehler}
+		\begin{block}{Aufgabe 4: Kontrollfluss-orientiertes Testen}
+			\begin{itemize}
+				\pause 
+				\item alles außer Kontrollfluss-Zeug so lassen wie es ist
+				\begin{itemize}
+					\item insb. auch \texttt{return x;} (nicht zusammenfassen!) \pause
+					\item ansonsten bei Überdeckung gemogelt 
+					\begin{itemize}
+						\item wo hört man beim Zusammenfassen auf? sind auch alle \texttt{c++} ein Block?
+						\item ein \texttt{return}-Block betreten reicht dann schon für Überdeckung aller \texttt{return}s
+						\item dann können wir es gleich lassen :D
+					\end{itemize} \pause
+					\item Code 1:1 übernehmen, \texttt{;} nicht vergessen
+				\end{itemize}
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Häufige Fehler}
-		\begin{block}{Aufgabe 4: Wettbewerb}
-			\begin{itemize}
-				\item 3 Abgaben
+		\begin{block}{Aufgabe 5: Codeinspektion}
+			\begin{itemize} \pause
+				\item JavaDoc bei \texttt{@Override} nicht nötig
+				\begin{itemize}
+					\item solange Unterklasse nicht etwas nennenswert anders macht
+					\begin{itemize}
+						\item sollte sie aber eh nicht (Substitutionsprinzip undso)
+					\end{itemize}
+				\end{itemize}
+				\pause
+				\item \texttt{throws} in Signatur und JavaDoc
+				\begin{itemize}
+					\item nur bei \texttt{CheckedExceptions} nötig
+					\item bei \texttt{UncheckedExceptions} = Unterklassen von \texttt{RuntimeException} \textbf{nicht}
+					\item z.B. \texttt{NullPointerException}, \texttt{IllegalArgumentException}, \texttt{ArrayIndexOutOfBoundsException}
+				\end{itemize}
+				\pause
+				\item \texttt{data = new double$\lbrack$rows$\rbrack\lbrack$cols$\rbrack$;} füllt das Array implizit mit Nullen
+				\begin{itemize}
+					\item also keine Verletzung des Verhaltens wie in JavaDoc beschrieben
+				\end{itemize} \pause
+				\item \texttt{final}-Variablen können erst deklariert werden und im Konstruktor initialisiert
 			\end{itemize}
 		\end{block}
 	\end{frame}
