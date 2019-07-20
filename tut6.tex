@@ -162,6 +162,27 @@
 		\end{block}
 	\end{frame}
 		
+\section{Werbung}
+\begin{frame}{Zusatztutorium}
+	Was?
+	\begin{itemize}
+		\item Übergang von SWT1 zu PSE
+		\item in kleinen Gruppen ein 2D-Jump'n'Run erweitern \pause
+		\item $<$zeige werbungs-slides$>$ \pause
+	\end{itemize}
+	Wann?
+	\begin{itemize}
+		\item steht noch nicht 100\%ig fest
+		\item vermutlich 1./2. VL-Woche vom nächsten Semester
+		\item \textbf{bevor} das PSE losgeht \pause
+	\end{itemize}
+	Warum?
+	\begin{itemize}
+		\item SWT ist dann schon über 2 Monate her ;)
+		\item und außerdem: warum nicht?
+	\end{itemize}
+\end{frame}
+		
 \section{Testen}
 	\subsection{Definitionen}
 	
@@ -341,6 +362,103 @@
 		\begin{huge}
 				\centering Hauptklausur SS2011 A3
 		\end{huge}
+	\end{frame}
+
+	\begin{frame}{\texttt{java.util.concurrent}}
+		\begin{itemize}
+			\item thread-safe Datenstrukturen (\enquote{Concurrent Collections})
+			\begin{itemize}
+				\item kann man in parallelen Programmen verwenden, falls mehrere Threads drauf zugreifen
+				\item \enquote{normale} Collections sind nicht thread-safe 
+				\begin{itemize}
+					\item was soll passieren, wenn ein Thread über Daten iteriert, ein anderer sie gleichzeit modifiziert?
+					\item sind \enquote{fail-fast}: werfen \texttt{ConcurrentModificationException}
+				\end{itemize} \pause
+				\item statt \texttt{HashMap}, verwende \texttt{ConcurrentHashMap}
+				\item statt \texttt{ArrayList}, verwende \texttt{CopyOnWriteArrayList}
+				\begin{itemize}
+					\item Achtung: kopiert bei jeder Veränderung das gesamte Array
+					\item daher nur benutzen, wenn öfter gelesen/iteriert wird als geschrieben
+				\end{itemize}
+				\item usw. \pause
+				\item Achtung: \texttt{Concurrent != Synchronized}
+				\begin{itemize}
+					\item Datenstrukturen lassen ggf. mehrere Threads zu (JavaDoc lesen)
+				\end{itemize}
+				\pause \item Code-Beispiel
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{\texttt{java.util.concurrent}}
+		\begin{itemize}
+			\item \texttt{Executor}, \texttt{ExecutorService}, \texttt{Executors}
+			\begin{itemize}
+				\item abstrahiert von Thread-Management
+				\item \texttt{Executor} bietet Methode \texttt{void execute(Runnable runnable)} \pause
+				\item \texttt{ExecutorService extends Executor} bietet weitere Methoden \pause
+				\item \texttt{Executors} bietet Methoden zum Erstellen von \texttt{ExecutorService}-Impl.
+				\begin{itemize}
+					\item \texttt{newFixedThreadPool(int nThreads)}
+					\item \texttt{newCachedThreadPool()}
+				\end{itemize}
+			\end{itemize} \pause
+			\item \texttt{Callable$<$T$>$}, \texttt{Future$<$T$>$}
+			\begin{itemize}
+				\item Problem an \texttt{Runnable}: keine Rückgabe möglich (\texttt{void}) \pause
+				\item \texttt{Callable$<$T$>$\#call()} gibt \texttt{T} zurück \pause
+				\item Problem: \enquote{man weiß nicht wann \texttt{call()} fertig}
+				\item daher: \texttt{Future$<$T$>$} ist Abstraktion der Rückgabe
+				\begin{itemize}
+					\item mittel \texttt{Future$<$T$>$\#get()} kann man auf Ergebnis warten
+				\end{itemize} \pause
+				\item z.B.: \texttt{ExecutorService\#submit(Callable$<$T$>$ task)} gibt Future$<$T$>$ zurück
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{\texttt{java.util.concurrent.atomic}}
+		\begin{itemize}
+			\item bietet atomare Datentypen
+			\item \enquote{lock-free thread-safe programming on single variables}
+			\item erlaubt z.B. atomares \texttt{i++;}
+			\begin{itemize}
+				\item normalerweise: \texttt{tmp = i; tmp = tmp + 1; i = tmp;}
+				\item problematisch bei mehreren Threads (s. Bsp. letztes Tut)
+			\end{itemize}
+			\item Bsp: \texttt{AtomicInteger\#incrementAndGet()}
+			\pause \item Code-Beispiel
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Semaphoren}
+		\begin{itemize}
+			\item \texttt{Semaphore(int n)}
+			\begin{itemize}
+				\item kritische Abschnitte mit Kapazität n statt 1
+				\begin{itemize}
+					\item ein kritischer Abschnitt kann von n Threads betreten werden
+					\item nützlich, wenn z.B. n Resourcen verarbeitet werden sollen
+				\end{itemize}
+				\item \texttt{aquire()}: versuchen reinzukommen, blockieren falls nicht möglich
+				\item \texttt{tryAquire()} wie \texttt{aquire()}, aber nicht blockierend
+				\item \texttt{release()} gibt einen \enquote{Platz} wieder frei
+			\end{itemize} 
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{CyclicBarrier}
+		\begin{itemize}
+			\item \texttt{CyclicBarrier(int n)}
+			\begin{itemize}
+				\item \texttt{await()} blockiert aufrufenden Thread
+				\item falls \texttt{await()} n-mal aufgerufen, dürfen alle Threads weitermachen
+				\item \texttt{Cyclic} = Barriere kann danach wiederbenutzt werden
+			\end{itemize}
+		\end{itemize}
+		\centering \includegraphics[scale=0.5]{pics/tut6/cyclic.png}
+		\pause
+		Code-Beispiel!
 	\end{frame}
 	
 	\subsection{Testen}
